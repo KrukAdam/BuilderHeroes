@@ -20,10 +20,10 @@ MonoBehaviour:
   effects:
   - buffBaseValue: 0
     buffMinValue: 0
-    buffMaxValue: 100
-    duration: 2
+    buffMaxValue: 20
+    duration: 10
     buffStatType: 1
-    isPercentMult: 0
+    isPercentMult: 1
   - buffBaseValue: 0
     buffMinValue: 10
     buffMaxValue: 10

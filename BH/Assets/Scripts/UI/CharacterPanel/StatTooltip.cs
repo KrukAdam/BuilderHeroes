@@ -34,17 +34,17 @@ public class StatTooltip : MonoBehaviour
 		sb.Append(" ");
 		sb.Append(stat.Value);
 
-		if (stat.Value != stat.BaseValue)
-		{
-			sb.Append(" (");
-			sb.Append(stat.BaseValue);
+		//if (stat.Value != stat.BaseValue)
+		//{
+		//	sb.Append(" (");
+		//	sb.Append(stat.BaseValue);
 
-			if (stat.Value > stat.BaseValue)
-				sb.Append("+");
+		//	if (stat.Value > stat.BaseValue)
+		//		sb.Append("+");
 
-			sb.Append(System.Math.Round(stat.Value - stat.BaseValue, 4));
-			sb.Append(")");
-		}
+		//	sb.Append(System.Math.Round(stat.Value - stat.BaseValue, 4));
+		//	sb.Append(")");
+		//}
 
 		return sb.ToString();
 	}

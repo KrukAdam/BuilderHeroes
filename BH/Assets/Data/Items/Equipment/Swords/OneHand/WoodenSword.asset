@@ -23,542 +23,542 @@ MonoBehaviour:
     StatType: 1
     StatDefenseType: 0
     BaseValue:
-      BaseValue: 0
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
+      Value: 0
   - StatName: Stamina
     StatUseValues: 3
     StatType: 3
     StatDefenseType: 0
     BaseValue:
-      BaseValue: 0
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
+      Value: 0
   - StatName: Mana
     StatUseValues: 3
     StatType: 2
     StatDefenseType: 0
     BaseValue:
-      BaseValue: 0
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
+      Value: 0
   - StatName: Move Speed
     StatUseValues: 1
     StatType: 4
     StatDefenseType: 0
     BaseValue:
-      BaseValue: 0
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
+      Value: 0
   - StatName: Attack Speed
     StatUseValues: 1
     StatType: 5
     StatDefenseType: 0
     BaseValue:
-      BaseValue: 0
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
+      Value: 0
   - StatName: Slash Damage
     StatUseValues: 2
     StatType: 6
     StatDefenseType: 0
     BaseValue:
-      BaseValue: 0
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
+      Value: 0
   - StatName: Stab Damage
     StatUseValues: 2
     StatType: 7
     StatDefenseType: 0
     BaseValue:
-      BaseValue: 0
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
+      Value: 0
   - StatName: Blunt Damage
     StatUseValues: 2
     StatType: 8
     StatDefenseType: 0
     BaseValue:
-      BaseValue: 0
+      Value: 0
     MinValue:
-      BaseValue: 1
+      Value: 1
     MaxValue:
-      BaseValue: 2
+      Value: 2
   - StatName: Arrow Damage
     StatUseValues: 2
     StatType: 9
     StatDefenseType: 0
     BaseValue:
-      BaseValue: 0
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
+      Value: 0
   - StatName: Fire Damage
     StatUseValues: 2
     StatType: 10
     StatDefenseType: 0
     BaseValue:
-      BaseValue: 0
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
+      Value: 0
   - StatName: Water Damage
     StatUseValues: 2
     StatType: 11
     StatDefenseType: 0
     BaseValue:
-      BaseValue: 0
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
+      Value: 0
   - StatName: Earth Damage
     StatUseValues: 2
     StatType: 12
     StatDefenseType: 0
     BaseValue:
-      BaseValue: 0
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
+      Value: 0
   - StatName: Wind Damage
     StatUseValues: 2
     StatType: 13
     StatDefenseType: 0
     BaseValue:
-      BaseValue: 0
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
+      Value: 0
   - StatName: Lighting Damage
     StatUseValues: 2
     StatType: 14
     StatDefenseType: 0
     BaseValue:
-      BaseValue: 0
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
+      Value: 0
   - StatName: Blessing Damage
     StatUseValues: 2
     StatType: 15
     StatDefenseType: 0
     BaseValue:
-      BaseValue: 0
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
+      Value: 0
   - StatName: Darkness Damage
     StatUseValues: 2
     StatType: 16
     StatDefenseType: 0
     BaseValue:
-      BaseValue: 0
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
+      Value: 0
   - StatName: Slash Defense
     StatUseValues: 1
     StatType: 17
     StatDefenseType: 0
     BaseValue:
-      BaseValue: 0
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
+      Value: 0
   - StatName: Stab Defense
     StatUseValues: 1
     StatType: 18
     StatDefenseType: 0
     BaseValue:
-      BaseValue: 0
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
+      Value: 0
   - StatName: Blunt Defense
     StatUseValues: 1
     StatType: 8
     StatDefenseType: 0
     BaseValue:
-      BaseValue: 0
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
+      Value: 0
   - StatName: Arrow Defense
     StatUseValues: 1
     StatType: 20
     StatDefenseType: 0
     BaseValue:
-      BaseValue: 0
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
+      Value: 0
   - StatName: Fire Defense
     StatUseValues: 1
     StatType: 21
     StatDefenseType: 0
     BaseValue:
-      BaseValue: 0
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
+      Value: 0
   - StatName: Water Defense
     StatUseValues: 1
     StatType: 22
     StatDefenseType: 0
     BaseValue:
-      BaseValue: 0
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
+      Value: 0
   - StatName: Earth Defense
     StatUseValues: 1
     StatType: 23
     StatDefenseType: 0
     BaseValue:
-      BaseValue: 0
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
+      Value: 0
   - StatName: Wind Defense
     StatUseValues: 1
     StatType: 24
     StatDefenseType: 0
     BaseValue:
-      BaseValue: 0
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
+      Value: 0
   - StatName: Lighting Defense
     StatUseValues: 1
     StatType: 25
     StatDefenseType: 0
     BaseValue:
-      BaseValue: 0
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
+      Value: 0
   - StatName: Blessing Defense
     StatUseValues: 1
     StatType: 26
     StatDefenseType: 0
     BaseValue:
-      BaseValue: 0
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
+      Value: 0
   - StatName: Darkness Defense
     StatUseValues: 1
     StatType: 27
     StatDefenseType: 0
     BaseValue:
-      BaseValue: 0
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
+      Value: 0
   itemStatsPercentMult:
   - StatName: Health
     StatUseValues: 3
     StatType: 1
     StatDefenseType: 0
     BaseValue:
-      BaseValue: 0
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
+      Value: 0
   - StatName: Stamina
     StatUseValues: 3
     StatType: 3
     StatDefenseType: 0
     BaseValue:
-      BaseValue: 0
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
+      Value: 0
   - StatName: Mana
     StatUseValues: 3
     StatType: 2
     StatDefenseType: 0
     BaseValue:
-      BaseValue: 0
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
+      Value: 0
   - StatName: Move Speed
     StatUseValues: 1
     StatType: 4
     StatDefenseType: 0
     BaseValue:
-      BaseValue: 0
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
+      Value: 0
   - StatName: Attack Speed
     StatUseValues: 1
     StatType: 5
     StatDefenseType: 0
     BaseValue:
-      BaseValue: 0
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
+      Value: 0
   - StatName: Slash Damage
     StatUseValues: 2
     StatType: 6
     StatDefenseType: 0
     BaseValue:
-      BaseValue: 0
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
+      Value: 0
   - StatName: Stab Damage
     StatUseValues: 2
     StatType: 7
     StatDefenseType: 0
     BaseValue:
-      BaseValue: 0
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
+      Value: 0
   - StatName: Blunt Damage
     StatUseValues: 2
     StatType: 8
     StatDefenseType: 0
     BaseValue:
-      BaseValue: 0
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
+      Value: 0
   - StatName: Arrow Damage
     StatUseValues: 2
     StatType: 9
     StatDefenseType: 0
     BaseValue:
-      BaseValue: 0
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
+      Value: 0
   - StatName: Fire Damage
     StatUseValues: 2
     StatType: 10
     StatDefenseType: 0
     BaseValue:
-      BaseValue: 0
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
+      Value: 0
   - StatName: Water Damage
     StatUseValues: 2
     StatType: 11
     StatDefenseType: 0
     BaseValue:
-      BaseValue: 0
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
+      Value: 0
   - StatName: Earth Damage
     StatUseValues: 2
     StatType: 12
     StatDefenseType: 0
     BaseValue:
-      BaseValue: 0
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
+      Value: 0
   - StatName: Wind Damage
     StatUseValues: 2
     StatType: 13
     StatDefenseType: 0
     BaseValue:
-      BaseValue: 0
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
+      Value: 0
   - StatName: Lighting Damage
     StatUseValues: 2
     StatType: 14
     StatDefenseType: 0
     BaseValue:
-      BaseValue: 0
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
+      Value: 0
   - StatName: Blessing Damage
     StatUseValues: 2
     StatType: 15
     StatDefenseType: 0
     BaseValue:
-      BaseValue: 0
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
+      Value: 0
   - StatName: Darkness Damage
     StatUseValues: 2
     StatType: 16
     StatDefenseType: 0
     BaseValue:
-      BaseValue: 0
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
+      Value: 0
   - StatName: Slash Defense
     StatUseValues: 1
     StatType: 17
     StatDefenseType: 0
     BaseValue:
-      BaseValue: 0
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
+      Value: 0
   - StatName: Stab Defense
     StatUseValues: 1
     StatType: 18
     StatDefenseType: 0
     BaseValue:
-      BaseValue: 0
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
+      Value: 0
   - StatName: Blunt Defense
     StatUseValues: 1
     StatType: 8
     StatDefenseType: 0
     BaseValue:
-      BaseValue: 0
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
+      Value: 0
   - StatName: Arrow Defense
     StatUseValues: 1
     StatType: 20
     StatDefenseType: 0
     BaseValue:
-      BaseValue: 0
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
+      Value: 0
   - StatName: Fire Defense
     StatUseValues: 1
     StatType: 21
     StatDefenseType: 0
     BaseValue:
-      BaseValue: 0
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
+      Value: 0
   - StatName: Water Defense
     StatUseValues: 1
     StatType: 22
     StatDefenseType: 0
     BaseValue:
-      BaseValue: 0
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
+      Value: 0
   - StatName: Earth Defense
     StatUseValues: 1
     StatType: 23
     StatDefenseType: 0
     BaseValue:
-      BaseValue: 0
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
+      Value: 0
   - StatName: Wind Defense
     StatUseValues: 1
     StatType: 24
     StatDefenseType: 0
     BaseValue:
-      BaseValue: 0
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
+      Value: 0
   - StatName: Lighting Defense
     StatUseValues: 1
     StatType: 25
     StatDefenseType: 0
     BaseValue:
-      BaseValue: 0
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
+      Value: 0
   - StatName: Blessing Defense
     StatUseValues: 1
     StatType: 26
     StatDefenseType: 0
     BaseValue:
-      BaseValue: 0
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
+      Value: 0
   - StatName: Darkness Defense
     StatUseValues: 1
     StatType: 27
     StatDefenseType: 0
     BaseValue:
-      BaseValue: 0
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
+      Value: 0
   gameCharacterStatsData: {fileID: 11400000, guid: 8f719858588acef4f945c0eba4f10e3a, type: 2}
   mainSkill: {fileID: 11400000, guid: f560bd5c3e16c614a81c6742e78e17de, type: 2}
   secondSkill: {fileID: 0}

@@ -34,9 +34,9 @@ MonoBehaviour:
   isRangeSkill: 0
   takeDamage: 0
   auras:
-  - buffBaseValue: 0
+  - buffBaseValue: 100
     buffMinValue: 0
     buffMaxValue: 0
-    duration: 3
+    duration: 10
     buffStatType: 4
     isPercentMult: 0
