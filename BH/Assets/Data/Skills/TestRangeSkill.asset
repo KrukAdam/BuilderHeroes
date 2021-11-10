@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1dfa8c8bf5ec8c4897f9bfbf7bf7c9c, type: 3}
+  m_Name: TestRangeSkill
+  m_EditorClassIdentifier: 
+  skillSprite: {fileID: 21300000, guid: 071460795786dfc4dbbdd4f483ca25fe, type: 3}
+  skillName: TestRange Skill
+  singleTarget: 0
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  skillUsePositionType: 3
+  skillRange: 1
+  skillCooldawn: 1
+  skillCastTime: 0
+  timeToBlockCasterMove: 0
+  timeToBlockCasterAction: 0
+  pushPower: 0
+  skillStatsUsed: []
+  offenseStatsType:
+  - StatType: 9
+    SkillOffenseStatType: 2
+    MinDamage: 1
+    MaxDamage: 4
+    MinPercentDamage: 0
+    MaxPercentDamage: 0
+    DamagedStatType: 1
+  ammoType: 1
+  ammoUsePerShot: 0
+  missileSpeed: 12
+  missileRange: 5
+  missileSprite: {fileID: 21300000, guid: b0731a907adde354fb5470049b983941, type: 3}
+  missilePrefab: {fileID: 3287878058728074275, guid: 28f5c2de72a363b46bc342b9622328a4, type: 3}
