@@ -13,7 +13,7 @@ public class AuraData : MonoBehaviour
 	[SerializeField] private EStatsTypes buffStatType;
 	[SerializeField] private bool isPercentMult = false;
 
-	public void ExecuteEffect(UsableItem parentItem, PlayerCharacter character)
+	public void ExecuteEffect(AuraSkill aura, Stats stats)
 	{
 		StatModifier baseValueStatModifier;
 		StatModifier minValueStatModifier;
@@ -21,26 +21,26 @@ public class AuraData : MonoBehaviour
 
 		if (isPercentMult)
 		{
-			baseValueStatModifier = new StatModifier(buffBaseValue, StatModType.PercentMult, parentItem);
-			minValueStatModifier = new StatModifier(buffMinValue, StatModType.PercentMult, parentItem);
-			maxValueStatModifier = new StatModifier(buffMaxValue, StatModType.PercentMult, parentItem);
+			baseValueStatModifier = new StatModifier(buffBaseValue, StatModType.PercentMult, aura);
+			minValueStatModifier = new StatModifier(buffMinValue, StatModType.PercentMult, aura);
+			maxValueStatModifier = new StatModifier(buffMaxValue, StatModType.PercentMult, aura);
 		}
 		else
 		{
-			baseValueStatModifier = new StatModifier(buffBaseValue, StatModType.Flat, parentItem);
-			minValueStatModifier = new StatModifier(buffMinValue, StatModType.Flat, parentItem);
-			maxValueStatModifier = new StatModifier(buffMaxValue, StatModType.Flat, parentItem);
+			baseValueStatModifier = new StatModifier(buffBaseValue, StatModType.Flat, aura);
+			minValueStatModifier = new StatModifier(buffMinValue, StatModType.Flat, aura);
+			maxValueStatModifier = new StatModifier(buffMaxValue, StatModType.Flat, aura);
 		}
 
 		int index = 0;
 		List<StatModifier> modifiers = new List<StatModifier>();
-		for (int i = 0; i < character.Stats.AllStats.Count; i++)
+		for (int i = 0; i < stats.AllStats.Count; i++)
 		{
-			if (buffStatType == character.Stats.AllStats[i].StatType)
+			if (buffStatType == stats.AllStats[i].StatType)
 			{
-				character.Stats.AllStats[i].BaseValue.AddModifier(baseValueStatModifier);
-				character.Stats.AllStats[i].MinValue.AddModifier(minValueStatModifier);
-				character.Stats.AllStats[i].MaxValue.AddModifier(maxValueStatModifier);
+				stats.AllStats[i].BaseValue.AddModifier(baseValueStatModifier);
+				stats.AllStats[i].MinValue.AddModifier(minValueStatModifier);
+				stats.AllStats[i].MaxValue.AddModifier(maxValueStatModifier);
 				index = i;
 				modifiers.Add(baseValueStatModifier);
 				modifiers.Add(minValueStatModifier);
@@ -48,22 +48,17 @@ public class AuraData : MonoBehaviour
 			}
 		}
 
-		character.UpdateStatValues();
-		character.StartCoroutine(RemoveBuff(character, modifiers, index, duration));
+		stats.StartCoroutine(RemoveBuff(stats, modifiers, index, duration));
+		stats.AuraRefresh();
 	}
 
-	public string GetDescription()
-	{
-		return "Grants " + buffBaseValue + " Agility for " + duration + " seconds.";
-	}
-
-	private static IEnumerator RemoveBuff(PlayerCharacter character, List<StatModifier> statModifiers, int index, float duration)
+	private static IEnumerator RemoveBuff(Stats stats, List<StatModifier> statModifiers, int index, float duration)
 	{
 		yield return new WaitForSeconds(duration);
 		foreach (var modifier in statModifiers)
 		{
-			character.Stats.AllStats[index].RemoveAllModifiers(modifier);
+			stats.AllStats[index].RemoveAllModifiers(modifier);
 		}
-		character.UpdateStatValues();
+		stats.AuraRefresh();
 	}
 }

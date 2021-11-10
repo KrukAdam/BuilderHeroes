@@ -1823,6 +1823,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterStatsData: {fileID: 11400000, guid: 8f719858588acef4f945c0eba4f10e3a, type: 2}
+  allyLayersMask:
+    serializedVersion: 2
+    m_Bits: 256
+  enemyLayerMask:
+    serializedVersion: 2
+    m_Bits: 768
+  allyAILayersMask:
+    serializedVersion: 2
+    m_Bits: 512
+  enemyAILayerMask:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!4 &238211034
 Transform:
   m_ObjectHideFlags: 0

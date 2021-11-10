@@ -7,12 +7,18 @@ public class SkillSetupInfo
     public Transform InteractionPointer;
     public Transform UserTransform;
     public Stats UserStats;
+    public LayerMask AllyLayersMask;
+    public LayerMask EnemyLayerMask;
+    public Character SkillOwner;
 
-    public SkillSetupInfo(Transform interactionPointer, Transform userTransform, Stats userStats)
+    public SkillSetupInfo(PlayerCharacter playerCharacter, Transform userTransform)
     {
-        InteractionPointer = interactionPointer;
+        InteractionPointer = playerCharacter.PlayerActionController.InteractionPointer;
         UserTransform = userTransform;
-        UserStats = userStats;
+        UserStats = playerCharacter.Stats;
+        AllyLayersMask = playerCharacter.AllyLayersMask;
+        EnemyLayerMask = playerCharacter.EnemyLayerMask;
+        SkillOwner = playerCharacter;
     }
 
 }

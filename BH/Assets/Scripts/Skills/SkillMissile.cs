@@ -8,6 +8,7 @@ public class SkillMissile : MonoBehaviour
     [SerializeField] private SpriteRenderer missileRenderer = null;
     [SerializeField] private Rigidbody2D rb = null;
 
+    private Character missileOwner;
     private RangeSkill rangeSkill;
     private bool canMove = false;
     private Vector3 moveDirection;
@@ -57,6 +58,7 @@ public class SkillMissile : MonoBehaviour
         missileRenderer.sprite = rangeSkill.MissileSprite;
         ownerShotPos = rangeSkill.SkillSetupInfo.UserTransform.position;
         missileRange = rangeSkill.MissileRange;
+        missileOwner = rangeSkill.SkillSetupInfo.SkillOwner;
 
         canMove = true;
     }
@@ -65,9 +67,19 @@ public class SkillMissile : MonoBehaviour
     {
         if (collision.gameObject.layer == lowCollidersLayer) return;  //Missile flies over this colliders
 
-        Debug.Log("Enter2");
-        rangeSkill.RangeSkillEffect(gameObject.transform);
-        Destroy(gameObject);
+        if(collision.TryGetComponent(out Character character))
+        {
+            if (character == missileOwner) return;
+
+            Debug.Log("Enter2");
+            rangeSkill.RangeSkillEffect(gameObject.transform);
+            Destroy(gameObject);
+        }
+        else
+        {
+            Debug.Log("Enter3");
+            Destroy(gameObject);
+        }
     }
 
     private void RotateMissile()

@@ -14,7 +14,9 @@ public class EnemyCharacter : Character
     //OnSpawn
     public void Init(GameUiManager gameUiManager)
 	{
-		this.gameUiManager = gameUiManager;
+		this.gameUiManager = gameUiManager; //?
+
+		InitLayerMask(false);
 
 		if (Stats == null)
 		{

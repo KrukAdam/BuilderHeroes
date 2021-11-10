@@ -11,14 +11,15 @@ public class MaleeSkill : Skill
     {
         base.UseSkill();
 
-
-        foreach (var target in GetTargets())
+        foreach (var target in GetTargets(SkillSetupInfo.EnemyLayerMask))
         {
             if (target.TryGetComponent(out Character character))
             {
                 bool push = true;
                 foreach (var offenseStatType in offenseStatsType)
                 {
+                    if (character == SkillSetupInfo.SkillOwner) break;
+
                     character.Stats.TakeDamage(offenseStatType);
                     if (push)
                     {

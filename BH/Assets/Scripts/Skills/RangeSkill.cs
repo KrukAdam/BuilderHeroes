@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Skills/RangeSkill")]
+[CreateAssetMenu(menuName = "Skills/Range Skill")]
 public class RangeSkill : Skill
 {
     public EAmmoType AmmoType { get => ammoType; }
@@ -30,13 +30,15 @@ public class RangeSkill : Skill
     public virtual void RangeSkillEffect(Transform effectPos)
     {
 
-        foreach (var target in GetRangeTargets(effectPos))
+        foreach (var target in GetRangeTargets(effectPos, SkillSetupInfo.EnemyLayerMask))
         {
             if (target.TryGetComponent(out Character character))
             {
                 bool push = true;
                 foreach (var offenseStatType in offenseStatsType)
                 {
+                    if (character == SkillSetupInfo.SkillOwner) break;
+
                     character.Stats.TakeDamage(offenseStatType);
                     if (push)
                     {
@@ -49,7 +51,7 @@ public class RangeSkill : Skill
         }
     }
 
-    protected Collider2D[] GetRangeTargets(Transform effectPos)
+    protected Collider2D[] GetRangeTargets(Transform effectPos, LayerMask targetLayer)
     {
         return Physics2D.OverlapCircleAll(effectPos.position, skillRange, targetLayer);
     }

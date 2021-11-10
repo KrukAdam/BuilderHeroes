@@ -45,7 +45,7 @@ public class Stats : MonoBehaviour, IDamage
         throw new System.NotImplementedException();
     }
 
-    public void SetAura()
+    public void AuraRefresh()
     {
 
     }

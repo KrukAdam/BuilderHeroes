@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(menuName = "Skills/Aura Skill")]
 public class AuraSkill : RangeSkill
 {
     [Space]
     [Header("Settings for aura skill")]
+    [SerializeField] private bool isBuff = true;        //If is true is buff, if false debuff
     [SerializeField] private bool isRangeSkill = false;
     [SerializeField] private bool takeDamage = false;
-    [SerializeField] private bool isBuff = true;        //If is true is buff, if false debuff
+    [SerializeField] private List<AuraData> auras = new List<AuraData>();
 
     public override void UseSkill()
     {
@@ -32,7 +34,7 @@ public class AuraSkill : RangeSkill
         UseStats();   //Dont use base method "UseSkill". Base method is range skill
         Debug.Log("Use skill: " + skillName);
 
-        foreach (var target in GetTargets())
+        foreach (var target in GetTargets(SkillSetupInfo.EnemyLayerMask))
         {
             if (target.TryGetComponent(out Character character))
             {
@@ -41,11 +43,17 @@ public class AuraSkill : RangeSkill
                 {
                     if (isBuff)
                     {
-                        SkillSetupInfo.UserStats.TakeDamage(offenseStatType);
+                        foreach (var aura in auras)
+                        {
+                            aura.ExecuteEffect(this, SkillSetupInfo.UserStats);
+                        }
                     }
                     else
                     {
-                        character.Stats.TakeDamage(offenseStatType);
+                        foreach (var aura in auras)
+                        {
+                            aura.ExecuteEffect(this, character.Stats);
+                        }
                     }
 
                     if(takeDamage) character.Stats.TakeDamage(offenseStatType);

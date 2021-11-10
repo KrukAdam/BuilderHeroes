@@ -15,7 +15,6 @@ public class Skill : ScriptableObject
     [SerializeField] protected Sprite skillSprite = null;
     [SerializeField] protected string skillName = null;
     [SerializeField] protected bool singleTarget = false;
-    [SerializeField] protected LayerMask targetLayer;
     [SerializeField] protected ESkillUsePositionType skillUsePositionType = ESkillUsePositionType.InteractionPoint;
     [SerializeField] protected float skillRange = 1f;
     [SerializeField] protected float skillCooldawn = 1f;
@@ -106,7 +105,7 @@ public class Skill : ScriptableObject
         }
     }
 
-    protected Collider2D[] GetTargets()
+    protected Collider2D[] GetTargets(LayerMask targetLayer)
     {
        return Physics2D.OverlapCircleAll(GetSkillUsePosition(), skillRange, targetLayer);
     }

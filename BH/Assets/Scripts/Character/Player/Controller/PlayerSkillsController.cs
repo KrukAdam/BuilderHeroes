@@ -39,7 +39,7 @@ public class PlayerSkillsController : MonoBehaviour
     {
         this.playerCharacter = playerCharacter;
 
-        skillSetupInfo = new SkillSetupInfo(playerCharacter.PlayerActionController.InteractionPointer, gameObject.transform, playerCharacter.Stats);
+        skillSetupInfo = new SkillSetupInfo(playerCharacter, gameObject.transform);
 
         mainSkill = Instantiate(mainSkillRacePrefab);
         secondSkill = Instantiate(secondSkillRacePrefab);

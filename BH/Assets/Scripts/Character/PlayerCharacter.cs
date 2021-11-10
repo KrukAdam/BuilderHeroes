@@ -14,6 +14,8 @@ public class PlayerCharacter : Character
 	{
 		this.gameUiManager = gameUiManager;
 
+		InitLayerMask(true);
+
 		if(!Stats) stats = gameObject.GetComponent<Stats>();
 		this.Stats.Init();
 

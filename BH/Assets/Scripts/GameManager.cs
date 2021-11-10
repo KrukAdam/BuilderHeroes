@@ -6,12 +6,18 @@ using UnityEngine.Assertions;
 public class GameManager : MonoBehaviour
 {
     public CharacterStatsData CharacterStatsData { get => characterStatsData; }
-
+    public LayerMask AllyLayersMask { get => allyLayersMask; }
+    public LayerMask EnemyLayersMask { get => enemyLayerMask; }
+    public LayerMask AllyAILayersMask { get => allyLayersMask; }
+    public LayerMask EnemyAILayersMask { get => enemyLayerMask; }
     public static GameManager Instance { get; private set; }
     public BHInputManager.InputManager InputManager { get; private set; }
 
-    [SerializeField]
-    private CharacterStatsData characterStatsData = null;
+    [SerializeField] private CharacterStatsData characterStatsData = null;
+    [SerializeField] private LayerMask allyLayersMask = LayerMask.GetMask();
+    [SerializeField] private LayerMask enemyLayerMask = LayerMask.GetMask();
+    [SerializeField] private LayerMask allyAILayersMask = LayerMask.GetMask();
+    [SerializeField] private LayerMask enemyAILayerMask = LayerMask.GetMask();
 
     private void Awake()
     {
