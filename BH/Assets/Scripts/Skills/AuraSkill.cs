@@ -53,7 +53,7 @@ public class AuraSkill : RangeSkill
                     {
                         if (takeDamage)
                         {
-                            if (character == SkillSetupInfo.SkillOwner) break;
+                            if (SkillOwner(character)) break;
                             character.Stats.TakeDamage(offenseStatType);
                         }
 

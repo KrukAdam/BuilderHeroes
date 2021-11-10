@@ -37,7 +37,7 @@ public class RangeSkill : Skill
                 bool push = true;
                 foreach (var offenseStatType in offenseStatsType)
                 {
-                    if (character == SkillSetupInfo.SkillOwner) break;
+                    if (SkillOwner(character)) break;
 
                     character.Stats.TakeDamage(offenseStatType);
                     if (push)
@@ -46,7 +46,7 @@ public class RangeSkill : Skill
                         PushTarget(character);
                     }
                 }
-                if (singleTarget) return;
+                if (singleTarget && !SkillOwner(character)) return;
             }
         }
     }

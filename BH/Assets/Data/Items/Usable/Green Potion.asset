@@ -27,8 +27,8 @@ MonoBehaviour:
   - buffBaseValue: 0
     buffMinValue: 10
     buffMaxValue: 10
-    duration: 2
-    buffStatType: 6
+    duration: 125
+    buffStatType: 8
     isPercentMult: 0
   - buffBaseValue: 10
     buffMinValue: 0

@@ -25,7 +25,6 @@ public class BaseStat
         }
         set => BaseValue = value;
     }
-    private float x;
 
     protected readonly List<StatModifier> statModifiers;
     public readonly ReadOnlyCollection<StatModifier> StatModifiers;
@@ -46,6 +45,8 @@ public class BaseStat
         isDirty = true;
         statModifiers.Add(mod);
         statModifiers.Sort(CompareModifierOrder);
+        float x = Value;
+        Value = x;
     }
 
     public virtual bool RemoveModifier(StatModifier mod)

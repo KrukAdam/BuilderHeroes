@@ -36,7 +36,7 @@ MonoBehaviour:
   auras:
   - buffBaseValue: 0
     buffMinValue: 0
-    buffMaxValue: 25
+    buffMaxValue: 0
     duration: 3
-    buffStatType: 1
+    buffStatType: 4
     isPercentMult: 0

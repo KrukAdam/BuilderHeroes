@@ -149,4 +149,9 @@ public class Skill : ScriptableObject
 
         return pushVector;
     }
+
+    protected bool SkillOwner(Character character)
+    {
+        return character == SkillSetupInfo.SkillOwner;
+    }
 }
