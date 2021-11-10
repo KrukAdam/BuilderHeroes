@@ -26,8 +26,8 @@ public class MaleeSkill : Skill
                         push = false;
                         PushTarget(character);
                     }
-                    if (singleTarget) return;
                 }
+                if (singleTarget) return;
             }
         }
     }

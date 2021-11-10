@@ -148,7 +148,7 @@ public class PlayerSkillsController : MonoBehaviour
     {
         RangeSkill rangeSkill = skill as RangeSkill;
 
-        if (!rangeSkill) return true;           //Skill not use ammo, it is not a range skill, and return true. Can use skill
+        if (!rangeSkill || !useAmmo) return true;           //Skill not use ammo, it is not a range skill, and return true. Can use skill
 
         if (rangeSkill.AmmoType != EAmmoType.None)
         {

@@ -33,38 +33,45 @@ public class AuraSkill : RangeSkill
     {
         UseStats();   //Dont use base method "UseSkill". Base method is range skill
         Debug.Log("Use skill: " + skillName);
-
-        foreach (var target in GetTargets(SkillSetupInfo.EnemyLayerMask))
+        Collider2D[] targets;
+        if (isBuff)
+        {
+            targets = GetTargets(SkillSetupInfo.AllyLayersMask);
+        }
+        else
+        {
+            targets = GetTargets(SkillSetupInfo.EnemyLayerMask);
+        }
+        foreach (var target in targets)
         {
             if (target.TryGetComponent(out Character character))
             {
-                bool push = true;
-                foreach (var offenseStatType in offenseStatsType)
+                if (isBuff || character != SkillSetupInfo.SkillOwner && !isBuff)
                 {
-                    if (isBuff)
+                    bool push = true;
+                    foreach (var offenseStatType in offenseStatsType)
                     {
-                        foreach (var aura in auras)
+                        if (takeDamage)
                         {
-                            aura.ExecuteEffect(this, SkillSetupInfo.UserStats);
+                            if (character == SkillSetupInfo.SkillOwner) break;
+                            character.Stats.TakeDamage(offenseStatType);
                         }
-                    }
-                    else
-                    {
-                        foreach (var aura in auras)
+
+                        if (push)
                         {
-                            aura.ExecuteEffect(this, character.Stats);
+                            push = false;
+                            PushTarget(character);
                         }
                     }
 
-                    if(takeDamage) character.Stats.TakeDamage(offenseStatType);
-
-                    if (push)
+                    foreach (var aura in auras)
                     {
-                        push = false;
-                        PushTarget(character);
+                        aura.ExecuteEffect(this, character.Stats);
+                        Debug.Log("Aura was used");
                     }
                     if (singleTarget) return;
                 }
+
             }
         }
     }

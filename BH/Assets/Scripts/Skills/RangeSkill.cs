@@ -45,8 +45,8 @@ public class RangeSkill : Skill
                         push = false;
                         PushTarget(character);
                     }
-                    if (singleTarget) return;
                 }
+                if (singleTarget) return;
             }
         }
     }

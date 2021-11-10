@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 
 [Serializable]
-public class AuraData : MonoBehaviour
+public class AuraData
 {
 	[SerializeField] private float buffBaseValue;
 	[SerializeField] private float buffMinValue;

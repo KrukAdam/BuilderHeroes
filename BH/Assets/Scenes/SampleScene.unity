@@ -10092,7 +10092,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainSkillRacePrefab: {fileID: 11400000, guid: df238334e13d0ee4c9dad9c51bd176cc, type: 2}
-  secondSkillRacePrefab: {fileID: 11400000, guid: f560bd5c3e16c614a81c6742e78e17de, type: 2}
+  secondSkillRacePrefab: {fileID: 11400000, guid: b11b883349f39dc438176c98884ecfe7, type: 2}
 --- !u!1 &1693566819
 GameObject:
   m_ObjectHideFlags: 0
