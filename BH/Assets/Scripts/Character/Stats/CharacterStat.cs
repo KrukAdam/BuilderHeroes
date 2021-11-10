@@ -15,7 +15,7 @@ public class CharacterStat
     public BaseStat MinValue;
     public BaseStat MaxValue;
 
-    public void AddModifierOnEquip(CharacterStat characterStat, EquippableItem item, StatModType typeStatMode)
+    public void AddModifierOnEquip(CharacterStat characterStat, EquippableItem item, EStatModifierType typeStatMode)
     {
         if (characterStat.BaseValue.Value != 0)
             BaseValue.AddModifier(new StatModifier(characterStat.BaseValue.Value, typeStatMode, item));

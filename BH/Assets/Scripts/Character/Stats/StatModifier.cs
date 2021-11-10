@@ -1,31 +1,30 @@
 
-public enum StatModType
+public enum EStatModifierType
 {
-    Flat = 100,
-    PercentAdd = 200,
-    PercentMult = 300,
+    Constants,
+    PercentAdd,
 }
 
 public class StatModifier
 {
     public readonly float Value;
-    public readonly StatModType Type;
-    public readonly int Order;
+    public readonly EStatModifierType Type;
     public readonly object Source;
+    public readonly Skill Skill;
 
-    public StatModifier(float value, StatModType type, int order, object source)
+    public StatModifier(float value, EStatModifierType type, object source)
     {
         Value = value;
         Type = type;
-        Order = order;
         Source = source;
+        Skill = null;
     }
 
-    public StatModifier(float value, StatModType type) : this(value, type, (int)type, null) { }
-
-    public StatModifier(float value, StatModType type, int order) : this(value, type, order, null) { }
-
-    public StatModifier(float value, StatModType type, object source) : this(value, type, (int)type, source) { }
-
-    public StatModifier(float value, StatModType type, AuraSkill aura) : this(value, type, (int)type, aura) { }
+    public StatModifier(float value, EStatModifierType type, object source, Skill skill)
+    {
+        Value = value;
+        Type = type;
+        Source = source;
+        Skill = skill;
+    }
 }

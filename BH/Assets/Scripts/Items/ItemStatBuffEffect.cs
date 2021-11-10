@@ -23,15 +23,15 @@ public class ItemStatBuffEffect
 
 		if (isPercentMult)
         {
-			baseValueStatModifier = new StatModifier(buffBaseValue, StatModType.PercentMult, parentItem);
-			minValueStatModifier = new StatModifier(buffMinValue, StatModType.PercentMult, parentItem);
-			maxValueStatModifier = new StatModifier(buffMaxValue, StatModType.PercentMult, parentItem);
+			baseValueStatModifier = new StatModifier(buffBaseValue, EStatModifierType.PercentAdd, parentItem);
+			minValueStatModifier = new StatModifier(buffMinValue, EStatModifierType.PercentAdd, parentItem);
+			maxValueStatModifier = new StatModifier(buffMaxValue, EStatModifierType.PercentAdd, parentItem);
         }
         else
         {
-			baseValueStatModifier = new StatModifier(buffBaseValue, StatModType.Flat, parentItem);
-			minValueStatModifier = new StatModifier(buffMinValue, StatModType.Flat, parentItem);
-			maxValueStatModifier = new StatModifier(buffMaxValue, StatModType.Flat, parentItem);
+			baseValueStatModifier = new StatModifier(buffBaseValue, EStatModifierType.Constants, parentItem);
+			minValueStatModifier = new StatModifier(buffMinValue, EStatModifierType.Constants, parentItem);
+			maxValueStatModifier = new StatModifier(buffMaxValue, EStatModifierType.Constants, parentItem);
 		}
 
 		int index = 0;

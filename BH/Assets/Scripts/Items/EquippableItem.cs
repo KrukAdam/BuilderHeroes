@@ -37,8 +37,8 @@ public class EquippableItem : Item
 	{
         for (int i = 0; i < c.Stats.AllStats.Count; i++)
         {
-            c.Stats.AllStats[i].AddModifierOnEquip(itemStats[i], this, StatModType.Flat);
-			c.Stats.AllStats[i].AddModifierOnEquip(itemStatsPercentMult[i], this, StatModType.PercentMult);
+            c.Stats.AllStats[i].AddModifierOnEquip(itemStats[i], this, EStatModifierType.Constants);
+			c.Stats.AllStats[i].AddModifierOnEquip(itemStatsPercentMult[i], this, EStatModifierType.PercentAdd);
 		}
 	}
 

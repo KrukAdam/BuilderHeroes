@@ -19,6 +19,8 @@ public class BaseStat
 
     public virtual void AddModifier(StatModifier mod)
     {
+        AurasCheck(mod);
+
         statModifiers.Add(mod);
         Value = CalculateFinalValue();
     }
@@ -50,6 +52,23 @@ public class BaseStat
         return didRemove;
     }
 
+    private void AurasCheck(StatModifier mod)
+    {
+        if (!mod.Skill) return;
+
+        foreach (var modifier in statModifiers)
+        {
+            if (modifier.Skill)
+            {
+                if (modifier.Skill == mod.Skill)
+                {
+                    RemoveModifier(modifier);
+                    return;
+                }
+            }
+        }
+    }
+
     private float CalculateFinalValue()
     {
         float finalValue = 0;
@@ -57,47 +76,20 @@ public class BaseStat
 
         foreach (var mod in statModifiers)
         {
-            if (mod.Type == StatModType.Flat)
+            if (mod.Type == EStatModifierType.Constants)
             {
                 finalValue += mod.Value;
             }
         }
         foreach (var mod in statModifiers)
         {
-            if (mod.Type == StatModType.PercentMult)
+            if (mod.Type == EStatModifierType.PercentAdd)
             {
                 sumPercentAdd += mod.Value;
             }
         }
 
         finalValue = finalValue + (finalValue/100 * sumPercentAdd);
-
         return (float)Math.Round(finalValue, 4);
-
-        //for (int i = 0; i < statModifiers.Count; i++)
-        //{
-        //    StatModifier mod = statModifiers[i];
-
-        //    if (mod.Type == StatModType.Flat)
-        //    {
-        //        finalValue += mod.Value;
-        //    }
-        //    else if (mod.Type == StatModType.PercentAdd)
-        //    {
-        //        sumPercentAdd += mod.Value;
-
-        //        if (i + 1 >= statModifiers.Count || statModifiers[i + 1].Type != StatModType.PercentAdd)
-        //        {
-        //            finalValue *= 1 + sumPercentAdd;
-        //            sumPercentAdd = 0;
-        //        }
-        //    }
-        //    else if (mod.Type == StatModType.PercentMult)
-        //    {
-        //        finalValue *= 1 + mod.Value;
-        //    }
-        //}
-
-        //return (float)Math.Round(finalValue, 4);
     }
 }

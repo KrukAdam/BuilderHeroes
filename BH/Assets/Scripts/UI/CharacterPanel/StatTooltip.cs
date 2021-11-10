@@ -61,7 +61,7 @@ public class StatTooltip : MonoBehaviour
 			if (mod.Value > 0)
 				sb.Append("+");
 
-			if (mod.Type == StatModType.Flat)
+			if (mod.Type == EStatModifierType.Constants)
 			{
 				sb.Append(mod.Value);
 			}
