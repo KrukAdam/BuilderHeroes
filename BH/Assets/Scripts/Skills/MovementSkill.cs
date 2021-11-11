@@ -6,10 +6,14 @@ using UnityEngine.InputSystem;
 [CreateAssetMenu(menuName = "Skills/Movement Skill")]
 public class MovementSkill : Skill
 {
+    public float CasterMoveSpeed { get => casterMoveSpeed; }
+    public float CasterMoveRange { get => casterMoveRange; }
+
     [Space]
     [Header("Movement skill settings")]
     [SerializeField] private float casterMoveSpeed = 1;
     [SerializeField] private float casterMoveRange = 1;
+    [SerializeField] private bool hitingEnemy = true;
 
     public override void UseSkill()
     {
@@ -19,6 +23,8 @@ public class MovementSkill : Skill
 
     public void HitTargets()
     {
+        if (!hitingEnemy) return;
+
         foreach (var target in GetTargets(SkillSetupInfo.EnemyLayerMask, skillSetupInfo.UserTransform.position))
         {
             if (target.TryGetComponent(out Character character))
@@ -43,6 +49,6 @@ public class MovementSkill : Skill
 
     private void CasterMove()
     {
-        SkillSetupInfo.SkillOwner.MoveController.StartMoveToTarget(GetSkillUsePosition(), casterMoveSpeed, this, casterMoveRange);
+        SkillSetupInfo.SkillOwner.MoveController.StartMoveToTarget(GetSkillUsePosition(), this);
     }
 }

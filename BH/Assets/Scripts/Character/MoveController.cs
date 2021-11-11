@@ -33,16 +33,16 @@ public class MoveController : MonoBehaviour
         moveToTarget = false;
     }
 
-    public virtual void StartMoveToTarget(Vector3 targetPos, float speedMoveToTarget, MovementSkill movementSkill, float moveRange)
+    public virtual void StartMoveToTarget(Vector3 targetPos, MovementSkill movementSkill)
     {
-        if(Vector2.Distance(targetPos, rb.position) > moveRange)
+        if(Vector2.Distance(targetPos, rb.position) > movementSkill.CasterMoveRange)
         {
             Debug.Log("The target is too far: " + Vector2.Distance(targetPos, rb.position));
             return;
         }
         SetTimeBlockMove(Constant.TimeToBlockMoveCaster);
         targetMovePosition = targetPos;
-        this.speedMoveToTarget = speedMoveToTarget;
+        this.speedMoveToTarget = movementSkill.CasterMoveSpeed;
         moveToTarget = true;
         directionAnimationMove = Vector2.zero;
         movementSkillUse = movementSkill;
@@ -92,9 +92,4 @@ public class MoveController : MonoBehaviour
     {
         if (moveToTarget && movementSkillUse != null) movementSkillUse.HitTargets();
     }
-
-    //private float CalculateMovementSkillRange(float rangeMoveFromSkill)
-    //{
-    //    float value = rangeMoveFromSkill - 10f; //
-    //}
 }
