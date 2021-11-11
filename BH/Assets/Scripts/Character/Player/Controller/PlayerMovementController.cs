@@ -58,6 +58,7 @@ public class PlayerMovementController : MoveController
 
     public override void Init(PlayerCharacter playerCharacter)
     {
+        base.Init(playerCharacter);
         this.playerCharacter = playerCharacter;
         rb = playerCharacter.CharacterRigidbody;
     }

@@ -10,28 +10,42 @@ public class MoveController : MonoBehaviour
     protected float timeBlockMove;
     //This move settings used by movement skill. Work when timeBlockMove > 0
     protected float speedMoveToTarget;
+    protected float distanceToTarget;
     protected bool moveToTarget = false;
     protected Vector3 targetMovePosition;
     protected Vector2 targetMoveDirection;
     protected Vector2 directionAnimationMove;
+    protected MovementSkill movementSkillUse = null;
     protected WaitForSeconds timeToMoveToTarget = new WaitForSeconds(Constant.TimeToBlockMoveCaster);
     //
 
-    public virtual void Init(PlayerCharacter character) { }
-    public virtual void Init(EnemyCharacter character) { }
+    public virtual void Init(PlayerCharacter character) 
+    {
+        distanceToTarget = Constant.DistanceToTarget;
+    }
+    public virtual void Init(EnemyCharacter character) 
+    {
+        distanceToTarget = Constant.DistanceToTarget;
+    }
 
     public virtual void SetTimeBlockMove(float timeToBlock, bool resetTime = false) 
     {
         moveToTarget = false;
     }
 
-    public virtual void StartMoveToTarget(Vector3 targetPos, float speedMoveToTarget)
+    public virtual void StartMoveToTarget(Vector3 targetPos, float speedMoveToTarget, MovementSkill movementSkill, float moveRange)
     {
+        if(Vector2.Distance(targetPos, rb.position) > moveRange)
+        {
+            Debug.Log("The target is too far: " + Vector2.Distance(targetPos, rb.position));
+            return;
+        }
         SetTimeBlockMove(Constant.TimeToBlockMoveCaster);
         targetMovePosition = targetPos;
         this.speedMoveToTarget = speedMoveToTarget;
         moveToTarget = true;
         directionAnimationMove = Vector2.zero;
+        movementSkillUse = movementSkill;
 
         if (targetMovePosition.y > transform.position.y)
         {
@@ -42,7 +56,7 @@ public class MoveController : MonoBehaviour
             directionAnimationMove.y = -1f;
         }
 
-        OffMoveToTarget();
+        StartCoroutine(OffMoveToTarget());
     }
 
     protected virtual void SetMoveAnimation(Vector2 direction, bool animWhenBlockMove = false) { }
@@ -51,9 +65,10 @@ public class MoveController : MonoBehaviour
     protected virtual void MoveToTarget()
     {
         if (!moveToTarget) return;
-        if (Vector2.Distance(rb.position, targetMovePosition) < 1f)
+        if (Vector2.Distance(rb.position, targetMovePosition) < distanceToTarget)
         {
             moveToTarget = false;
+            SetTimeBlockMove(0, true);
             return;
         }
 
@@ -70,5 +85,16 @@ public class MoveController : MonoBehaviour
     {
         yield return timeToMoveToTarget;
         moveToTarget = false;
+        movementSkillUse = null;
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (moveToTarget && movementSkillUse != null) movementSkillUse.HitTargets();
+    }
+
+    //private float CalculateMovementSkillRange(float rangeMoveFromSkill)
+    //{
+    //    float value = rangeMoveFromSkill - 10f; //
+    //}
 }

@@ -12,16 +12,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de43a8dabe7761d45a8f517d8ee64a13, type: 3}
   m_Name: TestMovementSkill
   m_EditorClassIdentifier: 
-  skillSprite: {fileID: 0}
-  skillName: 
+  skillSprite: {fileID: 21300000, guid: 434291000a9616e44b4dd55e4a2fe1e3, type: 3}
+  skillName: TestMovementSkill
   singleTarget: 0
-  skillUsePositionType: 3
+  skillUsePositionType: 2
   skillRange: 1
   skillCooldawn: 1
   skillCastTime: 0
   timeToBlockCasterMove: 0
   timeToBlockCasterAction: 0
-  pushPower: 0
+  pushPower: 10
   skillStatsUsed: []
-  offenseStatsType: []
-  casterMoveRange: 0
+  offenseStatsType:
+  - StatType: 8
+    SkillOffenseStatType: 2
+    MinDamage: 0
+    MaxDamage: 4
+    MinPercentDamage: 0
+    MaxPercentDamage: 0
+    DamagedStatType: 1
+  casterMoveSpeed: 12
+  casterMoveRange: 8

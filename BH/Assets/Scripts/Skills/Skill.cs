@@ -110,6 +110,11 @@ public class Skill : ScriptableObject
        return Physics2D.OverlapCircleAll(GetSkillUsePosition(), skillRange, targetLayer);
     }
 
+    protected Collider2D[] GetTargets(LayerMask targetLayer, Vector3 skillUsePos)
+    {
+        return Physics2D.OverlapCircleAll(skillUsePos, skillRange, targetLayer);
+    }
+
     protected Vector2 GetPushVector(Character targetCharacter)
     {
         Vector2 pushVector = skillSetupInfo.InteractionPointer.localPosition;

@@ -24,4 +24,5 @@ public static class Constant
     public static float PushPowerMultiplier = 100f;
     //Caster movement logic
     public static float TimeToBlockMoveCaster = 1f;
+    public static float DistanceToTarget = 0.25f;
 }
