@@ -19,7 +19,7 @@ public class BaseStat
 
     public virtual void AddModifier(StatModifier mod)
     {
-        AurasCheck(mod);
+        CheckAuras(mod);
 
         statModifiers.Add(mod);
         Value = CalculateFinalValue();
@@ -52,19 +52,16 @@ public class BaseStat
         return didRemove;
     }
 
-    private void AurasCheck(StatModifier mod)
+    private void CheckAuras(StatModifier mod)
     {
-        if (!mod.Skill) return;
+        if (mod.AuraType == EAuraSkillsType.None) return;
 
         foreach (var modifier in statModifiers)
         {
-            if (modifier.Skill)
+            if (modifier.AuraType == mod.AuraType)
             {
-                if (modifier.Skill == mod.Skill)
-                {
-                    RemoveModifier(modifier);
-                    return;
-                }
+                RemoveModifier(modifier);
+                return;
             }
         }
     }

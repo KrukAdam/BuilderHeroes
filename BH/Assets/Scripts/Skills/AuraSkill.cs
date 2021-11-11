@@ -5,11 +5,14 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Skills/Aura Skill")]
 public class AuraSkill : RangeSkill
 {
+    public EAuraSkillsType AuraType { get => auraType; }
+
     [Space]
     [Header("Settings for aura skill")]
     [SerializeField] private bool isBuff = true;        //If is true is buff, if false debuff
     [SerializeField] private bool isRangeSkill = false;
     [SerializeField] private bool takeDamage = false;
+    [SerializeField] private EAuraSkillsType auraType = EAuraSkillsType.None;
     [SerializeField] private List<AuraData> auras = new List<AuraData>();
 
     public override void UseSkill()

@@ -21,15 +21,15 @@ public class AuraData
 
 		if (isPercentMult)
 		{
-			baseValueStatModifier = new StatModifier(buffBaseValue, EStatModifierType.PercentAdd, aura, aura);
-			minValueStatModifier = new StatModifier(buffMinValue, EStatModifierType.PercentAdd, aura, aura);
-			maxValueStatModifier = new StatModifier(buffMaxValue, EStatModifierType.PercentAdd, aura, aura);
+			baseValueStatModifier = new StatModifier(buffBaseValue, EStatModifierType.PercentAdd, aura, aura.AuraType);
+			minValueStatModifier = new StatModifier(buffMinValue, EStatModifierType.PercentAdd, aura, aura.AuraType);
+			maxValueStatModifier = new StatModifier(buffMaxValue, EStatModifierType.PercentAdd, aura, aura.AuraType);
 		}
 		else
 		{
-			baseValueStatModifier = new StatModifier(buffBaseValue, EStatModifierType.Constants, aura, aura);
-			minValueStatModifier = new StatModifier(buffMinValue, EStatModifierType.Constants, aura, aura);
-			maxValueStatModifier = new StatModifier(buffMaxValue, EStatModifierType.Constants, aura, aura);
+			baseValueStatModifier = new StatModifier(buffBaseValue, EStatModifierType.Constants, aura, aura.AuraType);
+			minValueStatModifier = new StatModifier(buffMinValue, EStatModifierType.Constants, aura, aura.AuraType);
+			maxValueStatModifier = new StatModifier(buffMaxValue, EStatModifierType.Constants, aura, aura.AuraType);
 		}
 
 		int index = 0;
