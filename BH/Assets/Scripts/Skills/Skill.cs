@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.InputSystem;
 
 public class Skill : ScriptableObject
 {
@@ -73,7 +74,7 @@ public class Skill : ScriptableObject
     {
         if (pushPower <= 0) return;
 
-        targetCharacter.MoveController.SetTimeBlockMove(1f);
+        targetCharacter.MoveController.SetTimeBlockMove(Constant.TimeToBlockMovePushed);
         targetCharacter.CharacterRigidbody.AddForce(GetPushVector(targetCharacter) * pushPower * pushPowerMultiplier);
     }
 
@@ -95,8 +96,7 @@ public class Skill : ScriptableObject
             case ESkillUsePositionType.Character:
                 return skillSetupInfo.UserTransform.position;
             case ESkillUsePositionType.MousePosition:
-                Debug.LogError("Wrong position use type on skill!");
-                return Vector3.zero;
+                return Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
             case ESkillUsePositionType.InteractionPoint:
                 return skillSetupInfo.InteractionPointer.position;
             default:

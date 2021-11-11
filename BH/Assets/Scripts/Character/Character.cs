@@ -20,6 +20,8 @@ public class Character : MonoBehaviour
     protected LayerMask allyLayersMask;
     protected LayerMask enemyLayerMask;
 
+
+
     protected void InitLayerMask(bool isPlayer)
     {
         if (isPlayer)

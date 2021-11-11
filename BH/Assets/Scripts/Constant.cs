@@ -20,6 +20,8 @@ public static class Constant
 
     //Skills
     //Push logic
-    public static float TimeToBlockMove = 1f;
+    public static float TimeToBlockMovePushed = 1f;
     public static float PushPowerMultiplier = 100f;
+    //Caster movement logic
+    public static float TimeToBlockMoveCaster = 1f;
 }

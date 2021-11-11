@@ -35,6 +35,7 @@ public class EnemyMoveController : MoveController
         if (timeBlockMove > 0)
         {
             timeBlockMove -= Time.deltaTime;
+            MoveToTarget();
             return;
         }
         else
@@ -45,6 +46,7 @@ public class EnemyMoveController : MoveController
 
     public override void SetTimeBlockMove(float timeToBlock, bool resetTime = false)
     {
+        base.SetTimeBlockMove(timeToBlock, resetTime);
         if (resetTime)
         {
             timeBlockMove = timeToBlock;

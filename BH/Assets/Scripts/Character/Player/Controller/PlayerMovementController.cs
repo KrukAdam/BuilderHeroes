@@ -45,12 +45,13 @@ public class PlayerMovementController : MoveController
         if (timeBlockMove > 0)
         {
             timeBlockMove -= Time.deltaTime;
+            MoveToTarget();
             return;
         }
         else
         {
             if (refreshMove) RefreshMove();
-
+            
             rb.MovePosition(rb.position + currentDirection * moveSpeed * Time.fixedDeltaTime);
         }
     }
@@ -64,6 +65,7 @@ public class PlayerMovementController : MoveController
     
     public override void SetTimeBlockMove(float timeToBlock, bool resetTime = false)
     {
+        base.SetTimeBlockMove(timeToBlock, resetTime);
         if (resetTime)
         {
                 timeBlockMove = timeToBlock;
