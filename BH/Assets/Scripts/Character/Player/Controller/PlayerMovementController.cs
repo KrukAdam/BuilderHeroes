@@ -84,9 +84,9 @@ public class PlayerMovementController : MoveController
         }
     }
 
-    protected override void SetMoveAnimation(Vector2 direction)
+    protected override void SetMoveAnimation(Vector2 direction, bool animWhenBlockMove = false)
     {
-        if (direction == Vector2.zero || timeBlockMove > 0)
+        if (direction == Vector2.zero || timeBlockMove > 0 && !animWhenBlockMove)
         {
             animator.SetBool(hashMove, false);
         }

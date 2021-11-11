@@ -63,8 +63,4 @@ public class EnemyMoveController : MoveController
         }
     }
 
-    protected override void SetMoveAnimation(Vector2 direction)
-    {
-        Debug.Log("enemyAnim");
-    }
 }

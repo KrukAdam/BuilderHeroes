@@ -13,6 +13,7 @@ public class MoveController : MonoBehaviour
     protected bool moveToTarget = false;
     protected Vector3 targetMovePosition;
     protected Vector2 targetMoveDirection;
+    protected Vector2 directionAnimationMove;
     protected WaitForSeconds timeToMoveToTarget = new WaitForSeconds(Constant.TimeToBlockMoveCaster);
     //
 
@@ -30,10 +31,21 @@ public class MoveController : MonoBehaviour
         targetMovePosition = targetPos;
         this.speedMoveToTarget = speedMoveToTarget;
         moveToTarget = true;
+        directionAnimationMove = Vector2.zero;
+
+        if (targetMovePosition.y > transform.position.y)
+        {
+            directionAnimationMove.y = 1f;
+        }
+        else
+        {
+            directionAnimationMove.y = -1f;
+        }
+
         OffMoveToTarget();
     }
 
-    protected virtual void SetMoveAnimation(Vector2 direction) { }
+    protected virtual void SetMoveAnimation(Vector2 direction, bool animWhenBlockMove = false) { }
 
 
     protected virtual void MoveToTarget()
@@ -50,6 +62,8 @@ public class MoveController : MonoBehaviour
         targetMoveDirection = move;
 
         rb.MovePosition((Vector2)transform.position + (targetMoveDirection * speedMoveToTarget * Time.deltaTime));
+
+        SetMoveAnimation(directionAnimationMove, true);
     }
 
     protected IEnumerator OffMoveToTarget()
