@@ -12,6 +12,7 @@ public class AuraSkill : RangeSkill
     [SerializeField] private bool isBuff = true;        //If is true is buff, if false debuff
     [SerializeField] private bool isRangeSkill = false;
     [SerializeField] private bool takeDamage = false;
+    [SerializeField] private bool useOnlyOnCaster = false;
     [SerializeField] private EAuraSkillsType auraType = EAuraSkillsType.None;
     [SerializeField] private List<AuraData> auras = new List<AuraData>();
 
@@ -51,28 +52,32 @@ public class AuraSkill : RangeSkill
             {
                 if (isBuff || character != SkillSetupInfo.SkillOwner && !isBuff)
                 {
-                    bool push = true;
-                    foreach (var offenseStatType in offenseStatsType)
+                    if (!useOnlyOnCaster || useOnlyOnCaster && SkillOwner(character))
                     {
-                        if (takeDamage)
+                        bool push = true;
+                        foreach (var offenseStatType in offenseStatsType)
                         {
-                            if (SkillOwner(character)) break;
-                            character.Stats.TakeDamage(offenseStatType);
+                            if (takeDamage)
+                            {
+                                if (SkillOwner(character)) break;
+                                character.Stats.TakeDamage(offenseStatType);
+                            }
+
+                            if (push)
+                            {
+                                push = false;
+                                PushTarget(character);
+                            }
                         }
 
-                        if (push)
+                        foreach (var aura in auras)
                         {
-                            push = false;
-                            PushTarget(character);
+                            aura.ExecuteEffect(this, character.Stats);
+                            Debug.Log("Aura was used");
                         }
+                        if (singleTarget) return;
                     }
-
-                    foreach (var aura in auras)
-                    {
-                        aura.ExecuteEffect(this, character.Stats);
-                        Debug.Log("Aura was used");
-                    }
-                    if (singleTarget) return;
+                  
                 }
 
             }
