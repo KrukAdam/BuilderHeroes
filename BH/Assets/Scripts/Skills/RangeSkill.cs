@@ -12,12 +12,12 @@ public class RangeSkill : Skill
     public Sprite MissileSprite { get => missileSprite; }
 
     [Space]
-    [SerializeField] private EAmmoType ammoType = EAmmoType.None;
-    [SerializeField] private int ammoUsePerShot = 1;
-    [SerializeField] private float missileSpeed = 10;
-    [SerializeField] private float missileRange = 5;
-    [SerializeField] private Sprite missileSprite = null;
-    [SerializeField] private SkillMissile missilePrefab = null;   //Kind of missile collider
+    [SerializeField] protected EAmmoType ammoType = EAmmoType.None;
+    [SerializeField] protected int ammoUsePerShot = 1;
+    [SerializeField] protected float missileSpeed = 10;
+    [SerializeField] protected float missileRange = 5;
+    [SerializeField] protected Sprite missileSprite = null;
+    [SerializeField] protected SkillMissile missilePrefab = null;   //Kind of missile collider
 
     public override void UseSkill()
     {

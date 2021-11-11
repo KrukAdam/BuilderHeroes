@@ -11,6 +11,7 @@ public class SkillMissile : MonoBehaviour
     private Character missileOwner;
     private RangeSkill rangeSkill;
     private bool canMove = false;
+    private bool canHitCaster = false;
     private Vector3 moveDirection;
     private Vector2 moveTarget;
     private Vector2 ownerShotPos;
@@ -51,9 +52,10 @@ public class SkillMissile : MonoBehaviour
         missileRenderer.enabled = show;
     }
 
-    public void SetupMissile(RangeSkill rangeSkill)
+    public void SetupMissile(RangeSkill rangeSkill, bool canHitCaster = false)
     {
         this.rangeSkill = rangeSkill;
+        this.canHitCaster = canHitCaster;
         moveSpeed = rangeSkill.MissileSpeed;
         missileRenderer.sprite = rangeSkill.MissileSprite;
         ownerShotPos = rangeSkill.SkillSetupInfo.UserTransform.position;
@@ -69,7 +71,7 @@ public class SkillMissile : MonoBehaviour
 
         if(collision.TryGetComponent(out Character character))
         {
-            if (character == missileOwner) return;
+            if (character == missileOwner && !canHitCaster) return;
 
             Debug.Log("Enter2");
             rangeSkill.RangeSkillEffect(gameObject.transform);

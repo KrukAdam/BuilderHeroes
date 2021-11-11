@@ -20,7 +20,9 @@ public class AuraSkill : RangeSkill
     {
         if (isRangeSkill)
         {
-            base.UseSkill();
+            GameObject missile = Instantiate(missilePrefab.gameObject, skillSetupInfo.UserTransform);
+            SkillMissile sm = missile.GetComponent<SkillMissile>();
+            sm.SetupMissile(this, true);
         }
         else
         {
@@ -30,7 +32,51 @@ public class AuraSkill : RangeSkill
 
     public override void RangeSkillEffect(Transform effectPos)
     {
-        base.RangeSkillEffect(effectPos);
+        Debug.Log("Use skill: " + skillName);
+        Collider2D[] targets;
+        if (isBuff)
+        {
+            targets = GetRangeTargets(effectPos, SkillSetupInfo.AllyLayersMask);
+        }
+        else
+        {
+            targets = GetRangeTargets(effectPos, SkillSetupInfo.EnemyLayerMask);
+        }
+        foreach (var target in targets)
+        {
+            if (target.TryGetComponent(out Character character))
+            {
+                if (isBuff || character != SkillSetupInfo.SkillOwner && !isBuff)
+                {
+                    if (!useOnlyOnCaster || useOnlyOnCaster && SkillOwner(character))
+                    {
+                        bool push = true;
+                        foreach (var offenseStatType in offenseStatsType)
+                        {
+                            if (takeDamage)
+                            {
+                                if (SkillOwner(character)) break;
+                                character.Stats.TakeDamage(offenseStatType);
+                            }
+
+                            if (push)
+                            {
+                                push = false;
+                                PushTarget(character);
+                            }
+                        }
+
+                        foreach (var aura in auras)
+                        {
+                            aura.ExecuteEffect(this, character.Stats);
+                            Debug.Log("Aura was used");
+                        }
+                        if (singleTarget) return;
+                    }
+
+                }
+            }
+        }
     }
 
     public void MaleeSkillEffect()

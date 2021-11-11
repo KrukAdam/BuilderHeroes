@@ -26,17 +26,19 @@ MonoBehaviour:
   offenseStatsType: []
   ammoType: 0
   ammoUsePerShot: 0
-  missileSpeed: 10
-  missileRange: 5
-  missileSprite: {fileID: 0}
-  missilePrefab: {fileID: 0}
+  missileSpeed: 0.1
+  missileRange: 12
+  missileSprite: {fileID: 21300000, guid: d44c3950412ffeb45976659a4447b084, type: 3}
+  missilePrefab: {fileID: 3287878058728074275, guid: 28f5c2de72a363b46bc342b9622328a4, type: 3}
   isBuff: 1
-  isRangeSkill: 0
+  isRangeSkill: 1
   takeDamage: 0
+  useOnlyOnCaster: 0
+  auraType: 1
   auras:
   - buffBaseValue: 100
     buffMinValue: 0
     buffMaxValue: 0
-    duration: 10
+    duration: 2
     buffStatType: 4
     isPercentMult: 0
