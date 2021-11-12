@@ -33,3 +33,18 @@ public class AmmoItemEditor : Editor
     }
 }
 
+[CustomEditor(typeof(ToolItem))]
+public class ToolItemEditor : Editor
+{
+    public override void OnInspectorGUI()
+    {
+        base.OnInspectorGUI();
+
+        ToolItem item = (ToolItem)target;
+
+        if (GUILayout.Button("Set empty Stats"))
+        {
+            item.SetEmptyStats();
+        }
+    }
+}

@@ -35,6 +35,7 @@ public class EquippableItem : Item
 
 	public void Equip(PlayerCharacter c)
 	{
+
         for (int i = 0; i < c.Stats.AllStats.Count; i++)
         {
             c.Stats.AllStats[i].AddModifierOnEquip(itemStats[i], this, EStatModifierType.Constants);
