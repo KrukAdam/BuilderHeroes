@@ -8,7 +8,10 @@ using UnityEngine;
 public class ItemTool : ItemEquippable
 {
     public EItemToolType ToolType { get => toolType; }
+    public float DamageRawMaterial { get => damageRawMaterial; }
+    
 
     [Space]
     [SerializeField] private EItemToolType toolType = EItemToolType.None;
+    [SerializeField] private float damageRawMaterial = 0;
 }

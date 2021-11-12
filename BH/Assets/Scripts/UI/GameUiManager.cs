@@ -11,6 +11,7 @@ public class GameUiManager : MonoBehaviour
     public EquipmentPanel EquipmentPanel { get => equipmentPanel; }
     public StatPanel StatPanel { get => statPanel; }
     public ItemSlot AmmoSlot { get => ammoSlot; }
+    public ItemSlot ToolSlot { get => toolSlot; }
 
     [SerializeField] private GameObject eqAndStatsPanelObj = null;
     [SerializeField] private CharacterPanel characterPanel = null;
@@ -19,6 +20,7 @@ public class GameUiManager : MonoBehaviour
     [SerializeField] private EquipmentPanel equipmentPanel = null;
     [SerializeField] private ItemTooltip itemTooltip = null;
     [SerializeField] private ItemSlot ammoSlot = null;
+    [SerializeField] private ItemSlot toolSlot = null;
     [SerializeField] private CraftingPanel[] craftingPanels = null;
 
     private GameManager gameManager;

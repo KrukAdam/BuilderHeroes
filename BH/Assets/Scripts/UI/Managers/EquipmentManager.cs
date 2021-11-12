@@ -51,8 +51,20 @@ public class EquipmentManager : MonoBehaviour
         dropItemArea.OnDropEvent += DropItemOutsideUI;
     }
 
+    public ItemTool GetItemTool(EItemToolType toolNeeded)
+    {
+        if (!gameUiManager.ToolSlot.Item) return null;
 
-	public void Equip(ItemEquippable item)
+        ItemTool tool = gameUiManager.ToolSlot.Item as ItemTool;
+        if (tool)
+        {
+            if (tool.ToolType == toolNeeded) return tool;
+        }
+        return null;
+    }
+
+
+    public void Equip(ItemEquippable item)
 	{
 		if (inventory.RemoveItem(item))
 		{
