@@ -14,8 +14,9 @@ public class RawMaterial : BaseObjectOnMap
     public override void InteractionOnWorldMap(EquipmentManager equipmentManager)
     {
         toolNeeded = equipmentManager.GetItemTool(toolTypeNeeded);
-        if (!toolNeeded)
+        if (toolNeeded)
         {
+
             OnInteraction();
             DamageRawMaterial();
         }
