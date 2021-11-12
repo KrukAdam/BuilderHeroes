@@ -1114,14 +1114,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1356915147}
     m_Modifications:
-    - target: {fileID: 1753260283, guid: dc69fe1bf2b466941ba986adc552cb2a, type: 3}
-      propertyPath: hoverSecondSkillColor.g
-      value: 0.030305512
-      objectReference: {fileID: 0}
-    - target: {fileID: 1753260283, guid: dc69fe1bf2b466941ba986adc552cb2a, type: 3}
-      propertyPath: hoverSecondSkillColor.r
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1829793853738820, guid: dc69fe1bf2b466941ba986adc552cb2a, type: 3}
       propertyPath: m_Name
       value: CharacterPanel
@@ -1152,16 +1144,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114582467333662640, guid: dc69fe1bf2b466941ba986adc552cb2a, type: 3}
       propertyPath: startingItems.Array.size
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 114582467333662640, guid: dc69fe1bf2b466941ba986adc552cb2a, type: 3}
-      propertyPath: startingItems.Array.data[5]
+      propertyPath: startingItems.Array.data[7]
       value: 
-      objectReference: {fileID: 11400000, guid: 5e5d47652203e324ab369f6c348ac87f, type: 2}
-    - target: {fileID: 114582467333662640, guid: dc69fe1bf2b466941ba986adc552cb2a, type: 3}
-      propertyPath: startingItems.Array.data[6]
-      value: 
-      objectReference: {fileID: 11400000, guid: 5e5d47652203e324ab369f6c348ac87f, type: 2}
+      objectReference: {fileID: 11400000, guid: 3bc5d807c75b4af4ba8ac4c4d6e08760, type: 2}
     - target: {fileID: 224302909824897126, guid: dc69fe1bf2b466941ba986adc552cb2a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

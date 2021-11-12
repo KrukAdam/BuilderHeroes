@@ -1,14 +1,14 @@
 using UnityEditor;
 using UnityEngine;
 
-[CustomEditor(typeof(EquippableItem))]
+[CustomEditor(typeof(ItemEquippable))]
 public class EquippableItemEditor : Editor
 {
     public override void OnInspectorGUI()
     {
         base.OnInspectorGUI();
 
-        EquippableItem item = (EquippableItem)target;
+        ItemEquippable item = (ItemEquippable)target;
 
         if (GUILayout.Button("Set empty Stats"))
         {
@@ -17,14 +17,14 @@ public class EquippableItemEditor : Editor
     }
 }
 
-[CustomEditor(typeof(AmmoItem))]
+[CustomEditor(typeof(ItemAmmo))]
 public class AmmoItemEditor : Editor
 {
     public override void OnInspectorGUI()
     {
         base.OnInspectorGUI();
 
-        AmmoItem item = (AmmoItem)target;
+        ItemAmmo item = (ItemAmmo)target;
 
         if (GUILayout.Button("Set empty Stats"))
         {
@@ -33,14 +33,14 @@ public class AmmoItemEditor : Editor
     }
 }
 
-[CustomEditor(typeof(ToolItem))]
+[CustomEditor(typeof(ItemTool))]
 public class ToolItemEditor : Editor
 {
     public override void OnInspectorGUI()
     {
         base.OnInspectorGUI();
 
-        ToolItem item = (ToolItem)target;
+        ItemTool item = (ItemTool)target;
 
         if (GUILayout.Button("Set empty Stats"))
         {

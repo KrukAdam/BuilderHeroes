@@ -5,14 +5,14 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Skills/Range Skill")]
 public class RangeSkill : Skill
 {
-    public EAmmoType AmmoType { get => ammoType; }
+    public EItemAmmoType AmmoType { get => ammoType; }
     public int AmmoUsePerShot { get => ammoUsePerShot; }
     public float MissileSpeed { get => missileSpeed; }
     public float MissileRange { get => missileRange; }
     public Sprite MissileSprite { get => missileSprite; }
 
     [Space]
-    [SerializeField] protected EAmmoType ammoType = EAmmoType.None;
+    [SerializeField] protected EItemAmmoType ammoType = EItemAmmoType.None;
     [SerializeField] protected int ammoUsePerShot = 1;
     [SerializeField] protected float missileSpeed = 10;
     [SerializeField] protected float missileRange = 5;

@@ -1,5 +1,5 @@
 
-public enum EAmmoType
+public enum EItemAmmoType
 {
     None,
     Arrows,

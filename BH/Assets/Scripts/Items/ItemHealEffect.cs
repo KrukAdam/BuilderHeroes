@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 
 //[CreateAssetMenu(menuName = "Item Effects/Heal")]
-public class HealItemEffect 
+public class ItemHealEffect 
 {
 	public int HealAmount;
 
-	public void ExecuteEffect(UsableItem usableItem, PlayerCharacter character)
+	public void ExecuteEffect(ItemUsable usableItem, PlayerCharacter character)
 	{
 		// character.Health += HealAmount; 
 

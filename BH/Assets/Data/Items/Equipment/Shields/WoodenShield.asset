@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c896565b734b104f8c3c04bd3e7e7f8, type: 3}
+  m_Script: {fileID: 11500000, guid: b8a467e3041574045b08014c7d94072b, type: 3}
   m_Name: WoodenShield
   m_EditorClassIdentifier: 
   id: 5d031aaab3cc8ad43a4e1a563629d126

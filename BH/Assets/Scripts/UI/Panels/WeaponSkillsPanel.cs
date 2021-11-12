@@ -98,7 +98,7 @@ public class WeaponSkillsPanel : MonoBehaviour
         SetSecondSkillSelected(ECharacterWeaponSkillButtonType.SecondRaceSkill);
     }
 
-    public void UnsetupWeaponSkills(EquippableItem item)
+    public void UnsetupWeaponSkills(ItemEquippable item)
     {
         if (item.EquipmentType == EEquipmentType.MainHand)
         {
@@ -123,7 +123,7 @@ public class WeaponSkillsPanel : MonoBehaviour
 
     }
 
-    public void SetupWeaponSkills(EquippableItem item)
+    public void SetupWeaponSkills(ItemEquippable item)
     {
         if (item.EquipmentType == EEquipmentType.MainHand)
         {

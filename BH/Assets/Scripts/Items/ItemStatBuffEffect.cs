@@ -15,7 +15,7 @@ public class ItemStatBuffEffect
 	[SerializeField] private EStatsTypes buffStatType;
 	[SerializeField] private bool isPercentMult = false;
 
-	public void ExecuteEffect(UsableItem parentItem, PlayerCharacter character)
+	public void ExecuteEffect(ItemUsable parentItem, PlayerCharacter character)
 	{
 		StatModifier baseValueStatModifier;
 		StatModifier minValueStatModifier; 

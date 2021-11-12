@@ -5,7 +5,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(Stats))]
 [CreateAssetMenu(menuName = "Items/Tool Item")]
-public class ToolItem : EquippableItem
+public class ItemTool : ItemEquippable
 {
     public EItemToolType ToolType { get => toolType; }
 

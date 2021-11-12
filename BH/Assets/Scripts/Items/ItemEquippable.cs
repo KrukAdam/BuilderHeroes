@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 [RequireComponent(typeof(Stats))]
 [CreateAssetMenu(menuName = "Items/Equippable Item")]
-public class EquippableItem : Item
+public class ItemEquippable : Item
 {
 	[Space]
 	public EEquipmentType EquipmentType;

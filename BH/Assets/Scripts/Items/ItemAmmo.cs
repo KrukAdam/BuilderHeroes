@@ -5,10 +5,10 @@ using UnityEngine;
 
 [RequireComponent(typeof(Stats))]
 [CreateAssetMenu(menuName = "Items/Ammo Item")]
-public class AmmoItem : EquippableItem
+public class ItemAmmo : ItemEquippable
 {
-    public EAmmoType AmmoType { get => ammoType; }
+    public EItemAmmoType AmmoType { get => ammoType; }
 
     [Space]
-    [SerializeField] private EAmmoType ammoType = EAmmoType.None;
+    [SerializeField] private EItemAmmoType ammoType = EItemAmmoType.None;
 }

@@ -52,11 +52,11 @@ public class EquipmentManager : MonoBehaviour
     }
 
 
-	public void Equip(EquippableItem item)
+	public void Equip(ItemEquippable item)
 	{
 		if (inventory.RemoveItem(item))
 		{
-			EquippableItem previousItem;
+			ItemEquippable previousItem;
 			if (equipmentPanel.AddItem(item, out previousItem))
 			{
 				if (previousItem != null)
@@ -76,7 +76,7 @@ public class EquipmentManager : MonoBehaviour
 		statPanel.UpdateStatValues();
 	}
 
-	public void Unequip(EquippableItem item)
+	public void Unequip(ItemEquippable item)
 	{
 		if (inventory.CanAddItem(item) && equipmentPanel.RemoveItem(item))
 		{
@@ -154,13 +154,13 @@ public class EquipmentManager : MonoBehaviour
 
 	private void InventoryRightClick(BaseItemSlot itemSlot)
 	{
-		if (itemSlot.Item is EquippableItem)
+		if (itemSlot.Item is ItemEquippable)
 		{
-			Equip((EquippableItem)itemSlot.Item);
+			Equip((ItemEquippable)itemSlot.Item);
 		}
-		else if (itemSlot.Item is UsableItem)
+		else if (itemSlot.Item is ItemUsable)
 		{
-			UsableItem usableItem = (UsableItem)itemSlot.Item;
+			ItemUsable usableItem = (ItemUsable)itemSlot.Item;
 			usableItem.Use(playerCharacter);
 
 			if (usableItem.IsConsumable)
@@ -173,9 +173,9 @@ public class EquipmentManager : MonoBehaviour
 
 	private void EquipmentPanelRightClick(BaseItemSlot itemSlot)
 	{
-		if (itemSlot.Item is EquippableItem)
+		if (itemSlot.Item is ItemEquippable)
 		{
-			Unequip((EquippableItem)itemSlot.Item);
+			Unequip((ItemEquippable)itemSlot.Item);
 		}
 	}
 
@@ -242,8 +242,8 @@ public class EquipmentManager : MonoBehaviour
 
 	private void SwapItems(BaseItemSlot dropItemSlot)
 	{
-		EquippableItem dragEquipItem = dragItemSlot.Item as EquippableItem;
-		EquippableItem dropEquipItem = dropItemSlot.Item as EquippableItem;
+		ItemEquippable dragEquipItem = dragItemSlot.Item as ItemEquippable;
+		ItemEquippable dropEquipItem = dropItemSlot.Item as ItemEquippable;
 
 		if (dropItemSlot is EquipmentSlot)
 		{
@@ -290,7 +290,7 @@ public class EquipmentManager : MonoBehaviour
 		// If the item is equiped, unequip first
 		if (itemSlot is EquipmentSlot)
 		{
-			EquippableItem equippableItem = (EquippableItem)itemSlot.Item;
+			ItemEquippable equippableItem = (ItemEquippable)itemSlot.Item;
 			equippableItem.Unequip(playerCharacter);
 			weaponSkillsPanel.UnsetupWeaponSkills(equippableItem);
 		}

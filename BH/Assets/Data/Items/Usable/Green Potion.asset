@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 242e86f6e45bf164db9aa7a9fdc0dae8, type: 3}
+  m_Script: {fileID: 11500000, guid: 42ba1bf41f7fc634fab863aa1442b636, type: 3}
   m_Name: Green Potion
   m_EditorClassIdentifier: 
   id: 5e5d47652203e324ab369f6c348ac87f
