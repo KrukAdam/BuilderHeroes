@@ -13,6 +13,8 @@ public enum EEquipmentType
     MainHand,
     SecondHand,
 
-    Ammo
+    Ammo,
+
+    Tool
 
 }

@@ -33,3 +33,4 @@ MonoBehaviour:
     DamagedStatType: 1
   casterMoveSpeed: 12
   casterMoveRange: 8
+  hitingEnemy: 0
