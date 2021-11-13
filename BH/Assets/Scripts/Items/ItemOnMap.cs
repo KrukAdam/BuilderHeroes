@@ -19,6 +19,14 @@ public class ItemOnMap : BaseObjectOnMap
         objectSpriteRenderer.sortingOrder = Constant.ItemOnMapOrderLayer - (int)transform.position.y;
     }
 
+    public void Setup(Item item)
+    {
+        this.item = item.GetCopy();
+
+        objectSpriteRenderer.sprite = item.Icon;
+        objectSpriteRenderer.sortingOrder = Constant.ItemOnMapOrderLayer - (int)transform.position.y;
+    }
+
     private void PickUp(EquipmentManager equipmentManager)
     {
         bool addItemToInventory = equipmentManager.AddItemToInventory(item);

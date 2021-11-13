@@ -563,3 +563,4 @@ MonoBehaviour:
   mainSkill: {fileID: 0}
   secondSkill: {fileID: 0}
   toolType: 2
+  damageRawMaterial: 1

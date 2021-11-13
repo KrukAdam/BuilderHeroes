@@ -7,9 +7,17 @@ public class RawMaterial : BaseObjectOnMap
 {
     [SerializeField] protected EItemToolType toolTypeNeeded = EItemToolType.None;
     [SerializeField] protected float durability = 1;
-    [SerializeField] protected RawMaterialDropped[] rawMaterialsDroped = null;
+    [SerializeField] protected ItemOnMap itemOnMapPrefab = null;
+
+    [SerializeField] protected ItemDropped[] rawMaterialsDroped = null;
 
     protected ItemTool toolNeeded;
+    protected Transform itemsDropParent;
+
+    private void Awake()
+    {
+        itemsDropParent = transform.parent.transform;
+    }
 
     public override void InteractionOnWorldMap(EquipmentManager equipmentManager)
     {
@@ -26,7 +34,7 @@ public class RawMaterial : BaseObjectOnMap
         }
     }
 
-    protected virtual void OnInteraction() 
+    protected virtual void OnInteraction()
     {
 
     }
@@ -34,7 +42,30 @@ public class RawMaterial : BaseObjectOnMap
     protected virtual void DamageRawMaterial()
     {
         durability -= toolNeeded.DamageRawMaterial;
-        if (durability <= 0) DestroyRawMaterial();
+        if (durability <= 0)
+        {
+            DropItems();
+            DestroyRawMaterial();
+        }
+    }
+
+    protected virtual void DropItems()
+    {
+        if (rawMaterialsDroped.Length <= 0) return;
+
+        foreach (var item in rawMaterialsDroped)
+        {
+            if (Random.Range(0f, 100f) <= item.DropChance)
+            {
+                int numbersOfDroppedItems = Random.Range(1, item.DropMax);
+                for (int i = 0; i < numbersOfDroppedItems; i++)
+                {
+                    GameObject itemOnMapGO = Instantiate(itemOnMapPrefab.gameObject, itemsDropParent);
+                    itemOnMapGO.transform.position = transform.position;
+                    itemOnMapGO.GetComponent<ItemOnMap>().Setup(item.ItemDroppedPrefab);
+                }
+            }
+        }
     }
 
     protected virtual void DestroyRawMaterial()
