@@ -42,6 +42,8 @@ public class PlayerMovementController : MoveController
 
     private void FixedUpdate()
     {
+
+        spriteRenderer.sortingOrder = playerOrderLayer - (int)transform.position.y;
         if (timeBlockMove > 0)
         {
             timeBlockMove -= Time.deltaTime;
@@ -96,9 +98,8 @@ public class PlayerMovementController : MoveController
             animator.SetBool(hashMove, true);
             animator.SetFloat(hashPosX, direction.x);
             animator.SetFloat(hashPosY, direction.y);
-
-            spriteRenderer.sortingOrder = playerOrderLayer - (int)transform.position.y;
         }
+
     }
 
     private void RefreshMove()
