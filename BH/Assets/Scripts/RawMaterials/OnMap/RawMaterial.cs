@@ -37,7 +37,7 @@ public class RawMaterial : BaseObjectOnMap
 
     protected virtual void SetOrderLayer()
     {
-        objectSpriteRenderer.sortingOrder = Constant.ItemOnMapOrderLayer - (int)transform.position.y;
+        objectSpriteRenderer.sortingOrder = Constant.PlayerStartOrderLayer - (int)transform.position.y;
     }
 
     protected virtual void OnInteraction()
