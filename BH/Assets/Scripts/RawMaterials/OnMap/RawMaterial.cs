@@ -17,6 +17,7 @@ public class RawMaterial : BaseObjectOnMap
     private void Awake()
     {
         itemsDropParent = transform.parent.transform;
+        SetOrderLayer();
     }
 
     public override void InteractionOnWorldMap(EquipmentManager equipmentManager)
@@ -32,6 +33,11 @@ public class RawMaterial : BaseObjectOnMap
         {
             Debug.Log("Cant get it! Needed a: " + toolTypeNeeded);
         }
+    }
+
+    protected virtual void SetOrderLayer()
+    {
+        objectSpriteRenderer.sortingOrder = Constant.ItemOnMapOrderLayer - (int)transform.position.y;
     }
 
     protected virtual void OnInteraction()
