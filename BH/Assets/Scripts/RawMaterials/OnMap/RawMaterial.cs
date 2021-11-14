@@ -8,8 +8,9 @@ public class RawMaterial : BaseObjectOnMap
     [SerializeField] protected EItemToolType toolTypeNeeded = EItemToolType.None;
     [SerializeField] protected float durability = 1;
     [SerializeField] protected ItemOnMap itemOnMapPrefab = null;
-
     [SerializeField] protected ItemDropped[] rawMaterialsDroped = null;
+    [SerializeField] protected bool randomRawMaterialSprites = true;
+    [SerializeField] protected Sprite[] spritesRawMaterial = null;
 
     protected ItemTool toolNeeded;
     protected Transform itemsDropParent;
@@ -18,6 +19,7 @@ public class RawMaterial : BaseObjectOnMap
     {
         itemsDropParent = transform.parent.transform;
         SetOrderLayer();
+        SetSprite();
     }
 
     public override void InteractionOnWorldMap(EquipmentManager equipmentManager)
@@ -77,5 +79,12 @@ public class RawMaterial : BaseObjectOnMap
     protected virtual void DestroyRawMaterial()
     {
         Destroy(gameObject);
+    }
+
+    protected virtual void SetSprite()
+    {
+        if (!randomRawMaterialSprites || spritesRawMaterial == null || spritesRawMaterial.Length <= 0) return;
+
+        objectSpriteRenderer.sprite = spritesRawMaterial[Random.Range(0, spritesRawMaterial.Length-1)];
     }
 }

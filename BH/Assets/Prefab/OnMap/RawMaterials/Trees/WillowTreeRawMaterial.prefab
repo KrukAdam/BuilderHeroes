@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6083862566407778186}
   - component: {fileID: 6083862566407778181}
   - component: {fileID: 2816505371894349666}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: WillowTreeRawMaterial
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127,7 +127,11 @@ MonoBehaviour:
   - ItemDroppedPrefab: {fileID: 11400000, guid: fabe5bfad7ea78a46a8de7de58c13ad4, type: 2}
     DropChance: 100
     DropMax: 3
+  randomRawMaterialSprites: 1
+  spritesRawMaterial: []
   treeBranches: {fileID: 2728707333232815916}
+  randomTreeBranchesSprites: 1
+  spritesTreeBranches: []
 --- !u!1 &7069996616135654219
 GameObject:
   m_ObjectHideFlags: 0

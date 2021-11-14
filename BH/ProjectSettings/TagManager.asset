@@ -27,12 +27,12 @@ TagManager:
   - Water
   - UI
   - Colliders
-  - ObjectOnMap
+  - ObjectOnGround
   - Player
   - Enemy
   - LowColliders
   - HighColliders
-  - 
+  - HighObjectOnGround
   - 
   - 
   - 
