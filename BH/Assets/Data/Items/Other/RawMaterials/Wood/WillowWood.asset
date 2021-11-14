@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: fabe5bfad7ea78a46a8de7de58c13ad4
   ItemName: Willow Wood
-  Icon: {fileID: 21300000, guid: b0731a907adde354fb5470049b983941, type: 3}
+  Icon: {fileID: 21300000, guid: 041be44888939de4a9f7d9e510bf8f96, type: 3}
   MaximumStacks: 10
