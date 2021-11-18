@@ -21,19 +21,33 @@ public abstract class ItemContainer : MonoBehaviour, IItemContainer
 
 	protected virtual void Awake()
 	{
-		for (int i = 0; i < ItemSlots.Count; i++)
-		{
-			ItemSlots[i].OnPointerEnterEvent += slot => EventHelper(slot, OnPointerEnterEvent);
-			ItemSlots[i].OnPointerExitEvent += slot => EventHelper(slot, OnPointerExitEvent);
-			ItemSlots[i].OnRightClickEvent += slot => EventHelper(slot, OnRightClickEvent);
-			ItemSlots[i].OnBeginDragEvent += slot => EventHelper(slot, OnBeginDragEvent);
-			ItemSlots[i].OnEndDragEvent += slot => EventHelper(slot, OnEndDragEvent);
-			ItemSlots[i].OnDragEvent += slot => EventHelper(slot, OnDragEvent);
-			ItemSlots[i].OnDropEvent += slot => EventHelper(slot, OnDropEvent);
-		}
+		//for (int i = 0; i < ItemSlots.Count; i++)
+		//{
+		//	ItemSlots[i].OnPointerEnterEvent += slot => EventHelper(slot, OnPointerEnterEvent);
+		//	ItemSlots[i].OnPointerExitEvent += slot => EventHelper(slot, OnPointerExitEvent);
+		//	ItemSlots[i].OnRightClickEvent += slot => EventHelper(slot, OnRightClickEvent);
+		//	ItemSlots[i].OnBeginDragEvent += slot => EventHelper(slot, OnBeginDragEvent);
+		//	ItemSlots[i].OnEndDragEvent += slot => EventHelper(slot, OnEndDragEvent);
+		//	ItemSlots[i].OnDragEvent += slot => EventHelper(slot, OnDragEvent);
+		//	ItemSlots[i].OnDropEvent += slot => EventHelper(slot, OnDropEvent);
+		//}
 	}
 
-	private void EventHelper(BaseItemSlot itemSlot, Action<BaseItemSlot> action)
+    public void SetupSlots()
+    {
+        for (int i = 0; i < ItemSlots.Count; i++)
+        {
+            ItemSlots[i].OnPointerEnterEvent += slot => EventHelper(slot, OnPointerEnterEvent);
+            ItemSlots[i].OnPointerExitEvent += slot => EventHelper(slot, OnPointerExitEvent);
+            ItemSlots[i].OnRightClickEvent += slot => EventHelper(slot, OnRightClickEvent);
+            ItemSlots[i].OnBeginDragEvent += slot => EventHelper(slot, OnBeginDragEvent);
+            ItemSlots[i].OnEndDragEvent += slot => EventHelper(slot, OnEndDragEvent);
+            ItemSlots[i].OnDragEvent += slot => EventHelper(slot, OnDragEvent);
+            ItemSlots[i].OnDropEvent += slot => EventHelper(slot, OnDropEvent);
+        }
+    }
+
+    private void EventHelper(BaseItemSlot itemSlot, Action<BaseItemSlot> action)
 	{
 		if (action != null)
 			action(itemSlot);

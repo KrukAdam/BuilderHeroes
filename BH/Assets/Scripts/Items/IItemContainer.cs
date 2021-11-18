@@ -1,13 +1,14 @@
 ﻿
 public interface IItemContainer
 {
-	bool CanAddItem(Item item, int amount = 1);
-	bool AddItem(Item item);
+	public bool CanAddItem(Item item, int amount = 1);
+	public bool AddItem(Item item);
 
-	Item RemoveItem(string itemID);
-	bool RemoveItem(Item item);
+	public Item RemoveItem(string itemID);
+	public bool RemoveItem(Item item);
 
-	void Clear();
+	public void Clear();
 
-	int ItemCount(string itemID);
+	public int ItemCount(string itemID);
+	public void SetupSlots();
 }

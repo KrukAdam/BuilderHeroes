@@ -4,7 +4,7 @@ public class ItemChest : MonoBehaviour
 {
 	[SerializeField] Item item;
 	[SerializeField] int amount = 1;
-	[SerializeField] Inventory inventory;
+	[SerializeField] InventoryPanel inventory;
 	[SerializeField] SpriteRenderer spriteRenderer;
 	[SerializeField] Color emptyColor;
 	[SerializeField] KeyCode itemPickupKeyCode = KeyCode.E;
@@ -15,7 +15,7 @@ public class ItemChest : MonoBehaviour
 	private void OnValidate()
 	{
 		if (inventory == null)
-			inventory = FindObjectOfType<Inventory>();
+			inventory = FindObjectOfType<InventoryPanel>();
 
 		if (spriteRenderer == null)
 			spriteRenderer = GetComponentInChildren<SpriteRenderer>();

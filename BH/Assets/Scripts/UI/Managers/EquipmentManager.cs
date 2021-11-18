@@ -16,10 +16,10 @@ public class EquipmentManager : MonoBehaviour
 	private BaseItemSlot dragItemSlot;
 
 	private GameUiManager gameUiManager;
-	private Inventory inventory;
+	private InventoryPanel inventory;
     private EquipmentPanel equipmentPanel;
 	private PlayerCharacter playerCharacter;
-	private StatPanel statPanel;
+	private StatsPanel statPanel;
 	private ItemContainer openItemContainer;
 
 
@@ -32,7 +32,7 @@ public class EquipmentManager : MonoBehaviour
 		equipmentPanel = gameUiManager.EquipmentPanel;
 		statPanel = gameUiManager.StatPanel;
 
-		weaponSkillsPanel.Init(playerCharacter.PlayerSkillsController);
+		weaponSkillsPanel.Setup(playerCharacter.PlayerSkillsController);
 
         inventory.OnRightClickEvent += InventoryRightClick;
         equipmentPanel.OnRightClickEvent += EquipmentPanelRightClick;

@@ -11,7 +11,7 @@ public class LevelController : MonoBehaviour
 
     private void Awake()
     {
-        gameUiManager.Init(this);
+        gameUiManager.Setup(this);
         player.Init(gameUiManager);
     }
 }

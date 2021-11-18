@@ -22,7 +22,7 @@ public class WeaponSkillsPanel : MonoBehaviour
     private ECharacterWeaponSkillButtonType secondSkillButtonSelected;
     private Dictionary<ECharacterWeaponSkillButtonType, Skill> skillsSet = new Dictionary<ECharacterWeaponSkillButtonType, Skill>();
 
-    public void Init(PlayerSkillsController playerSkillsController)
+    public void Setup(PlayerSkillsController playerSkillsController)
     {
         this.playerSkillsController = playerSkillsController;
         SetupImageOnStart();

@@ -7,31 +7,38 @@ public class GameUiManager : MonoBehaviour
 {
     public event Action<bool> OnTogglePanels = delegate { };
     
-    public Inventory Inventory { get => inventory; }
+    public InventoryPanel Inventory { get => inventory; }
     public EquipmentPanel EquipmentPanel { get => equipmentPanel; }
-    public StatPanel StatPanel { get => statPanel; }
+    public StatsPanel StatPanel { get => statPanel; }
     public ItemSlot AmmoSlot { get => ammoSlot; }
     public ItemSlot ToolSlot { get => toolSlot; }
+    private CraftingsPanels CraftingsPanels { get => craftingsPanels; }
 
     [SerializeField] private GameObject eqAndStatsPanelObj = null;
-    [SerializeField] private CharacterPanel characterPanel = null;
-    [SerializeField] private Inventory inventory = null;
-    [SerializeField] private StatPanel statPanel = null;
+    [SerializeField] private EquipmentPanel characterPanel = null;
+    [SerializeField] private InventoryPanel inventory = null;
+    [SerializeField] private StatsPanel statPanel = null;
     [SerializeField] private EquipmentPanel equipmentPanel = null;
     [SerializeField] private ItemTooltip itemTooltip = null;
     [SerializeField] private ItemSlot ammoSlot = null;
     [SerializeField] private ItemSlot toolSlot = null;
-    [SerializeField] private CraftingPanel[] craftingPanels = null;
+    [SerializeField] private CraftingsPanels craftingsPanels = null;
+    [SerializeField] private CharacterPanels characterPanels = null;
 
     private GameManager gameManager;
     private LevelController levelController;
 
-    public void Init(LevelController levelController)
+    public void Setup(LevelController levelController)
     {
         gameManager = GameManager.Instance;
         this.levelController = levelController;
 
-        characterPanel.Init(this);
+        craftingsPanels.Setup(this);
+        characterPanels.Setup(this, levelController);
+
+        ToggleCharacterPanel();
+
+        gameManager.InputManager.InputController.Player.CharacterAndInventory.performed += ctx => ToggleCharacterPanel();
 
         // Pointer Enter
         inventory.OnPointerEnterEvent += ShowTooltip;
@@ -40,20 +47,7 @@ public class GameUiManager : MonoBehaviour
         // Pointer Exit
         inventory.OnPointerExitEvent += HideTooltip;
         equipmentPanel.OnPointerExitEvent += HideTooltip;
-
-        InitCraftingPanels();
-        ToggleCharacterPanel();
-
-        gameManager.InputManager.InputController.Player.CharacterAndInventory.performed += ctx => ToggleCharacterPanel();
-
     }
-
-    public void SetStatsOnStatsPanel(Stats stats)
-    {
-        statPanel.SetStats(stats);
-        statPanel.UpdateStatValues();
-    }
-
 
     public void UpdateStatValues()
     {
@@ -77,20 +71,6 @@ public class GameUiManager : MonoBehaviour
         }
     }
 
-    public void ToggleEqAndStatsPanel()
-    {
-        eqAndStatsPanelObj.SetActive(!eqAndStatsPanelObj.activeSelf);
-    }
-
-    private void InitCraftingPanels()
-    {
-        foreach (var craftPanel in craftingPanels)
-        {
-            craftPanel.OnPointerEnterEvent += ShowTooltip;
-            craftPanel.OnPointerExitEvent += HideTooltip;
-        }
-    }
-
     private void ToggleCharacterPanel()
     {
         characterPanel.gameObject.SetActive(!characterPanel.gameObject.activeSelf);
@@ -101,10 +81,7 @@ public class GameUiManager : MonoBehaviour
     {
         if (characterPanel.gameObject.activeSelf) return true;
 
-        foreach (var panel in craftingPanels)
-        {
-            if (panel.gameObject.activeSelf) return true;
-        }
+        //TODo check crafting panels
 
         return false;
     }

@@ -4,25 +4,23 @@ using UnityEngine;
 
 public class CraftingPanel : MonoBehaviour
 {
-	[Header("References")]
-	[SerializeField] private GameObject recipeUIPrefab;
-	[SerializeField] private RectTransform recipeUIParent;
-	public List<CraftingRecipeUI> craftingRecipeUIs;
-
-	[Header("Public Variables")]
-	public ItemContainer ItemContainer;
-	public List<CraftingRecipe> CraftingRecipes;
 
 	public event Action<BaseItemSlot> OnPointerEnterEvent;
 	public event Action<BaseItemSlot> OnPointerExitEvent;
 
+	[Header("References")]
+	[SerializeField] private GameObject recipeUIPrefab;
+	[SerializeField] private RectTransform recipeUIParent;
+	[SerializeField] private ItemContainer itemContainer;
+	[SerializeField] private List<CraftingRecipe> craftingRecipes;
+	[SerializeField] private List<CraftingRecipeUI> craftingRecipesUI;
 
 	public void OnOpenPanel()
     {
 		//recipeUIParent.GetComponentsInChildren<CraftingRecipeUI>(includeInactive: true, result: craftingRecipeUIs);
 		UpdateCraftingRecipes();
 
-		foreach (CraftingRecipeUI craftingRecipeUI in craftingRecipeUIs)
+		foreach (CraftingRecipeUI craftingRecipeUI in craftingRecipesUI)
 		{
 			craftingRecipeUI.OnPointerEnterEvent += slot => OnPointerEnterEvent(slot);
 			craftingRecipeUI.OnPointerExitEvent += slot => OnPointerExitEvent(slot);
@@ -31,7 +29,7 @@ public class CraftingPanel : MonoBehaviour
 
 	public void UpdateCraftingRecipes()
 	{
-		for (int i = 0; i < CraftingRecipes.Count; i++)
+		for (int i = 0; i < craftingRecipes.Count; i++)
 		{
 			//if (craftingRecipeUIs.Count == i)
 			//{
@@ -43,15 +41,15 @@ public class CraftingPanel : MonoBehaviour
 			//}
 
 		    GameObject uiRecipleObj = Instantiate(recipeUIPrefab, recipeUIParent, false);
-			craftingRecipeUIs.Add(uiRecipleObj.GetComponent<CraftingRecipeUI>());
-			Debug.Log(craftingRecipeUIs[i] + "    " + ItemContainer);
-			craftingRecipeUIs[i].ItemContainer = ItemContainer;
-			craftingRecipeUIs[i].CraftingRecipe = CraftingRecipes[i];
+			craftingRecipesUI.Add(uiRecipleObj.GetComponent<CraftingRecipeUI>());
+			Debug.Log(craftingRecipesUI[i] + "    " + itemContainer);
+			craftingRecipesUI[i].ItemContainer = itemContainer;
+			craftingRecipesUI[i].CraftingRecipe = craftingRecipes[i];
 		}
 
-		for (int i = CraftingRecipes.Count; i < craftingRecipeUIs.Count; i++)
+		for (int i = craftingRecipes.Count; i < craftingRecipesUI.Count; i++)
 		{
-			craftingRecipeUIs[i].CraftingRecipe = null;
+			craftingRecipesUI[i].CraftingRecipe = null;
 		}
 	}
 }

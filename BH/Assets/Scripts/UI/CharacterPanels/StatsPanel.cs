@@ -2,7 +2,7 @@
 using Kryz.CharacterStats;
 using System.Collections.Generic;
 
-public class StatPanel : MonoBehaviour
+public class StatsPanel : MonoBehaviour
 {
     [SerializeField] private GameObject statDisplayPrefab = null;
     [SerializeField] private Transform CtxStatDisplayParent = null;

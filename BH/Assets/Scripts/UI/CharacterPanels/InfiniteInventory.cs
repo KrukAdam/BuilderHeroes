@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class InfiniteInventory : Inventory
+public class InfiniteInventory : InventoryPanel
 {
 	[SerializeField] GameObject itemSlotPrefab;
 
@@ -40,7 +40,7 @@ public class InfiniteInventory : Inventory
 			for (int i = 0; i < diff; i++)
 			{
 				GameObject gameObject = Instantiate(itemSlotPrefab);
-				gameObject.transform.SetParent(itemsParent, worldPositionStays: false);
+			//	gameObject.transform.SetParent(itemsParent, worldPositionStays: false);
 				ItemSlots.Add(gameObject.GetComponentInChildren<ItemSlot>());
 			}
 		}
