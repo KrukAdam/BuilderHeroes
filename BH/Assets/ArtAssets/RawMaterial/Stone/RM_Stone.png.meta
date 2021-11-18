@@ -51,6 +51,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -328,6 +329,16 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      RM_Stone_3: 1029809828940711045
+      RM_Stone_0: -4720652815188460627
+      RM_Stone_5: -1908637629532813016
+      RM_Stone_4: -7210492506216176629
+      RM_Stone_7: 262036986586524575
+      RM_Stone_1: -2676914262237607281
+      RM_Stone_6: -5307858123158887959
+      RM_Stone_8: 4663523443894226489
+      RM_Stone_2: 314057016703628990
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
