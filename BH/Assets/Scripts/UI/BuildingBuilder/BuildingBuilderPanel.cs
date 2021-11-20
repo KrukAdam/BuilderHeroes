@@ -13,20 +13,20 @@ public class BuildingBuilderPanel : MonoBehaviour
 
     }
 
-    public void SetupBuildingsData(BuildingsData buildingsData)
+    public void SetupBuildingsDataPanel(BuildingsData buildingsData, BuildingBuilderManager buildingBuilderManager)
     {
         this.buildingsData = buildingsData;
-        SetupBuildingsButtons();
+        SetupBuildingsButtons(buildingBuilderManager);
     }
 
-    private void SetupBuildingsButtons()
+    private void SetupBuildingsButtons(BuildingBuilderManager buildingBuilderManager)
     {
         foreach (var building in buildingsData.Buildings)
         {
-            Debug.Log("Building");
             BuildingButton button;
             button = Instantiate(buildingButtonPrefab, transform);
-            button.Setup(building);
+            button.Setup(building, buildingBuilderManager);
+            button.ClickOnBuildingButton += buildingBuilderManager.SelectedBuilding;
         }
     }
 }

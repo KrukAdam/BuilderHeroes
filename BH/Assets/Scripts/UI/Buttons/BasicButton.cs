@@ -31,8 +31,14 @@ public class BasicButton : MonoBehaviour
         action = call;
     }
 
+    protected virtual void AfterButtonClick()
+    {
+
+    }
+
     private void OnClick()
     {
         action.Invoke();
+        AfterButtonClick();
     }
 }
