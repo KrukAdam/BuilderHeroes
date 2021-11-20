@@ -8,9 +8,9 @@ public class CraftingsPanels : MonoBehaviour
 
     private GameUiManager gameUiManager;
 
-    public void Setup(GameUiManager gameUiManager)
+    public void Setup(LevelController levelController)
     {
-        this.gameUiManager = gameUiManager;
+        gameUiManager = levelController.GameUiManager;
 
         InitCraftingPanels();
     }

@@ -10,10 +10,12 @@ public class GameUiManager : MonoBehaviour
     public CharacterPanels CharacterPanels { get => characterPanels; }
     public TooltipsPanels TooltipsPanels { get => tooltipsPanels; }
     public CraftingsPanels CraftingsPanels { get => craftingsPanels; }
+    public CityBuilderPanels CityBuilderPanels { get => cityBuilderPanels; }
 
     [SerializeField] private TooltipsPanels tooltipsPanels = null;
     [SerializeField] private CraftingsPanels craftingsPanels = null;
     [SerializeField] private CharacterPanels characterPanels = null;
+    [SerializeField] private CityBuilderPanels cityBuilderPanels = null;
 
     private LevelController levelController;
 
@@ -21,13 +23,21 @@ public class GameUiManager : MonoBehaviour
     {
         this.levelController = levelController;
 
-        craftingsPanels.Setup(this);
+        craftingsPanels.Setup(levelController);
         characterPanels.SetupPanel(levelController);
+        cityBuilderPanels.Setup(levelController);
 
-        ToggleCharacterPanel();
+        TogglePanels();
         SetEvents();
 
         GameManager.Instance.InputManager.InputController.Player.CharacterAndInventory.performed += ctx => ToggleCharacterPanel();
+        GameManager.Instance.InputManager.InputController.Player.BuildingBuilderPanel.performed += ctx => ToggleBuildingBuilderPanel();
+    }
+
+    private void TogglePanels()
+    {
+        ToggleCharacterPanel();
+        ToggleBuildingBuilderPanel();
     }
 
     private void SetEvents()
@@ -46,9 +56,16 @@ public class GameUiManager : MonoBehaviour
         OnTogglePanels(!CheckForActivePanels());
     }
 
+    private void ToggleBuildingBuilderPanel()
+    {
+        CityBuilderPanels.ToggleBuildingBuilderPanel();
+        OnTogglePanels(!CheckForActivePanels());
+    }
+
     private bool CheckForActivePanels()
     {
         if (CharacterPanels.CheckActivePanels()) return true;
+        if (CityBuilderPanels.CheckActivePanels()) return true;
 
         //TODo check crafting panels
 

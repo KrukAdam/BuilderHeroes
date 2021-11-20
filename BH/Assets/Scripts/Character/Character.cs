@@ -5,15 +5,17 @@ using UnityEngine;
 [RequireComponent(typeof(Stats))]
 public class Character : MonoBehaviour
 {
+    public ERaceType RaceType { get => raceType; }
     public Stats Stats { get => stats; }
     public Rigidbody2D CharacterRigidbody { get => characterRigidbody; }
     public MoveController MoveController { get => moveController; }
     public LayerMask AllyLayersMask { get => allyLayersMask; }
     public LayerMask EnemyLayerMask { get => enemyLayerMask; }
 
-    [SerializeField] protected Stats stats;
-    [SerializeField] protected Rigidbody2D characterRigidbody;
-    [SerializeField] protected MoveController moveController;
+    [SerializeField] protected ERaceType raceType = ERaceType.None;
+    [SerializeField] protected Stats stats = null;
+    [SerializeField] protected Rigidbody2D characterRigidbody = null;
+    [SerializeField] protected MoveController moveController = null;
 
     protected LayerMask allyLayersMask;
     protected LayerMask enemyLayerMask;

@@ -89,6 +89,15 @@ public partial class @InputController : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": ""Press"",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""BuildingBuilderPanel"",
+                    ""type"": ""Button"",
+                    ""id"": ""2dc75523-306f-43b4-9b43-c0f2049e5237"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press"",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -300,6 +309,17 @@ public partial class @InputController : IInputActionCollection2, IDisposable
                     ""action"": ""CancelAction"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2715b487-544f-4eba-9388-dcec921708d9"",
+                    ""path"": ""<Keyboard>/b"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""BuildingBuilderPanel"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -321,6 +341,7 @@ public partial class @InputController : IInputActionCollection2, IDisposable
         m_Player_MainSkill = m_Player.FindAction("MainSkill", throwIfNotFound: true);
         m_Player_SecondSkill = m_Player.FindAction("SecondSkill", throwIfNotFound: true);
         m_Player_CancelAction = m_Player.FindAction("CancelAction", throwIfNotFound: true);
+        m_Player_BuildingBuilderPanel = m_Player.FindAction("BuildingBuilderPanel", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -387,6 +408,7 @@ public partial class @InputController : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_MainSkill;
     private readonly InputAction m_Player_SecondSkill;
     private readonly InputAction m_Player_CancelAction;
+    private readonly InputAction m_Player_BuildingBuilderPanel;
     public struct PlayerActions
     {
         private @InputController m_Wrapper;
@@ -398,6 +420,7 @@ public partial class @InputController : IInputActionCollection2, IDisposable
         public InputAction @MainSkill => m_Wrapper.m_Player_MainSkill;
         public InputAction @SecondSkill => m_Wrapper.m_Player_SecondSkill;
         public InputAction @CancelAction => m_Wrapper.m_Player_CancelAction;
+        public InputAction @BuildingBuilderPanel => m_Wrapper.m_Player_BuildingBuilderPanel;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -428,6 +451,9 @@ public partial class @InputController : IInputActionCollection2, IDisposable
                 @CancelAction.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCancelAction;
                 @CancelAction.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCancelAction;
                 @CancelAction.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCancelAction;
+                @BuildingBuilderPanel.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnBuildingBuilderPanel;
+                @BuildingBuilderPanel.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnBuildingBuilderPanel;
+                @BuildingBuilderPanel.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnBuildingBuilderPanel;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -453,6 +479,9 @@ public partial class @InputController : IInputActionCollection2, IDisposable
                 @CancelAction.started += instance.OnCancelAction;
                 @CancelAction.performed += instance.OnCancelAction;
                 @CancelAction.canceled += instance.OnCancelAction;
+                @BuildingBuilderPanel.started += instance.OnBuildingBuilderPanel;
+                @BuildingBuilderPanel.performed += instance.OnBuildingBuilderPanel;
+                @BuildingBuilderPanel.canceled += instance.OnBuildingBuilderPanel;
             }
         }
     }
@@ -475,5 +504,6 @@ public partial class @InputController : IInputActionCollection2, IDisposable
         void OnMainSkill(InputAction.CallbackContext context);
         void OnSecondSkill(InputAction.CallbackContext context);
         void OnCancelAction(InputAction.CallbackContext context);
+        void OnBuildingBuilderPanel(InputAction.CallbackContext context);
     }
 }

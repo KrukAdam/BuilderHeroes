@@ -11,7 +11,8 @@
                     "id": "64f20641-bb19-4924-9a2a-5af2cee790b6",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Press(behavior=2)"
+                    "interactions": "Press(behavior=2)",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "VerticalMove",
@@ -19,7 +20,8 @@
                     "id": "00a3d68d-8e1d-4737-b639-5aadbb1f5d13",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Press(behavior=2)"
+                    "interactions": "Press(behavior=2)",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "CharacterAndInventory",
@@ -27,7 +29,8 @@
                     "id": "59bfabb0-cba5-4036-9045-10f330a085cd",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Press"
+                    "interactions": "Press",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "Interaction",
@@ -35,7 +38,8 @@
                     "id": "b0b7501c-2f02-4af1-85ce-1698c8a57cd6",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Press(behavior=2)"
+                    "interactions": "Press(behavior=2)",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "MainSkill",
@@ -43,7 +47,8 @@
                     "id": "e0412d86-fb83-48ca-a3bc-ee03255e0331",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Press"
+                    "interactions": "Press",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "SecondSkill",
@@ -51,7 +56,8 @@
                     "id": "6f0b8b2a-e116-4b61-bc20-e99b25bf851f",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Press"
+                    "interactions": "Press",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "CancelAction",
@@ -59,7 +65,17 @@
                     "id": "dfa98787-0ede-48b5-908d-6257ea28ccdd",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Press"
+                    "interactions": "Press",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "BuildingBuilderPanel",
+                    "type": "Button",
+                    "id": "2dc75523-306f-43b4-9b43-c0f2049e5237",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -269,6 +285,17 @@
                     "processors": "",
                     "groups": "Keyboard",
                     "action": "CancelAction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2715b487-544f-4eba-9388-dcec921708d9",
+                    "path": "<Keyboard>/b",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "BuildingBuilderPanel",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
