@@ -6,18 +6,16 @@ using UnityEngine;
 public class GameUiManager : MonoBehaviour
 {
     public event Action<bool> OnTogglePanels = delegate { };
-    
+
+    public CharacterPanels CharacterPanels { get => characterPanels; }
+
     public InventoryPanel Inventory { get => inventory; }
     public EquipmentPanel EquipmentPanel { get => equipmentPanel; }
-    public StatsPanel StatPanel { get => statPanel; }
     public ItemSlot AmmoSlot { get => ammoSlot; }
     public ItemSlot ToolSlot { get => toolSlot; }
-    private CraftingsPanels CraftingsPanels { get => craftingsPanels; }
 
-    [SerializeField] private GameObject eqAndStatsPanelObj = null;
     [SerializeField] private EquipmentPanel characterPanel = null;
     [SerializeField] private InventoryPanel inventory = null;
-    [SerializeField] private StatsPanel statPanel = null;
     [SerializeField] private EquipmentPanel equipmentPanel = null;
     [SerializeField] private ItemTooltip itemTooltip = null;
     [SerializeField] private ItemSlot ammoSlot = null;
@@ -25,35 +23,28 @@ public class GameUiManager : MonoBehaviour
     [SerializeField] private CraftingsPanels craftingsPanels = null;
     [SerializeField] private CharacterPanels characterPanels = null;
 
-    private GameManager gameManager;
     private LevelController levelController;
 
     public void Setup(LevelController levelController)
     {
-        gameManager = GameManager.Instance;
         this.levelController = levelController;
 
         craftingsPanels.Setup(this);
-        characterPanels.Setup(this, levelController);
+        characterPanels.SetupPanel(levelController);
 
         ToggleCharacterPanel();
+        SetEvents();
 
-        gameManager.InputManager.InputController.Player.CharacterAndInventory.performed += ctx => ToggleCharacterPanel();
-
-        // Pointer Enter
-        inventory.OnPointerEnterEvent += ShowTooltip;
-        equipmentPanel.OnPointerEnterEvent += ShowTooltip;
-
-        // Pointer Exit
-        inventory.OnPointerExitEvent += HideTooltip;
-        equipmentPanel.OnPointerExitEvent += HideTooltip;
+        GameManager.Instance.InputManager.InputController.Player.CharacterAndInventory.performed += ctx => ToggleCharacterPanel();
     }
 
-    public void UpdateStatValues()
+    private void OnDestroy()
     {
-        statPanel.UpdateStatValues();
+        inventory.OnPointerEnterEvent -= ShowTooltip;
+        equipmentPanel.OnPointerEnterEvent -= ShowTooltip;
+        inventory.OnPointerExitEvent -= HideTooltip;
+        equipmentPanel.OnPointerExitEvent -= HideTooltip;
     }
-
 
     public void ShowTooltip(BaseItemSlot itemSlot)
     {
@@ -69,6 +60,16 @@ public class GameUiManager : MonoBehaviour
         {
             itemTooltip.HideTooltip();
         }
+    }
+
+    private void SetEvents()
+    {
+        // Pointer Enter
+        inventory.OnPointerEnterEvent += ShowTooltip;
+        equipmentPanel.OnPointerEnterEvent += ShowTooltip;
+        // Pointer Exit
+        inventory.OnPointerExitEvent += HideTooltip;
+        equipmentPanel.OnPointerExitEvent += HideTooltip;
     }
 
     private void ToggleCharacterPanel()

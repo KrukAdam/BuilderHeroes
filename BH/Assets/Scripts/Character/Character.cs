@@ -20,9 +20,7 @@ public class Character : MonoBehaviour
     protected LayerMask allyLayersMask;
     protected LayerMask enemyLayerMask;
 
-
-
-    protected void InitLayerMask(bool isPlayer)
+    protected void SetupLayerMask(bool isPlayer)
     {
         if (isPlayer)
         {
@@ -35,5 +33,4 @@ public class Character : MonoBehaviour
             enemyLayerMask = GameManager.Instance.EnemyAILayersMask;
         }
     }
-
 }

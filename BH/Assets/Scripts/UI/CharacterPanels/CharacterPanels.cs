@@ -12,15 +12,11 @@ public class CharacterPanels : MonoBehaviour
     [SerializeField] private StatsPanel statsPanel = null;
     [SerializeField] private EquipmentWeaponSkillsPanel equipmentWeaponSkillsPanel = null;
 
-    private GameUiManager gameUiManager;
-
-    public void Setup(GameUiManager gameUiManager, LevelController levelController)
+    public void SetupPanel(LevelController levelController)
     {
-        this.gameUiManager = gameUiManager;
-
         inventoryPanel.Setup(this);
         SetupCharacterPanels(levelController);
-
+        StatsPanel.SetupPanel(levelController);
     }
 
     public void ToggleCharacterPanel()
@@ -44,7 +40,6 @@ public class CharacterPanels : MonoBehaviour
 
     private void SetStatsOnStatsPanel(Stats stats)
     {
-        StatsPanel.SetStats(stats);
-        StatsPanel.UpdateStatValues();
+       
     }
 }

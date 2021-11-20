@@ -50,7 +50,7 @@ public class ItemStatBuffEffect
 			}
 		}
 
-		character.UpdateStatValues();
+		character.Stats.Refresh();
 		character.StartCoroutine(RemoveBuff(character, modifiers, index, duration));
 	}
 
@@ -66,7 +66,7 @@ public class ItemStatBuffEffect
         {
 			character.Stats.AllStats[index].RemoveAllModifiers(modifier);
 		}
-		character.UpdateStatValues();
+		character.Stats.Refresh();
 	}
 
 }

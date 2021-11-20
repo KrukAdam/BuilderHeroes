@@ -16,7 +16,7 @@ public class EnemyCharacter : Character
 	{
 		this.gameUiManager = gameUiManager; //?
 
-		InitLayerMask(false);
+		SetupLayerMask(false);
 
 		if (Stats == null)
 		{

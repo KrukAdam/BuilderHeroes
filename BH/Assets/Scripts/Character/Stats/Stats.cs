@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Stats : MonoBehaviour, IDamage
 {
+    public event Action OnStatsChange = delegate { };
     public event Action OnDamage = delegate { };
     public event Action OnDeath = delegate { };
     
@@ -30,9 +31,11 @@ public class Stats : MonoBehaviour, IDamage
 
         if (damage < 0) damage = minDamage;
 
-        OnDamage();
+
         GetStat(skillOffenseStat.DamagedStatType).BaseValue.Value -= damage;
-        if(GetStat(skillOffenseStat.DamagedStatType).BaseValue.Value <= 0 && skillOffenseStat.DamagedStatType == EStatsTypes.Health)
+        OnDamage();
+        OnStatsChange();
+        if (GetStat(skillOffenseStat.DamagedStatType).BaseValue.Value <= 0 && skillOffenseStat.DamagedStatType == EStatsTypes.Health)
         {
             OnDeath();
             Death();
@@ -47,7 +50,12 @@ public class Stats : MonoBehaviour, IDamage
 
     public void AuraRefresh()
     {
+        Refresh();
+    }
 
+    public void Refresh()
+    {
+        OnStatsChange();
     }
 
     public void Death()

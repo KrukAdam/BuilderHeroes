@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,8 @@ using UnityEngine.UI;
 
 public class EquipmentManager : MonoBehaviour
 {
+	public event Action OnEquipmentChange = delegate { };
+
     [SerializeField] private DropItemArea dropItemArea = null;
 	[SerializeField] private Image draggableItem = null;
 	[SerializeField] private QuestionDialog reallyDropItemDialog = null;
@@ -19,18 +22,15 @@ public class EquipmentManager : MonoBehaviour
 	private InventoryPanel inventory;
     private EquipmentPanel equipmentPanel;
 	private PlayerCharacter playerCharacter;
-	private StatsPanel statPanel;
 	private ItemContainer openItemContainer;
 
-
-	public void Init(GameUiManager gameUiManager, PlayerCharacter playerCharacter)
+	public void Setup(GameUiManager gameUiManager, PlayerCharacter playerCharacter)
     {
 		this.gameUiManager = gameUiManager;
 		this.playerCharacter = playerCharacter;
 
 		inventory = gameUiManager.Inventory;
 		equipmentPanel = gameUiManager.EquipmentPanel;
-		statPanel = gameUiManager.StatPanel;
 
 		weaponSkillsPanel.Setup(playerCharacter.PlayerSkillsController);
 
@@ -85,7 +85,7 @@ public class EquipmentManager : MonoBehaviour
 				inventory.AddItem(item);
 			}
 		}
-		statPanel.UpdateStatValues();
+		OnEquipmentChange();
 	}
 
 	public void Unequip(ItemEquippable item)
@@ -94,8 +94,8 @@ public class EquipmentManager : MonoBehaviour
 		{
 			item.Unequip(playerCharacter);
 			weaponSkillsPanel.UnsetupWeaponSkills(item);
-			statPanel.UpdateStatValues();
 			inventory.AddItem(item);
+			OnEquipmentChange();
 		}
 	}
 
@@ -284,7 +284,7 @@ public class EquipmentManager : MonoBehaviour
 				weaponSkillsPanel.SetupWeaponSkills(dropEquipItem);
 			}
 		}
-		statPanel.UpdateStatValues();
+		OnEquipmentChange();
 
 		Item draggedItem = dragItemSlot.Item;
 		int draggedItemAmount = dragItemSlot.Amount;
