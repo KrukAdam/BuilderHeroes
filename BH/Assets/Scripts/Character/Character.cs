@@ -8,7 +8,6 @@ public class Character : MonoBehaviour
     public Stats Stats { get => stats; }
     public Rigidbody2D CharacterRigidbody { get => characterRigidbody; }
     public MoveController MoveController { get => moveController; }
-    public GameUiManager GameUiManager { get => gameUiManager; }
     public LayerMask AllyLayersMask { get => allyLayersMask; }
     public LayerMask EnemyLayerMask { get => enemyLayerMask; }
 
@@ -16,7 +15,6 @@ public class Character : MonoBehaviour
     [SerializeField] protected Rigidbody2D characterRigidbody;
     [SerializeField] protected MoveController moveController;
 
-    protected GameUiManager gameUiManager;
     protected LayerMask allyLayersMask;
     protected LayerMask enemyLayerMask;
 

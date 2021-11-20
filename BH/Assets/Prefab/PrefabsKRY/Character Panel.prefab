@@ -795,7 +795,7 @@ RectTransform:
   - {fileID: 224588068638215462}
   - {fileID: 5882987087705449288}
   m_Father: {fileID: 224639381728844310}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -1380,7 +1380,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7c1129f45a72c240a9e3bcc1ae10cab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EquipmentSlots:
+  ammoSlot: {fileID: 114037786918941898}
+  toolSlot: {fileID: 114550513439414484}
+  equipmentSlots:
   - {fileID: 114309221018764872}
   - {fileID: 114255710531342934}
   - {fileID: 114037786918941898}
@@ -1390,7 +1392,6 @@ MonoBehaviour:
   - {fileID: 114889349844509822}
   - {fileID: 114866406503442744}
   - {fileID: 114550513439414484}
-  equipmentSlotsParent: {fileID: 224588068638215462}
 --- !u!1 &1449827773766652
 GameObject:
   m_ObjectHideFlags: 0
@@ -1518,7 +1519,7 @@ RectTransform:
   - {fileID: 3756385496124310552}
   - {fileID: 3957008603392406914}
   m_Father: {fileID: 224639381728844310}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
@@ -2072,8 +2073,8 @@ RectTransform:
   m_LocalScale: {x: 0.65, y: 0.65, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 224807107835964214}
   - {fileID: 224212972492018938}
+  - {fileID: 224807107835964214}
   - {fileID: 224808693104144244}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -7887,10 +7888,10 @@ RectTransform:
   m_Father: {fileID: 842422946395271099}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 151.5, y: -21}
-  m_SizeDelta: {x: 303, y: 42}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9180144197568506150
 CanvasRenderer:

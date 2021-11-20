@@ -3,9 +3,6 @@ using UnityEngine;
 
 public class EquipmentPanel : MonoBehaviour
 {
-	public EquipmentSlot[] EquipmentSlots;
-	[SerializeField] Transform equipmentSlotsParent;
-
 	public event Action<BaseItemSlot> OnPointerEnterEvent;
 	public event Action<BaseItemSlot> OnPointerExitEvent;
 	public event Action<BaseItemSlot> OnRightClickEvent;
@@ -14,6 +11,14 @@ public class EquipmentPanel : MonoBehaviour
 	public event Action<BaseItemSlot> OnDragEvent;
 	public event Action<BaseItemSlot> OnDropEvent;
 
+	public ItemSlot AmmoSlot { get => ammoSlot; }
+	public ItemSlot ToolSlot { get => toolSlot; }
+
+	[SerializeField] private ItemSlot ammoSlot = null;
+	[SerializeField] private ItemSlot toolSlot = null;
+	[SerializeField] private EquipmentSlot[] equipmentSlots;
+	//[SerializeField] private Transform equipmentSlotsParent;
+
 	public void Setup()
     {
 		SetupSlots();
@@ -21,27 +26,27 @@ public class EquipmentPanel : MonoBehaviour
 
 	public void SetupSlots()
     {
-		for (int i = 0; i < EquipmentSlots.Length; i++)
+		for (int i = 0; i < equipmentSlots.Length; i++)
 		{
-			EquipmentSlots[i].OnPointerEnterEvent += slot => OnPointerEnterEvent(slot);
-			EquipmentSlots[i].OnPointerExitEvent += slot => OnPointerExitEvent(slot);
-			EquipmentSlots[i].OnRightClickEvent += slot => OnRightClickEvent(slot);
-			EquipmentSlots[i].OnBeginDragEvent += slot => OnBeginDragEvent(slot);
-			EquipmentSlots[i].OnEndDragEvent += slot => OnEndDragEvent(slot);
-			EquipmentSlots[i].OnDragEvent += slot => OnDragEvent(slot);
-			EquipmentSlots[i].OnDropEvent += slot => OnDropEvent(slot);
+			equipmentSlots[i].OnPointerEnterEvent += slot => OnPointerEnterEvent(slot);
+			equipmentSlots[i].OnPointerExitEvent += slot => OnPointerExitEvent(slot);
+			equipmentSlots[i].OnRightClickEvent += slot => OnRightClickEvent(slot);
+			equipmentSlots[i].OnBeginDragEvent += slot => OnBeginDragEvent(slot);
+			equipmentSlots[i].OnEndDragEvent += slot => OnEndDragEvent(slot);
+			equipmentSlots[i].OnDragEvent += slot => OnDragEvent(slot);
+			equipmentSlots[i].OnDropEvent += slot => OnDropEvent(slot);
 		}
 	}
 
 	public bool AddItem(ItemEquippable item, out ItemEquippable previousItem)
 	{
-		for (int i = 0; i < EquipmentSlots.Length; i++)
+		for (int i = 0; i < equipmentSlots.Length; i++)
 		{
-			if (EquipmentSlots[i].EquipmentType == item.EquipmentType)
+			if (equipmentSlots[i].EquipmentType == item.EquipmentType)
 			{
-				previousItem = (ItemEquippable)EquipmentSlots[i].Item;
-				EquipmentSlots[i].Item = item;
-				EquipmentSlots[i].Amount = 1;
+				previousItem = (ItemEquippable)equipmentSlots[i].Item;
+				equipmentSlots[i].Item = item;
+				equipmentSlots[i].Amount = 1;
 				return true;
 			}
 		}
@@ -51,12 +56,12 @@ public class EquipmentPanel : MonoBehaviour
 
 	public bool RemoveItem(ItemEquippable item)
 	{
-		for (int i = 0; i < EquipmentSlots.Length; i++)
+		for (int i = 0; i < equipmentSlots.Length; i++)
 		{
-			if (EquipmentSlots[i].Item == item)
+			if (equipmentSlots[i].Item == item)
 			{
-				EquipmentSlots[i].Item = null;
-				EquipmentSlots[i].Amount = 0;
+				equipmentSlots[i].Item = null;
+				equipmentSlots[i].Amount = 0;
 				return true;
 			}
 		}

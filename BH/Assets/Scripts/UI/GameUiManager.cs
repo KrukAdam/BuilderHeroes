@@ -8,18 +8,10 @@ public class GameUiManager : MonoBehaviour
     public event Action<bool> OnTogglePanels = delegate { };
 
     public CharacterPanels CharacterPanels { get => characterPanels; }
+    public TooltipsPanels TooltipsPanels { get => tooltipsPanels; }
+    public CraftingsPanels CraftingsPanels { get => craftingsPanels; }
 
-    public InventoryPanel Inventory { get => inventory; }
-    public EquipmentPanel EquipmentPanel { get => equipmentPanel; }
-    public ItemSlot AmmoSlot { get => ammoSlot; }
-    public ItemSlot ToolSlot { get => toolSlot; }
-
-    [SerializeField] private EquipmentPanel characterPanel = null;
-    [SerializeField] private InventoryPanel inventory = null;
-    [SerializeField] private EquipmentPanel equipmentPanel = null;
-    [SerializeField] private ItemTooltip itemTooltip = null;
-    [SerializeField] private ItemSlot ammoSlot = null;
-    [SerializeField] private ItemSlot toolSlot = null;
+    [SerializeField] private TooltipsPanels tooltipsPanels = null;
     [SerializeField] private CraftingsPanels craftingsPanels = null;
     [SerializeField] private CharacterPanels characterPanels = null;
 
@@ -38,49 +30,25 @@ public class GameUiManager : MonoBehaviour
         GameManager.Instance.InputManager.InputController.Player.CharacterAndInventory.performed += ctx => ToggleCharacterPanel();
     }
 
-    private void OnDestroy()
-    {
-        inventory.OnPointerEnterEvent -= ShowTooltip;
-        equipmentPanel.OnPointerEnterEvent -= ShowTooltip;
-        inventory.OnPointerExitEvent -= HideTooltip;
-        equipmentPanel.OnPointerExitEvent -= HideTooltip;
-    }
-
-    public void ShowTooltip(BaseItemSlot itemSlot)
-    {
-        if (itemSlot.Item != null)
-        {
-            itemTooltip.ShowTooltip(itemSlot.Item);
-        }
-    }
-
-    public void HideTooltip(BaseItemSlot itemSlot)
-    {
-        if (itemTooltip.gameObject.activeSelf)
-        {
-            itemTooltip.HideTooltip();
-        }
-    }
-
     private void SetEvents()
     {
         // Pointer Enter
-        inventory.OnPointerEnterEvent += ShowTooltip;
-        equipmentPanel.OnPointerEnterEvent += ShowTooltip;
+        CharacterPanels.InventoryPanel.OnPointerEnterEvent += TooltipsPanels.ShowItemTooltip;
+        CharacterPanels.EquipmentWeaponSkillsPanel.EquipmentPanel.OnPointerEnterEvent += TooltipsPanels.ShowItemTooltip;
         // Pointer Exit
-        inventory.OnPointerExitEvent += HideTooltip;
-        equipmentPanel.OnPointerExitEvent += HideTooltip;
+        CharacterPanels.InventoryPanel.OnPointerExitEvent += TooltipsPanels.HideItemTooltip;
+        CharacterPanels.EquipmentWeaponSkillsPanel.EquipmentPanel.OnPointerExitEvent += TooltipsPanels.HideItemTooltip;
     }
 
     private void ToggleCharacterPanel()
     {
-        characterPanel.gameObject.SetActive(!characterPanel.gameObject.activeSelf);
+        CharacterPanels.ToggleCharacterInventoryPanels();
         OnTogglePanels(!CheckForActivePanels());
     }
 
     private bool CheckForActivePanels()
     {
-        if (characterPanel.gameObject.activeSelf) return true;
+        if (CharacterPanels.CheckActivePanels()) return true;
 
         //TODo check crafting panels
 

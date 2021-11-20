@@ -15,8 +15,8 @@ public class CharacterPanels : MonoBehaviour
     public void SetupPanel(LevelController levelController)
     {
         inventoryPanel.Setup(this);
-        SetupCharacterPanels(levelController);
         StatsPanel.SetupPanel(levelController);
+        EquipmentWeaponSkillsPanel.Setup(levelController);
     }
 
     public void ToggleCharacterPanel()
@@ -26,20 +26,16 @@ public class CharacterPanels : MonoBehaviour
         StatsPanel.gameObject.SetActive(isActive);
     }
 
-
-    private void SetupCharacterPanels(LevelController levelController)
+    public void ToggleCharacterInventoryPanels()
     {
-        SetWeaponSkillsPanel(levelController.Player.PlayerSkillsController);
-        SetStatsOnStatsPanel(levelController.Player.Stats);
+        bool isActive = !InventoryPanel.gameObject.activeSelf;
+        EquipmentWeaponSkillsPanel.gameObject.SetActive(isActive);
+        StatsPanel.gameObject.SetActive(isActive);
+        InventoryPanel.gameObject.SetActive(isActive);
     }
 
-    private void SetWeaponSkillsPanel(PlayerSkillsController playerSkillsController)
+    public bool CheckActivePanels()
     {
-        EquipmentWeaponSkillsPanel.WeaponSkillsPanel.Setup(playerSkillsController);
-    }
-
-    private void SetStatsOnStatsPanel(Stats stats)
-    {
-       
+        return EquipmentWeaponSkillsPanel.gameObject.activeSelf;
     }
 }

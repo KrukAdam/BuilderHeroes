@@ -9,8 +9,8 @@ public class LocalManagers : MonoBehaviour
     [SerializeField]
     private EquipmentManager equipmentManager = null;
 
-    public void SetupManagers()
+    public void SetupManagers(LevelController levelController)
     {
-
+        equipmentManager.Setup(levelController);
     }
 }

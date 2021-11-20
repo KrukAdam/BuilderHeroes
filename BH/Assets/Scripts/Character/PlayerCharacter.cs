@@ -10,9 +10,8 @@ public class PlayerCharacter : Character
 	[SerializeField] private PlayerSkillsController playerSkillsController = null;
 	[SerializeField] private EquipmentManager equipmentManager = null;
 
-	public void SetupCharacter(GameUiManager gameUiManager)
+	public void SetupCharacter(LevelController levelController)
 	{
-		this.gameUiManager = gameUiManager;
 
 		SetupLayerMask(true);
 
@@ -21,9 +20,8 @@ public class PlayerCharacter : Character
 
 		playerActionController.Init(equipmentManager, this);
 		moveController.Init(this);
-		playerSkillsController.Init(this);
-		equipmentManager.Setup(gameUiManager, this);
+		playerSkillsController.Setup(levelController);
 
-		Stats.OnStatsChange += gameUiManager.CharacterPanels.StatsPanel.UpdateStatValues;
+		Stats.OnStatsChange += levelController.GameUiManager.CharacterPanels.StatsPanel.UpdateStatValues;
 	}
 }

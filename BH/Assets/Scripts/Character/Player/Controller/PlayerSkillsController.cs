@@ -21,7 +21,7 @@ public class PlayerSkillsController : MonoBehaviour
     private float mainSkillCooldawn;
     private float secondSkillCooldawn;
     private Coroutine castSkill;
-    private ItemSlot ammoSlot = null;
+    private ItemSlot ammoSlot;
 
     private void Update()
     {
@@ -35,9 +35,9 @@ public class PlayerSkillsController : MonoBehaviour
         }
     }
 
-    public void Init(PlayerCharacter playerCharacter)
+    public void Setup(LevelController levelController)
     {
-        this.playerCharacter = playerCharacter;
+        this.playerCharacter = levelController.Player;
 
         skillSetupInfo = new SkillSetupInfo(playerCharacter, gameObject.transform);
 
@@ -47,11 +47,12 @@ public class PlayerSkillsController : MonoBehaviour
         mainSkill.SetupSkill(skillSetupInfo);
         secondSkill.SetupSkill(skillSetupInfo);
 
-        ammoSlot = playerCharacter.GameUiManager.AmmoSlot;
+        ammoSlot = levelController.GameUiManager.CharacterPanels.EquipmentWeaponSkillsPanel.EquipmentPanel.AmmoSlot;
 
         playerCharacter.Stats.OnDamage += StopSkillCasting;
         playerCharacter.Stats.OnDeath += StopSkillCasting;
-        playerCharacter.GameUiManager.OnTogglePanels += BindSkillToMouse;
+
+        levelController.GameUiManager.OnTogglePanels += BindSkillToMouse;
 
         GameManager.Instance.InputManager.InputController.Player.CancelAction.performed += ctx => StopSkillCasting();
         GameManager.Instance.InputManager.InputController.Player.MainSkill.performed += ctx => UseMainSkill();

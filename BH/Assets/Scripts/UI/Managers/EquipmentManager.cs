@@ -14,48 +14,32 @@ public class EquipmentManager : MonoBehaviour
 	[SerializeField] private QuestionDialog reallyDropItemDialog = null;
 	[SerializeField] private ItemOnMap itemOnMapPrefab = null;
 	[SerializeField] private Transform itemsDropParent = null;
-	[SerializeField] private WeaponSkillsPanel weaponSkillsPanel = null;
 
 	private BaseItemSlot dragItemSlot;
 
-	private GameUiManager gameUiManager;
-	private InventoryPanel inventory;
+	private TooltipsPanels tooltipsPanels;
+	private InventoryPanel inventoryPanel;
     private EquipmentPanel equipmentPanel;
+	private WeaponSkillsPanel weaponSkillsPanel;
 	private PlayerCharacter playerCharacter;
 	private ItemContainer openItemContainer;
 
-	public void Setup(GameUiManager gameUiManager, PlayerCharacter playerCharacter)
+	public void Setup(LevelController levelController)
     {
-		this.gameUiManager = gameUiManager;
-		this.playerCharacter = playerCharacter;
+		playerCharacter = levelController.Player;
+		inventoryPanel = levelController.GameUiManager.CharacterPanels.InventoryPanel;
+		equipmentPanel = levelController.GameUiManager.CharacterPanels.EquipmentWeaponSkillsPanel.EquipmentPanel;
+		weaponSkillsPanel = levelController.GameUiManager.CharacterPanels.EquipmentWeaponSkillsPanel.WeaponSkillsPanel;
+		tooltipsPanels = levelController.GameUiManager.TooltipsPanels;
 
-		inventory = gameUiManager.Inventory;
-		equipmentPanel = gameUiManager.EquipmentPanel;
-
-		weaponSkillsPanel.Setup(playerCharacter.PlayerSkillsController);
-
-        inventory.OnRightClickEvent += InventoryRightClick;
-        equipmentPanel.OnRightClickEvent += EquipmentPanelRightClick;
-        // Begin Drag
-        inventory.OnBeginDragEvent += BeginDrag;
-        equipmentPanel.OnBeginDragEvent += BeginDrag;
-        // End Drag
-        inventory.OnEndDragEvent += EndDrag;
-        equipmentPanel.OnEndDragEvent += EndDrag;
-        // Drag
-        inventory.OnDragEvent += Drag;
-        equipmentPanel.OnDragEvent += Drag;
-        // Drop
-        inventory.OnDropEvent += Drop;
-        equipmentPanel.OnDropEvent += Drop;
-        dropItemArea.OnDropEvent += DropItemOutsideUI;
+		SetupEvents();
     }
 
     public ItemTool GetItemTool(EItemToolType toolNeeded)
     {
-        if (!gameUiManager.ToolSlot.Item) return null;
+        if (!equipmentPanel.ToolSlot.Item) return null;
 
-        ItemTool tool = gameUiManager.ToolSlot.Item as ItemTool;
+        ItemTool tool = equipmentPanel.ToolSlot.Item as ItemTool;
         if (tool)
         {
             if (tool.ToolType == toolNeeded) return tool;
@@ -66,14 +50,14 @@ public class EquipmentManager : MonoBehaviour
 
     public void Equip(ItemEquippable item)
 	{
-		if (inventory.RemoveItem(item))
+		if (inventoryPanel.RemoveItem(item))
 		{
 			ItemEquippable previousItem;
 			if (equipmentPanel.AddItem(item, out previousItem))
 			{
 				if (previousItem != null)
 				{
-					inventory.AddItem(previousItem);
+					inventoryPanel.AddItem(previousItem);
 					previousItem.Unequip(playerCharacter);
 					weaponSkillsPanel.UnsetupWeaponSkills(previousItem);
 				}
@@ -82,7 +66,7 @@ public class EquipmentManager : MonoBehaviour
 			}
 			else
 			{
-				inventory.AddItem(item);
+				inventoryPanel.AddItem(item);
 			}
 		}
 		OnEquipmentChange();
@@ -90,11 +74,11 @@ public class EquipmentManager : MonoBehaviour
 
 	public void Unequip(ItemEquippable item)
 	{
-		if (inventory.CanAddItem(item) && equipmentPanel.RemoveItem(item))
+		if (inventoryPanel.CanAddItem(item) && equipmentPanel.RemoveItem(item))
 		{
 			item.Unequip(playerCharacter);
 			weaponSkillsPanel.UnsetupWeaponSkills(item);
-			inventory.AddItem(item);
+			inventoryPanel.AddItem(item);
 			OnEquipmentChange();
 		}
 	}
@@ -103,7 +87,7 @@ public class EquipmentManager : MonoBehaviour
     {
 		if (item != null)
 		{
-			bool addItem = inventory.AddItem(item);
+			bool addItem = inventoryPanel.AddItem(item);
 			return addItem;
 		}
 		return false;
@@ -113,13 +97,13 @@ public class EquipmentManager : MonoBehaviour
 	{
 		openItemContainer = itemContainer;
 
-		inventory.OnRightClickEvent -= InventoryRightClick;
-		inventory.OnRightClickEvent += TransferToItemContainer;
+		inventoryPanel.OnRightClickEvent -= InventoryRightClick;
+		inventoryPanel.OnRightClickEvent += TransferToItemContainer;
 
 		itemContainer.OnRightClickEvent += TransferToInventory;
 
-		itemContainer.OnPointerEnterEvent += gameUiManager.ShowTooltip;
-		itemContainer.OnPointerExitEvent += gameUiManager.HideTooltip;
+		itemContainer.OnPointerEnterEvent += tooltipsPanels.ShowItemTooltip;
+		itemContainer.OnPointerExitEvent += tooltipsPanels.HideItemTooltip;
 		itemContainer.OnBeginDragEvent += BeginDrag;
 		itemContainer.OnEndDragEvent += EndDrag;
 		itemContainer.OnDragEvent += Drag;
@@ -130,17 +114,36 @@ public class EquipmentManager : MonoBehaviour
 	{
 		openItemContainer = null;
 
-		inventory.OnRightClickEvent += InventoryRightClick;
-		inventory.OnRightClickEvent -= TransferToItemContainer;
+		inventoryPanel.OnRightClickEvent += InventoryRightClick;
+		inventoryPanel.OnRightClickEvent -= TransferToItemContainer;
 
 		itemContainer.OnRightClickEvent -= TransferToInventory;
 
-		itemContainer.OnPointerEnterEvent -= gameUiManager.ShowTooltip;
-		itemContainer.OnPointerExitEvent -= gameUiManager.HideTooltip;
+		itemContainer.OnPointerEnterEvent -= tooltipsPanels.ShowItemTooltip;
+		itemContainer.OnPointerExitEvent -= tooltipsPanels.HideItemTooltip;
 		itemContainer.OnBeginDragEvent -= BeginDrag;
 		itemContainer.OnEndDragEvent -= EndDrag;
 		itemContainer.OnDragEvent -= Drag;
 		itemContainer.OnDropEvent -= Drop;
+	}
+
+	private void SetupEvents()
+    {
+		inventoryPanel.OnRightClickEvent += InventoryRightClick;
+		equipmentPanel.OnRightClickEvent += EquipmentPanelRightClick;
+		// Begin Drag
+		inventoryPanel.OnBeginDragEvent += BeginDrag;
+		equipmentPanel.OnBeginDragEvent += BeginDrag;
+		// End Drag
+		inventoryPanel.OnEndDragEvent += EndDrag;
+		equipmentPanel.OnEndDragEvent += EndDrag;
+		// Drag
+		inventoryPanel.OnDragEvent += Drag;
+		equipmentPanel.OnDragEvent += Drag;
+		// Drop
+		inventoryPanel.OnDropEvent += Drop;
+		equipmentPanel.OnDropEvent += Drop;
+		dropItemArea.OnDropEvent += DropItemOutsideUI;
 	}
 
 
@@ -149,7 +152,7 @@ public class EquipmentManager : MonoBehaviour
 		Item item = itemSlot.Item;
 		if (item != null && openItemContainer.CanAddItem(item))
 		{
-			inventory.RemoveItem(item);
+			inventoryPanel.RemoveItem(item);
 			openItemContainer.AddItem(item);
 		}
 	}
@@ -157,10 +160,10 @@ public class EquipmentManager : MonoBehaviour
 	private void TransferToInventory(BaseItemSlot itemSlot)
 	{
 		Item item = itemSlot.Item;
-		if (item != null && inventory.CanAddItem(item))
+		if (item != null && inventoryPanel.CanAddItem(item))
 		{
 			openItemContainer.RemoveItem(item);
-			inventory.AddItem(item);
+			inventoryPanel.AddItem(item);
 		}
 	}
 

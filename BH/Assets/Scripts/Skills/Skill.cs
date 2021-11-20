@@ -45,6 +45,7 @@ public class Skill : ScriptableObject
 
         foreach (var offenseStatType in offenseStatsType)
         {
+            Debug.Log("debug: " + offenseStatsType.Length + " ofst " + offenseStatsType + " skillSetupInfo: " + skillSetupInfo);
             offenseStatType.SetOffenseStat(skillSetupInfo.UserStats.GetStat(offenseStatType.StatType));
         }
     }

@@ -19,8 +19,8 @@ public class CraftingsPanels : MonoBehaviour
     {
         foreach (var craftPanel in craftingPanels)
         {
-            craftPanel.OnPointerEnterEvent += gameUiManager.ShowTooltip;
-            craftPanel.OnPointerExitEvent += gameUiManager.HideTooltip;
+            craftPanel.OnPointerEnterEvent += gameUiManager.TooltipsPanels.ShowItemTooltip;
+            craftPanel.OnPointerExitEvent += gameUiManager.TooltipsPanels.HideItemTooltip;
         }
     }
 }
