@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,7 @@ public class PlayerActionController : MonoBehaviour
     [SerializeField] private float interactionRange = 1;
     [SerializeField] private LayerMask interactionObjectLayer;
 
+    private BuildingBuilderManager buildingBuilderManager;
     private EquipmentManager equipmentManager;
     private PlayerCharacter playerCharacter;
     private float baseTimetoNextInteraction;
@@ -26,12 +28,13 @@ public class PlayerActionController : MonoBehaviour
     private void Update()
     {
         CalculateTimeToNextInteraction();
-        InteractionWithObjectOnMap();
+        InteractionInit();
     }
 
-    public void Init(EquipmentManager equipmentManager, PlayerCharacter playerCharacter)
+    public void Setup(LocalManagers localManagers, PlayerCharacter playerCharacter)
     {
-        this.equipmentManager = equipmentManager;
+        this.equipmentManager = localManagers.EquipmentManager;
+        this.buildingBuilderManager = localManagers.BuildingBuilder;
         this.playerCharacter = playerCharacter;
     }
 
@@ -59,11 +62,11 @@ public class PlayerActionController : MonoBehaviour
         interactionOnMap = interaction > 0 ? true : false;
     }
 
-    private void InteractionWithObjectOnMap()
+    private void InteractionInit()
     {
         if (timeToNextInteraction > 0 || !interactionOnMap) return;
 
-        if(interactionOnMap)
+        if (interactionOnMap)
         {
             timeToNextInteraction = baseTimetoNextInteraction;
             Interaction();
@@ -72,14 +75,28 @@ public class PlayerActionController : MonoBehaviour
 
     private void Interaction()
     {
+        if (buildingBuilderManager.BuildingSelected)
+        {
+            BuildingBuild();
+            return;
+        }
+
         Collider2D[] objectOnRange = Physics2D.OverlapCircleAll(interactionPointer.position, interactionRange, interactionObjectLayer);
         foreach (var obj in objectOnRange)
         {
-           if(obj.TryGetComponent(out BaseObjectOnMap objectOnMap))
+            if (obj.TryGetComponent(out BaseObjectOnMap objectOnMap))
             {
                 objectOnMap.InteractionOnWorldMap(equipmentManager);
                 return;
             }
+        }
+    }
+
+    private void BuildingBuild()
+    {
+        if (buildingBuilderManager.Build())
+        {
+            buildingBuilderManager.DeselectedBuilding();
         }
     }
 

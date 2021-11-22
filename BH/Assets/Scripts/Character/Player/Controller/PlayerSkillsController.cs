@@ -139,10 +139,13 @@ public class PlayerSkillsController : MonoBehaviour
 
     public void StopSkillCasting()
     {
-        Debug.Log("StopCasting");
-        StopCoroutine(castSkill);
-        SetTimeBlockAction(0, true);
-        playerCharacter.MoveController.SetTimeBlockMove(0, true);
+        if(castSkill != null)
+        {
+            Debug.Log("StopCasting");
+            StopCoroutine(castSkill);
+            SetTimeBlockAction(0, true);
+            playerCharacter.MoveController.SetTimeBlockMove(0, true);
+        }
     }
 
     private bool HasAmmo(Skill skill, bool useAmmo = false)

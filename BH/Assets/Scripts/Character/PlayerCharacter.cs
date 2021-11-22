@@ -8,7 +8,6 @@ public class PlayerCharacter : Character
 
 	[SerializeField] private PlayerActionController playerActionController = null;
 	[SerializeField] private PlayerSkillsController playerSkillsController = null;
-	[SerializeField] private EquipmentManager equipmentManager = null;
 
 	public void SetupCharacter(LevelController levelController)
 	{
@@ -18,7 +17,7 @@ public class PlayerCharacter : Character
 		if(!Stats) stats = gameObject.GetComponent<Stats>();
 		this.Stats.Init();
 
-		playerActionController.Init(equipmentManager, this);
+		playerActionController.Setup(levelController.LocalManagers, this);
 		moveController.Init(this);
 		playerSkillsController.Setup(levelController);
 

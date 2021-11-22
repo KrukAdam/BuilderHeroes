@@ -2959,6 +2959,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a2ac7834cd6ecb4ca508d300944339a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buildBlockingLayers:
+    serializedVersion: 2
+    m_Bits: 8144
+  constructionPrefab: {fileID: 5938319044134626738, guid: 089c2f936acaf6a428666ab488a25456, type: 3}
   buildingsDatas:
   - {fileID: 11400000, guid: 52af111897d712241af5269aed9760ab, type: 2}
   - {fileID: 11400000, guid: 01816f6fcc8c18542ade7c512a7038b3, type: 2}
@@ -10509,7 +10513,6 @@ MonoBehaviour:
   moveController: {fileID: 1631126492}
   playerActionController: {fileID: 1631126494}
   playerSkillsController: {fileID: 1631126499}
-  equipmentManager: {fileID: 1132674438}
 --- !u!114 &1631126497
 MonoBehaviour:
   m_ObjectHideFlags: 0
