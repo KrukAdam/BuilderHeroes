@@ -37,11 +37,11 @@ public class BuildingBlueprint : MonoBehaviour
         this.interactionPointer = interactionPointer;
         layerMaskBlockingBuild = layerMask;
         spriteRenderer.sprite = building.Sprite;
-        spriteRenderer.sortingOrder = Constant.ContructionOrderLayer;
+        spriteRenderer.sortingOrder = Constant.BlueprintBuildingOrderLayer;
         size = building.Size;
-
         boxCollider.size = size;
         SetHalfSize();
+        SetSpritePosition();
     }
 
     public bool CanBuild()
@@ -64,22 +64,22 @@ public class BuildingBlueprint : MonoBehaviour
         {
             if(interactionPointer.localPosition.x > 0)
             {
-                contructPos.x = interactionPointer.localPosition.x + halfSize.x;
+                contructPos.x += halfSize.x;
             }
             else
             {
-                contructPos.x = interactionPointer.localPosition.x - halfSize.x;
+                contructPos.x -= halfSize.x;
             }
         }
         else if (interactionPointer.localPosition.y != 0)
         {
             if (interactionPointer.localPosition.y > 0)
             {
-                contructPos.y = interactionPointer.localPosition.y + halfSize.y;
+                contructPos.y += halfSize.y;
             }
             else
             {
-                contructPos.y = interactionPointer.localPosition.y - halfSize.y;
+                contructPos.y -= halfSize.y;
             }
         }
         transform.localPosition = contructPos;
@@ -90,11 +90,27 @@ public class BuildingBlueprint : MonoBehaviour
         halfSize = Vector2.zero;
         if(size.x >= 0)
         {
-            halfSize.x = size.x / 2;
+            halfSize.x = (float)size.x / 2;
         }
         if (size.y >= 0)
         {
-            halfSize.y = size.y / 2;
+            halfSize.y = (float)size.y / 2;
         }
+    }
+
+    private void SetSpritePosition()
+    {
+        float yPos = size.x - size.y;
+        if (yPos <= 0)
+        {
+            yPos = 0.45f;
+        }
+        else
+        {
+            yPos = yPos / 2;
+        }
+
+        Vector2 pos = new Vector2(0, yPos);
+        spriteRenderer.gameObject.transform.localPosition = pos;
     }
 }

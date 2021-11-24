@@ -2963,9 +2963,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4048
   buildingBlueprintPrefab: {fileID: 5938319044134626738, guid: 089c2f936acaf6a428666ab488a25456, type: 3}
+  constructionPrefab: {fileID: 5879383826086817770, guid: d49c1bc1bef88b34b852d4328236fae2, type: 3}
   buildingsDatas:
   - {fileID: 11400000, guid: 52af111897d712241af5269aed9760ab, type: 2}
   - {fileID: 11400000, guid: 01816f6fcc8c18542ade7c512a7038b3, type: 2}
+  buildingsParent: {fileID: 1518286246}
 --- !u!4 &672937804
 Transform:
   m_ObjectHideFlags: 0
@@ -2977,7 +2979,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1518286246}
   m_Father: {fileID: 206176852}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10258,6 +10261,37 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ac5602f730f0be4997f93dab386d3bf, type: 3}
+--- !u!1 &1518286245
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1518286246}
+  m_Layer: 0
+  m_Name: BuildingsParent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1518286246
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1518286245}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 672937804}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1520058581
 PrefabInstance:
   m_ObjectHideFlags: 0

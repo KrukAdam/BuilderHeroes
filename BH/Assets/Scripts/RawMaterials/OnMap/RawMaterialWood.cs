@@ -11,7 +11,7 @@ public class RawMaterialWood : RawMaterial
     protected override void SetOrderLayer()
     {
         base.SetOrderLayer();
-        treeBranches.sortingOrder = Constant.PlayerStartOrderLayer - (int)transform.position.y + 1;
+        treeBranches.sortingOrder = Constant.BaseStartOrderLayer - (int)transform.position.y + 1;
     }
 
     protected override void SetSprite()

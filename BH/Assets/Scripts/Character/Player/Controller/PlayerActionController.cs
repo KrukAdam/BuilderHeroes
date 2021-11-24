@@ -78,7 +78,7 @@ public class PlayerActionController : MonoBehaviour
     {
         if (buildingBuilderManager.BuildingSelected)
         {
-            BuildingBuild();
+            buildingBuilderManager.Build();
             return;
         }
 
@@ -90,14 +90,6 @@ public class PlayerActionController : MonoBehaviour
                 objectOnMap.InteractionOnWorldMap(equipmentManager);
                 return;
             }
-        }
-    }
-
-    private void BuildingBuild()
-    {
-        if (buildingBuilderManager.Build())
-        {
-            buildingBuilderManager.DeselectedBuilding();
         }
     }
 

@@ -34,7 +34,7 @@ public class PlayerMovementController : MoveController
     private void Start()
     {
         currentDirection = Vector2.zero;
-        playerOrderLayer = Constant.PlayerStartOrderLayer;
+        playerOrderLayer = Constant.BaseStartOrderLayer;
 
         GameManager.Instance.InputManager.InputController.Player.HorizontalMove.performed += ctx => MoveHorizontal(ctx.ReadValue<float>());
         GameManager.Instance.InputManager.InputController.Player.VerticalMove.performed += ctx => MoveVertical(ctx.ReadValue<float>());

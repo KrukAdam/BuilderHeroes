@@ -5,14 +5,13 @@ using UnityEngine;
 
 public class BuildingBuilderManager : MonoBehaviour
 {
-    //public event Action OnSelectedBuilding = delegate { };
-    //public event Action OnDeselectedBuilding = delegate { };
-
-    public bool BuildingSelected => buildingSelected;
+    public bool BuildingSelected => blueprintSelected;
 
     [SerializeField] private LayerMask buildBlockingLayers = LayerMask.GetMask();
     [SerializeField] private BuildingBlueprint buildingBlueprintPrefab = null;
+    [SerializeField] private Construction constructionPrefab = null;
     [SerializeField] private BuildingsData[] buildingsDatas = null;
+    [SerializeField] private Transform buildingsParent = null;
 
     private LocalManagers localManagers;
     private Dictionary<ERaceType, BuildingsData> buildingsDictionary = new Dictionary<ERaceType, BuildingsData>();
@@ -20,7 +19,8 @@ public class BuildingBuilderManager : MonoBehaviour
     private Transform interactionPointer;
     private Building selectedBuilding;
     private BuildingBlueprint buildingBlueprint;
-    private bool buildingSelected = false;
+    private Construction construction;
+    private bool blueprintSelected = false;
 
     public void Setup(LevelController levelController)
     {
@@ -41,22 +41,34 @@ public class BuildingBuilderManager : MonoBehaviour
         selectedBuilding = building;
         buildingBlueprint = Instantiate(buildingBlueprintPrefab, interactionPointer);
         buildingBlueprint.Setup(selectedBuilding, interactionPointer, buildBlockingLayers);
-        buildingSelected = true;
+        blueprintSelected = true;
     }
 
     public void DeselectedBuilding()
     {
-        if (buildingSelected)
+        if (blueprintSelected)
         {
-            buildingSelected = false;
+            blueprintSelected = false;
             Destroy(buildingBlueprint.gameObject);
             selectedBuilding = null;
         }
     }
 
-    public bool Build()
+    public void Build()
     {
-        return buildingBlueprint.CanBuild();
+        if (buildingBlueprint.CanBuild())
+        {
+            //TODO take resources
+            construction = Instantiate(constructionPrefab, buildingsParent);
+            construction.transform.position = buildingBlueprint.transform.position;
+            construction.Setup(selectedBuilding);
+
+            DeselectedBuilding();
+        }
+        else
+        {
+            //TODO info why cant build
+        }
     }
 
     private void SetupBuildingsDictionary()

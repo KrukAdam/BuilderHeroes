@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: IronWorks
   m_EditorClassIdentifier: 
   buildingName: IronWorks
-  sprite: {fileID: 21300000, guid: c086c708aa0f6704c92e2400bcedc7f1, type: 3}
-  size: {x: 3, y: 3}
+  sprite: {fileID: 21300000, guid: 39e2377242f674c46b6b0b41a95374da, type: 3}
+  size: {x: 3, y: 2}

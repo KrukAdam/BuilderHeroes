@@ -11,9 +11,10 @@ public static class Constant
     public static int HighCollidersOrderLayer = -9994;
 
     public static int ItemOnMapOrderLayer = 10010;
-    public static int PlayerStartOrderLayer = 10020;
+    public static int BaseStartOrderLayer = 10020;
     public static int MissileStartOrderLayer = 10021;
-    public static int ContructionOrderLayer = 32760;
+    public static int BlueprintBuildingOrderLayer = 32760;
+
 
     //LAYER MASK ID
     public static int LowLayerColliders = 10;  
