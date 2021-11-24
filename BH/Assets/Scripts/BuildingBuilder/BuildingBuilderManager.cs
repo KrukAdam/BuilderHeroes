@@ -11,7 +11,7 @@ public class BuildingBuilderManager : MonoBehaviour
     public bool BuildingSelected => buildingSelected;
 
     [SerializeField] private LayerMask buildBlockingLayers = LayerMask.GetMask();
-    [SerializeField] private Construction constructionPrefab = null;
+    [SerializeField] private BuildingBlueprint buildingBlueprintPrefab = null;
     [SerializeField] private BuildingsData[] buildingsDatas = null;
 
     private LocalManagers localManagers;
@@ -19,7 +19,7 @@ public class BuildingBuilderManager : MonoBehaviour
     private CityBuilderPanels cityBuilderPanels;
     private Transform interactionPointer;
     private Building selectedBuilding;
-    private Construction construction;
+    private BuildingBlueprint buildingBlueprint;
     private bool buildingSelected = false;
 
     public void Setup(LevelController levelController)
@@ -37,9 +37,10 @@ public class BuildingBuilderManager : MonoBehaviour
     {
         if (selectedBuilding == building) return;
 
+        DeselectedBuilding();
         selectedBuilding = building;
-        construction = Instantiate(constructionPrefab, interactionPointer);
-        construction.Setup(selectedBuilding, interactionPointer, buildBlockingLayers);
+        buildingBlueprint = Instantiate(buildingBlueprintPrefab, interactionPointer);
+        buildingBlueprint.Setup(selectedBuilding, interactionPointer, buildBlockingLayers);
         buildingSelected = true;
     }
 
@@ -48,14 +49,14 @@ public class BuildingBuilderManager : MonoBehaviour
         if (buildingSelected)
         {
             buildingSelected = false;
-            Destroy(construction.gameObject);
+            Destroy(buildingBlueprint.gameObject);
             selectedBuilding = null;
         }
     }
 
     public bool Build()
     {
-        return construction.CanBuild();
+        return buildingBlueprint.CanBuild();
     }
 
     private void SetupBuildingsDictionary()

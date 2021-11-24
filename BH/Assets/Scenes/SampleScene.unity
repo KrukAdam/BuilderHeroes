@@ -2962,7 +2962,7 @@ MonoBehaviour:
   buildBlockingLayers:
     serializedVersion: 2
     m_Bits: 4048
-  constructionPrefab: {fileID: 5938319044134626738, guid: 089c2f936acaf6a428666ab488a25456, type: 3}
+  buildingBlueprintPrefab: {fileID: 5938319044134626738, guid: 089c2f936acaf6a428666ab488a25456, type: 3}
   buildingsDatas:
   - {fileID: 11400000, guid: 52af111897d712241af5269aed9760ab, type: 2}
   - {fileID: 11400000, guid: 01816f6fcc8c18542ade7c512a7038b3, type: 2}
