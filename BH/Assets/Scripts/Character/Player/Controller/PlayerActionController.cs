@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlayerActionController : MonoBehaviour
 {
+
     public Transform InteractionPointer { get => interactionPointer; }
 
     [SerializeField] private float timeToNextInteraction = 1;

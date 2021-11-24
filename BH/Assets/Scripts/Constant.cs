@@ -1,7 +1,9 @@
 
 public static class Constant
 {
+
     //Sorting layer
+    //Max 32767;
     //Map start position > y = 0 but position map  < y = 9999 
     public static int GroundOrderLayer = -9999;
     public static int GroundOverlayOrderLayer = -9990;
@@ -11,6 +13,7 @@ public static class Constant
     public static int ItemOnMapOrderLayer = 10010;
     public static int PlayerStartOrderLayer = 10020;
     public static int MissileStartOrderLayer = 10021;
+    public static int ContructionOrderLayer = 32760;
 
     //LAYER MASK ID
     public static int LowLayerColliders = 10;  

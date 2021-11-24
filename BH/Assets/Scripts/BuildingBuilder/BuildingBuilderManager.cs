@@ -39,7 +39,7 @@ public class BuildingBuilderManager : MonoBehaviour
 
         selectedBuilding = building;
         construction = Instantiate(constructionPrefab, interactionPointer);
-        construction.Setup(selectedBuilding);
+        construction.Setup(selectedBuilding, interactionPointer, buildBlockingLayers);
         buildingSelected = true;
     }
 
@@ -55,7 +55,7 @@ public class BuildingBuilderManager : MonoBehaviour
 
     public bool Build()
     {
-        return construction.CheckBuildSpace(buildBlockingLayers);
+        return construction.CanBuild();
     }
 
     private void SetupBuildingsDictionary()
