@@ -6,9 +6,9 @@ public class ItemOnMap : BaseObjectOnMap
 {
     private Item item;
 
-    public override void InteractionOnWorldMap(EquipmentManager equipmentManager)
+    public override void InteractionOnWorldMap(LocalController localController)
     {
-        PickUp(equipmentManager);
+        PickUp(localController.LocalManagers.EquipmentManager);
     }
 
     public void Setup(BaseItemSlot slot)

@@ -11,9 +11,9 @@ public class LocalManagers : MonoBehaviour
     [SerializeField] private BuildingBuilderManager buildingBuilder = null;
 
 
-    public void SetupManagers(LevelController levelController)
+    public void SetupManagers(LocalController localController)
     {
-        EquipmentManager.Setup(levelController);
-        BuildingBuilder.Setup(levelController);
+        EquipmentManager.Setup(localController);
+        BuildingBuilder.Setup(localController);
     }
 }

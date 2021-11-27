@@ -13,7 +13,6 @@ public class BuildingBuilderManager : MonoBehaviour
     [SerializeField] private BuildingsData[] buildingsDatas = null;
     [SerializeField] private Transform buildingsParent = null;
 
-    private LocalManagers localManagers;
     private Dictionary<ERaceType, BuildingsData> buildingsDictionary = new Dictionary<ERaceType, BuildingsData>();
     private CityBuilderPanels cityBuilderPanels;
     private Transform interactionPointer;
@@ -22,7 +21,7 @@ public class BuildingBuilderManager : MonoBehaviour
     private Construction construction;
     private bool blueprintSelected = false;
 
-    public void Setup(LevelController levelController)
+    public void Setup(LocalController levelController)
     {
         cityBuilderPanels = levelController.GameUiManager.CityBuilderPanels;
         interactionPointer = levelController.Player.PlayerActionController.InteractionPointer;

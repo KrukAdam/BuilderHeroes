@@ -4,23 +4,36 @@ using UnityEngine;
 
 public class CraftingsPanels : MonoBehaviour
 {
-    [SerializeField] private CraftingPanel[] craftingPanels = null;
+    [SerializeField] private CraftingPanel craftingPanel = null;
+    [SerializeField] private BasicButton buttonClose = null;
 
     private GameUiManager gameUiManager;
 
-    public void Setup(LevelController levelController)
+    public void Setup(LocalController localController)
     {
-        gameUiManager = levelController.GameUiManager;
+        gameUiManager = localController.GameUiManager;
 
-        InitCraftingPanels();
+        craftingPanel.Setup(localController.GameUiManager.CharacterPanels.InventoryPanel);
+        craftingPanel.OnPointerEnterEvent += gameUiManager.TooltipsPanels.ShowItemTooltip;
+        craftingPanel.OnPointerExitEvent += gameUiManager.TooltipsPanels.HideItemTooltip;
+
+        buttonClose.SetupListener(ToggleCraftingPanel);
     }
 
-    private void InitCraftingPanels()
+    public void OnOpenCraftingPanel(Building building)
     {
-        foreach (var craftPanel in craftingPanels)
-        {
-            craftPanel.OnPointerEnterEvent += gameUiManager.TooltipsPanels.ShowItemTooltip;
-            craftPanel.OnPointerExitEvent += gameUiManager.TooltipsPanels.HideItemTooltip;
-        }
+        craftingPanel.OnOpen(building);
+    }
+
+    public void ToggleCraftingPanel()
+    {
+        bool isActive = !craftingPanel.gameObject.activeSelf;
+        craftingPanel.gameObject.SetActive(isActive);
+        buttonClose.gameObject.SetActive(isActive);
+    }
+
+    public bool CheckActivePanels()
+    {
+        return craftingPanel.gameObject.activeSelf;
     }
 }

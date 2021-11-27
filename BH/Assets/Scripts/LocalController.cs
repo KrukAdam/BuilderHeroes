@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelController : MonoBehaviour
+public class LocalController : MonoBehaviour
 {
     public PlayerCharacter Player { get => player; }
     public GameUiManager GameUiManager { get => gameUiManager; }

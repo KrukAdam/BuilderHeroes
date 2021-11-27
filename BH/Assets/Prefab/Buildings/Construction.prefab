@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3639019046780534776}
   - component: {fileID: 3010268328207354379}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,9 +93,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8120407853759382983}
-  - component: {fileID: 3198197951511060076}
+  - component: {fileID: 918773336181421751}
   - component: {fileID: 5879383826086817770}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Construction
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,7 +118,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &3198197951511060076
+--- !u!61 &918773336181421751
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -157,4 +157,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 3010268328207354379}
-  boxCollider: {fileID: 3198197951511060076}
+  boxCollider: {fileID: 918773336181421751}

@@ -22,9 +22,9 @@ public class RawMaterial : BaseObjectOnMap
         SetSprite();
     }
 
-    public override void InteractionOnWorldMap(EquipmentManager equipmentManager)
+    public override void InteractionOnWorldMap(LocalController localController)
     {
-        toolNeeded = equipmentManager.GetItemTool(toolTypeNeeded);
+        toolNeeded = localController.LocalManagers.EquipmentManager.GetItemTool(toolTypeNeeded);
         if (toolNeeded)
         {
 

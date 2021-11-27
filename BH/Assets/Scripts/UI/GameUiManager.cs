@@ -17,27 +17,40 @@ public class GameUiManager : MonoBehaviour
     [SerializeField] private CharacterPanels characterPanels = null;
     [SerializeField] private CityBuilderPanels cityBuilderPanels = null;
 
-    private LevelController levelController;
-
-    public void Setup(LevelController levelController)
+    public void Setup(LocalController localController)
     {
-        this.levelController = levelController;
+        craftingsPanels.Setup(localController);
+        characterPanels.SetupPanel(localController);
+        cityBuilderPanels.Setup(localController);
 
-        craftingsPanels.Setup(levelController);
-        characterPanels.SetupPanel(levelController);
-        cityBuilderPanels.Setup(levelController);
-
-        TogglePanels();
         SetEvents();
+        TogglePanels();
 
         GameManager.Instance.InputManager.InputController.Player.CharacterAndInventory.performed += ctx => ToggleCharacterPanel();
         GameManager.Instance.InputManager.InputController.Player.BuildingBuilderPanel.performed += ctx => ToggleBuildingBuilderPanel();
+    }
+
+    public void OpenBuildingPanel(Building building)
+    {
+        switch (building.FunctionType)
+        {
+            case EBuildingFunctionType.None:
+                Debug.LogWarning("WORNG building function");
+                break;
+            case EBuildingFunctionType.Crafting:
+                CraftingsPanels.OnOpenCraftingPanel(building);
+                ToggleCraftingPanel();
+                break;
+            default:
+                break;
+        }
     }
 
     private void TogglePanels()
     {
         ToggleCharacterPanel();
         ToggleBuildingBuilderPanel();
+        ToggleCraftingPanel();
     }
 
     private void SetEvents()
@@ -53,21 +66,26 @@ public class GameUiManager : MonoBehaviour
     private void ToggleCharacterPanel()
     {
         CharacterPanels.ToggleCharacterInventoryPanels();
-        OnTogglePanels(!CheckForActivePanels());
+        OnTogglePanels(CheckForActivePanels());
     }
 
     private void ToggleBuildingBuilderPanel()
     {
         CityBuilderPanels.ToggleBuildingBuilderPanel();
-        OnTogglePanels(!CheckForActivePanels());
+        OnTogglePanels(CheckForActivePanels());
+    }
+
+    private void ToggleCraftingPanel()
+    {
+        CraftingsPanels.ToggleCraftingPanel();
+        OnTogglePanels(CheckForActivePanels());
     }
 
     private bool CheckForActivePanels()
     {
         if (CharacterPanels.CheckActivePanels()) return true;
         if (CityBuilderPanels.CheckActivePanels()) return true;
-
-        //TODo check crafting panels
+        if (CraftingsPanels.CheckActivePanels()) return true;
 
         return false;
     }

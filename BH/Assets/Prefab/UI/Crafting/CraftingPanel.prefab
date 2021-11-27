@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 114053465783647658}
   - component: {fileID: 114683399692370012}
   m_Layer: 5
-  m_Name: Crafting Window
+  m_Name: CraftingPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,6 +29,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 224635166974867556}
   m_Father: {fileID: 0}
@@ -89,21 +90,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dd09f014ddaa2d418dbe90a2f78235e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  recipeUIPrefab: {fileID: 1193295343686170, guid: d5f3f05f9c5d35247a48de4c4c3c9707, type: 3}
+  recipeUIPrefab: {fileID: 114960904808507894, guid: d5f3f05f9c5d35247a48de4c4c3c9707, type: 3}
+  startInstantiateRecipe: 10
   recipeUIParent: {fileID: 224480952142348832}
-  craftingRecipeUIs: []
-  ItemContainer: {fileID: 0}
-  CraftingRecipes:
-  - {fileID: 11400000, guid: 3c340cee6299c6a41961743f04ab7b07, type: 2}
-  - {fileID: 11400000, guid: 3dfa6355f20ae994fb53a503a9532c84, type: 2}
-  - {fileID: 11400000, guid: d5f25970e9d95834186ac9c295b1bf47, type: 2}
-  - {fileID: 11400000, guid: c3926677764b6544486068f98553eae1, type: 2}
-  - {fileID: 11400000, guid: f536f9e89703546498e22cb43810c469, type: 2}
-  - {fileID: 11400000, guid: d90b313c569628549a97bae4b967ed01, type: 2}
-  - {fileID: 11400000, guid: ec25c63a501f47c458a101857dd82235, type: 2}
-  - {fileID: 11400000, guid: c7c968777cbbb194eb6783659e6b305d, type: 2}
-  - {fileID: 11400000, guid: 93c39a07e2ae46b4b963a0ec4a37b3a0, type: 2}
-  - {fileID: 11400000, guid: f6fc6cb2038385a4d9a9029036007c18, type: 2}
 --- !u!1 &1075366395865018
 GameObject:
   m_ObjectHideFlags: 0
@@ -133,6 +122,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 224480952142348832}
   m_Father: {fileID: 224635166974867556}
@@ -220,6 +210,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 224066662381947138}
   m_Father: {fileID: 224891995630342214}
@@ -259,6 +250,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 224461012054834696}
   m_Father: {fileID: 224635166974867556}
@@ -384,6 +376,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 224461012054834696}
   m_RootOrder: 0
@@ -459,6 +452,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 224016169106853982}
   m_RootOrder: 0
@@ -535,6 +529,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 224016169106853982}
   - {fileID: 224891995630342214}

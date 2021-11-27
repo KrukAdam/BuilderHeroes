@@ -13,8 +13,7 @@ public class PlayerActionController : MonoBehaviour
     [SerializeField] private float interactionRange = 1;
     [SerializeField] private LayerMask interactionObjectLayer;
 
-    private BuildingBuilderManager buildingBuilderManager;
-    private EquipmentManager equipmentManager;
+    private LocalController localController;
     private PlayerCharacter playerCharacter;
     private float baseTimetoNextInteraction;
     private bool interactionOnMap = false;
@@ -32,10 +31,9 @@ public class PlayerActionController : MonoBehaviour
         InteractionInit();
     }
 
-    public void Setup(LocalManagers localManagers, PlayerCharacter playerCharacter)
+    public void Setup(LocalController localController, PlayerCharacter playerCharacter)
     {
-        this.equipmentManager = localManagers.EquipmentManager;
-        this.buildingBuilderManager = localManagers.BuildingBuilder;
+        this.localController = localController;
         this.playerCharacter = playerCharacter;
     }
 
@@ -76,18 +74,18 @@ public class PlayerActionController : MonoBehaviour
 
     private void Interaction()
     {
-        if (buildingBuilderManager.BuildingSelected)
+        if (localController.LocalManagers.BuildingBuilder.BuildingSelected)
         {
-            buildingBuilderManager.Build();
+            localController.LocalManagers.BuildingBuilder.Build();
             return;
         }
 
         Collider2D[] objectOnRange = Physics2D.OverlapCircleAll(interactionPointer.position, interactionRange, interactionObjectLayer);
         foreach (var obj in objectOnRange)
         {
-            if (obj.TryGetComponent(out BaseObjectOnMap objectOnMap))
+            if (obj.TryGetComponent(out IObjectOnMap objectOnMap))
             {
-                objectOnMap.InteractionOnWorldMap(equipmentManager);
+                objectOnMap.InteractionOnWorldMap(localController);
                 return;
             }
         }

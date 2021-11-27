@@ -4,24 +4,21 @@ using UnityEngine;
 
 public class CraftingRecipeUI : MonoBehaviour
 {
-	[Header("References")]
-	[SerializeField] RectTransform arrowParent;
-	[SerializeField] BaseItemSlot[] itemSlots;
-
-	[Header("Public Variables")]
-	public ItemContainer ItemContainer;
-
-	private CraftingRecipe craftingRecipe;
-	public CraftingRecipe CraftingRecipe {
-		get { return craftingRecipe; }
-		set { SetCraftingRecipe(value); }
-	}
 
 	public event Action<BaseItemSlot> OnPointerEnterEvent;
 	public event Action<BaseItemSlot> OnPointerExitEvent;
 
-	private void Start()
-	{
+	[SerializeField] private RectTransform arrowParent;
+	[SerializeField] private BaseItemSlot[] itemSlots;
+
+	private CraftingRecipe craftingRecipe;
+	private ItemContainer itemContainer;
+
+	public void Setup(CraftingRecipe craftingRecipe, ItemContainer itemContainer)
+    {
+		this.itemContainer = itemContainer;
+		SetCraftingRecipe(craftingRecipe);
+
 		foreach (BaseItemSlot itemSlot in itemSlots)
 		{
 			itemSlot.OnPointerEnterEvent += slot => OnPointerEnterEvent(slot);
@@ -31,9 +28,9 @@ public class CraftingRecipeUI : MonoBehaviour
 
 	public void OnCraftButtonClick()
 	{
-		if (craftingRecipe != null && ItemContainer != null)
+		if (craftingRecipe != null && itemContainer != null)
 		{
-			craftingRecipe.Craft(ItemContainer);
+			craftingRecipe.Craft(itemContainer);
 		}
 	}
 

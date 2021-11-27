@@ -2,5 +2,5 @@
 
 public interface IObjectOnMap
 {
-    public void InteractionOnWorldMap(EquipmentManager equipmentManager);
+    public void InteractionOnWorldMap(LocalController localController);
 }

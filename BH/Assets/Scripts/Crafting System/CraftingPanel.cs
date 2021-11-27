@@ -4,52 +4,74 @@ using UnityEngine;
 
 public class CraftingPanel : MonoBehaviour
 {
+    public event Action<BaseItemSlot> OnPointerEnterEvent;
+    public event Action<BaseItemSlot> OnPointerExitEvent;
 
-	public event Action<BaseItemSlot> OnPointerEnterEvent;
-	public event Action<BaseItemSlot> OnPointerExitEvent;
+    [Header("References")]
+    [SerializeField] private CraftingRecipeUI recipeUIPrefab = null;
+    [SerializeField] private int startInstantiateRecipe = 10;
+    [SerializeField] private RectTransform recipeUIParent = null;
 
-	[Header("References")]
-	[SerializeField] private GameObject recipeUIPrefab;
-	[SerializeField] private RectTransform recipeUIParent;
-	[SerializeField] private ItemContainer itemContainer;
-	[SerializeField] private List<CraftingRecipe> craftingRecipes;
-	[SerializeField] private List<CraftingRecipeUI> craftingRecipesUI;
+    private ItemContainer itemContainer;
+    private List<CraftingRecipe> craftingRecipes = new List<CraftingRecipe>();
+    private List<CraftingRecipeUI> craftingRecipesUI = new List<CraftingRecipeUI>();
+    private BuildingCraft buildingCraft;
 
-	public void OnOpenPanel()
+    public void Setup(ItemContainer itemContainer)
     {
-		//recipeUIParent.GetComponentsInChildren<CraftingRecipeUI>(includeInactive: true, result: craftingRecipeUIs);
-		UpdateCraftingRecipes();
+        this.itemContainer = itemContainer;
+        InstantiateRecipesUi();
+    }
 
-		foreach (CraftingRecipeUI craftingRecipeUI in craftingRecipesUI)
-		{
-			craftingRecipeUI.OnPointerEnterEvent += slot => OnPointerEnterEvent(slot);
-			craftingRecipeUI.OnPointerExitEvent += slot => OnPointerExitEvent(slot);
-		}
-	}
+    public void OnOpen(Building building)
+    {
+        buildingCraft = building as BuildingCraft;
+        if (!buildingCraft) return;
 
-	public void UpdateCraftingRecipes()
-	{
-		for (int i = 0; i < craftingRecipes.Count; i++)
-		{
-			//if (craftingRecipeUIs.Count == i)
-			//{
-			//	craftingRecipeUIs.Add(Instantiate(recipeUIPrefab, recipeUIParent, false));
-			//}
-			//else if (craftingRecipeUIs[i] == null)
-			//{
-			//	craftingRecipeUIs[i] = Instantiate(recipeUIPrefab, recipeUIParent, false);
-			//}
+        craftingRecipes = buildingCraft.CraftingRecipeData.CraftingRecipes;
 
-		    GameObject uiRecipleObj = Instantiate(recipeUIPrefab, recipeUIParent, false);
-			craftingRecipesUI.Add(uiRecipleObj.GetComponent<CraftingRecipeUI>());
-			Debug.Log(craftingRecipesUI[i] + "    " + itemContainer);
-			craftingRecipesUI[i].ItemContainer = itemContainer;
-			craftingRecipesUI[i].CraftingRecipe = craftingRecipes[i];
-		}
+        OffRecipesUi();
+        SetAndOnRecipes();
 
-		for (int i = craftingRecipes.Count; i < craftingRecipesUI.Count; i++)
-		{
-			craftingRecipesUI[i].CraftingRecipe = null;
-		}
-	}
+        foreach (CraftingRecipeUI craftingRecipeUI in craftingRecipesUI)
+        {
+            craftingRecipeUI.OnPointerEnterEvent += slot => OnPointerEnterEvent(slot);
+            craftingRecipeUI.OnPointerExitEvent += slot => OnPointerExitEvent(slot);
+        }
+    }
+
+    private void SetAndOnRecipes()
+    {
+        for (int i = 0; i < craftingRecipes.Count; i++)
+        {
+            if(craftingRecipesUI.Count <= i)
+            {
+                CraftingRecipeUI recipeUI = Instantiate(recipeUIPrefab, recipeUIParent);
+                craftingRecipesUI.Add(recipeUI);
+            }
+            craftingRecipesUI[i].gameObject.SetActive(true);
+            craftingRecipesUI[i].Setup(craftingRecipes[i], itemContainer);
+        }
+    }
+
+    private void InstantiateRecipesUi()
+    {
+        for (int i = 0; i < startInstantiateRecipe; i++)
+        {
+            CraftingRecipeUI recipeUI = Instantiate(recipeUIPrefab, recipeUIParent);
+            craftingRecipesUI.Add(recipeUI);
+            recipeUI.gameObject.SetActive(false);
+        }
+    }
+
+    private void OffRecipesUi()
+    {
+        foreach (var recipe in craftingRecipesUI)
+        {
+            if (recipe.gameObject.activeSelf)
+            {
+                recipe.gameObject.SetActive(false);
+            }
+        }
+    }
 }

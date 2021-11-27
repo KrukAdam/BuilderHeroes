@@ -12,7 +12,7 @@ public class StatsPanel : MonoBehaviour
 	private List<StatDisplay> statDisplays = new List<StatDisplay>();
     private Stats stats;
 
-	public void SetupPanel(LevelController levelController)
+	public void SetupPanel(LocalController levelController)
     {
         stats = levelController.Player.Stats;
         SetStats();
@@ -79,7 +79,7 @@ public class StatsPanel : MonoBehaviour
         }
 	}
 
-    private void SetupEvents(LevelController levelController)
+    private void SetupEvents(LocalController levelController)
     {
         levelController.LocalManagers.EquipmentManager.OnEquipmentChange += UpdateStatValues;
     }

@@ -1,4 +1,6 @@
 
+using UnityEngine;
+
 public static class Constant
 {
 
@@ -17,7 +19,8 @@ public static class Constant
 
 
     //LAYER MASK ID
-    public static int LowLayerColliders = 10;  
+    public static int LowLayerColliders = 10;
+    public static int HighLayerColliders = 11;
 
     //Stats
     public static int MinDamage = 1;

@@ -15,9 +15,9 @@ public class RawMaterialPartsOnMap : BaseObjectOnMap
         objectSpriteRenderer.sortingOrder = Constant.ItemOnMapOrderLayer - (int)transform.position.y;
     }
 
-    public override void InteractionOnWorldMap(EquipmentManager equipmentManager)
+    public override void InteractionOnWorldMap(LocalController localController)
     {
-        PickUp(equipmentManager);
+        PickUp(localController.LocalManagers.EquipmentManager);
     }
 
     private void PickUp(EquipmentManager equipmentManager)

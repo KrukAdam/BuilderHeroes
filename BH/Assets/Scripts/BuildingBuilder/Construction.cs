@@ -2,13 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Construction : MonoBehaviour
+public class Construction : MonoBehaviour, IObjectOnMap
 {
     [SerializeField] private SpriteRenderer spriteRenderer = null;
     [SerializeField] private BoxCollider2D boxCollider = null;
 
     private Building building;
     private Vector2Int size;
+
+    public void InteractionOnWorldMap(LocalController localController)
+    {
+        localController.GameUiManager.OpenBuildingPanel(building);
+    }
 
     public void Setup(Building building)
     {
@@ -18,6 +23,7 @@ public class Construction : MonoBehaviour
         spriteRenderer.sprite = building.Sprite;
         SetSpritePosition();
     }
+
 
     private void SetSpritePosition()
     {

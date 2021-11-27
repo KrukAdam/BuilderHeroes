@@ -24,7 +24,7 @@ public class EquipmentManager : MonoBehaviour
 	private PlayerCharacter playerCharacter;
 	private ItemContainer openItemContainer;
 
-	public void Setup(LevelController levelController)
+	public void Setup(LocalController levelController)
     {
 		playerCharacter = levelController.Player;
 		inventoryPanel = levelController.GameUiManager.CharacterPanels.InventoryPanel;

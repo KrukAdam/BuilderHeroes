@@ -10,7 +10,7 @@ public class EquipmentWeaponSkillsPanel : MonoBehaviour
     [SerializeField] private EquipmentPanel equipmentPanel = null;
     [SerializeField] private WeaponSkillsPanel weaponSkillsPanel = null;
 
-    public void Setup(LevelController levelController)
+    public void Setup(LocalController levelController)
     {
         EquipmentPanel.Setup();
         WeaponSkillsPanel.Setup(levelController.Player.PlayerSkillsController);

@@ -10,7 +10,7 @@ public class CityBuilderPanels : MonoBehaviour
 
     private GameUiManager gameUiManager;
 
-    public void Setup(LevelController levelController)
+    public void Setup(LocalController levelController)
     {
         gameUiManager = levelController.GameUiManager;
 

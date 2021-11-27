@@ -9,7 +9,7 @@ public class PlayerCharacter : Character
 	[SerializeField] private PlayerActionController playerActionController = null;
 	[SerializeField] private PlayerSkillsController playerSkillsController = null;
 
-	public void SetupCharacter(LevelController levelController)
+	public void SetupCharacter(LocalController localController)
 	{
 
 		SetupLayerMask(true);
@@ -17,10 +17,10 @@ public class PlayerCharacter : Character
 		if(!Stats) stats = gameObject.GetComponent<Stats>();
 		this.Stats.Init();
 
-		playerActionController.Setup(levelController.LocalManagers, this);
+		playerActionController.Setup(localController, this);
 		moveController.Init(this);
-		playerSkillsController.Setup(levelController);
+		playerSkillsController.Setup(localController);
 
-		Stats.OnStatsChange += levelController.GameUiManager.CharacterPanels.StatsPanel.UpdateStatValues;
+		Stats.OnStatsChange += localController.GameUiManager.CharacterPanels.StatsPanel.UpdateStatValues;
 	}
 }

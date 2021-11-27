@@ -12,7 +12,7 @@ public class BaseObjectOnMap : MonoBehaviour, IObjectOnMap
         if (!objectSpriteRenderer) objectSpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
     }
 
-    public virtual void InteractionOnWorldMap(EquipmentManager equipmentManager)
+    public virtual void InteractionOnWorldMap(LocalController localController)
     {
         throw new System.NotImplementedException();
     }

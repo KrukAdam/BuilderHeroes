@@ -35,7 +35,7 @@ public class PlayerSkillsController : MonoBehaviour
         }
     }
 
-    public void Setup(LevelController levelController)
+    public void Setup(LocalController levelController)
     {
         this.playerCharacter = levelController.Player;
 
@@ -73,10 +73,10 @@ public class PlayerSkillsController : MonoBehaviour
         secondSkill.SetupSkill(skillSetupInfo);
     }
 
-    public void BindSkillToMouse(bool bind)
+    public void BindSkillToMouse(bool panelsAreActive)
     {
-        Debug.Log("Use mouse to skill: " + bind);
-        if (bind)
+        Debug.Log("Use mouse to skill: " + panelsAreActive);
+        if (!panelsAreActive)
         {
             GameManager.Instance.InputManager.InputController.Player.MainSkill.Enable();
             GameManager.Instance.InputManager.InputController.Player.SecondSkill.Enable();
