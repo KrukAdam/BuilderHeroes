@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class CraftingsPanels : MonoBehaviour
 {
@@ -17,7 +18,7 @@ public class CraftingsPanels : MonoBehaviour
         craftingPanel.OnPointerEnterEvent += gameUiManager.TooltipsPanels.ShowItemTooltip;
         craftingPanel.OnPointerExitEvent += gameUiManager.TooltipsPanels.HideItemTooltip;
 
-        buttonClose.SetupListener(ToggleCraftingPanel);
+        buttonClose.SetupListener(gameUiManager.ToggleCraftingPanel);
     }
 
     public void OnOpenCraftingPanel(Building building)
@@ -25,15 +26,32 @@ public class CraftingsPanels : MonoBehaviour
         craftingPanel.OnOpen(building);
     }
 
-    public void ToggleCraftingPanel()
+    public void ToggleBuildingBuilderPanel()
     {
         bool isActive = !craftingPanel.gameObject.activeSelf;
         craftingPanel.gameObject.SetActive(isActive);
         buttonClose.gameObject.SetActive(isActive);
+
+        if (isActive)
+        {
+            GameManager.Instance.InputManager.InputController.Player.HorizontalMove.performed += ClosePanelsWhenMove;
+            GameManager.Instance.InputManager.InputController.Player.VerticalMove.performed += ClosePanelsWhenMove;
+        }
+        else
+        {
+            GameManager.Instance.InputManager.InputController.Player.HorizontalMove.performed -= ClosePanelsWhenMove;
+            GameManager.Instance.InputManager.InputController.Player.VerticalMove.performed -= ClosePanelsWhenMove;
+        }
     }
 
     public bool CheckActivePanels()
     {
         return craftingPanel.gameObject.activeSelf;
+    }
+
+    private void ClosePanelsWhenMove(InputAction.CallbackContext context)
+    {
+
+        gameUiManager.ToggleCraftingPanel();
     }
 }

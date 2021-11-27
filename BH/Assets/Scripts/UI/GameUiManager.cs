@@ -46,6 +46,24 @@ public class GameUiManager : MonoBehaviour
         }
     }
 
+    public void ToggleCharacterPanel()
+    {
+        CharacterPanels.ToggleCharacterInventoryPanels();
+        OnTogglePanels(CheckForActivePanels());
+    }
+
+    public void ToggleBuildingBuilderPanel()
+    {
+        CityBuilderPanels.ToggleBuildingBuilderPanel();
+        OnTogglePanels(CheckForActivePanels());
+    }
+
+    public void ToggleCraftingPanel()
+    {
+        CraftingsPanels.ToggleBuildingBuilderPanel();
+        OnTogglePanels(CheckForActivePanels());
+    }
+
     private void TogglePanels()
     {
         ToggleCharacterPanel();
@@ -61,24 +79,6 @@ public class GameUiManager : MonoBehaviour
         // Pointer Exit
         CharacterPanels.InventoryPanel.OnPointerExitEvent += TooltipsPanels.HideItemTooltip;
         CharacterPanels.EquipmentWeaponSkillsPanel.EquipmentPanel.OnPointerExitEvent += TooltipsPanels.HideItemTooltip;
-    }
-
-    private void ToggleCharacterPanel()
-    {
-        CharacterPanels.ToggleCharacterInventoryPanels();
-        OnTogglePanels(CheckForActivePanels());
-    }
-
-    private void ToggleBuildingBuilderPanel()
-    {
-        CityBuilderPanels.ToggleBuildingBuilderPanel();
-        OnTogglePanels(CheckForActivePanels());
-    }
-
-    private void ToggleCraftingPanel()
-    {
-        CraftingsPanels.ToggleCraftingPanel();
-        OnTogglePanels(CheckForActivePanels());
     }
 
     private bool CheckForActivePanels()
