@@ -6,6 +6,7 @@ public class CityBuilderPanels : MonoBehaviour
 {
     public BuildingBuilderPanel BuildingBuilderPanel { get => buildingBuilderPanel; }
 
+    [SerializeField] private BasicButton btnCloseBuilderPanel = null;
     [SerializeField] private BuildingBuilderPanel buildingBuilderPanel = null;
 
     private GameUiManager gameUiManager;
@@ -15,12 +16,15 @@ public class CityBuilderPanels : MonoBehaviour
         gameUiManager = levelController.GameUiManager;
 
         buildingBuilderPanel.Setup();
+        btnCloseBuilderPanel.SetupListener(gameUiManager.ToggleBuildingBuilderPanel);
     }
+
 
     public void ToggleBuildingBuilderPanel()
     {
         bool isActive = !BuildingBuilderPanel.gameObject.activeSelf;
         BuildingBuilderPanel.gameObject.SetActive(isActive);
+        btnCloseBuilderPanel.gameObject.SetActive(isActive);
     }
 
     public bool CheckActivePanels()
