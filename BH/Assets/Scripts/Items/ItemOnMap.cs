@@ -5,6 +5,7 @@ using UnityEngine;
 public class ItemOnMap : BaseObjectOnMap
 {
     private Item item;
+    private int amount;
 
     public override void InteractionOnWorldMap(LocalController localController)
     {
@@ -14,14 +15,16 @@ public class ItemOnMap : BaseObjectOnMap
     public void Setup(BaseItemSlot slot)
     {
         item = slot.Item.GetCopy();
+        amount = slot.Amount;
 
         objectSpriteRenderer.sprite = slot.Item.Icon;
         objectSpriteRenderer.sortingOrder = Constant.ItemOnMapOrderLayer - (int)transform.position.y;
     }
 
-    public void Setup(Item item)
+    public void Setup(Item item, int amount)
     {
         this.item = item.GetCopy();
+        this.amount = amount;
 
         objectSpriteRenderer.sprite = item.Icon;
         objectSpriteRenderer.sortingOrder = Constant.ItemOnMapOrderLayer - (int)transform.position.y;
@@ -29,8 +32,21 @@ public class ItemOnMap : BaseObjectOnMap
 
     private void PickUp(EquipmentManager equipmentManager)
     {
-        bool addItemToInventory = equipmentManager.AddItemToInventory(item);
-        if (addItemToInventory)
+        int itemPickUp = 0;
+        for (int i = 0; i < amount; i++)
+        {
+            if (equipmentManager.AddItemToInventory(item))
+            {
+                itemPickUp++;
+            }
+            else
+            {
+                break;
+            }
+        }
+        amount -= itemPickUp;
+       
+        if (amount <= 0)
         {
             Destroy(gameObject);
         }

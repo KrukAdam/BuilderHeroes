@@ -241,9 +241,9 @@ public class EquipmentManager : MonoBehaviour
 
 	private void DropItemOnMap(BaseItemSlot slot)
     {
-		GameObject itemOnMapGO = Instantiate(itemOnMapPrefab.gameObject, itemsDropParent);
-		itemOnMapGO.transform.position = playerCharacter.transform.position;
-		itemOnMapGO.GetComponent<ItemOnMap>().Setup(slot);
+		ItemOnMap itemOnMap = Instantiate(itemOnMapPrefab, itemsDropParent);
+		itemOnMap.transform.position = playerCharacter.transform.position;
+		itemOnMap.Setup(slot);
     }
 
 	private void AddStacks(BaseItemSlot dropItemSlot)

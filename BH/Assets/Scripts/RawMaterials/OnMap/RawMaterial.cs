@@ -66,12 +66,9 @@ public class RawMaterial : BaseObjectOnMap
             if (Random.Range(0f, 100f) <= item.DropChance)
             {
                 int numbersOfDroppedItems = Random.Range(1, item.DropMax);
-                for (int i = 0; i < numbersOfDroppedItems; i++)
-                {
-                    GameObject itemOnMapGO = Instantiate(itemOnMapPrefab.gameObject, itemsDropParent);
-                    itemOnMapGO.transform.position = transform.position;
-                    itemOnMapGO.GetComponent<ItemOnMap>().Setup(item.ItemDroppedPrefab);
-                }
+                GameObject itemOnMapGO = Instantiate(itemOnMapPrefab.gameObject, itemsDropParent);
+                itemOnMapGO.transform.position = transform.position;
+                itemOnMapGO.GetComponent<ItemOnMap>().Setup(item.ItemDroppedPrefab, numbersOfDroppedItems);
             }
         }
     }
@@ -85,6 +82,6 @@ public class RawMaterial : BaseObjectOnMap
     {
         if (!randomRawMaterialSprites || spritesRawMaterial == null || spritesRawMaterial.Length <= 0) return;
 
-        objectSpriteRenderer.sprite = spritesRawMaterial[Random.Range(0, spritesRawMaterial.Length-1)];
+        objectSpriteRenderer.sprite = spritesRawMaterial[Random.Range(0, spritesRawMaterial.Length - 1)];
     }
 }
