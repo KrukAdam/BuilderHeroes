@@ -4,8 +4,6 @@ using UnityEngine;
 
 public abstract class ItemContainer : MonoBehaviour, IItemContainer
 {
-	public List<ItemSlot> ItemSlots;
-
 	public event Action<BaseItemSlot> OnPointerEnterEvent;
 	public event Action<BaseItemSlot> OnPointerExitEvent;
 	public event Action<BaseItemSlot> OnRightClickEvent;
@@ -13,25 +11,9 @@ public abstract class ItemContainer : MonoBehaviour, IItemContainer
 	public event Action<BaseItemSlot> OnEndDragEvent;
 	public event Action<BaseItemSlot> OnDragEvent;
 	public event Action<BaseItemSlot> OnDropEvent;
+	public event Action<Item> OnAddItem;
 
-	//protected virtual void OnValidate()
-	//{
-	//	GetComponentsInChildren(includeInactive: true, result: ItemSlots);
-	//}
-
-	protected virtual void Awake()
-	{
-		//for (int i = 0; i < ItemSlots.Count; i++)
-		//{
-		//	ItemSlots[i].OnPointerEnterEvent += slot => EventHelper(slot, OnPointerEnterEvent);
-		//	ItemSlots[i].OnPointerExitEvent += slot => EventHelper(slot, OnPointerExitEvent);
-		//	ItemSlots[i].OnRightClickEvent += slot => EventHelper(slot, OnRightClickEvent);
-		//	ItemSlots[i].OnBeginDragEvent += slot => EventHelper(slot, OnBeginDragEvent);
-		//	ItemSlots[i].OnEndDragEvent += slot => EventHelper(slot, OnEndDragEvent);
-		//	ItemSlots[i].OnDragEvent += slot => EventHelper(slot, OnDragEvent);
-		//	ItemSlots[i].OnDropEvent += slot => EventHelper(slot, OnDropEvent);
-		//}
-	}
+	public List<ItemSlot> ItemSlots;
 
     public void SetupSlots()
     {
@@ -85,6 +67,7 @@ public abstract class ItemContainer : MonoBehaviour, IItemContainer
 			{
 				ItemSlots[i].Item = item;
 				ItemSlots[i].Amount++;
+				OnAddItem(item);
 				return true;
 			}
 		}

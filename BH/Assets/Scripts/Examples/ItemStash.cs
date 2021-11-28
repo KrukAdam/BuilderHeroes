@@ -22,11 +22,11 @@ public class ItemStash : ItemContainer
 	//	spriteRenderer.enabled = false;
 	//}
 
-	protected override void Awake()
-	{
-		base.Awake();
-		itemsParent.gameObject.SetActive(false);
-	}
+	//protected override void Awake()
+	//{
+	//	base.Awake();
+	//	itemsParent.gameObject.SetActive(false);
+	//}
 
 	private void Update()
 	{

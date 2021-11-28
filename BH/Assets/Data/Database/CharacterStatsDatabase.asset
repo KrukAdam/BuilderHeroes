@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 358d8f7bb25f0694dba5bd0598b398ee, type: 3}
-  m_Name: CharacterStatsData
+  m_Name: CharacterStatsDatabase
   m_EditorClassIdentifier: 
   allStats:
   - StatName: Health

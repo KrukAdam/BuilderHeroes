@@ -6,6 +6,7 @@ using UnityEngine.Assertions;
 public class GameManager : MonoBehaviour
 {
     public CharacterStatsData CharacterStatsData { get => characterStatsData; }
+    public CraftingRecipesDatabase CraftingRecipesDatabase { get => craftingRecipesDatabase; }
     public LayerMask AllyLayersMask { get => allyLayersMask; }
     public LayerMask EnemyLayersMask { get => enemyLayerMask; }
     public LayerMask AllyAILayersMask { get => allyLayersMask; }
@@ -14,6 +15,7 @@ public class GameManager : MonoBehaviour
     public BHInputManager.InputManager InputManager { get; private set; }
 
     [SerializeField] private CharacterStatsData characterStatsData = null;
+    [SerializeField] private CraftingRecipesDatabase craftingRecipesDatabase = null;
     [SerializeField] private LayerMask allyLayersMask = LayerMask.GetMask();
     [SerializeField] private LayerMask enemyLayerMask = LayerMask.GetMask();
     [SerializeField] private LayerMask allyAILayersMask = LayerMask.GetMask();

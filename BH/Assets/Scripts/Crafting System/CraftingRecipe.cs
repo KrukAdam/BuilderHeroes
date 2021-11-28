@@ -16,10 +16,33 @@ public class CraftingRecipe : ScriptableObject
 	public List<ItemAmount> Materials;
 	public List<ItemAmount> Results;
 
+	public bool NeededItemToCraft(Item item)
+    {
+        foreach (var material in Materials)
+        {
+			if(material.Item == item)
+            {
+				return true;
+            }
+        }
+
+		return false;
+    }
+
 	public bool CanCraft(IItemContainer itemContainer)
 	{
 		return HasMaterials(itemContainer) && HasSpace(itemContainer);
 	}
+
+	public void Craft(IItemContainer itemContainer)
+	{
+		if (CanCraft(itemContainer))
+		{
+			RemoveMaterials(itemContainer);
+			AddResults(itemContainer);
+		}
+	}
+
 
 	private bool HasMaterials(IItemContainer itemContainer)
 	{
@@ -45,15 +68,6 @@ public class CraftingRecipe : ScriptableObject
 			}
 		}
 		return true;
-	}
-
-	public void Craft(IItemContainer itemContainer)
-	{
-		if (CanCraft(itemContainer))
-		{
-			RemoveMaterials(itemContainer);
-			AddResults(itemContainer);
-		}
 	}
 
 	private void RemoveMaterials(IItemContainer itemContainer)

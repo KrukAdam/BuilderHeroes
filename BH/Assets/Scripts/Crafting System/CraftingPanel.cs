@@ -7,19 +7,21 @@ public class CraftingPanel : MonoBehaviour
     public event Action<BaseItemSlot> OnPointerEnterEvent;
     public event Action<BaseItemSlot> OnPointerExitEvent;
 
-    [Header("References")]
     [SerializeField] private CraftingRecipeUI recipeUIPrefab = null;
     [SerializeField] private int startInstantiateRecipe = 10;
     [SerializeField] private RectTransform recipeUIParent = null;
 
-    private ItemContainer itemContainer;
     private List<CraftingRecipe> craftingRecipes = new List<CraftingRecipe>();
     private List<CraftingRecipeUI> craftingRecipesUI = new List<CraftingRecipeUI>();
     private BuildingCraft buildingCraft;
+    private ItemContainer itemContainer;
+    private ItemDiscoveryManager itemDiscoveryManager;
 
-    public void Setup(ItemContainer itemContainer)
+    public void Setup(LocalController localController)
     {
-        this.itemContainer = itemContainer;
+        this.itemContainer = localController.GameUiManager.CharacterPanels.InventoryPanel;
+        this.itemDiscoveryManager = localController.LocalManagers.ItemDiscoveryManager;
+
         InstantiateRecipesUi();
     }
 
@@ -44,13 +46,16 @@ public class CraftingPanel : MonoBehaviour
     {
         for (int i = 0; i < craftingRecipes.Count; i++)
         {
-            if(craftingRecipesUI.Count <= i)
+            if (itemDiscoveryManager.HasRecipe(craftingRecipes[i]))
             {
-                CraftingRecipeUI recipeUI = Instantiate(recipeUIPrefab, recipeUIParent);
-                craftingRecipesUI.Add(recipeUI);
+                if (craftingRecipesUI.Count <= i)
+                {
+                    CraftingRecipeUI recipeUI = Instantiate(recipeUIPrefab, recipeUIParent);
+                    craftingRecipesUI.Add(recipeUI);
+                }
+                craftingRecipesUI[i].gameObject.SetActive(true);
+                craftingRecipesUI[i].Setup(craftingRecipes[i], itemContainer);
             }
-            craftingRecipesUI[i].gameObject.SetActive(true);
-            craftingRecipesUI[i].Setup(craftingRecipes[i], itemContainer);
         }
     }
 

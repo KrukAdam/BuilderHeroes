@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9539e1196c7b0714ba90a224fea15b53, type: 3}
   m_Name: IronWork
   m_EditorClassIdentifier: 
+  buildingType: 1
   craftingRecipes:
   - {fileID: 11400000, guid: 5b2d4dcbaebb40c4ba968b6ca39131bc, type: 2}
   - {fileID: 11400000, guid: b58cd0035f2fcfb4eb7876317a054bf8, type: 2}
-  - {fileID: 11400000, guid: ab5d549640acfb44491c02dffed168b7, type: 2}
-  - {fileID: 11400000, guid: 07c0505cb07fd734ba992e0461ea0820, type: 2}
   - {fileID: 11400000, guid: d97c4326ca983b84e8084427f00d2a6e, type: 2}

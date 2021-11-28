@@ -14,7 +14,7 @@ public class CraftingsPanels : MonoBehaviour
     {
         gameUiManager = localController.GameUiManager;
 
-        craftingPanel.Setup(localController.GameUiManager.CharacterPanels.InventoryPanel);
+        craftingPanel.Setup(localController);
         craftingPanel.OnPointerEnterEvent += gameUiManager.TooltipsPanels.ShowItemTooltip;
         craftingPanel.OnPointerExitEvent += gameUiManager.TooltipsPanels.HideItemTooltip;
 

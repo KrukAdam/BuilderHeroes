@@ -3,10 +3,10 @@
 using UnityEditor;
 #endif
 
-[CreateAssetMenu]
+[CreateAssetMenu(menuName = "Database/Items Database")]
 public class ItemDatabase : ScriptableObject
 {
-	[SerializeField] Item[] items;
+	[SerializeField] private Item[] items;
 
 	public Item GetItemReference(string itemID)
 	{
@@ -45,7 +45,8 @@ public class ItemDatabase : ScriptableObject
 
 	private void LoadItems()
 	{
-		items = FindAssetsByType<Item>("Assets/Items");
+		Debug.Log("Load all items");
+		items = FindAssetsByType<Item>("Assets/Data/Items");
 	}
 
 	// Slightly modified version of this answer: http://answers.unity.com/answers/1216386/view.html

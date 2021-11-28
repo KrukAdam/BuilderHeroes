@@ -1833,6 +1833,7 @@ Transform:
   m_Children:
   - {fileID: 1132674439}
   - {fileID: 672937804}
+  - {fileID: 2117599762}
   m_Father: {fileID: 1526003536}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1850,6 +1851,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   equipmentManager: {fileID: 1132674438}
   buildingBuilder: {fileID: 672937803}
+  itemDiscoveryManager: {fileID: 2117599761}
 --- !u!1 &238211032
 GameObject:
   m_ObjectHideFlags: 0
@@ -1880,6 +1882,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterStatsData: {fileID: 11400000, guid: 8f719858588acef4f945c0eba4f10e3a, type: 2}
+  craftingRecipesDatabase: {fileID: 11400000, guid: 66d6eb8c58f196849833ca81ac866cea, type: 2}
   allyLayersMask:
     serializedVersion: 2
     m_Bits: 256
@@ -13649,6 +13652,50 @@ MonoBehaviour:
   rb: {fileID: 2074780360}
   moveTarget: {fileID: 392516766}
   moveSpeed: 3
+--- !u!1 &2117599760
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2117599762}
+  - component: {fileID: 2117599761}
+  m_Layer: 0
+  m_Name: ItemDiscoveryManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2117599761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2117599760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e705126238988e1439f07a476897941c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &2117599762
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2117599760}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 206176852}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2118171830
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,11 +10,11 @@ public class InfiniteInventory : InventoryPanel
 		set { SetMaxSlots(value); }
 	}
 
-	protected override void Awake()
-	{
-		SetMaxSlots(maxSlots);
-		base.Awake();
-	}
+	//protected override void Awake()
+	//{
+	//	SetMaxSlots(maxSlots);
+	//	base.Awake();
+	//}
 
 	private void SetMaxSlots(int value)
 	{
