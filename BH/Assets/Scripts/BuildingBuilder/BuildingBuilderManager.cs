@@ -27,9 +27,12 @@ public class BuildingBuilderManager : MonoBehaviour
         interactionPointer = levelController.Player.PlayerActionController.InteractionPointer;
 
         SetupBuildingsDictionary();
+        InstantiateBuildingBlueprint();
         cityBuilderPanels.BuildingBuilderPanel.SetupBuildingsDataPanel(buildingsDictionary[levelController.Player.RaceType], this);
 
         GameManager.Instance.InputManager.InputController.Player.CancelAction.performed += ctx => DeselectedBuilding();
+
+        cityBuilderPanels.OnToggleBuilderPanel += OnTogglePanel;
     }
 
     public void SelectedBuilding(Building building)
@@ -38,7 +41,7 @@ public class BuildingBuilderManager : MonoBehaviour
 
         DeselectedBuilding();
         selectedBuilding = building;
-        buildingBlueprint = Instantiate(buildingBlueprintPrefab, interactionPointer);
+        BuildingBlueprintActive(true);
         buildingBlueprint.Setup(selectedBuilding, interactionPointer, buildBlockingLayers);
         blueprintSelected = true;
     }
@@ -48,7 +51,7 @@ public class BuildingBuilderManager : MonoBehaviour
         if (blueprintSelected)
         {
             blueprintSelected = false;
-            Destroy(buildingBlueprint.gameObject);
+            BuildingBlueprintActive(false);
             selectedBuilding = null;
         }
     }
@@ -78,5 +81,24 @@ public class BuildingBuilderManager : MonoBehaviour
             if(buildingsData.RaceType != ERaceType.None)
             buildingsDictionary.Add(buildingsData.RaceType, buildingsData);
         }
+    }
+
+    private void OnTogglePanel(bool isActive)
+    {
+        if (!isActive)
+        {
+            DeselectedBuilding();
+        }
+    }
+
+    private void InstantiateBuildingBlueprint()
+    {
+        buildingBlueprint = Instantiate(buildingBlueprintPrefab, interactionPointer);
+        BuildingBlueprintActive(false);
+    }
+
+    private void BuildingBlueprintActive(bool active)
+    {
+        buildingBlueprint.gameObject.SetActive(active);
     }
 }

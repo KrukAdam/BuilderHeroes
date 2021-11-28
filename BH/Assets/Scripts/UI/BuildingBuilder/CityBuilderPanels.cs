@@ -1,9 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CityBuilderPanels : MonoBehaviour
 {
+    public event Action<bool> OnToggleBuilderPanel = delegate { };
+
     public BuildingBuilderPanel BuildingBuilderPanel { get => buildingBuilderPanel; }
 
     [SerializeField] private BasicButton btnCloseBuilderPanel = null;
@@ -25,6 +28,8 @@ public class CityBuilderPanels : MonoBehaviour
         bool isActive = !BuildingBuilderPanel.gameObject.activeSelf;
         BuildingBuilderPanel.gameObject.SetActive(isActive);
         btnCloseBuilderPanel.gameObject.SetActive(isActive);
+
+        OnToggleBuilderPanel(isActive);
     }
 
     public bool CheckActivePanels()
