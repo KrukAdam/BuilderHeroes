@@ -4,46 +4,29 @@ using UnityEngine.EventSystems;
 
 public class StatDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-	public BaseStat Stat {
-		get { return stat; }
-		set {
-			stat = value;
-			UpdateStatValue();
-		}
-	}
-
-	public string Name
-	{
-		get { return displayName; }
-		set
-		{
-			displayName = value;
-			nameText.text = displayName.ToLower();
-		}
-	}
-
-	private string displayName;
-	private BaseStat stat;
-
-	[SerializeField] Text nameText;
-	[SerializeField] Text valueText;
-	[SerializeField] StatTooltip tooltip;
+	[SerializeField] private Text nameText;
+	[SerializeField] private Text valueBaseText;
+	//[SerializeField] private Text valueMaxText;
+	[SerializeField] private StatTooltip tooltip;
 
 	private bool showingTooltip;
+	private CharacterStat stat;
 
-	//private void OnValidate()
-	//{
-	//	Text[] texts = GetComponentsInChildren<Text>();
-	//	nameText = texts[0];
-	//	valueText = texts[1];
+	public void Setup(CharacterStat characterStat)
+    {
+		stat = characterStat;
+		nameText.text = stat.StatName;
 
-	//	if (tooltip == null)
-	//		tooltip = FindObjectOfType<StatTooltip>();
-	//}
+		//if(stat.StatUseValues == EStatsValueUse.OnlyBaseValue)
+  //      {
+		//	valueMaxText.gameObject.SetActive(false);
+  //      }
+		UpdateStatValue();
+	}
 
 	public void OnPointerEnter(PointerEventData eventData)
 	{
-		tooltip.ShowTooltip(Stat, Name);
+	//	tooltip.ShowTooltip(Stat, Name);
 		showingTooltip = true;
 	}
 
@@ -55,9 +38,21 @@ public class StatDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
 	public void UpdateStatValue()
 	{
-		valueText.text = stat.Value.ToString();
-		if (showingTooltip) {
-			tooltip.ShowTooltip(Stat, Name);
+		//if (showingTooltip) {
+		//	tooltip.ShowTooltip(Stat, Name);
+		//}
+
+		if(stat.StatUseValues == EStatsValueUse.OnlyBaseValue)
+        {
+			valueBaseText.text = stat.BaseValue.Value.ToString();
+        }
+		if (stat.StatUseValues == EStatsValueUse.MinAndMaxValue)
+		{
+			valueBaseText.text = stat.MinValue.Value.ToString() + " - " + stat.MaxValue.Value.ToString();
+		}
+		if (stat.StatUseValues == EStatsValueUse.BaseAndMaxValue)
+		{
+			valueBaseText.text = stat.BaseValue.Value.ToString() + " / " + stat.MaxValue.Value.ToString();
 		}
 	}
 }
