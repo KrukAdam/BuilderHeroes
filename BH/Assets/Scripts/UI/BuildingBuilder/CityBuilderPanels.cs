@@ -2,15 +2,18 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class CityBuilderPanels : MonoBehaviour
 {
     public event Action<bool> OnToggleBuilderPanel = delegate { };
 
     public BuildingBuilderPanel BuildingBuilderPanel { get => buildingBuilderPanel; }
+    public ConstructionPanel ConstructionPanel { get => constructionPanel; }
 
-    [SerializeField] private BasicButton btnCloseBuilderPanel = null;
+
     [SerializeField] private BuildingBuilderPanel buildingBuilderPanel = null;
+    [SerializeField] private ConstructionPanel constructionPanel = null;
 
     private GameUiManager gameUiManager;
 
@@ -18,22 +21,46 @@ public class CityBuilderPanels : MonoBehaviour
     {
         gameUiManager = levelController.GameUiManager;
 
-        buildingBuilderPanel.Setup();
-        btnCloseBuilderPanel.SetupListener(gameUiManager.ToggleBuildingBuilderPanel);
+        buildingBuilderPanel.Setup(levelController.GameUiManager);
+        constructionPanel.Setup(levelController.GameUiManager);
+
     }
 
+    public void ToggleContructionPanel()
+    {
+        bool isActive = !constructionPanel.gameObject.activeSelf;
+        constructionPanel.gameObject.SetActive(isActive);
+
+        if (isActive)
+        {
+            GameManager.Instance.InputManager.InputController.Player.HorizontalMove.performed += CloseContructionPanelOnMove;
+            GameManager.Instance.InputManager.InputController.Player.VerticalMove.performed += CloseContructionPanelOnMove;
+        }
+        else
+        {
+            GameManager.Instance.InputManager.InputController.Player.HorizontalMove.performed -= CloseContructionPanelOnMove;
+            GameManager.Instance.InputManager.InputController.Player.VerticalMove.performed -= CloseContructionPanelOnMove;
+        }
+    }
 
     public void ToggleBuildingBuilderPanel()
     {
-        bool isActive = !BuildingBuilderPanel.gameObject.activeSelf;
-        BuildingBuilderPanel.gameObject.SetActive(isActive);
-        btnCloseBuilderPanel.gameObject.SetActive(isActive);
+        bool isActive = !buildingBuilderPanel.gameObject.activeSelf;
+        buildingBuilderPanel.gameObject.SetActive(isActive);
 
         OnToggleBuilderPanel(isActive);
     }
 
     public bool CheckActivePanels()
     {
-        return BuildingBuilderPanel.gameObject.activeSelf;
+        if (buildingBuilderPanel.gameObject.activeSelf) return true;
+        if (constructionPanel.gameObject.activeSelf) return true;
+
+        return false;
+    }
+
+    private void CloseContructionPanelOnMove(InputAction.CallbackContext context)
+    {
+        gameUiManager.ToggleContructionPanel();
     }
 }

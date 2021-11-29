@@ -9,6 +9,7 @@ public class Building : ScriptableObject
     public Vector2Int Size { get => size; }
     public EBuildingFunctionType FunctionType { get => functionType; }
     public EBuildingType BuildingType { get => buildingType; }
+    public List<ItemAmount> ItemsToConstruction { get => itemsToConstruction; }
 
 
     [SerializeField] private string buildingName = "";
@@ -16,4 +17,5 @@ public class Building : ScriptableObject
     [SerializeField] private Vector2Int size = Vector2Int.zero;
     [SerializeField] private EBuildingType buildingType = EBuildingType.None;
     [SerializeField] private EBuildingFunctionType functionType = EBuildingFunctionType.None;
+    [SerializeField] private List<ItemAmount> itemsToConstruction = new List<ItemAmount>();
 }

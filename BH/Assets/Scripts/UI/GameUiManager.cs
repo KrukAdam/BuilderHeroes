@@ -46,6 +46,12 @@ public class GameUiManager : MonoBehaviour
         }
     }
 
+    public void ToggleContructionPanel()
+    {
+        cityBuilderPanels.ToggleContructionPanel();
+        OnTogglePanels(CheckForActivePanels());
+    }
+
     public void ToggleCharacterPanel()
     {
         CharacterPanels.ToggleCharacterInventoryPanels();
@@ -69,6 +75,7 @@ public class GameUiManager : MonoBehaviour
         ToggleCharacterPanel();
         ToggleBuildingBuilderPanel();
         ToggleCraftingPanel();
+        ToggleContructionPanel();
     }
 
     private void SetEvents()

@@ -17,4 +17,11 @@ MonoBehaviour:
   size: {x: 3, y: 3}
   buildingType: 5
   functionType: 1
+  itemsToConstruction:
+  - Item: {fileID: 11400000, guid: 9d136dbea02723748982facfa4c0fe3d, type: 2}
+    Amount: 1
+  - Item: {fileID: 11400000, guid: 6fac732f37fe4aa42962a71b55996f6d, type: 2}
+    Amount: 20
+  - Item: {fileID: 11400000, guid: fabe5bfad7ea78a46a8de7de58c13ad4, type: 2}
+    Amount: 15
   craftingRecipeData: {fileID: 11400000, guid: 305aeb266c741c04eab8d9b4a21a3b42, type: 2}

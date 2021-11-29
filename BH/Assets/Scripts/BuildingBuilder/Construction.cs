@@ -4,15 +4,29 @@ using UnityEngine;
 
 public class Construction : MonoBehaviour, IObjectOnMap
 {
+    public List<ConstructItemData> ItemsNeeded { get => itemsNeeded; }
+
     [SerializeField] private SpriteRenderer spriteRenderer = null;
     [SerializeField] private BoxCollider2D boxCollider = null;
 
+    private ItemContainer itemContainer;
     private Building building;
     private Vector2Int size;
+    private bool built = false;
+    private List<ConstructItemData> itemsNeeded;
 
     public void InteractionOnWorldMap(LocalController localController)
     {
-        localController.GameUiManager.OpenBuildingPanel(building);
+        if (built)
+        {
+            localController.GameUiManager.OpenBuildingPanel(building);
+        }
+        else
+        {
+            this.itemContainer = localController.GameUiManager.CharacterPanels.InventoryPanel;
+            localController.GameUiManager.CityBuilderPanels.ConstructionPanel.SetContruction(this);
+            localController.GameUiManager.ToggleContructionPanel();
+        }
     }
 
     public void Setup(Building building)
@@ -22,8 +36,33 @@ public class Construction : MonoBehaviour, IObjectOnMap
         boxCollider.size = size;
         spriteRenderer.sprite = building.Sprite;
         SetSpritePosition();
+        SetupItemsNeeded();
     }
 
+    public bool AddConstructItem(ConstructItemData constructItemData)
+    {
+        if (itemContainer.RemoveItem(constructItemData.Item))
+        {
+            constructItemData.ItemHas++;
+            return true;
+        }
+
+        return false;
+    }
+
+    public bool Build()
+    {
+        foreach (var item in itemsNeeded)
+        {
+            if(item.ItemHas < item.ItemNeeded)
+            {
+                return false;
+            }
+        }
+
+        built = true;
+        return true;
+    }
 
     private void SetSpritePosition()
     {
@@ -41,5 +80,14 @@ public class Construction : MonoBehaviour, IObjectOnMap
         spriteRenderer.gameObject.transform.localPosition = pos;
 
         spriteRenderer.sortingOrder = Constant.BaseStartOrderLayer - (int)transform.position.y;
+    }
+
+    private void SetupItemsNeeded()
+    {
+        itemsNeeded = new List<ConstructItemData>();
+        foreach (var item in building.ItemsToConstruction)
+        {
+            itemsNeeded.Add(new ConstructItemData(item));
+        }
     }
 }
