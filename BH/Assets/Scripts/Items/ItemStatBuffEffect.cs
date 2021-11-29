@@ -8,65 +8,48 @@ using UnityEngine;
 [Serializable]
 public class ItemStatBuffEffect
 {
-	[SerializeField] private float buffBaseValue;
-	[SerializeField] private float buffMinValue;
-	[SerializeField] private float buffMaxValue;
-	[SerializeField] private float duration;
-	[SerializeField] private EStatsTypes buffStatType;
+	[SerializeField] private float buffValue = 0;
+	[SerializeField] private float duration = 0;
+	[SerializeField] private EBaseStatType baseStatType = EBaseStatType.None;
+	[SerializeField] private EStatsTypes buffStatType = EStatsTypes.None;
 	[SerializeField] private bool isPercentMult = false;
 
 	public void ExecuteEffect(ItemUsable parentItem, PlayerCharacter character)
 	{
-		StatModifier baseValueStatModifier;
-		StatModifier minValueStatModifier; 
-		StatModifier maxValueStatModifier;
+		StatModifier statModifier;
 
 		if (isPercentMult)
         {
-			baseValueStatModifier = new StatModifier(buffBaseValue, EStatModifierType.PercentAdd, parentItem);
-			minValueStatModifier = new StatModifier(buffMinValue, EStatModifierType.PercentAdd, parentItem);
-			maxValueStatModifier = new StatModifier(buffMaxValue, EStatModifierType.PercentAdd, parentItem);
+			statModifier = new StatModifier(buffValue, EStatModifierType.PercentAdd, parentItem);
         }
         else
         {
-			baseValueStatModifier = new StatModifier(buffBaseValue, EStatModifierType.Constants, parentItem);
-			minValueStatModifier = new StatModifier(buffMinValue, EStatModifierType.Constants, parentItem);
-			maxValueStatModifier = new StatModifier(buffMaxValue, EStatModifierType.Constants, parentItem);
+			statModifier = new StatModifier(buffValue, EStatModifierType.Constants, parentItem);
 		}
 
 		int index = 0;
-		List<StatModifier> modifiers = new List<StatModifier>();
 		for (int i = 0; i < character.Stats.AllStats.Count; i++)
         {
 			if (buffStatType == character.Stats.AllStats[i].StatType)
 			{
-				character.Stats.AllStats[i].BaseValue.AddModifier(baseValueStatModifier);
-				character.Stats.AllStats[i].MinValue.AddModifier(minValueStatModifier);
-				character.Stats.AllStats[i].MaxValue.AddModifier(maxValueStatModifier);
+				character.Stats.AllStats[i].AddModifier(statModifier, baseStatType);
 				index = i;
-				modifiers.Add(baseValueStatModifier);
-				modifiers.Add(minValueStatModifier);
-				modifiers.Add(maxValueStatModifier);
 			}
 		}
 
 		character.Stats.Refresh();
-		character.StartCoroutine(RemoveBuff(character, modifiers, index, duration));
+		character.StartCoroutine(RemoveBuff(character, statModifier, index, duration));
 	}
 
 	public string GetDescription()
 	{
-		return "Grants " + buffBaseValue + " Agility for " + duration + " seconds.";
+		return "Grants " + buffValue + " of " + buffStatType +" to " + duration + " seconds.";
 	}
 
-	private static IEnumerator RemoveBuff(PlayerCharacter character, List<StatModifier> statModifiers, int index, float duration)
+	private IEnumerator RemoveBuff(PlayerCharacter character, StatModifier statModifiers, int index, float duration)
 	{
 		yield return new WaitForSeconds(duration);
-        foreach (var modifier in statModifiers)
-        {
-			character.Stats.AllStats[index].RemoveAllModifiers(modifier);
-		}
+		character.Stats.AllStats[index].RemoveModifiers(statModifiers, baseStatType);
 		character.Stats.Refresh();
 	}
-
 }

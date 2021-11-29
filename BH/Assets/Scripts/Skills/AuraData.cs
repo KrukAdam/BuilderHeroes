@@ -6,59 +6,43 @@ using System;
 [Serializable]
 public class AuraData
 {
-	[SerializeField] private float buffBaseValue;
-	[SerializeField] private float buffMinValue;
-	[SerializeField] private float buffMaxValue;
-	[SerializeField] private float duration;
-	[SerializeField] private EStatsTypes buffStatType;
-	[SerializeField] private bool isPercentMult = false;
+    [SerializeField] private float buffValue = 0;
+    [SerializeField] private float duration = 0;
+    [SerializeField] private EBaseStatType baseStatType = EBaseStatType.None;
+    [SerializeField] private EStatsTypes buffStatType = EStatsTypes.None;
+    [SerializeField] private bool isPercentMult = false;
 
-	public void ExecuteEffect(AuraSkill aura, Stats stats)
-	{
-		StatModifier baseValueStatModifier;
-		StatModifier minValueStatModifier;
-		StatModifier maxValueStatModifier;
+    public void ExecuteEffect(AuraSkill aura, Stats stats)
+    {
+        StatModifier statModifier;
 
-		if (isPercentMult)
-		{
-			baseValueStatModifier = new StatModifier(buffBaseValue, EStatModifierType.PercentAdd, aura, aura.AuraType);
-			minValueStatModifier = new StatModifier(buffMinValue, EStatModifierType.PercentAdd, aura, aura.AuraType);
-			maxValueStatModifier = new StatModifier(buffMaxValue, EStatModifierType.PercentAdd, aura, aura.AuraType);
-		}
-		else
-		{
-			baseValueStatModifier = new StatModifier(buffBaseValue, EStatModifierType.Constants, aura, aura.AuraType);
-			minValueStatModifier = new StatModifier(buffMinValue, EStatModifierType.Constants, aura, aura.AuraType);
-			maxValueStatModifier = new StatModifier(buffMaxValue, EStatModifierType.Constants, aura, aura.AuraType);
-		}
+        if (isPercentMult)
+        {
+            statModifier = new StatModifier(buffValue, EStatModifierType.PercentAdd, aura, aura.AuraType);
+        }
+        else
+        {
+            statModifier = new StatModifier(buffValue, EStatModifierType.Constants, aura, aura.AuraType);
+        }
 
-		int index = 0;
-		List<StatModifier> modifiers = new List<StatModifier>();
-		for (int i = 0; i < stats.AllStats.Count; i++)
-		{
-			if (buffStatType == stats.AllStats[i].StatType)
-			{
-				stats.AllStats[i].BaseValue.AddModifier(baseValueStatModifier);
-				stats.AllStats[i].MinValue.AddModifier(minValueStatModifier);
-				stats.AllStats[i].MaxValue.AddModifier(maxValueStatModifier);
-				index = i;
-				modifiers.Add(baseValueStatModifier);
-				modifiers.Add(minValueStatModifier);
-				modifiers.Add(maxValueStatModifier);
-			}
-		}
+        int index = 0;
+        for (int i = 0; i < stats.AllStats.Count; i++)
+        {
+            if (buffStatType == stats.AllStats[i].StatType)
+            {
+                stats.AllStats[i].AddModifier(statModifier, baseStatType);
+                index = i;
+            }
+        }
 
-		stats.StartCoroutine(RemoveBuff(stats, modifiers, index, duration));
-		stats.AuraRefresh();
-	}
+        stats.StartCoroutine(RemoveBuff(stats, statModifier, index, duration));
+        stats.AuraRefresh();
+    }
 
-	private static IEnumerator RemoveBuff(Stats stats, List<StatModifier> statModifiers, int index, float duration)
-	{
-		yield return new WaitForSeconds(duration);
-		foreach (var modifier in statModifiers)
-		{
-			stats.AllStats[index].RemoveAllModifiers(modifier);
-		}
-		stats.AuraRefresh();
-	}
+    private IEnumerator RemoveBuff(Stats stats, StatModifier statModifiers, int index, float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        stats.AllStats[index].RemoveModifiers(statModifiers, baseStatType);
+        stats.AuraRefresh();
+    }
 }

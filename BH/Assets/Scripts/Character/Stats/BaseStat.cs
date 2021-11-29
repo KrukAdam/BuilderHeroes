@@ -11,7 +11,6 @@ public class BaseStat
 
     private List<StatModifier> statModifiers;
 
-
     public BaseStat()
     {
         statModifiers = new List<StatModifier>();

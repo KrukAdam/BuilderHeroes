@@ -9,7 +9,7 @@ public class CharacterStat
 
     public EStatsValueUse StatUseValues = EStatsValueUse.None;
     public EStatsTypes StatType = EStatsTypes.None;
-    [Header("If stat if offensive, this is defense stat")]
+    [Header("If stat if offensive, set defense stat")]
     public EStatsTypes StatDefenseType = EStatsTypes.None;
     public BaseStat BaseValue;
     public BaseStat MinValue;
@@ -23,6 +23,8 @@ public class CharacterStat
             MinValue.AddModifier(new StatModifier(characterStat.MinValue.Value, typeStatMode, item));
         if (characterStat.MaxValue.Value != 0)
             MaxValue.AddModifier(new StatModifier(characterStat.MaxValue.Value, typeStatMode, item));
+
+        CheckOverride();
     }
 
     public void RemoveAllModifiersFromSource(object obj)
@@ -30,12 +32,55 @@ public class CharacterStat
         BaseValue.RemoveAllModifiersFromSource(obj);
         MinValue.RemoveAllModifiersFromSource(obj);
         MaxValue.RemoveAllModifiersFromSource(obj);
+
+        CheckOverride();
     }
 
-    public void RemoveAllModifiers(StatModifier modifier)
+    public void RemoveModifiers(StatModifier modifier, EBaseStatType baseStatType)
     {
-        BaseValue.RemoveModifier(modifier);
-        MinValue.RemoveModifier(modifier);
-        MaxValue.RemoveModifier(modifier);
+        if (baseStatType == EBaseStatType.Base)
+        {
+            BaseValue.RemoveModifier(modifier);
+        }
+        if (baseStatType == EBaseStatType.Min)
+        {
+            MinValue.RemoveModifier(modifier);
+        }
+        if (baseStatType == EBaseStatType.Max)
+        {
+            MaxValue.RemoveModifier(modifier);
+        }
+
+        CheckOverride();
+    }
+
+    public void AddModifier(StatModifier mod, EBaseStatType baseStatType)
+    {
+        if(baseStatType == EBaseStatType.Base)
+        {
+            BaseValue.AddModifier(mod);
+        }
+        if (baseStatType == EBaseStatType.Min)
+        {
+            MinValue.AddModifier(mod);
+        }
+        if (baseStatType == EBaseStatType.Max)
+        {
+            MaxValue.AddModifier(mod);
+        }
+
+        CheckOverride();
+    }
+
+    private void CheckOverride()
+    {
+        if(StatUseValues == EStatsValueUse.BaseAndMaxValue)
+        {
+            if (BaseValue.Value > MaxValue.Value) BaseValue.Value = MaxValue.Value;
+        }
+        if (StatUseValues == EStatsValueUse.MinAndMaxValue)
+        {
+            if (MinValue.Value > MaxValue.Value) MinValue.Value = MaxValue.Value;
+        }
     }
 }

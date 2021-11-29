@@ -9,7 +9,7 @@ public class StatDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 	//[SerializeField] private Text valueMaxText;
 	[SerializeField] private StatTooltip tooltip;
 
-	private bool showingTooltip;
+//	private bool showingTooltip;
 	private CharacterStat stat;
 
 	public void Setup(CharacterStat characterStat)
@@ -27,13 +27,13 @@ public class StatDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 	public void OnPointerEnter(PointerEventData eventData)
 	{
 	//	tooltip.ShowTooltip(Stat, Name);
-		showingTooltip = true;
+	//	showingTooltip = true;
 	}
 
 	public void OnPointerExit(PointerEventData eventData)
 	{
 		tooltip.HideTooltip();
-		showingTooltip = false;
+	//	showingTooltip = false;
 	}
 
 	public void UpdateStatValue()
