@@ -23,7 +23,7 @@ MonoBehaviour:
     StatType: 1
     StatDefenseType: 0
     BaseValue:
-      Value: 0
+      Value: 600
     MinValue:
       Value: 0
     MaxValue:

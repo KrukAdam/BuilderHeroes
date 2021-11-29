@@ -18,21 +18,18 @@ MonoBehaviour:
   MaximumStacks: 20
   IsConsumable: 1
   effects:
-  - buffBaseValue: 0
-    buffMinValue: 0
-    buffMaxValue: 20
+  - buffValue: 50
     duration: 10
+    baseStatType: 3
     buffStatType: 1
-    isPercentMult: 1
-  - buffBaseValue: 0
-    buffMinValue: 10
-    buffMaxValue: 10
-    duration: 125
+    isPercentMult: 0
+  - buffValue: 100
+    duration: 10
+    baseStatType: 2
     buffStatType: 8
     isPercentMult: 0
-  - buffBaseValue: 10
-    buffMinValue: 0
-    buffMaxValue: 0
-    duration: 8
-    buffStatType: 4
-    isPercentMult: 0
+  - buffValue: 50
+    duration: 5
+    baseStatType: 2
+    buffStatType: 8
+    isPercentMult: 1

@@ -11,16 +11,18 @@ public class Stats : MonoBehaviour, IDamage
     
 	public List<CharacterStat> AllStats { get => allStats; }
 
+    [SerializeField] private StatsData statsData = null;   //TODO gracz wybiera rase i dostaje odpowiednie staty poczatkowe
     [SerializeField] private List<CharacterStat> allStats = null;    //Init on start, SF to see in inspector
 
-	private CharacterStatsData characterStatsData = null;
+	private StatsData characterStatsData = null;
     private int minDamage;
 
 
 	public void Init()
     {
-		characterStatsData = Instantiate(GameManager.Instance.CharacterStatsData);
-		allStats = characterStatsData.AllStats;
+		characterStatsData = Instantiate(statsData);
+        characterStatsData.Setup();
+		allStats = characterStatsData.Stats;
 
         minDamage = Constant.MinDamage;
     }

@@ -10390,6 +10390,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc91f5710a1d7a54fb1104cb011a665f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  statsData: {fileID: 11400000, guid: ca99db2c8806ae140a45689962166419, type: 2}
   allStats: []
 --- !u!58 &1631126498
 CircleCollider2D:
@@ -13497,6 +13498,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc91f5710a1d7a54fb1104cb011a665f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  statsData: {fileID: 11400000, guid: ca99db2c8806ae140a45689962166419, type: 2}
   allStats: []
 --- !u!58 &2074780358
 CircleCollider2D:
