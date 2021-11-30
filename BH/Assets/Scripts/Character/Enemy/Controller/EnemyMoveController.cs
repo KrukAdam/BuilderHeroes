@@ -5,7 +5,6 @@ using UnityEngine;
 public class EnemyMoveController : MoveController
 {
     [SerializeField] private Transform moveTarget = null;
-    [SerializeField] private float moveSpeed = 3f;
 
     private Vector2 direction;
     private bool canMove = true;

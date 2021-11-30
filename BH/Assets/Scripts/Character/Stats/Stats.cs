@@ -16,6 +16,7 @@ public class Stats : MonoBehaviour, IDamage
 
 	private StatsData characterStatsData = null;
     private int minDamage;
+    private Dictionary<EStatsTypes, CharacterStat> statsDictionary = new Dictionary<EStatsTypes, CharacterStat>();
 
 
 	public void Init()
@@ -25,6 +26,8 @@ public class Stats : MonoBehaviour, IDamage
 		allStats = characterStatsData.Stats;
 
         minDamage = Constant.MinDamage;
+
+        SetupStatsDictionary();
     }
 
     public void TakeDamage(SkillOffenseStat skillOffenseStat)
@@ -65,20 +68,44 @@ public class Stats : MonoBehaviour, IDamage
         Debug.Log("Death " + gameObject.name);
     }
 
-
     public CharacterStat GetStat(EStatsTypes statsType)
     {
         if (statsType == EStatsTypes.None) return null;
 
-        foreach (var stat in AllStats)
+        if (statsDictionary.ContainsKey(statsType))
         {
-            if (stat.StatType == statsType)
-            {
-                return stat;
-            }
+            return statsDictionary[statsType];
         }
 
         Debug.LogError("No have stats type: " + statsType + " on character stats!");
         return null;
+    }
+
+    public float GetMoveSpeed()
+    {
+        float speed = statsDictionary[EStatsTypes.MoveSpeed].BaseValue.Value;
+        if (speed <= 0) speed = 1f;
+
+        speed = speed / 25;
+
+        return speed;
+    }
+
+    public float GetAttackSpeed()
+    {
+        float speed = statsDictionary[EStatsTypes.AttackSpeed].BaseValue.Value;
+        if (speed <= 0) speed = 1f;
+
+        speed = speed / 100;
+
+        return speed;
+    }
+
+    private void SetupStatsDictionary()
+    {
+        foreach (var stat in allStats)
+        {
+            statsDictionary.Add(stat.StatType, stat);
+        }
     }
 }

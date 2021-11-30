@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(Stats))]
 public class MoveController : MonoBehaviour
 {
     [SerializeField] protected Rigidbody2D rb = null;
 
+    protected Stats stats = null;
+    protected float moveSpeed;
     protected float timeBlockMove;
+
     //This move settings used by movement skill. Work when timeBlockMove > 0
     protected float speedMoveToTarget;
     protected float distanceToTarget;
@@ -19,13 +23,12 @@ public class MoveController : MonoBehaviour
     protected WaitForSeconds timeToMoveToTarget = new WaitForSeconds(Constant.TimeToBlockMoveCaster);
     //
 
-    public virtual void Init(PlayerCharacter character) 
+    public virtual void Init(Character character, Stats stats) 
     {
+        this.stats = stats;
         distanceToTarget = Constant.DistanceToTarget;
-    }
-    public virtual void Init(EnemyCharacter character) 
-    {
-        distanceToTarget = Constant.DistanceToTarget;
+        SetEvents();
+        SetMoveSpeed();
     }
 
     public virtual void SetTimeBlockMove(float timeToBlock, bool resetTime = false) 
@@ -81,6 +84,11 @@ public class MoveController : MonoBehaviour
         SetMoveAnimation(directionAnimationMove, true);
     }
 
+    protected void SetMoveSpeed()
+    {
+        moveSpeed = stats.GetMoveSpeed();
+    }
+
     protected IEnumerator OffMoveToTarget()
     {
         yield return timeToMoveToTarget;
@@ -91,5 +99,10 @@ public class MoveController : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (moveToTarget && movementSkillUse != null) movementSkillUse.HitTargets();
+    }
+
+    private void SetEvents()
+    {
+        stats.OnStatsChange += SetMoveSpeed;
     }
 }

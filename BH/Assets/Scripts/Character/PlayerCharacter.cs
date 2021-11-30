@@ -18,7 +18,7 @@ public class PlayerCharacter : Character
 		this.Stats.Init();
 
 		playerActionController.Setup(localController, this);
-		moveController.Init(this);
+		moveController.Init(this, stats);
 		playerSkillsController.Setup(localController);
 
 		Stats.OnStatsChange += localController.GameUiManager.CharacterPanels.StatsPanel.UpdateStatValues;

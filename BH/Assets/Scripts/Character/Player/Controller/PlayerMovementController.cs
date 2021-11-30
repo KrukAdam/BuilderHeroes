@@ -8,7 +8,6 @@ using UnityEngine.Tilemaps;
 [RequireComponent(typeof(PlayerActionController))]
 public class PlayerMovementController : MoveController
 {
-    [SerializeField] private float moveSpeed = 5;
     [SerializeField] private Animator animator = null;
     [SerializeField] private SpriteRenderer spriteRenderer = null;
 
@@ -58,10 +57,10 @@ public class PlayerMovementController : MoveController
         }
     }
 
-    public override void Init(PlayerCharacter playerCharacter)
+    public override void Init(Character playerCharacter, Stats stats)
     {
-        base.Init(playerCharacter);
-        this.playerCharacter = playerCharacter;
+        base.Init(playerCharacter,stats);
+        this.playerCharacter = playerCharacter as PlayerCharacter;
         rb = playerCharacter.CharacterRigidbody;
     }
 

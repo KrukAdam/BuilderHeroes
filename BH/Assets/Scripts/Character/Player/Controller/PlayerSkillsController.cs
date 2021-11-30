@@ -20,6 +20,7 @@ public class PlayerSkillsController : MonoBehaviour
     private SkillSetupInfo skillSetupInfo;
     private float mainSkillCooldawn;
     private float secondSkillCooldawn;
+    private float attackSpeed;
     private Coroutine castSkill;
     private ItemSlot ammoSlot;
 
@@ -58,6 +59,9 @@ public class PlayerSkillsController : MonoBehaviour
         GameManager.Instance.InputManager.InputController.Player.MainSkill.performed += ctx => UseMainSkill();
         GameManager.Instance.InputManager.InputController.Player.SecondSkill.performed += ctx => UseSecondSkill();
 
+        playerCharacter.Stats.OnStatsChange += SetSpeedAttack;
+
+        SetSpeedAttack();
         BindSkillToMouse(true);
     }
 
@@ -88,7 +92,7 @@ public class PlayerSkillsController : MonoBehaviour
         }
     }
 
-    public void SetTimeBlockAction(float timeBlock, bool resetTime = false)
+    public void SetTimeBlockInteraction(float timeBlock, bool resetTime = false)
     {
         if (resetTime)
         {
@@ -109,9 +113,9 @@ public class PlayerSkillsController : MonoBehaviour
         if (CanUseSkill(mainSkill) && mainSkillCooldawn <= 0)
         {
             castSkill = StartCoroutine(SkillCasting(mainSkill));
-            mainSkillCooldawn = mainSkill.SkillCooldawn;
+            mainSkillCooldawn = GetTimeCooldawn(mainSkill);
             playerCharacter.MoveController.SetTimeBlockMove(mainSkill.TimeToBlockCasterMove);
-            SetTimeBlockAction(mainSkill.TimeToBlockCasterAction);
+            SetTimeBlockInteraction(mainSkill.TimeToBlockCasterAction);
             OnMainSkillUse();
         }
     }
@@ -121,9 +125,9 @@ public class PlayerSkillsController : MonoBehaviour
         if (CanUseSkill(secondSkill) && secondSkillCooldawn <= 0)
         {
             castSkill = StartCoroutine(SkillCasting(secondSkill));
-            secondSkillCooldawn = secondSkill.SkillCooldawn;
+            secondSkillCooldawn = GetTimeCooldawn(secondSkill);
             playerCharacter.MoveController.SetTimeBlockMove(secondSkill.TimeToBlockCasterMove);
-            SetTimeBlockAction(secondSkill.TimeToBlockCasterAction);
+            SetTimeBlockInteraction(secondSkill.TimeToBlockCasterAction);
             OnSecondSkillUse();
         }
     }
@@ -143,9 +147,25 @@ public class PlayerSkillsController : MonoBehaviour
         {
             Debug.Log("StopCasting");
             StopCoroutine(castSkill);
-            SetTimeBlockAction(0, true);
+            SetTimeBlockInteraction(0, true);
             playerCharacter.MoveController.SetTimeBlockMove(0, true);
         }
+    }
+
+    private void SetSpeedAttack()
+    {
+        attackSpeed = playerCharacter.Stats.GetAttackSpeed();
+    }
+
+    private float GetTimeCooldawn(Skill skill)
+    {
+        if (skill.SkillCooldawn <= 0) return 0;
+
+        float time = skill.SkillCooldawn - attackSpeed;
+        if(time < skill.SkillCooldawn / 10) time = skill.SkillCooldawn / 10;
+
+        Debug.Log("Time to cooldawn skill: " + skill + "  - " + time);
+        return time;
     }
 
     private bool HasAmmo(Skill skill, bool useAmmo = false)

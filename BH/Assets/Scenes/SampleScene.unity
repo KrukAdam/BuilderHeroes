@@ -10300,7 +10300,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1631126493}
-  moveSpeed: 5
   animator: {fileID: 294248879}
   spriteRenderer: {fileID: 294248878}
 --- !u!50 &1631126493
@@ -13823,6 +13822,10 @@ PrefabInstance:
     - target: {fileID: 7162798387380146952, guid: 9bfb70d8045fbec4db985e4ed4b2726b, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7162798387380146952, guid: 9bfb70d8045fbec4db985e4ed4b2726b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -21.694824
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9bfb70d8045fbec4db985e4ed4b2726b, type: 3}
