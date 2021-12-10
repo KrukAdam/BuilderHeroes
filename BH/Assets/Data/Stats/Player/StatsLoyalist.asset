@@ -58,7 +58,7 @@ MonoBehaviour:
     StatType: 5
     StatDefenseType: 0
     BaseValue:
-      Value: 100
+      Value: 10
     MinValue:
       Value: 0
     MaxValue:

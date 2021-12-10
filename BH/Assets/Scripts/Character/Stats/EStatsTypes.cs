@@ -32,5 +32,5 @@ public enum EStatsTypes
     WindDefense = 24,
     LightingDefense = 25,
     BlessingDefense = 26,
-    DarknessDefense = 27
+    DarknessDefense = 27,
 }

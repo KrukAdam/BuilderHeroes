@@ -12,8 +12,6 @@ public class EquipmentManager : MonoBehaviour
     [SerializeField] private DropItemArea dropItemArea = null;
 	[SerializeField] private Image draggableItem = null;
 	[SerializeField] private QuestionDialog reallyDropItemDialog = null;
-	[SerializeField] private ItemOnMap itemOnMapPrefab = null;
-	[SerializeField] private Transform itemsDropParent = null;
 
 	private BaseItemSlot dragItemSlot;
 
@@ -23,14 +21,16 @@ public class EquipmentManager : MonoBehaviour
 	private WeaponSkillsPanel weaponSkillsPanel;
 	private PlayerCharacter playerCharacter;
 	private ItemContainer openItemContainer;
+	private DropItemManager dropItemManager;
 
-	public void Setup(LocalController levelController)
+	public void Setup(LocalController localController)
     {
-		playerCharacter = levelController.Player;
-		inventoryPanel = levelController.GameUiManager.CharacterPanels.InventoryPanel;
-		equipmentPanel = levelController.GameUiManager.CharacterPanels.EquipmentWeaponSkillsPanel.EquipmentPanel;
-		weaponSkillsPanel = levelController.GameUiManager.CharacterPanels.EquipmentWeaponSkillsPanel.WeaponSkillsPanel;
-		tooltipsPanels = levelController.GameUiManager.TooltipsPanels;
+		playerCharacter = localController.Player;
+		inventoryPanel = localController.GameUiManager.CharacterPanels.InventoryPanel;
+		equipmentPanel = localController.GameUiManager.CharacterPanels.EquipmentWeaponSkillsPanel.EquipmentPanel;
+		weaponSkillsPanel = localController.GameUiManager.CharacterPanels.EquipmentWeaponSkillsPanel.WeaponSkillsPanel;
+		tooltipsPanels = localController.GameUiManager.TooltipsPanels;
+		dropItemManager = localController.LocalManagers.DropItemManager;
 
 		SetupEvents();
     }
@@ -239,13 +239,6 @@ public class EquipmentManager : MonoBehaviour
 		reallyDropItemDialog.OnYesEvent += () => DestroyItemInSlot(slot, true);
 	}
 
-	private void DropItemOnMap(BaseItemSlot slot)
-    {
-		ItemOnMap itemOnMap = Instantiate(itemOnMapPrefab, itemsDropParent);
-		itemOnMap.transform.position = playerCharacter.transform.position;
-		itemOnMap.Setup(slot);
-    }
-
 	private void AddStacks(BaseItemSlot dropItemSlot)
 	{
 		int numAddableStacks = dropItemSlot.Item.MaximumStacks - dropItemSlot.Amount;
@@ -312,7 +305,7 @@ public class EquipmentManager : MonoBehaviour
         //Drop item
         if (dropOnMap)
         {
-			DropItemOnMap(itemSlot);
+			dropItemManager.DropItemOnMap(itemSlot, playerCharacter.transform.position);
 		}
 
 		itemSlot.Item.Destroy();

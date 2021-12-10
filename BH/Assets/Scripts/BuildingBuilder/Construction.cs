@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,6 +15,7 @@ public class Construction : MonoBehaviour, IObjectOnMap
     private Vector2Int size;
     private bool built = false;
     private List<ConstructItemData> itemsNeeded;
+    private DropItemManager dropItemManager;
 
     public void InteractionOnWorldMap(LocalController localController)
     {
@@ -29,8 +31,9 @@ public class Construction : MonoBehaviour, IObjectOnMap
         }
     }
 
-    public void Setup(Building building)
+    public void Setup(Building building, DropItemManager dropItemManager)
     {
+        this.dropItemManager = dropItemManager;
         this.building = building;
         size = building.Size;
         boxCollider.size = size;
@@ -62,6 +65,17 @@ public class Construction : MonoBehaviour, IObjectOnMap
 
         built = true;
         return true;
+    }
+
+    public void Destroy()
+    {
+        foreach (var item in itemsNeeded)
+        {
+            if(item.ItemHas > 1)
+            {
+                dropItemManager.DropItemOnMap(item.Item, item.ItemHas / 2, transform.position);
+            }
+        }
     }
 
     private void SetSpritePosition()

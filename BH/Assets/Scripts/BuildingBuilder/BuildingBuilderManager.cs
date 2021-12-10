@@ -19,16 +19,18 @@ public class BuildingBuilderManager : MonoBehaviour
     private Building selectedBuilding;
     private BuildingBlueprint buildingBlueprint;
     private Construction construction;
+    private LocalManagers localManagers;
     private bool blueprintSelected = false;
 
-    public void Setup(LocalController levelController)
+    public void Setup(LocalController localController)
     {
-        cityBuilderPanels = levelController.GameUiManager.CityBuilderPanels;
-        interactionPointer = levelController.Player.PlayerActionController.InteractionPointer;
+        cityBuilderPanels = localController.GameUiManager.CityBuilderPanels;
+        interactionPointer = localController.Player.PlayerActionController.InteractionPointer;
+        localManagers = localController.LocalManagers;
 
         SetupBuildingsDictionary();
         InstantiateBuildingBlueprint();
-        cityBuilderPanels.BuildingBuilderPanel.SetupBuildingsDataPanel(buildingsDictionary[levelController.Player.RaceType], this);
+        cityBuilderPanels.BuildingBuilderPanel.SetupBuildingsDataPanel(buildingsDictionary[localController.Player.RaceType], this);
 
         GameManager.Instance.InputManager.InputController.Player.CancelAction.performed += ctx => DeselectedBuilding();
 
@@ -60,10 +62,9 @@ public class BuildingBuilderManager : MonoBehaviour
     {
         if (buildingBlueprint.CanBuild())
         {
-            //TODO take resources
             construction = Instantiate(constructionPrefab, buildingsParent);
             construction.transform.position = buildingBlueprint.transform.position;
-            construction.Setup(selectedBuilding);
+            construction.Setup(selectedBuilding, localManagers.DropItemManager);
 
             DeselectedBuilding();
         }

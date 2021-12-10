@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ConstructionPanel : MonoBehaviour
 {
-
+    [SerializeField] private BasicButton btnDestroyConstruction = null;
     [SerializeField] private BasicButton btnCloseConstructionPanel = null;
     [SerializeField] private BasicButton btnBuildConstruction = null;
     [SerializeField] private Transform parentLabels = null;
@@ -19,6 +19,7 @@ public class ConstructionPanel : MonoBehaviour
         InstantiateLabels();
         btnCloseConstructionPanel.SetupListener(gameUiManager.ToggleContructionPanel);
         btnBuildConstruction.SetupListener(BuildContruction);
+        btnDestroyConstruction.SetupListener(DestroyConstruction);
     }
 
     public void SetContruction(Construction construction)
@@ -75,5 +76,12 @@ public class ConstructionPanel : MonoBehaviour
                 label.gameObject.SetActive(false);
             }
         }
+    }
+
+    private void DestroyConstruction()
+    {
+        btnCloseConstructionPanel.OnClick();
+        construction.Destroy();
+        Destroy(construction.gameObject);
     }
 }
