@@ -30,6 +30,15 @@ public class MaleeSkill : Skill
                 }
                 if (singleTarget && !SkillOwner(character)) return;
             }
+
+            if (target.TryGetComponent(out Construction construction))
+            {
+                foreach (var offenseStatType in offenseStatsType)
+                {
+                    construction.Stats.TakeDamage(offenseStatType);
+                }
+                if (singleTarget) return;
+            }
         }
     }
 }

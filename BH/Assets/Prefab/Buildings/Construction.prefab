@@ -94,8 +94,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8120407853759382983}
   - component: {fileID: 918773336181421751}
+  - component: {fileID: 5912367541088691358}
   - component: {fileID: 5879383826086817770}
-  m_Layer: 11
+  m_Layer: 8
   m_Name: Construction
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -144,6 +145,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &5912367541088691358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8120407853759382977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc91f5710a1d7a54fb1104cb011a665f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statsData: {fileID: 0}
+  allStats: []
 --- !u!114 &5879383826086817770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,3 +173,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 3010268328207354379}
   boxCollider: {fileID: 918773336181421751}
+  stats: {fileID: 5912367541088691358}

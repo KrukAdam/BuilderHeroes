@@ -30,6 +30,18 @@ public class Stats : MonoBehaviour, IDamage
         SetupStatsDictionary();
     }
 
+    public void Init(StatsData statsData)
+    {
+        characterStatsData = Instantiate(statsData);
+        characterStatsData.Setup();
+        allStats = characterStatsData.Stats;
+
+        minDamage = Constant.MinDamage;
+
+        SetupStatsDictionary();
+    }
+
+
     public void TakeDamage(SkillOffenseStat skillOffenseStat)
     {
         float damage = skillOffenseStat.GetDamage() - GetStat(skillOffenseStat.GetDefenseStatType()).BaseValue.Value;

@@ -2995,7 +2995,6 @@ MonoBehaviour:
   constructionPrefab: {fileID: 5879383826086817770, guid: d49c1bc1bef88b34b852d4328236fae2, type: 3}
   buildingsDatas:
   - {fileID: 11400000, guid: 52af111897d712241af5269aed9760ab, type: 2}
-  - {fileID: 11400000, guid: 01816f6fcc8c18542ade7c512a7038b3, type: 2}
   buildingsParent: {fileID: 1518286246}
 --- !u!4 &672937804
 Transform:
@@ -10524,7 +10523,7 @@ MonoBehaviour:
   interactionRange: 0.5
   interactionObjectLayer:
     serializedVersion: 2
-    m_Bits: 6272
+    m_Bits: 6528
 --- !u!4 &1631126495
 Transform:
   m_ObjectHideFlags: 0

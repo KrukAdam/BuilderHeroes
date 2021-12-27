@@ -6,9 +6,11 @@ using UnityEngine;
 public class Construction : MonoBehaviour, IObjectOnMap
 {
     public List<ConstructItemData> ItemsNeeded { get => itemsNeeded; }
+    public Stats Stats { get => stats; }
 
     [SerializeField] private SpriteRenderer spriteRenderer = null;
     [SerializeField] private BoxCollider2D boxCollider = null;
+    [SerializeField] private Stats stats = null;
 
     private ItemContainer itemContainer;
     private Building building;
@@ -16,6 +18,7 @@ public class Construction : MonoBehaviour, IObjectOnMap
     private bool built = false;
     private List<ConstructItemData> itemsNeeded;
     private DropItemManager dropItemManager;
+
 
     public void InteractionOnWorldMap(LocalController localController)
     {
@@ -40,6 +43,9 @@ public class Construction : MonoBehaviour, IObjectOnMap
         spriteRenderer.sprite = building.Sprite;
         SetSpritePosition();
         SetupItemsNeeded();
+
+        stats.Init(this.building.StatsData);
+        stats.OnDeath += Destroy;
     }
 
     public bool AddConstructItem(ConstructItemData constructItemData)

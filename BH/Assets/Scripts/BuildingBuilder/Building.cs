@@ -10,6 +10,7 @@ public class Building : ScriptableObject
     public EBuildingFunctionType FunctionType { get => functionType; }
     public EBuildingType BuildingType { get => buildingType; }
     public List<ItemAmount> ItemsToConstruction { get => itemsToConstruction; }
+    public StatsData StatsData { get => stats; }
 
 
     [SerializeField] private string buildingName = "";
@@ -18,4 +19,5 @@ public class Building : ScriptableObject
     [SerializeField] private EBuildingType buildingType = EBuildingType.None;
     [SerializeField] private EBuildingFunctionType functionType = EBuildingFunctionType.None;
     [SerializeField] private List<ItemAmount> itemsToConstruction = new List<ItemAmount>();
+    [SerializeField] private StatsData stats = null;
 }

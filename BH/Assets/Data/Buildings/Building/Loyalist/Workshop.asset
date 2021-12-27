@@ -24,4 +24,5 @@ MonoBehaviour:
     Amount: 20
   - Item: {fileID: 11400000, guid: fabe5bfad7ea78a46a8de7de58c13ad4, type: 2}
     Amount: 15
+  stats: {fileID: 11400000, guid: 1fb8bb9caa7eb3141a3ce7a9ab775cb4, type: 2}
   craftingRecipeData: {fileID: 11400000, guid: 305aeb266c741c04eab8d9b4a21a3b42, type: 2}
