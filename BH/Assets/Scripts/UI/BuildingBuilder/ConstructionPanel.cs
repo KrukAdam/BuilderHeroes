@@ -82,6 +82,5 @@ public class ConstructionPanel : MonoBehaviour
     {
         btnCloseConstructionPanel.OnClick();
         construction.Destroy();
-        Destroy(construction.gameObject);
     }
 }

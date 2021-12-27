@@ -7,8 +7,10 @@ public class CraftingsPanels : MonoBehaviour
 {
     [SerializeField] private CraftingPanel craftingPanel = null;
     [SerializeField] private BasicButton buttonClose = null;
+    [SerializeField] private BasicButton buttonDestroyBuilding = null;
 
     private GameUiManager gameUiManager;
+    private Construction construction;
 
     public void Setup(LocalController localController)
     {
@@ -19,10 +21,12 @@ public class CraftingsPanels : MonoBehaviour
         craftingPanel.OnPointerExitEvent += gameUiManager.TooltipsPanels.HideItemTooltip;
 
         buttonClose.SetupListener(gameUiManager.ToggleCraftingPanel);
+        buttonDestroyBuilding.SetupListener(DestroyBuilding);
     }
 
-    public void OnOpenCraftingPanel(Building building)
+    public void OnOpenCraftingPanel(Building building, Construction construction)
     {
+        this.construction = construction;
         craftingPanel.OnOpen(building);
     }
 
@@ -31,6 +35,7 @@ public class CraftingsPanels : MonoBehaviour
         bool isActive = !craftingPanel.gameObject.activeSelf;
         craftingPanel.gameObject.SetActive(isActive);
         buttonClose.gameObject.SetActive(isActive);
+        buttonDestroyBuilding.gameObject.SetActive(isActive);
 
         if (isActive)
         {
@@ -51,7 +56,12 @@ public class CraftingsPanels : MonoBehaviour
 
     private void ClosePanelsWhenMove(InputAction.CallbackContext context)
     {
-
         gameUiManager.ToggleCraftingPanel();
+    }
+
+    private void DestroyBuilding()
+    {
+        ToggleBuildingBuilderPanel();
+        construction.Destroy();
     }
 }

@@ -30,15 +30,16 @@ public class GameUiManager : MonoBehaviour
         GameManager.Instance.InputManager.InputController.Player.BuildingBuilderPanel.performed += ctx => ToggleBuildingBuilderPanel();
     }
 
-    public void OpenBuildingPanel(Building building)
+    public void OpenBuildingPanel(Building building, Construction construction)
     {
+
         switch (building.FunctionType)
         {
             case EBuildingFunctionType.None:
                 Debug.LogWarning("WORNG building function");
                 break;
             case EBuildingFunctionType.Crafting:
-                CraftingsPanels.OnOpenCraftingPanel(building);
+                CraftingsPanels.OnOpenCraftingPanel(building, construction);
                 ToggleCraftingPanel();
                 break;
             default:

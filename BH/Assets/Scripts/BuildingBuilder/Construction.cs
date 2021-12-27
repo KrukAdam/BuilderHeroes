@@ -21,7 +21,7 @@ public class Construction : MonoBehaviour, IObjectOnMap
     {
         if (built)
         {
-            localController.GameUiManager.OpenBuildingPanel(building);
+            localController.GameUiManager.OpenBuildingPanel(building, this);
         }
         else
         {
@@ -76,6 +76,8 @@ public class Construction : MonoBehaviour, IObjectOnMap
                 dropItemManager.DropItemOnMap(item.Item, item.ItemHas / 2, transform.position);
             }
         }
+
+        Destroy(gameObject);
     }
 
     private void SetSpritePosition()
