@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 31f098b1f861fd94bb6f09f84fe87404, type: 3}
-  m_Name: Coal
+  m_Name: OreCopper
   m_EditorClassIdentifier: 
-  id: 9d136dbea02723748982facfa4c0fe3d
-  ItemName: Coal
-  Icon: {fileID: 21300000, guid: cb74032f9adc22e4d96e488623a2b502, type: 3}
+  id: 35386439a5298464ab8558cb6f14acdc
+  ItemName: Copper Ore
+  Icon: {fileID: 631667610, guid: cca2ecb5e932ff44fa5efeeafc11cd75, type: 3}
   MaximumStacks: 99
