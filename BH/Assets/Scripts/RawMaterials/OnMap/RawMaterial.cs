@@ -27,9 +27,9 @@ public class RawMaterial : BaseObjectOnMap
         toolNeeded = localController.LocalManagers.EquipmentManager.GetItemTool(toolTypeNeeded);
         if (toolNeeded)
         {
-
             OnInteraction();
             DamageRawMaterial();
+            localController.LocalManagers.EquipmentManager.DamageTool();
         }
         else
         {

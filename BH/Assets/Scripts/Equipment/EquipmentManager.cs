@@ -47,6 +47,21 @@ public class EquipmentManager : MonoBehaviour
         return null;
     }
 
+	public void DamageTool()
+    {
+		if (!equipmentPanel.ToolSlot.Item) return;
+
+		ItemTool tool = equipmentPanel.ToolSlot.Item as ItemTool;
+		if (tool)
+		{
+			tool.Durability = tool.Durability - 1;  //TODO damage value = !race skill tools use
+		}
+		if(tool.Durability <= 0)
+        {
+			tool.Destroy();
+        }
+	}
+
 
     public void Equip(ItemEquippable item)
 	{

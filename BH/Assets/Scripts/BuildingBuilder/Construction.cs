@@ -40,7 +40,7 @@ public class Construction : MonoBehaviour, IObjectOnMap
         this.building = building;
         size = building.Size;
         boxCollider.size = size;
-        spriteRenderer.sprite = building.Sprite;
+        spriteRenderer.sprite = building.ContructionSprite;
         SetSpritePosition();
         SetupItemsNeeded();
 
@@ -70,6 +70,7 @@ public class Construction : MonoBehaviour, IObjectOnMap
         }
 
         built = true;
+        spriteRenderer.sprite = building.Sprite;
         return true;
     }
 

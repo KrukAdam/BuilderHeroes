@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 719583cd28bceec479fac18a11a2434b, type: 3}
+  m_Name: IronWorks_Loyalist
+  m_EditorClassIdentifier: 
+  buildingName: Iron Work
+  sprite: {fileID: 21300000, guid: a2dc1544669ef4e459c2c103f78632f8, type: 3}
+  contructionSprite: {fileID: 21300000, guid: d2ddb68536301a445b5b185b0688c2b2, type: 3}
+  size: {x: 3, y: 2}
+  buildingType: 1
+  functionType: 1
+  itemsToConstruction:
+  - Item: {fileID: 11400000, guid: 6fac732f37fe4aa42962a71b55996f6d, type: 2}
+    Amount: 1
+  - Item: {fileID: 11400000, guid: fabe5bfad7ea78a46a8de7de58c13ad4, type: 2}
+    Amount: 1
+  stats: {fileID: 11400000, guid: 1fb8bb9caa7eb3141a3ce7a9ab775cb4, type: 2}
+  craftingRecipeData: {fileID: 11400000, guid: 14b9f95ab57c45f41b605fc8c0c2af20, type: 2}
