@@ -64,7 +64,7 @@ public class ItemEquippable : Item
         {
             if (stat.StatUseValues == EStatsValueUse.OnlyBaseValue)
             {
-				AddStat(stat.BaseValue.Value, stat.StatName);
+				//AddStat(stat.BaseValue.Value, stat.StatName);
 			}
             else if(stat.StatUseValues == EStatsValueUse.MinAndMaxValue)
             {
@@ -81,7 +81,7 @@ public class ItemEquippable : Item
 		{
 			if (stat.StatUseValues == EStatsValueUse.OnlyBaseValue)
 			{
-				AddStat(stat.BaseValue.Value, stat.StatName, true);
+				//AddStat(stat.BaseValue.Value, stat.StatName, true);
 			}
 			else if (stat.StatUseValues == EStatsValueUse.MinAndMaxValue)
 			{

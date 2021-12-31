@@ -1,11 +1,12 @@
 using System;
 using UnityEngine;
+using UnityEngine.Localization;
 
 [Serializable]
 public class CharacterStat
 {
     //Display name
-    public string StatName = "No Name";
+    public LocalizedString StatName = null;
 
     public EStatsValueUse StatUseValues = EStatsValueUse.None;
     public EStatsTypes StatType = EStatsTypes.None;

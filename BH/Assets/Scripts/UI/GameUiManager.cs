@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Localization.Settings;
 
 public class GameUiManager : MonoBehaviour
 {
@@ -19,9 +20,7 @@ public class GameUiManager : MonoBehaviour
 
     public void Setup(LocalController localController)
     {
-        craftingsPanels.Setup(localController);
-        characterPanels.SetupPanel(localController);
-        cityBuilderPanels.Setup(localController);
+        StartCoroutine(SetupPanels(localController));
 
         SetEvents();
         TogglePanels();
@@ -96,5 +95,14 @@ public class GameUiManager : MonoBehaviour
         if (CraftingsPanels.CheckActivePanels()) return true;
 
         return false;
+    }
+
+    private IEnumerator SetupPanels(LocalController localController)
+    {
+        // Wait for the localization system to initialize
+        yield return LocalizationSettings.InitializationOperation;
+        craftingsPanels.Setup(localController);
+        characterPanels.SetupPanel(localController);
+        cityBuilderPanels.Setup(localController);
     }
 }

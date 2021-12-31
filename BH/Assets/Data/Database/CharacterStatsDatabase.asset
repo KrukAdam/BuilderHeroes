@@ -13,273 +13,492 @@ MonoBehaviour:
   m_Name: CharacterStatsDatabase
   m_EditorClassIdentifier: 
   allStats:
-  - StatName: Health
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
+      m_TableEntryReference:
+        m_KeyId: 65724248064
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 3
     StatType: 1
     StatDefenseType: 0
-    Value:
-      BaseValue: 0
+    BaseValue:
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
-  - StatName: Stamina
+      Value: 0
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
+      m_TableEntryReference:
+        m_KeyId: 107130417152
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 3
     StatType: 3
     StatDefenseType: 0
-    Value:
-      BaseValue: 0
+    BaseValue:
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
-  - StatName: Mana
+      Value: 0
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
+      m_TableEntryReference:
+        m_KeyId: 159882178560
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 3
     StatType: 2
     StatDefenseType: 0
-    Value:
-      BaseValue: 0
+    BaseValue:
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
-  - StatName: Move Speed
+      Value: 0
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
+      m_TableEntryReference:
+        m_KeyId: 184775372800
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 1
     StatType: 4
     StatDefenseType: 0
-    Value:
-      BaseValue: 0
+    BaseValue:
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
-  - StatName: Attack Speed
+      Value: 0
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
+      m_TableEntryReference:
+        m_KeyId: 213703487488
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 1
     StatType: 5
     StatDefenseType: 0
-    Value:
-      BaseValue: 0
+    BaseValue:
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
-  - StatName: Slash Damage
+      Value: 0
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
+      m_TableEntryReference:
+        m_KeyId: 241180372992
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 2
     StatType: 6
     StatDefenseType: 17
-    Value:
-      BaseValue: 0
+    BaseValue:
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
-  - StatName: Stab Damage
+      Value: 0
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
+      m_TableEntryReference:
+        m_KeyId: 271178035200
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 2
     StatType: 7
     StatDefenseType: 17
-    Value:
-      BaseValue: 0
+    BaseValue:
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
-  - StatName: Blunt Damage
+      Value: 0
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
+      m_TableEntryReference:
+        m_KeyId: 298629754880
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 2
     StatType: 8
     StatDefenseType: 19
-    Value:
-      BaseValue: 0
+    BaseValue:
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
-  - StatName: Arrow Damage
+      Value: 0
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
+      m_TableEntryReference:
+        m_KeyId: 330300944384
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 2
     StatType: 9
     StatDefenseType: 20
-    Value:
-      BaseValue: 0
+    BaseValue:
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
-  - StatName: Fire Damage
+      Value: 0
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
+      m_TableEntryReference:
+        m_KeyId: 363293339648
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 2
     StatType: 10
     StatDefenseType: 21
-    Value:
-      BaseValue: 0
+    BaseValue:
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
-  - StatName: Water Damage
+      Value: 0
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
+      m_TableEntryReference:
+        m_KeyId: 400064802816
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 2
     StatType: 11
     StatDefenseType: 22
-    Value:
-      BaseValue: 0
+    BaseValue:
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
-  - StatName: Earth Damage
+      Value: 0
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
+      m_TableEntryReference:
+        m_KeyId: 424756670464
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 2
     StatType: 12
     StatDefenseType: 23
-    Value:
-      BaseValue: 0
+    BaseValue:
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
-  - StatName: Wind Damage
+      Value: 0
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
+      m_TableEntryReference:
+        m_KeyId: 455593193472
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 2
     StatType: 13
     StatDefenseType: 24
-    Value:
-      BaseValue: 0
+    BaseValue:
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
-  - StatName: Lighting Damage
+      Value: 0
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
+      m_TableEntryReference:
+        m_KeyId: 484760383488
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 2
     StatType: 14
     StatDefenseType: 25
-    Value:
-      BaseValue: 0
+    BaseValue:
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
-  - StatName: Blessing Damage
+      Value: 0
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
+      m_TableEntryReference:
+        m_KeyId: 580717670400
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 2
     StatType: 15
     StatDefenseType: 26
-    Value:
-      BaseValue: 0
+    BaseValue:
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
-  - StatName: Darkness Damage
+      Value: 0
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
+      m_TableEntryReference:
+        m_KeyId: 612296585216
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 2
     StatType: 16
     StatDefenseType: 27
-    Value:
-      BaseValue: 0
+    BaseValue:
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
-  - StatName: Slash Defense
+      Value: 0
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
+      m_TableEntryReference:
+        m_KeyId: 663601311744
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 1
     StatType: 17
     StatDefenseType: 0
-    Value:
-      BaseValue: 0
+    BaseValue:
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
-  - StatName: Stab Defense
+      Value: 0
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
+      m_TableEntryReference:
+        m_KeyId: 697688420352
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 1
     StatType: 18
     StatDefenseType: 0
-    Value:
-      BaseValue: 0
+    BaseValue:
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
-  - StatName: Blunt Defense
+      Value: 0
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
+      m_TableEntryReference:
+        m_KeyId: 716109803520
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 1
     StatType: 19
     StatDefenseType: 0
-    Value:
-      BaseValue: 0
+    BaseValue:
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
-  - StatName: Arrow Defense
+      Value: 0
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
+      m_TableEntryReference:
+        m_KeyId: 751643947008
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 1
     StatType: 20
     StatDefenseType: 0
-    Value:
-      BaseValue: 0
+    BaseValue:
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
-  - StatName: Fire Defense
+      Value: 0
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
+      m_TableEntryReference:
+        m_KeyId: 781981347840
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 1
     StatType: 21
     StatDefenseType: 0
-    Value:
-      BaseValue: 0
+    BaseValue:
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
-  - StatName: Water Defense
+      Value: 0
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
+      m_TableEntryReference:
+        m_KeyId: 811647660032
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 1
     StatType: 22
     StatDefenseType: 0
-    Value:
-      BaseValue: 0
+    BaseValue:
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
-  - StatName: Earth Defense
+      Value: 0
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
+      m_TableEntryReference:
+        m_KeyId: 835303534592
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 1
     StatType: 23
     StatDefenseType: 0
-    Value:
-      BaseValue: 0
+    BaseValue:
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
-  - StatName: Wind Defense
+      Value: 0
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
+      m_TableEntryReference:
+        m_KeyId: 863153713152
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 1
     StatType: 24
     StatDefenseType: 0
-    Value:
-      BaseValue: 0
+    BaseValue:
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
-  - StatName: Lighting Defense
+      Value: 0
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
+      m_TableEntryReference:
+        m_KeyId: 892539006976
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 1
     StatType: 25
     StatDefenseType: 0
-    Value:
-      BaseValue: 0
+    BaseValue:
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
-  - StatName: Blessing Defense
+      Value: 0
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
+      m_TableEntryReference:
+        m_KeyId: 939049644032
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 1
     StatType: 26
     StatDefenseType: 0
-    Value:
-      BaseValue: 0
+    BaseValue:
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
-  - StatName: Darkness Defense
+      Value: 0
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
+      m_TableEntryReference:
+        m_KeyId: 970687279104
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 1
     StatType: 27
     StatDefenseType: 0
-    Value:
-      BaseValue: 0
+    BaseValue:
+      Value: 0
     MinValue:
-      BaseValue: 0
+      Value: 0
     MaxValue:
-      BaseValue: 0
+      Value: 0
+  references:
+    version: 2
+    RefIds: []

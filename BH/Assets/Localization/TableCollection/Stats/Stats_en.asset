@@ -1,0 +1,131 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Stats_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 50d145101e263214aaefdd253bbd7f6e, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 65724248064
+    m_Localized: Health
+    m_Metadata:
+      m_Items: []
+  - m_Id: 107130417152
+    m_Localized: Stamina
+    m_Metadata:
+      m_Items: []
+  - m_Id: 159882178560
+    m_Localized: Mana
+    m_Metadata:
+      m_Items: []
+  - m_Id: 184775372800
+    m_Localized: Move Speed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 213703487488
+    m_Localized: Attack Speed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 241180372992
+    m_Localized: Slash Damage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 271178035200
+    m_Localized: Stab Damage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 298629754880
+    m_Localized: Blunt Damage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 330300944384
+    m_Localized: Arrow Damage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 363293339648
+    m_Localized: Fire Damage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 400064802816
+    m_Localized: Water Damage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 424756670464
+    m_Localized: Earth Damage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 455593193472
+    m_Localized: Wind Damage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 484760383488
+    m_Localized: Lighting Damage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 580717670400
+    m_Localized: Holy Damage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 612296585216
+    m_Localized: Darkness Damage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 663601311744
+    m_Localized: Slash Defense
+    m_Metadata:
+      m_Items: []
+  - m_Id: 697688420352
+    m_Localized: Stab Defense
+    m_Metadata:
+      m_Items: []
+  - m_Id: 716109803520
+    m_Localized: Blunt Defense
+    m_Metadata:
+      m_Items: []
+  - m_Id: 751643947008
+    m_Localized: Arrow Defense
+    m_Metadata:
+      m_Items: []
+  - m_Id: 781981347840
+    m_Localized: Fire Defense
+    m_Metadata:
+      m_Items: []
+  - m_Id: 811647660032
+    m_Localized: Water Defense
+    m_Metadata:
+      m_Items: []
+  - m_Id: 835303534592
+    m_Localized: Earth Defense
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863153713152
+    m_Localized: Wind Defense
+    m_Metadata:
+      m_Items: []
+  - m_Id: 892539006976
+    m_Localized: Lighting Defense
+    m_Metadata:
+      m_Items: []
+  - m_Id: 939049644032
+    m_Localized: Holy Defense
+    m_Metadata:
+      m_Items: []
+  - m_Id: 970687279104
+    m_Localized: Darkness Defense
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
