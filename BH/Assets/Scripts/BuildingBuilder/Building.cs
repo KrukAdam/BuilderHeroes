@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Localization;
 
 public class Building : ScriptableObject
 {
-    public string BuildingName { get => buildingName; }
+    public LocalizedString BuildingName { get => buildingName; }
     public Sprite Sprite { get => sprite; }
     public Sprite ContructionSprite { get => contructionSprite; }
     public Vector2Int Size { get => size; }
@@ -14,7 +15,7 @@ public class Building : ScriptableObject
     public StatsData StatsData { get => stats; }
 
 
-    [SerializeField] private string buildingName = "";
+    [SerializeField] private LocalizedString buildingName = null;
     [SerializeField] private Sprite sprite = null;
     [SerializeField] private Sprite contructionSprite = null;
     [SerializeField] private Vector2Int size = Vector2Int.zero;

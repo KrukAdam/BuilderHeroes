@@ -12,7 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 719583cd28bceec479fac18a11a2434b, type: 3}
   m_Name: Sawmill_Loyalist
   m_EditorClassIdentifier: 
-  buildingName: Sawmill
+  buildingName:
+    m_TableReference:
+      m_TableCollectionName: GUID:466bc0f7986d04544b31fef27006d832
+    m_TableEntryReference:
+      m_KeyId: 793654095872
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   sprite: {fileID: 21300000, guid: f55156ccf12c5bd4e8648ef74aa03439, type: 3}
   contructionSprite: {fileID: 21300000, guid: d2ddb68536301a445b5b185b0688c2b2, type: 3}
   size: {x: 3, y: 2}
@@ -23,3 +31,6 @@ MonoBehaviour:
     Amount: 1
   stats: {fileID: 11400000, guid: 1fb8bb9caa7eb3141a3ce7a9ab775cb4, type: 2}
   craftingRecipeData: {fileID: 11400000, guid: 305aeb266c741c04eab8d9b4a21a3b42, type: 2}
+  references:
+    version: 2
+    RefIds: []

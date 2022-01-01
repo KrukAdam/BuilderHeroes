@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: PanelBuilding Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: PanelBuilding
+  m_TableCollectionNameGuidString: 499abb697409b834bb017221d31883be
+  m_Entries:
+  - m_Id: 9801592832
+    m_Key: ClosePanel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 86674796544
+    m_Key: DestroyBuilding
+    m_Metadata:
+      m_Items: []
+  - m_Id: 296524214272
+    m_Key: Create
+    m_Metadata:
+      m_Items: []
+  - m_Id: 919797788672
+    m_Key: Add
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1025896902656
+    m_Key: Build
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 2937792845568278615
+  references:
+    version: 2
+    RefIds:
+    - rid: 2937792845568278615
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1641026874396

@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: PanelBuilding_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 499abb697409b834bb017221d31883be, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 9801592832
+    m_Localized: Close
+    m_Metadata:
+      m_Items: []
+  - m_Id: 86674796544
+    m_Localized: Destroy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 296524214272
+    m_Localized: Create
+    m_Metadata:
+      m_Items: []
+  - m_Id: 919797788672
+    m_Localized: Add
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1025896902656
+    m_Localized: Build
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

@@ -22,6 +22,18 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-pl
+  - m_GUID: 159dc17db8003a8438f882cf2e13f1ec
+    m_Address: PanelBuilding_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    - Preload
+  - m_GUID: 47f7565373aaabb4d97858a5d33c22de
+    m_Address: BuildingName_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    - Preload
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 6c2525f31135a624f874d31204351340, type: 2}
   m_SchemaSet:

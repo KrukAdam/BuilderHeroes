@@ -80,7 +80,7 @@ MonoBehaviour:
     StatType: 4
     StatDefenseType: 0
     BaseValue:
-      Value: 5
+      Value: 100
     MinValue:
       Value: 0
     MaxValue:
