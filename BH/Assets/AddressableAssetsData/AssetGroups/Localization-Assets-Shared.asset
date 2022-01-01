@@ -31,6 +31,11 @@ MonoBehaviour:
       Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
+  - m_GUID: f8eea51c3e646d14492ed533e7de77c7
+    m_Address: Assets/Localization/TableCollection/PanelCharacter/PanelCharacter
+      Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 6c2525f31135a624f874d31204351340, type: 2}
   m_SchemaSet:
