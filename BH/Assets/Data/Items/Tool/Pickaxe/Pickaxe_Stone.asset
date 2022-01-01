@@ -18,7 +18,15 @@ MonoBehaviour:
   MaximumStacks: 1
   EquipmentType: 9
   itemStats:
-  - StatName: Health
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 3
     StatType: 1
     StatDefenseType: 0
@@ -28,7 +36,15 @@ MonoBehaviour:
       Value: 0
     MaxValue:
       Value: 0
-  - StatName: Stamina
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 3
     StatType: 3
     StatDefenseType: 0
@@ -38,7 +54,15 @@ MonoBehaviour:
       Value: 0
     MaxValue:
       Value: 0
-  - StatName: Mana
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 3
     StatType: 2
     StatDefenseType: 0
@@ -48,7 +72,15 @@ MonoBehaviour:
       Value: 0
     MaxValue:
       Value: 0
-  - StatName: Move Speed
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 1
     StatType: 4
     StatDefenseType: 0
@@ -58,7 +90,15 @@ MonoBehaviour:
       Value: 0
     MaxValue:
       Value: 0
-  - StatName: Attack Speed
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 1
     StatType: 5
     StatDefenseType: 0
@@ -68,7 +108,15 @@ MonoBehaviour:
       Value: 0
     MaxValue:
       Value: 0
-  - StatName: Slash Damage
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 2
     StatType: 6
     StatDefenseType: 17
@@ -78,7 +126,15 @@ MonoBehaviour:
       Value: 0
     MaxValue:
       Value: 0
-  - StatName: Stab Damage
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 2
     StatType: 7
     StatDefenseType: 17
@@ -88,7 +144,15 @@ MonoBehaviour:
       Value: 0
     MaxValue:
       Value: 0
-  - StatName: Blunt Damage
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 2
     StatType: 8
     StatDefenseType: 19
@@ -98,7 +162,15 @@ MonoBehaviour:
       Value: 0
     MaxValue:
       Value: 0
-  - StatName: Arrow Damage
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 2
     StatType: 9
     StatDefenseType: 20
@@ -108,7 +180,15 @@ MonoBehaviour:
       Value: 0
     MaxValue:
       Value: 0
-  - StatName: Fire Damage
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 2
     StatType: 10
     StatDefenseType: 21
@@ -118,7 +198,15 @@ MonoBehaviour:
       Value: 0
     MaxValue:
       Value: 0
-  - StatName: Water Damage
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 2
     StatType: 11
     StatDefenseType: 22
@@ -128,7 +216,15 @@ MonoBehaviour:
       Value: 0
     MaxValue:
       Value: 0
-  - StatName: Earth Damage
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 2
     StatType: 12
     StatDefenseType: 23
@@ -138,7 +234,15 @@ MonoBehaviour:
       Value: 0
     MaxValue:
       Value: 0
-  - StatName: Wind Damage
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 2
     StatType: 13
     StatDefenseType: 24
@@ -148,7 +252,15 @@ MonoBehaviour:
       Value: 0
     MaxValue:
       Value: 0
-  - StatName: Lighting Damage
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 2
     StatType: 14
     StatDefenseType: 25
@@ -158,7 +270,15 @@ MonoBehaviour:
       Value: 0
     MaxValue:
       Value: 0
-  - StatName: Blessing Damage
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 2
     StatType: 15
     StatDefenseType: 26
@@ -168,7 +288,15 @@ MonoBehaviour:
       Value: 0
     MaxValue:
       Value: 0
-  - StatName: Darkness Damage
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 2
     StatType: 16
     StatDefenseType: 27
@@ -178,7 +306,15 @@ MonoBehaviour:
       Value: 0
     MaxValue:
       Value: 0
-  - StatName: Slash Defense
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 1
     StatType: 17
     StatDefenseType: 0
@@ -188,7 +324,15 @@ MonoBehaviour:
       Value: 0
     MaxValue:
       Value: 0
-  - StatName: Stab Defense
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 1
     StatType: 18
     StatDefenseType: 0
@@ -198,7 +342,15 @@ MonoBehaviour:
       Value: 0
     MaxValue:
       Value: 0
-  - StatName: Blunt Defense
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 1
     StatType: 19
     StatDefenseType: 0
@@ -208,7 +360,15 @@ MonoBehaviour:
       Value: 0
     MaxValue:
       Value: 0
-  - StatName: Arrow Defense
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 1
     StatType: 20
     StatDefenseType: 0
@@ -218,7 +378,15 @@ MonoBehaviour:
       Value: 0
     MaxValue:
       Value: 0
-  - StatName: Fire Defense
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 1
     StatType: 21
     StatDefenseType: 0
@@ -228,7 +396,15 @@ MonoBehaviour:
       Value: 0
     MaxValue:
       Value: 0
-  - StatName: Water Defense
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 1
     StatType: 22
     StatDefenseType: 0
@@ -238,7 +414,15 @@ MonoBehaviour:
       Value: 0
     MaxValue:
       Value: 0
-  - StatName: Earth Defense
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 1
     StatType: 23
     StatDefenseType: 0
@@ -248,7 +432,15 @@ MonoBehaviour:
       Value: 0
     MaxValue:
       Value: 0
-  - StatName: Wind Defense
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 1
     StatType: 24
     StatDefenseType: 0
@@ -258,7 +450,15 @@ MonoBehaviour:
       Value: 0
     MaxValue:
       Value: 0
-  - StatName: Lighting Defense
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 1
     StatType: 25
     StatDefenseType: 0
@@ -268,7 +468,15 @@ MonoBehaviour:
       Value: 0
     MaxValue:
       Value: 0
-  - StatName: Blessing Defense
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 1
     StatType: 26
     StatDefenseType: 0
@@ -278,7 +486,15 @@ MonoBehaviour:
       Value: 0
     MaxValue:
       Value: 0
-  - StatName: Darkness Defense
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 1
     StatType: 27
     StatDefenseType: 0
@@ -289,7 +505,15 @@ MonoBehaviour:
     MaxValue:
       Value: 0
   itemStatsPercentMult:
-  - StatName: Health
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 3
     StatType: 1
     StatDefenseType: 0
@@ -299,7 +523,15 @@ MonoBehaviour:
       Value: 0
     MaxValue:
       Value: 0
-  - StatName: Stamina
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 3
     StatType: 3
     StatDefenseType: 0
@@ -309,7 +541,15 @@ MonoBehaviour:
       Value: 0
     MaxValue:
       Value: 0
-  - StatName: Mana
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 3
     StatType: 2
     StatDefenseType: 0
@@ -319,7 +559,15 @@ MonoBehaviour:
       Value: 0
     MaxValue:
       Value: 0
-  - StatName: Move Speed
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 1
     StatType: 4
     StatDefenseType: 0
@@ -329,7 +577,15 @@ MonoBehaviour:
       Value: 0
     MaxValue:
       Value: 0
-  - StatName: Attack Speed
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 1
     StatType: 5
     StatDefenseType: 0
@@ -339,7 +595,15 @@ MonoBehaviour:
       Value: 0
     MaxValue:
       Value: 0
-  - StatName: Slash Damage
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 2
     StatType: 6
     StatDefenseType: 17
@@ -349,7 +613,15 @@ MonoBehaviour:
       Value: 0
     MaxValue:
       Value: 0
-  - StatName: Stab Damage
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 2
     StatType: 7
     StatDefenseType: 17
@@ -359,7 +631,15 @@ MonoBehaviour:
       Value: 0
     MaxValue:
       Value: 0
-  - StatName: Blunt Damage
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 2
     StatType: 8
     StatDefenseType: 19
@@ -369,7 +649,15 @@ MonoBehaviour:
       Value: 0
     MaxValue:
       Value: 0
-  - StatName: Arrow Damage
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 2
     StatType: 9
     StatDefenseType: 20
@@ -379,7 +667,15 @@ MonoBehaviour:
       Value: 0
     MaxValue:
       Value: 0
-  - StatName: Fire Damage
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 2
     StatType: 10
     StatDefenseType: 21
@@ -389,7 +685,15 @@ MonoBehaviour:
       Value: 0
     MaxValue:
       Value: 0
-  - StatName: Water Damage
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 2
     StatType: 11
     StatDefenseType: 22
@@ -399,7 +703,15 @@ MonoBehaviour:
       Value: 0
     MaxValue:
       Value: 0
-  - StatName: Earth Damage
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 2
     StatType: 12
     StatDefenseType: 23
@@ -409,7 +721,15 @@ MonoBehaviour:
       Value: 0
     MaxValue:
       Value: 0
-  - StatName: Wind Damage
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 2
     StatType: 13
     StatDefenseType: 24
@@ -419,7 +739,15 @@ MonoBehaviour:
       Value: 0
     MaxValue:
       Value: 0
-  - StatName: Lighting Damage
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 2
     StatType: 14
     StatDefenseType: 25
@@ -429,7 +757,15 @@ MonoBehaviour:
       Value: 0
     MaxValue:
       Value: 0
-  - StatName: Blessing Damage
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 2
     StatType: 15
     StatDefenseType: 26
@@ -439,7 +775,15 @@ MonoBehaviour:
       Value: 0
     MaxValue:
       Value: 0
-  - StatName: Darkness Damage
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 2
     StatType: 16
     StatDefenseType: 27
@@ -449,7 +793,15 @@ MonoBehaviour:
       Value: 0
     MaxValue:
       Value: 0
-  - StatName: Slash Defense
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 1
     StatType: 17
     StatDefenseType: 0
@@ -459,7 +811,15 @@ MonoBehaviour:
       Value: 0
     MaxValue:
       Value: 0
-  - StatName: Stab Defense
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 1
     StatType: 18
     StatDefenseType: 0
@@ -469,7 +829,15 @@ MonoBehaviour:
       Value: 0
     MaxValue:
       Value: 0
-  - StatName: Blunt Defense
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 1
     StatType: 19
     StatDefenseType: 0
@@ -479,7 +847,15 @@ MonoBehaviour:
       Value: 0
     MaxValue:
       Value: 0
-  - StatName: Arrow Defense
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 1
     StatType: 20
     StatDefenseType: 0
@@ -489,7 +865,15 @@ MonoBehaviour:
       Value: 0
     MaxValue:
       Value: 0
-  - StatName: Fire Defense
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 1
     StatType: 21
     StatDefenseType: 0
@@ -499,7 +883,15 @@ MonoBehaviour:
       Value: 0
     MaxValue:
       Value: 0
-  - StatName: Water Defense
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 1
     StatType: 22
     StatDefenseType: 0
@@ -509,7 +901,15 @@ MonoBehaviour:
       Value: 0
     MaxValue:
       Value: 0
-  - StatName: Earth Defense
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 1
     StatType: 23
     StatDefenseType: 0
@@ -519,7 +919,15 @@ MonoBehaviour:
       Value: 0
     MaxValue:
       Value: 0
-  - StatName: Wind Defense
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 1
     StatType: 24
     StatDefenseType: 0
@@ -529,7 +937,15 @@ MonoBehaviour:
       Value: 0
     MaxValue:
       Value: 0
-  - StatName: Lighting Defense
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 1
     StatType: 25
     StatDefenseType: 0
@@ -539,7 +955,15 @@ MonoBehaviour:
       Value: 0
     MaxValue:
       Value: 0
-  - StatName: Blessing Defense
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 1
     StatType: 26
     StatDefenseType: 0
@@ -549,7 +973,15 @@ MonoBehaviour:
       Value: 0
     MaxValue:
       Value: 0
-  - StatName: Darkness Defense
+  - StatName:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     StatUseValues: 1
     StatType: 27
     StatDefenseType: 0
@@ -565,3 +997,6 @@ MonoBehaviour:
   toolType: 2
   damageRawMaterial: 1
   durability: 100
+  references:
+    version: 2
+    RefIds: []

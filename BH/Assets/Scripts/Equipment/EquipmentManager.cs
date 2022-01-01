@@ -58,8 +58,9 @@ public class EquipmentManager : MonoBehaviour
 		}
 		if(tool.Durability <= 0)
         {
-			tool.Destroy();
-        }
+			equipmentPanel.ToolSlot.Item = null;
+			equipmentPanel.ToolSlot.Amount = 0;
+		}
 	}
 
 
