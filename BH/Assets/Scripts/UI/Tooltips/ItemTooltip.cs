@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Localization;
 using UnityEngine.Localization.Components;
 using UnityEngine.UI;
 
@@ -35,9 +36,14 @@ public class ItemTooltip : BaseTooltip
 
     private void ShowItemDescription(Item item)
     {
-        //TODO show derscription
-        itemDescriptionText.text = "";
-        //  ItemDescriptionText.text = item.GetDescription();
+        if(item.ItemDescription.IsEmpty)
+        {
+            itemDescriptionText.text = "";
+        }
+        else
+        {
+            itemDescriptionText.text = item.ItemDescription.GetLocalizedString();
+        }
     }
 
     private void ShowModifiersItemEq(ItemEquippable itemEquippable)

@@ -13,6 +13,7 @@ public class Item : ScriptableObject
 	public string ID { get { return id; } }
 	public LocalizedString ItemName;
 	public LocalizedString ItemType;
+	public LocalizedString ItemDescription;
 	public Sprite Icon;
 	[Range(1,999)]
 	public int MaximumStacks = 1;
