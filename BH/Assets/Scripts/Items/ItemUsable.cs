@@ -4,6 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Items/Usable Item")]
 public class ItemUsable : Item
 {
+	public List<ItemStatBuffEffect> Effects { get => effects; }
 	public bool IsConsumable;
 
     [SerializeField] private List<ItemStatBuffEffect> effects; 

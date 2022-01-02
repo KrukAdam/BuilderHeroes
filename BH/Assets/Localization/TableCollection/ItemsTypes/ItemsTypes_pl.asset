@@ -22,6 +22,38 @@ MonoBehaviour:
     m_Localized: "Narz\u0119dzie"
     m_Metadata:
       m_Items: []
+  - m_Id: 433759287013376
+    m_Localized: "G\u0142owna R\u0119ka"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 433798126268416
+    m_Localized: "Druga R\u0119ka"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 433823996735488
+    m_Localized: Amunicja
+    m_Metadata:
+      m_Items: []
+  - m_Id: 433895367012352
+    m_Localized: "Napier\u015Bnik"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 433932880867328
+    m_Localized: "He\u0142m"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 433998689497088
+    m_Localized: Nogawice
+    m_Metadata:
+      m_Items: []
+  - m_Id: 434099579285504
+    m_Localized: Buty
+    m_Metadata:
+      m_Items: []
+  - m_Id: 434165048176640
+    m_Localized: Akcesorium
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

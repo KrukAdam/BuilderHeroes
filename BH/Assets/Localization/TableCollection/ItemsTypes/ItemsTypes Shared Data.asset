@@ -19,14 +19,46 @@ MonoBehaviour:
     m_Key: Item_Type_Tool
     m_Metadata:
       m_Items: []
+  - m_Id: 433759287013376
+    m_Key: Item_Type_MainHand
+    m_Metadata:
+      m_Items: []
+  - m_Id: 433798126268416
+    m_Key: Item_Type_SecondHand
+    m_Metadata:
+      m_Items: []
+  - m_Id: 433823996735488
+    m_Key: Item_Type_Ammo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 433895367012352
+    m_Key: Item_Type_Chest
+    m_Metadata:
+      m_Items: []
+  - m_Id: 433932880867328
+    m_Key: Item_Type_Helmet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 433998689497088
+    m_Key: Item_Type_Legs
+    m_Metadata:
+      m_Items: []
+  - m_Id: 434099579285504
+    m_Key: Item_Type_Boots
+    m_Metadata:
+      m_Items: []
+  - m_Id: 434165048176640
+    m_Key: Item_Type_Accessory
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
-    rid: 2937792845568278892
+    rid: 2937792873613755052
   references:
     version: 2
     RefIds:
-    - rid: 2937792845568278892
+    - rid: 2937792873613755052
       type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
       data:
         m_CustomEpoch: 1641039036175

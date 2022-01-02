@@ -36,6 +36,8 @@ public class GameManager : MonoBehaviour
 
         InputManager = new BHInputManager.InputManager();
         InputManager.Init();
+
+        characterStatsData.Setup();
     }
 
     private void OnEnable()

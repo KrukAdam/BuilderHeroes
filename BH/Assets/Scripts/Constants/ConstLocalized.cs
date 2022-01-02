@@ -9,4 +9,8 @@ public class ConstLocalized : ScriptableObject
     //Stats
     public LocalizedString StatMinValue;
     public LocalizedString StatMaxValue;
+
+    //Time
+    public LocalizedString ForTime;
+    public LocalizedString Seconds;
 }
