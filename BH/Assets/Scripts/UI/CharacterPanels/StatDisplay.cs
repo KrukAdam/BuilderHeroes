@@ -4,50 +4,42 @@ using UnityEngine.EventSystems;
 using UnityEngine.Localization.Components;
 using System.Collections;
 using UnityEngine.Localization.Settings;
+using System;
 
 public class StatDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
+	public event Action<CharacterStat> OnPointerEnterEvent;
+	public event Action OnPointerExitEvent;
+
 	[SerializeField] private LocalizeStringEvent nameText;
 	[SerializeField] private Text valueBaseText;
-	//[SerializeField] private Text valueMaxText;
 	[SerializeField] private StatTooltip tooltip;
 
-	//	private bool showingTooltip;
 	private CharacterStat stat;
 
-	public void Setup(CharacterStat characterStat)
+	public void Setup(CharacterStat characterStat, LocalController localController)
 	{
 		stat = characterStat;
-
 		nameText.StringReference = stat.StatName;
 
-		//nameText.text = stat.StatName;
-
-		//if(stat.StatUseValues == EStatsValueUse.OnlyBaseValue)
-		//      {
-		//	valueMaxText.gameObject.SetActive(false);
-		//      }
 		UpdateStatValue();
+
+		OnPointerEnterEvent += localController.GameUiManager.TooltipsPanels.ShowStatTooltip;
+		OnPointerExitEvent += localController.GameUiManager.TooltipsPanels.HideStatTooltip;
 	}
 
 	public void OnPointerEnter(PointerEventData eventData)
 	{
-		//	tooltip.ShowTooltip(Stat, Name);
-		//	showingTooltip = true;
+		OnPointerEnterEvent(stat);
 	}
 
 	public void OnPointerExit(PointerEventData eventData)
 	{
-		tooltip.HideTooltip();
-		//	showingTooltip = false;
+		OnPointerExitEvent();
 	}
 
 	public void UpdateStatValue()
 	{
-		//if (showingTooltip) {
-		//	tooltip.ShowTooltip(Stat, Name);
-		//}
-
 		if (stat.StatUseValues == EStatsValueUse.OnlyBaseValue)
 		{
 			valueBaseText.text = stat.BaseValue.Value.ToString();
@@ -61,4 +53,5 @@ public class StatDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 			valueBaseText.text = stat.BaseValue.Value.ToString() + " / " + stat.MaxValue.Value.ToString();
 		}
 	}
+
 }

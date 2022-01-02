@@ -40,6 +40,7 @@ public class ItemDiscoveryManager : MonoBehaviour
 
     private void DiscaveredNewItem(Item newItem)
     {
+        //Localized is not setup here
         Debug.Log("New item : " + newItem.ItemName);
         itemsDiscovered.Add(newItem);
 

@@ -6,7 +6,7 @@ using UnityEngine.Localization;
 public class CharacterStat
 {
     //Display name
-    public LocalizedString StatName = null;
+    public LocalizedString StatName;
 
     public EStatsValueUse StatUseValues = EStatsValueUse.None;
     public EStatsTypes StatType = EStatsTypes.None;

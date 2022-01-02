@@ -1,16 +1,18 @@
 ﻿using System.Text;
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.Localization;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
 
-[CreateAssetMenu(menuName = "Items/Item")]
+[CreateAssetMenu(menuName = "Game/Items/Item")]
 public class Item : ScriptableObject
 {
 	[SerializeField] string id;
 	public string ID { get { return id; } }
-	public string ItemName;
+	public LocalizedString ItemName;
+	public LocalizedString ItemType;
 	public Sprite Icon;
 	[Range(1,999)]
 	public int MaximumStacks = 1;
@@ -34,11 +36,6 @@ public class Item : ScriptableObject
 	public virtual void Destroy()
 	{
 
-	}
-
-	public virtual string GetItemType()
-	{
-		return "";
 	}
 
 	public virtual string GetDescription()

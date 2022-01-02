@@ -12,19 +12,19 @@ public class StatsPanel : MonoBehaviour
     private List<StatDisplay> statDisplays = new List<StatDisplay>();
     private Stats stats;
 
-    public void SetupPanel(LocalController levelController)
+    public void SetupPanel(LocalController localController)
     {
-        stats = levelController.Player.Stats;
-        SetStats();
-        SetupEvents(levelController);
+        stats = localController.Player.Stats;
+        SetStats(localController);
+        SetupEvents(localController);
     }
 
-    public void SetStats()
+    public void SetStats(LocalController localController)
     {
         for (int i = 0; i < stats.AllStats.Count; i++)
         {
             StatDisplay display = Instantiate(statDisplayPrefab, parentStatDisplay);
-            display.Setup(stats.AllStats[i]);
+            display.Setup(stats.AllStats[i], localController);
 
             statDisplays.Add(display);
         }

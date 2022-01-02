@@ -13,16 +13,33 @@ MonoBehaviour:
   m_Name: Pickaxe_Stone
   m_EditorClassIdentifier: 
   id: 3bc5d807c75b4af4ba8ac4c4d6e08760
-  ItemName: Stone Pickaxe
+  ItemName:
+    m_TableReference:
+      m_TableCollectionName: GUID:9613dbe3555c461408e66ff89af959b2
+    m_TableEntryReference:
+      m_KeyId: 7587000320
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  ItemType:
+    m_TableReference:
+      m_TableCollectionName: GUID:430614de7679a2e44b04d68c9c8442c7
+    m_TableEntryReference:
+      m_KeyId: 27925180416
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   Icon: {fileID: -1059151252, guid: b7daa4134f3bdd041afe364cfe36ebfc, type: 3}
   MaximumStacks: 1
   EquipmentType: 9
   itemStats:
   - StatName:
       m_TableReference:
-        m_TableCollectionName: 
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
       m_TableEntryReference:
-        m_KeyId: 0
+        m_KeyId: 65724248064
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
@@ -38,9 +55,9 @@ MonoBehaviour:
       Value: 0
   - StatName:
       m_TableReference:
-        m_TableCollectionName: 
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
       m_TableEntryReference:
-        m_KeyId: 0
+        m_KeyId: 107130417152
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
@@ -56,9 +73,9 @@ MonoBehaviour:
       Value: 0
   - StatName:
       m_TableReference:
-        m_TableCollectionName: 
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
       m_TableEntryReference:
-        m_KeyId: 0
+        m_KeyId: 159882178560
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
@@ -74,9 +91,9 @@ MonoBehaviour:
       Value: 0
   - StatName:
       m_TableReference:
-        m_TableCollectionName: 
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
       m_TableEntryReference:
-        m_KeyId: 0
+        m_KeyId: 184775372800
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
@@ -92,9 +109,9 @@ MonoBehaviour:
       Value: 0
   - StatName:
       m_TableReference:
-        m_TableCollectionName: 
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
       m_TableEntryReference:
-        m_KeyId: 0
+        m_KeyId: 213703487488
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
@@ -110,9 +127,9 @@ MonoBehaviour:
       Value: 0
   - StatName:
       m_TableReference:
-        m_TableCollectionName: 
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
       m_TableEntryReference:
-        m_KeyId: 0
+        m_KeyId: 241180372992
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
@@ -128,9 +145,9 @@ MonoBehaviour:
       Value: 0
   - StatName:
       m_TableReference:
-        m_TableCollectionName: 
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
       m_TableEntryReference:
-        m_KeyId: 0
+        m_KeyId: 271178035200
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
@@ -146,9 +163,9 @@ MonoBehaviour:
       Value: 0
   - StatName:
       m_TableReference:
-        m_TableCollectionName: 
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
       m_TableEntryReference:
-        m_KeyId: 0
+        m_KeyId: 298629754880
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
@@ -164,9 +181,9 @@ MonoBehaviour:
       Value: 0
   - StatName:
       m_TableReference:
-        m_TableCollectionName: 
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
       m_TableEntryReference:
-        m_KeyId: 0
+        m_KeyId: 330300944384
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
@@ -182,9 +199,9 @@ MonoBehaviour:
       Value: 0
   - StatName:
       m_TableReference:
-        m_TableCollectionName: 
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
       m_TableEntryReference:
-        m_KeyId: 0
+        m_KeyId: 363293339648
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
@@ -200,9 +217,9 @@ MonoBehaviour:
       Value: 0
   - StatName:
       m_TableReference:
-        m_TableCollectionName: 
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
       m_TableEntryReference:
-        m_KeyId: 0
+        m_KeyId: 400064802816
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
@@ -218,9 +235,9 @@ MonoBehaviour:
       Value: 0
   - StatName:
       m_TableReference:
-        m_TableCollectionName: 
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
       m_TableEntryReference:
-        m_KeyId: 0
+        m_KeyId: 424756670464
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
@@ -236,9 +253,9 @@ MonoBehaviour:
       Value: 0
   - StatName:
       m_TableReference:
-        m_TableCollectionName: 
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
       m_TableEntryReference:
-        m_KeyId: 0
+        m_KeyId: 455593193472
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
@@ -254,9 +271,9 @@ MonoBehaviour:
       Value: 0
   - StatName:
       m_TableReference:
-        m_TableCollectionName: 
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
       m_TableEntryReference:
-        m_KeyId: 0
+        m_KeyId: 484760383488
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
@@ -272,9 +289,9 @@ MonoBehaviour:
       Value: 0
   - StatName:
       m_TableReference:
-        m_TableCollectionName: 
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
       m_TableEntryReference:
-        m_KeyId: 0
+        m_KeyId: 580717670400
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
@@ -290,9 +307,9 @@ MonoBehaviour:
       Value: 0
   - StatName:
       m_TableReference:
-        m_TableCollectionName: 
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
       m_TableEntryReference:
-        m_KeyId: 0
+        m_KeyId: 612296585216
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
@@ -308,9 +325,9 @@ MonoBehaviour:
       Value: 0
   - StatName:
       m_TableReference:
-        m_TableCollectionName: 
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
       m_TableEntryReference:
-        m_KeyId: 0
+        m_KeyId: 663601311744
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
@@ -326,9 +343,9 @@ MonoBehaviour:
       Value: 0
   - StatName:
       m_TableReference:
-        m_TableCollectionName: 
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
       m_TableEntryReference:
-        m_KeyId: 0
+        m_KeyId: 697688420352
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
@@ -344,9 +361,9 @@ MonoBehaviour:
       Value: 0
   - StatName:
       m_TableReference:
-        m_TableCollectionName: 
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
       m_TableEntryReference:
-        m_KeyId: 0
+        m_KeyId: 716109803520
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
@@ -362,9 +379,9 @@ MonoBehaviour:
       Value: 0
   - StatName:
       m_TableReference:
-        m_TableCollectionName: 
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
       m_TableEntryReference:
-        m_KeyId: 0
+        m_KeyId: 751643947008
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
@@ -380,9 +397,9 @@ MonoBehaviour:
       Value: 0
   - StatName:
       m_TableReference:
-        m_TableCollectionName: 
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
       m_TableEntryReference:
-        m_KeyId: 0
+        m_KeyId: 781981347840
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
@@ -398,9 +415,9 @@ MonoBehaviour:
       Value: 0
   - StatName:
       m_TableReference:
-        m_TableCollectionName: 
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
       m_TableEntryReference:
-        m_KeyId: 0
+        m_KeyId: 811647660032
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
@@ -416,9 +433,9 @@ MonoBehaviour:
       Value: 0
   - StatName:
       m_TableReference:
-        m_TableCollectionName: 
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
       m_TableEntryReference:
-        m_KeyId: 0
+        m_KeyId: 835303534592
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
@@ -434,9 +451,9 @@ MonoBehaviour:
       Value: 0
   - StatName:
       m_TableReference:
-        m_TableCollectionName: 
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
       m_TableEntryReference:
-        m_KeyId: 0
+        m_KeyId: 863153713152
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
@@ -452,9 +469,9 @@ MonoBehaviour:
       Value: 0
   - StatName:
       m_TableReference:
-        m_TableCollectionName: 
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
       m_TableEntryReference:
-        m_KeyId: 0
+        m_KeyId: 892539006976
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
@@ -470,9 +487,9 @@ MonoBehaviour:
       Value: 0
   - StatName:
       m_TableReference:
-        m_TableCollectionName: 
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
       m_TableEntryReference:
-        m_KeyId: 0
+        m_KeyId: 939049644032
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
@@ -488,9 +505,9 @@ MonoBehaviour:
       Value: 0
   - StatName:
       m_TableReference:
-        m_TableCollectionName: 
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
       m_TableEntryReference:
-        m_KeyId: 0
+        m_KeyId: 970687279104
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
@@ -507,9 +524,9 @@ MonoBehaviour:
   itemStatsPercentMult:
   - StatName:
       m_TableReference:
-        m_TableCollectionName: 
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
       m_TableEntryReference:
-        m_KeyId: 0
+        m_KeyId: 65724248064
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
@@ -525,9 +542,9 @@ MonoBehaviour:
       Value: 0
   - StatName:
       m_TableReference:
-        m_TableCollectionName: 
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
       m_TableEntryReference:
-        m_KeyId: 0
+        m_KeyId: 107130417152
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
@@ -543,9 +560,9 @@ MonoBehaviour:
       Value: 0
   - StatName:
       m_TableReference:
-        m_TableCollectionName: 
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
       m_TableEntryReference:
-        m_KeyId: 0
+        m_KeyId: 159882178560
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
@@ -561,9 +578,9 @@ MonoBehaviour:
       Value: 0
   - StatName:
       m_TableReference:
-        m_TableCollectionName: 
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
       m_TableEntryReference:
-        m_KeyId: 0
+        m_KeyId: 184775372800
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
@@ -579,9 +596,9 @@ MonoBehaviour:
       Value: 0
   - StatName:
       m_TableReference:
-        m_TableCollectionName: 
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
       m_TableEntryReference:
-        m_KeyId: 0
+        m_KeyId: 213703487488
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
@@ -597,9 +614,9 @@ MonoBehaviour:
       Value: 0
   - StatName:
       m_TableReference:
-        m_TableCollectionName: 
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
       m_TableEntryReference:
-        m_KeyId: 0
+        m_KeyId: 241180372992
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
@@ -615,9 +632,9 @@ MonoBehaviour:
       Value: 0
   - StatName:
       m_TableReference:
-        m_TableCollectionName: 
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
       m_TableEntryReference:
-        m_KeyId: 0
+        m_KeyId: 271178035200
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
@@ -633,9 +650,9 @@ MonoBehaviour:
       Value: 0
   - StatName:
       m_TableReference:
-        m_TableCollectionName: 
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
       m_TableEntryReference:
-        m_KeyId: 0
+        m_KeyId: 298629754880
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
@@ -651,9 +668,9 @@ MonoBehaviour:
       Value: 0
   - StatName:
       m_TableReference:
-        m_TableCollectionName: 
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
       m_TableEntryReference:
-        m_KeyId: 0
+        m_KeyId: 330300944384
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
@@ -669,9 +686,9 @@ MonoBehaviour:
       Value: 0
   - StatName:
       m_TableReference:
-        m_TableCollectionName: 
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
       m_TableEntryReference:
-        m_KeyId: 0
+        m_KeyId: 363293339648
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
@@ -687,9 +704,9 @@ MonoBehaviour:
       Value: 0
   - StatName:
       m_TableReference:
-        m_TableCollectionName: 
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
       m_TableEntryReference:
-        m_KeyId: 0
+        m_KeyId: 400064802816
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
@@ -705,9 +722,9 @@ MonoBehaviour:
       Value: 0
   - StatName:
       m_TableReference:
-        m_TableCollectionName: 
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
       m_TableEntryReference:
-        m_KeyId: 0
+        m_KeyId: 424756670464
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
@@ -723,9 +740,9 @@ MonoBehaviour:
       Value: 0
   - StatName:
       m_TableReference:
-        m_TableCollectionName: 
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
       m_TableEntryReference:
-        m_KeyId: 0
+        m_KeyId: 455593193472
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
@@ -741,9 +758,9 @@ MonoBehaviour:
       Value: 0
   - StatName:
       m_TableReference:
-        m_TableCollectionName: 
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
       m_TableEntryReference:
-        m_KeyId: 0
+        m_KeyId: 484760383488
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
@@ -759,9 +776,9 @@ MonoBehaviour:
       Value: 0
   - StatName:
       m_TableReference:
-        m_TableCollectionName: 
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
       m_TableEntryReference:
-        m_KeyId: 0
+        m_KeyId: 580717670400
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
@@ -777,9 +794,9 @@ MonoBehaviour:
       Value: 0
   - StatName:
       m_TableReference:
-        m_TableCollectionName: 
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
       m_TableEntryReference:
-        m_KeyId: 0
+        m_KeyId: 612296585216
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
@@ -795,9 +812,9 @@ MonoBehaviour:
       Value: 0
   - StatName:
       m_TableReference:
-        m_TableCollectionName: 
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
       m_TableEntryReference:
-        m_KeyId: 0
+        m_KeyId: 663601311744
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
@@ -813,9 +830,9 @@ MonoBehaviour:
       Value: 0
   - StatName:
       m_TableReference:
-        m_TableCollectionName: 
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
       m_TableEntryReference:
-        m_KeyId: 0
+        m_KeyId: 697688420352
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
@@ -831,9 +848,9 @@ MonoBehaviour:
       Value: 0
   - StatName:
       m_TableReference:
-        m_TableCollectionName: 
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
       m_TableEntryReference:
-        m_KeyId: 0
+        m_KeyId: 716109803520
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
@@ -849,9 +866,9 @@ MonoBehaviour:
       Value: 0
   - StatName:
       m_TableReference:
-        m_TableCollectionName: 
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
       m_TableEntryReference:
-        m_KeyId: 0
+        m_KeyId: 751643947008
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
@@ -867,9 +884,9 @@ MonoBehaviour:
       Value: 0
   - StatName:
       m_TableReference:
-        m_TableCollectionName: 
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
       m_TableEntryReference:
-        m_KeyId: 0
+        m_KeyId: 781981347840
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
@@ -885,9 +902,9 @@ MonoBehaviour:
       Value: 0
   - StatName:
       m_TableReference:
-        m_TableCollectionName: 
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
       m_TableEntryReference:
-        m_KeyId: 0
+        m_KeyId: 811647660032
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
@@ -903,9 +920,9 @@ MonoBehaviour:
       Value: 0
   - StatName:
       m_TableReference:
-        m_TableCollectionName: 
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
       m_TableEntryReference:
-        m_KeyId: 0
+        m_KeyId: 835303534592
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
@@ -921,9 +938,9 @@ MonoBehaviour:
       Value: 0
   - StatName:
       m_TableReference:
-        m_TableCollectionName: 
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
       m_TableEntryReference:
-        m_KeyId: 0
+        m_KeyId: 863153713152
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
@@ -939,9 +956,9 @@ MonoBehaviour:
       Value: 0
   - StatName:
       m_TableReference:
-        m_TableCollectionName: 
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
       m_TableEntryReference:
-        m_KeyId: 0
+        m_KeyId: 892539006976
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
@@ -957,9 +974,9 @@ MonoBehaviour:
       Value: 0
   - StatName:
       m_TableReference:
-        m_TableCollectionName: 
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
       m_TableEntryReference:
-        m_KeyId: 0
+        m_KeyId: 939049644032
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
@@ -975,9 +992,9 @@ MonoBehaviour:
       Value: 0
   - StatName:
       m_TableReference:
-        m_TableCollectionName: 
+        m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
       m_TableEntryReference:
-        m_KeyId: 0
+        m_KeyId: 970687279104
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0

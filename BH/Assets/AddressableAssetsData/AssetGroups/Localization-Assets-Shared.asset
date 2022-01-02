@@ -36,6 +36,24 @@ MonoBehaviour:
       Shared Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
+  - m_GUID: 9613dbe3555c461408e66ff89af959b2
+    m_Address: Assets/Localization/TableCollection/ItemsPickaxes/ItemsPickaxes Shared
+      Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+  - m_GUID: 430614de7679a2e44b04d68c9c8442c7
+    m_Address: Assets/Localization/TableCollection/ItemsTypes/ItemsTypes Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+  - m_GUID: f3d23caa9efacb44fa1345bc422185cd
+    m_Address: Assets/Localization/TableCollection/Tooltips/Tooltips Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+  - m_GUID: 16bbb9c522cd5e147af7c09d8b15aee4
+    m_Address: Assets/Localization/TableCollection/Nowy folder/ConstLocalized Shared
+      Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 6c2525f31135a624f874d31204351340, type: 2}
   m_SchemaSet:

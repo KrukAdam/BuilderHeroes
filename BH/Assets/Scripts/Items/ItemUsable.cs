@@ -16,11 +16,6 @@ public class ItemUsable : Item
 		}
 	}
 
-	public override string GetItemType()
-	{
-		return IsConsumable ? "Consumable" : "Usable";
-	}
-
 	public override string GetDescription()
 	{
 		sb.Length = 0;

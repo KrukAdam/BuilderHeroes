@@ -40,6 +40,30 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-pl
     - Preload
+  - m_GUID: 6baace800bf5487479ae2ad92d346197
+    m_Address: ItemsPickaxes_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    - Preload
+  - m_GUID: 54d4898a6a9d8ba48affcac63f26b4cd
+    m_Address: ItemsTypes_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    - Preload
+  - m_GUID: 1b0e82f1b32a30148b07a53d20773a46
+    m_Address: Tooltips_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    - Preload
+  - m_GUID: bab30a193a7be54479365c989498eedc
+    m_Address: ConstLocalized_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    - Preload
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 6c2525f31135a624f874d31204351340, type: 2}
   m_SchemaSet:

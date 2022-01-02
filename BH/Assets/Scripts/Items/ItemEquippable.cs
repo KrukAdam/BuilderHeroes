@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 
 [RequireComponent(typeof(Stats))]
-[CreateAssetMenu(menuName = "Items/Equippable Item")]
+[CreateAssetMenu(menuName = "Game/Items/Equippable Item")]
 public class ItemEquippable : Item
 {
 	[Space]
@@ -51,11 +51,6 @@ public class ItemEquippable : Item
         }
 	}
 
-    public override string GetItemType()
-	{
-		return EquipmentType.ToString();
-	}
-
 	public override string GetDescription()
 	{
         sb.Length = 0;
@@ -64,34 +59,34 @@ public class ItemEquippable : Item
         {
             if (stat.StatUseValues == EStatsValueUse.OnlyBaseValue)
             {
-				//AddStat(stat.BaseValue.Value, stat.StatName);
+				AddStat(stat.BaseValue.Value, stat.StatName.GetLocalizedString());
 			}
             else if(stat.StatUseValues == EStatsValueUse.MinAndMaxValue)
             {
-				AddStat(stat.MinValue.Value, "Min. " + stat.StatName);
-				AddStat(stat.MaxValue.Value, "Max. " + stat.StatName);
+				AddStat(stat.MinValue.Value, "Min. " + stat.StatName.GetLocalizedString());
+				AddStat(stat.MaxValue.Value, "Max. " + stat.StatName.GetLocalizedString());
 			}
 			else if (stat.StatUseValues == EStatsValueUse.BaseAndMaxValue)
 			{
 				AddStat(stat.BaseValue.Value, "Current stats value cant by use in eq items");
-				AddStat(stat.MaxValue.Value, "Max. " + stat.StatName);
+				AddStat(stat.MaxValue.Value, "Max. " + stat.StatName.GetLocalizedString());
 			}
 		}
 		foreach (var stat in itemStatsPercentMult)
 		{
 			if (stat.StatUseValues == EStatsValueUse.OnlyBaseValue)
 			{
-				//AddStat(stat.BaseValue.Value, stat.StatName, true);
+				AddStat(stat.BaseValue.Value, stat.StatName.GetLocalizedString(), true);
 			}
 			else if (stat.StatUseValues == EStatsValueUse.MinAndMaxValue)
 			{
-				AddStat(stat.MinValue.Value, "Min. " + stat.StatName, true);
-				AddStat(stat.MaxValue.Value, "Max. " + stat.StatName, true);
+				AddStat(stat.MinValue.Value, "Min. " + stat.StatName.GetLocalizedString(), true);
+				AddStat(stat.MaxValue.Value, "Max. " + stat.StatName.GetLocalizedString(), true);
 			}
 			else if (stat.StatUseValues == EStatsValueUse.BaseAndMaxValue)
 			{
 				AddStat(stat.BaseValue.Value, "Current stats value cant by use in eq items");
-				AddStat(stat.MaxValue.Value, "Max. " + stat.StatName, true);
+				AddStat(stat.MaxValue.Value, "Max. " + stat.StatName.GetLocalizedString(), true);
 			}
 		}
 		return sb.ToString();
