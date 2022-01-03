@@ -13,7 +13,24 @@ MonoBehaviour:
   m_Name: HumanPunch
   m_EditorClassIdentifier: 
   skillSprite: {fileID: 21300000, guid: d4484d350e72d0d49b4a228d0c398abf, type: 3}
-  skillName: Punch
+  skillName:
+    m_TableReference:
+      m_TableCollectionName: GUID:f3d23caa9efacb44fa1345bc422185cd
+    m_TableEntryReference:
+      m_KeyId: 9742872576
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  description:
+    m_TableReference:
+      m_TableCollectionName: GUID:16bbb9c522cd5e147af7c09d8b15aee4
+    m_TableEntryReference:
+      m_KeyId: 8513941504
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   singleTarget: 1
   skillUsePositionType: 3
   skillRange: 0.5
@@ -22,12 +39,17 @@ MonoBehaviour:
   timeToBlockCasterMove: 0
   timeToBlockCasterAction: 1
   pushPower: 0
-  skillStatsUsed: []
-  offenseStatsType:
+  skillStatsUsed:
+  - StatType: 3
+    StatValue: -1
+  offenseStats:
   - StatType: 8
-    SkillOffenseStatType: 2
+    SkillOffenseStatType: 4
     MinDamage: 0
-    MaxDamage: 2
-    MinPercentDamage: 0
-    MaxPercentDamage: 0
+    MaxDamage: 0
+    MinPercentDamage: 100
+    MaxPercentDamage: 110
     DamagedStatType: 1
+  references:
+    version: 2
+    RefIds: []

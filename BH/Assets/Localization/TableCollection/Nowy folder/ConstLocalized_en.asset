@@ -26,6 +26,110 @@ MonoBehaviour:
     m_Localized: Max
     m_Metadata:
       m_Items: []
+  - m_Id: 99729500827648
+    m_Localized: For
+    m_Metadata:
+      m_Items: []
+  - m_Id: 99931129409536
+    m_Localized: Seconds
+    m_Metadata:
+      m_Items: []
+  - m_Id: 158788060999680
+    m_Localized: Buff Effect
+    m_Metadata:
+      m_Items: []
+  - m_Id: 158739641954304
+    m_Localized: Offense
+    m_Metadata:
+      m_Items: []
+  - m_Id: 158564861112320
+    m_Localized: Cost
+    m_Metadata:
+      m_Items: []
+  - m_Id: 158483017658368
+    m_Localized: Movement Range
+    m_Metadata:
+      m_Items: []
+  - m_Id: 158418693812224
+    m_Localized: Doesn't Hit Enemy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 158350049832960
+    m_Localized: Hits The Enemy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 158087519956992
+    m_Localized: Aura Type
+    m_Metadata:
+      m_Items: []
+  - m_Id: 157930644598784
+    m_Localized: Nearby Usage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 157880984039424
+    m_Localized: Use Only On Caster
+    m_Metadata:
+      m_Items: []
+  - m_Id: 157828135809024
+    m_Localized: Debuff Skill
+    m_Metadata:
+      m_Items: []
+  - m_Id: 157785794310144
+    m_Localized: Buff Skill
+    m_Metadata:
+      m_Items: []
+  - m_Id: 157714587611136
+    m_Localized: Missile Range
+    m_Metadata:
+      m_Items: []
+  - m_Id: 157627413196800
+    m_Localized: Ammo Per Shot
+    m_Metadata:
+      m_Items: []
+  - m_Id: 157572216156160
+    m_Localized: Runs
+    m_Metadata:
+      m_Items: []
+  - m_Id: 157530910650368
+    m_Localized: Bolts
+    m_Metadata:
+      m_Items: []
+  - m_Id: 157484911718400
+    m_Localized: Arrows
+    m_Metadata:
+      m_Items: []
+  - m_Id: 157286735048704
+    m_Localized: Push Power
+    m_Metadata:
+      m_Items: []
+  - m_Id: 157253717487616
+    m_Localized: Cast Time
+    m_Metadata:
+      m_Items: []
+  - m_Id: 157173388177408
+    m_Localized: Multi Targets
+    m_Metadata:
+      m_Items: []
+  - m_Id: 157113292189696
+    m_Localized: Single Target
+    m_Metadata:
+      m_Items: []
+  - m_Id: 157027799691264
+    m_Localized: Movement
+    m_Metadata:
+      m_Items: []
+  - m_Id: 156999240675328
+    m_Localized: Aura
+    m_Metadata:
+      m_Items: []
+  - m_Id: 156973001109504
+    m_Localized: Range
+    m_Metadata:
+      m_Items: []
+  - m_Id: 156807179300864
+    m_Localized: Melee
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

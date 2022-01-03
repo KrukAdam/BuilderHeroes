@@ -3,7 +3,7 @@ using UnityEngine.Localization;
 using UnityEngine.Localization.Components;
 using UnityEngine.UI;
 
-public class ItemTooltip : BaseTooltip
+public class TooltipItem : TooltipBase
 {
     [SerializeField] private LocalizeStringEvent localizeName;
     [SerializeField] private LocalizeStringEvent localizeType;

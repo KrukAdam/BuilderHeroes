@@ -54,6 +54,10 @@ MonoBehaviour:
     m_Localized: Akcesorium
     m_Metadata:
       m_Items: []
+  - m_Id: 435438954770432
+    m_Localized: "U\u017Cytkowy"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

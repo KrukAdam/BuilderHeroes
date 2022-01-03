@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[CreateAssetMenu(menuName = "Skills/Malee Skill")]
-public class MaleeSkill : Skill
+[CreateAssetMenu(menuName = "Game/Skills/Melee Skill")]
+public class MeleeSkill : Skill
 {
 
     public override void UseSkill()
@@ -16,7 +16,7 @@ public class MaleeSkill : Skill
             if (target.TryGetComponent(out Character character))
             {
                 bool push = true;
-                foreach (var offenseStatType in offenseStatsType)
+                foreach (var offenseStatType in offenseStats)
                 {
 
                     if (SkillOwner(character)) break;
@@ -33,7 +33,7 @@ public class MaleeSkill : Skill
 
             if (target.TryGetComponent(out Construction construction))
             {
-                foreach (var offenseStatType in offenseStatsType)
+                foreach (var offenseStatType in offenseStats)
                 {
                     construction.Stats.TakeDamage(offenseStatType);
                 }

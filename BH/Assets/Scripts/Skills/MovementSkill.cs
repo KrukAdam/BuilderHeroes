@@ -8,6 +8,7 @@ public class MovementSkill : Skill
 {
     public float CasterMoveSpeed { get => casterMoveSpeed; }
     public float CasterMoveRange { get => casterMoveRange; }
+    public bool HitingEnemy { get => hitingEnemy; }
 
     [Space]
     [Header("Movement skill settings")]
@@ -31,7 +32,7 @@ public class MovementSkill : Skill
             {
 
                 bool push = true;
-                foreach (var offenseStatType in offenseStatsType)
+                foreach (var offenseStatType in offenseStats)
                 {
                     if (SkillOwner(character)) break;
 
@@ -47,7 +48,7 @@ public class MovementSkill : Skill
 
             if (target.TryGetComponent(out Construction construction))
             {
-                foreach (var offenseStatType in offenseStatsType)
+                foreach (var offenseStatType in offenseStats)
                 {
                     construction.Stats.TakeDamage(offenseStatType);
                 }

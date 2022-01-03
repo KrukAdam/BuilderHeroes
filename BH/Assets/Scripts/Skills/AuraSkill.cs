@@ -1,11 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Localization;
 
 [CreateAssetMenu(menuName = "Skills/Aura Skill")]
 public class AuraSkill : RangeSkill
 {
     public EAuraSkillsType AuraType { get => auraType; }
+    public bool IsBuff { get => isBuff; }
+    public bool UseOnlyOnCaster { get => useOnlyOnCaster; }
+    public LocalizedString AuraTypeName { get => auraTypeName; }
+    public List<AuraData> Auras { get => auras; }
 
     [Space]
     [Header("Settings for aura skill")]
@@ -14,6 +19,7 @@ public class AuraSkill : RangeSkill
     [SerializeField] private bool takeDamage = false;
     [SerializeField] private bool useOnlyOnCaster = false;
     [SerializeField] private EAuraSkillsType auraType = EAuraSkillsType.None;
+    [SerializeField] private LocalizedString auraTypeName = null;
     [SerializeField] private List<AuraData> auras = new List<AuraData>();
 
     public override void UseSkill()
@@ -51,7 +57,7 @@ public class AuraSkill : RangeSkill
                     if (!useOnlyOnCaster || useOnlyOnCaster && SkillOwner(character))
                     {
                         bool push = true;
-                        foreach (var offenseStatType in offenseStatsType)
+                        foreach (var offenseStatType in offenseStats)
                         {
                             if (takeDamage)
                             {
@@ -101,7 +107,7 @@ public class AuraSkill : RangeSkill
                     if (!useOnlyOnCaster || useOnlyOnCaster && SkillOwner(character))
                     {
                         bool push = true;
-                        foreach (var offenseStatType in offenseStatsType)
+                        foreach (var offenseStatType in offenseStats)
                         {
                             if (takeDamage)
                             {

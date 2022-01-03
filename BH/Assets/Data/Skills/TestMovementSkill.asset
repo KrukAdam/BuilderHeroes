@@ -13,7 +13,24 @@ MonoBehaviour:
   m_Name: TestMovementSkill
   m_EditorClassIdentifier: 
   skillSprite: {fileID: 21300000, guid: 434291000a9616e44b4dd55e4a2fe1e3, type: 3}
-  skillName: TestMovementSkill
+  skillName:
+    m_TableReference:
+      m_TableCollectionName: GUID:9613dbe3555c461408e66ff89af959b2
+    m_TableEntryReference:
+      m_KeyId: 7587000320
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  description:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   singleTarget: 0
   skillUsePositionType: 2
   skillRange: 1
@@ -23,14 +40,10 @@ MonoBehaviour:
   timeToBlockCasterAction: 0
   pushPower: 10
   skillStatsUsed: []
-  offenseStatsType:
-  - StatType: 8
-    SkillOffenseStatType: 2
-    MinDamage: 0
-    MaxDamage: 4
-    MinPercentDamage: 0
-    MaxPercentDamage: 0
-    DamagedStatType: 1
+  offenseStats: []
   casterMoveSpeed: 12
   casterMoveRange: 8
-  hitingEnemy: 0
+  hitingEnemy: 1
+  references:
+    version: 2
+    RefIds: []

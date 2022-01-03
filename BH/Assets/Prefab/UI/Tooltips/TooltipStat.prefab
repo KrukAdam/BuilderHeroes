@@ -218,7 +218,7 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
     m_TableEntryReference:
-      m_KeyId: 184775372800
+      m_KeyId: 363293339648
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
@@ -351,14 +351,14 @@ GameObject:
   - component: {fileID: 114519715262437052}
   - component: {fileID: 114055925621540796}
   - component: {fileID: 114221996668899584}
-  - component: {fileID: 114248254949711876}
+  - component: {fileID: 2944448156166549014}
   m_Layer: 5
   m_Name: TooltipStat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &224128282601086286
 RectTransform:
   m_ObjectHideFlags: 0
@@ -442,7 +442,7 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
---- !u!114 &114248254949711876
+--- !u!114 &2944448156166549014
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -451,9 +451,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1770203302414130}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5b254c67ca2421458d6162bacbde0f7, type: 3}
+  m_Script: {fileID: 11500000, guid: 31cfc45848a2e2746bf6d5301ade9050, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  localizeStatName: {fileID: 629906383169040065}
   modifierBarPrefab: {fileID: 4974294918026859801, guid: 57566c1a14ac7434ea752e69eccdd0db, type: 3}
-  modifiersBarsInstantiate: 1
+  modifiersBarsInstantiate: 10
+  localizeStatName: {fileID: 629906383169040065}

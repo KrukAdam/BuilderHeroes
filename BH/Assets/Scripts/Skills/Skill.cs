@@ -3,18 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using UnityEngine.InputSystem;
+using UnityEngine.Localization;
 
 public class Skill : ScriptableObject
 {
     public float SkillCooldawn { get => skillCooldawn; }
+    public float SkillCastTime { get => skillCastTime; }
+    public float PushPower { get => pushPower; }
     public float TimeToBlockCasterMove { get => timeToBlockCasterMove; }
     public float TimeToBlockCasterAction { get => timeToBlockCasterAction; }
     public WaitForSeconds WaitForCastTime { get => waitForCastTime; }
     public SkillSetupInfo SkillSetupInfo { get => skillSetupInfo; }
     public Sprite SkillSprite { get => skillSprite; }
+    public LocalizedString SkillName { get => skillName; }
+    public LocalizedString Description { get => description; }
+    public bool SingleTarget { get => singleTarget; }
+    public SkillStatUsed[] SkillStatsUsed { get => skillStatsUsed; }
+    public SkillOffenseStat[] OffenseStats { get => offenseStats; }
 
     [SerializeField] protected Sprite skillSprite = null;
-    [SerializeField] protected string skillName = null;
+    [SerializeField] protected LocalizedString skillName = null;
+    [SerializeField] protected LocalizedString description = null;
     [SerializeField] protected bool singleTarget = false;
     [SerializeField] protected ESkillUsePositionType skillUsePositionType = ESkillUsePositionType.InteractionPoint;
     [SerializeField] protected float skillRange = 1f;
@@ -27,7 +36,7 @@ public class Skill : ScriptableObject
     [Header("Stat used to skill use")]
     [SerializeField] private SkillStatUsed[] skillStatsUsed = null;
     [Space]
-    [SerializeField] protected SkillOffenseStat[] offenseStatsType;
+    [SerializeField] protected SkillOffenseStat[] offenseStats;
 
     protected Transform skillUsePosition;
     protected SkillSetupInfo skillSetupInfo;
@@ -43,9 +52,9 @@ public class Skill : ScriptableObject
 
         if (TimeToBlockCasterAction < skillCastTime) timeToBlockCasterAction = skillCastTime;    //You cant cast more than one skill
 
-        foreach (var offenseStatType in offenseStatsType)
+        foreach (var offenseStatType in offenseStats)
         {
-            Debug.Log("debug: " + offenseStatsType.Length + " ofst " + offenseStatsType + " skillSetupInfo: " + skillSetupInfo);
+            Debug.Log("debug: " + offenseStats.Length + " ofst " + offenseStats + " skillSetupInfo: " + skillSetupInfo);
             offenseStatType.SetOffenseStat(skillSetupInfo.UserStats.GetStat(offenseStatType.StatType));
         }
     }

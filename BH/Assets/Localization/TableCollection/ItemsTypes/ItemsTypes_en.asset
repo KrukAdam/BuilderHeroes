@@ -54,6 +54,10 @@ MonoBehaviour:
     m_Localized: Accessory
     m_Metadata:
       m_Items: []
+  - m_Id: 435438954770432
+    m_Localized: Usable
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

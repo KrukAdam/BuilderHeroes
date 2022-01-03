@@ -24,9 +24,18 @@ MonoBehaviour:
     m_LocalVariables: []
   ItemType:
     m_TableReference:
-      m_TableCollectionName: GUID:f3d23caa9efacb44fa1345bc422185cd
+      m_TableCollectionName: GUID:430614de7679a2e44b04d68c9c8442c7
     m_TableEntryReference:
-      m_KeyId: 9742872576
+      m_KeyId: 433759287013376
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  ItemDescription:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
@@ -1009,7 +1018,7 @@ MonoBehaviour:
     MaxValue:
       Value: 0
   gameCharacterStatsData: {fileID: 11400000, guid: 8f719858588acef4f945c0eba4f10e3a, type: 2}
-  mainSkill: {fileID: 11400000, guid: f560bd5c3e16c614a81c6742e78e17de, type: 2}
+  mainSkill: {fileID: 11400000, guid: ce3ee8e2fcaf62843bb2d79c8f40c01f, type: 2}
   secondSkill: {fileID: 0}
   references:
     version: 2

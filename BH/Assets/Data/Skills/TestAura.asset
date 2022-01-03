@@ -13,7 +13,24 @@ MonoBehaviour:
   m_Name: TestAura
   m_EditorClassIdentifier: 
   skillSprite: {fileID: 21300000, guid: d44c3950412ffeb45976659a4447b084, type: 3}
-  skillName: Test Aura
+  skillName:
+    m_TableReference:
+      m_TableCollectionName: GUID:430614de7679a2e44b04d68c9c8442c7
+    m_TableEntryReference:
+      m_KeyId: 433759287013376
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  description:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   singleTarget: 0
   skillUsePositionType: 1
   skillRange: 12
@@ -23,7 +40,7 @@ MonoBehaviour:
   timeToBlockCasterAction: 0
   pushPower: 0
   skillStatsUsed: []
-  offenseStatsType: []
+  offenseStats: []
   ammoType: 0
   ammoUsePerShot: 0
   missileSpeed: 8
@@ -35,9 +52,21 @@ MonoBehaviour:
   takeDamage: 0
   useOnlyOnCaster: 0
   auraType: 1
+  auraTypeName:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   auras:
   - buffValue: 100
     duration: 8
     baseStatType: 1
     buffStatType: 4
     isPercentMult: 0
+  references:
+    version: 2
+    RefIds: []

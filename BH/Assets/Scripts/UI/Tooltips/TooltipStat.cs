@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Localization.Components;
 using UnityEngine.UI;
 
-public class StatTooltip : BaseTooltip
+public class TooltipStat : TooltipBase
 {
 	[SerializeField] private LocalizeStringEvent localizeStatName = null;
 

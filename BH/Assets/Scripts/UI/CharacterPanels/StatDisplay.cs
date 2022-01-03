@@ -13,7 +13,7 @@ public class StatDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
 	[SerializeField] private LocalizeStringEvent nameText;
 	[SerializeField] private Text valueBaseText;
-	[SerializeField] private StatTooltip tooltip;
+	[SerializeField] private TooltipStat tooltip;
 
 	private CharacterStat stat;
 

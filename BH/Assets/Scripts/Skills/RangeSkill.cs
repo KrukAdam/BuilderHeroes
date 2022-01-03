@@ -35,7 +35,7 @@ public class RangeSkill : Skill
             if (target.TryGetComponent(out Character character))
             {
                 bool push = true;
-                foreach (var offenseStatType in offenseStatsType)
+                foreach (var offenseStatType in offenseStats)
                 {
                     if (SkillOwner(character)) break;
 
@@ -51,7 +51,7 @@ public class RangeSkill : Skill
 
             if (target.TryGetComponent(out Construction construction))
             {
-                foreach (var offenseStatType in offenseStatsType)
+                foreach (var offenseStatType in offenseStats)
                 {
                     construction.Stats.TakeDamage(offenseStatType);
                 }

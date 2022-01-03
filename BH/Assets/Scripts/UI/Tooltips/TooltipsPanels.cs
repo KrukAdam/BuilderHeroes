@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class TooltipsPanels : MonoBehaviour
 {
-    [SerializeField] private ItemTooltip itemTooltip = null;
-    [SerializeField] private StatTooltip statTooltip = null;
+    [SerializeField] private TooltipItem itemTooltip = null;
+    [SerializeField] private TooltipStat statTooltip = null;
+    [SerializeField] private TooltipSkill tooltipMainSkill = null;
+    [SerializeField] private TooltipSkill tooltipSecondSkill = null;
     [SerializeField] private Color statPositive = Color.green;
     [SerializeField] private Color statNegative = Color.red;
 
@@ -13,6 +15,8 @@ public class TooltipsPanels : MonoBehaviour
     {
         statTooltip.Setup(statPositive, statNegative);
         itemTooltip.Setup(statPositive, statNegative);
+        tooltipMainSkill.Setup(statPositive, statNegative);
+        tooltipSecondSkill.Setup(statPositive, statNegative);
     }
 
     public void ShowItemTooltip(BaseItemSlot itemSlot)
@@ -20,6 +24,19 @@ public class TooltipsPanels : MonoBehaviour
         if (itemSlot.Item != null)
         {
             itemTooltip.ShowTooltip(itemSlot.Item);
+
+            ItemEquippable eqItem = itemSlot.Item as ItemEquippable;
+            if (eqItem)
+            {
+                if (eqItem.MainSkill)
+                {
+                    tooltipMainSkill.ShowTooltip(eqItem.MainSkill);
+                }
+                if (eqItem.SecondSkill)
+                {
+                    tooltipSecondSkill.ShowTooltip(eqItem.SecondSkill);
+                }
+            }
         }
     }
 
@@ -28,6 +45,8 @@ public class TooltipsPanels : MonoBehaviour
         if (itemTooltip.gameObject.activeSelf)
         {
             itemTooltip.HideTooltip();
+            tooltipMainSkill.HideTooltip();
+            tooltipSecondSkill.HideTooltip();
         }
     }
 
@@ -41,4 +60,29 @@ public class TooltipsPanels : MonoBehaviour
         statTooltip.HideTooltip();
     }
 
+    public void ShowMainSkillTooltip(Skill skill)
+    {
+        if (skill != null)
+        {
+            tooltipMainSkill.ShowTooltip(skill);
+        }
+    }
+
+    public void HideMainSkillTooltip()
+    {
+        tooltipMainSkill.HideTooltip();
+    }
+
+    public void ShowSecondSkillTooltip(Skill skill)
+    {
+        if (skill != null)
+        {
+            tooltipSecondSkill.ShowTooltip(skill);
+        }
+    }
+
+    public void HideSecondSkillTooltip()
+    {
+        tooltipSecondSkill.HideTooltip();
+    }
 }

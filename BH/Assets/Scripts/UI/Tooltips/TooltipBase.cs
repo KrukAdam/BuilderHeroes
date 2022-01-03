@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 
-public class BaseTooltip : MonoBehaviour
+public class TooltipBase : MonoBehaviour
 {
     [SerializeField] protected TooltipsStatModifierBar modifierBarPrefab = null;
     [SerializeField] protected int modifiersBarsInstantiate = 10;
@@ -16,6 +16,7 @@ public class BaseTooltip : MonoBehaviour
     private void Awake()
     {
         InstantiateModifiersBars();
+        HideModifiersBars();
         gameObject.SetActive(false);
     }
 
@@ -27,7 +28,7 @@ public class BaseTooltip : MonoBehaviour
 
     public virtual void ShowTooltip(CharacterStat stat) { }
     public virtual void ShowTooltip(Item item) { }
-
+    public virtual void ShowTooltip(Skill skill) { }
     public virtual void HideTooltip() { }
 
     protected virtual void ShowModifiers(CharacterStat characterStat) { }

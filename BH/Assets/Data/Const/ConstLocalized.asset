@@ -30,6 +30,240 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
+  ForTime:
+    m_TableReference:
+      m_TableCollectionName: GUID:16bbb9c522cd5e147af7c09d8b15aee4
+    m_TableEntryReference:
+      m_KeyId: 99729500827648
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  Seconds:
+    m_TableReference:
+      m_TableCollectionName: GUID:16bbb9c522cd5e147af7c09d8b15aee4
+    m_TableEntryReference:
+      m_KeyId: 99931129409536
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  SkillTypeMelee:
+    m_TableReference:
+      m_TableCollectionName: GUID:16bbb9c522cd5e147af7c09d8b15aee4
+    m_TableEntryReference:
+      m_KeyId: 156807179300864
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  SkillTypeRange:
+    m_TableReference:
+      m_TableCollectionName: GUID:16bbb9c522cd5e147af7c09d8b15aee4
+    m_TableEntryReference:
+      m_KeyId: 156973001109504
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  SkillTypeAura:
+    m_TableReference:
+      m_TableCollectionName: GUID:16bbb9c522cd5e147af7c09d8b15aee4
+    m_TableEntryReference:
+      m_KeyId: 156999240675328
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  SkillTypeMovement:
+    m_TableReference:
+      m_TableCollectionName: GUID:16bbb9c522cd5e147af7c09d8b15aee4
+    m_TableEntryReference:
+      m_KeyId: 157027799691264
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  SkillSingleTarget:
+    m_TableReference:
+      m_TableCollectionName: GUID:16bbb9c522cd5e147af7c09d8b15aee4
+    m_TableEntryReference:
+      m_KeyId: 157113292189696
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  SkillMultiTargets:
+    m_TableReference:
+      m_TableCollectionName: GUID:16bbb9c522cd5e147af7c09d8b15aee4
+    m_TableEntryReference:
+      m_KeyId: 157173388177408
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  SkillCastTime:
+    m_TableReference:
+      m_TableCollectionName: GUID:16bbb9c522cd5e147af7c09d8b15aee4
+    m_TableEntryReference:
+      m_KeyId: 157253717487616
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  SkillPushPower:
+    m_TableReference:
+      m_TableCollectionName: GUID:16bbb9c522cd5e147af7c09d8b15aee4
+    m_TableEntryReference:
+      m_KeyId: 157286735048704
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  SkillAmmoArrows:
+    m_TableReference:
+      m_TableCollectionName: GUID:16bbb9c522cd5e147af7c09d8b15aee4
+    m_TableEntryReference:
+      m_KeyId: 157484911718400
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  SkillAmmoBolts:
+    m_TableReference:
+      m_TableCollectionName: GUID:16bbb9c522cd5e147af7c09d8b15aee4
+    m_TableEntryReference:
+      m_KeyId: 157530910650368
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  SkillAmmoRuns:
+    m_TableReference:
+      m_TableCollectionName: GUID:16bbb9c522cd5e147af7c09d8b15aee4
+    m_TableEntryReference:
+      m_KeyId: 157572216156160
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  SkillAmmoPerShot:
+    m_TableReference:
+      m_TableCollectionName: GUID:16bbb9c522cd5e147af7c09d8b15aee4
+    m_TableEntryReference:
+      m_KeyId: 157627413196800
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  SkillMissileRange:
+    m_TableReference:
+      m_TableCollectionName: GUID:16bbb9c522cd5e147af7c09d8b15aee4
+    m_TableEntryReference:
+      m_KeyId: 157714587611136
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  SkillBuff:
+    m_TableReference:
+      m_TableCollectionName: GUID:16bbb9c522cd5e147af7c09d8b15aee4
+    m_TableEntryReference:
+      m_KeyId: 157785794310144
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  SkillDebuff:
+    m_TableReference:
+      m_TableCollectionName: GUID:16bbb9c522cd5e147af7c09d8b15aee4
+    m_TableEntryReference:
+      m_KeyId: 157828135809024
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  SkillUseOnlyOnCaster:
+    m_TableReference:
+      m_TableCollectionName: GUID:16bbb9c522cd5e147af7c09d8b15aee4
+    m_TableEntryReference:
+      m_KeyId: 157880984039424
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  SkillUseOnAround:
+    m_TableReference:
+      m_TableCollectionName: GUID:16bbb9c522cd5e147af7c09d8b15aee4
+    m_TableEntryReference:
+      m_KeyId: 157930644598784
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  SkillAuraType:
+    m_TableReference:
+      m_TableCollectionName: GUID:16bbb9c522cd5e147af7c09d8b15aee4
+    m_TableEntryReference:
+      m_KeyId: 158087519956992
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  SkillHitEnemy:
+    m_TableReference:
+      m_TableCollectionName: GUID:16bbb9c522cd5e147af7c09d8b15aee4
+    m_TableEntryReference:
+      m_KeyId: 158350049832960
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  SkillDontHitEnemy:
+    m_TableReference:
+      m_TableCollectionName: GUID:16bbb9c522cd5e147af7c09d8b15aee4
+    m_TableEntryReference:
+      m_KeyId: 158418693812224
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  SkillMovementRange:
+    m_TableReference:
+      m_TableCollectionName: GUID:16bbb9c522cd5e147af7c09d8b15aee4
+    m_TableEntryReference:
+      m_KeyId: 158483017658368
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  SkillUseStat:
+    m_TableReference:
+      m_TableCollectionName: GUID:16bbb9c522cd5e147af7c09d8b15aee4
+    m_TableEntryReference:
+      m_KeyId: 158564861112320
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  SkillOffenseStat:
+    m_TableReference:
+      m_TableCollectionName: GUID:16bbb9c522cd5e147af7c09d8b15aee4
+    m_TableEntryReference:
+      m_KeyId: 158739641954304
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  SkillBuffEffect:
+    m_TableReference:
+      m_TableCollectionName: GUID:16bbb9c522cd5e147af7c09d8b15aee4
+    m_TableEntryReference:
+      m_KeyId: 158788060999680
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   references:
     version: 2
     RefIds: []

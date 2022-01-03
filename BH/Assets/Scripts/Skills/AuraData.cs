@@ -6,6 +6,12 @@ using System;
 [Serializable]
 public class AuraData
 {
+    public float BuffValue { get => buffValue; }
+    public float Duration { get => duration; }
+    public EBaseStatType BaseStatType { get => baseStatType; }
+    public EStatsTypes BuffStatType { get => buffStatType; }
+    public bool IsPercentMult { get => isPercentMult; }
+
     [SerializeField] private float buffValue = 0;
     [SerializeField] private float duration = 0;
     [SerializeField] private EBaseStatType baseStatType = EBaseStatType.None;

@@ -51,14 +51,18 @@ MonoBehaviour:
     m_Key: Item_Type_Accessory
     m_Metadata:
       m_Items: []
+  - m_Id: 435438954770432
+    m_Key: Item_Type_Usable
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
-    rid: 2937792873613755052
+    rid: 2937792877301334190
   references:
     version: 2
     RefIds:
-    - rid: 2937792873613755052
+    - rid: 2937792877301334190
       type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
       data:
         m_CustomEpoch: 1641039036175

@@ -23,14 +23,118 @@ MonoBehaviour:
     m_Key: Const_Max
     m_Metadata:
       m_Items: []
+  - m_Id: 99729500827648
+    m_Key: Const_For_#time
+    m_Metadata:
+      m_Items: []
+  - m_Id: 99931129409536
+    m_Key: Const_Seconds
+    m_Metadata:
+      m_Items: []
+  - m_Id: 156807179300864
+    m_Key: Const_Skill_Type_Melee
+    m_Metadata:
+      m_Items: []
+  - m_Id: 156973001109504
+    m_Key: Const_Skill_Type_Range
+    m_Metadata:
+      m_Items: []
+  - m_Id: 156999240675328
+    m_Key: Const_Skill_Type_Aura
+    m_Metadata:
+      m_Items: []
+  - m_Id: 157027799691264
+    m_Key: Const_Skill_Type_Movement
+    m_Metadata:
+      m_Items: []
+  - m_Id: 157113292189696
+    m_Key: Const_Skill_Target_Single
+    m_Metadata:
+      m_Items: []
+  - m_Id: 157173388177408
+    m_Key: Const_Skill_Target_Multi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 157253717487616
+    m_Key: Const_Skill_CastTime
+    m_Metadata:
+      m_Items: []
+  - m_Id: 157286735048704
+    m_Key: Const_Skill_PushPower
+    m_Metadata:
+      m_Items: []
+  - m_Id: 157484911718400
+    m_Key: Const_Skill_AmmoType_Arrows
+    m_Metadata:
+      m_Items: []
+  - m_Id: 157530910650368
+    m_Key: Const_Skill_AmmoType_Bolts
+    m_Metadata:
+      m_Items: []
+  - m_Id: 157572216156160
+    m_Key: Const_Skill_AmmoType_Runs
+    m_Metadata:
+      m_Items: []
+  - m_Id: 157627413196800
+    m_Key: Const_Skill_AmmoPerShot
+    m_Metadata:
+      m_Items: []
+  - m_Id: 157714587611136
+    m_Key: Const_Skill_MissileRange
+    m_Metadata:
+      m_Items: []
+  - m_Id: 157785794310144
+    m_Key: Const_Skill_IsBuff
+    m_Metadata:
+      m_Items: []
+  - m_Id: 157828135809024
+    m_Key: Const_Skill_IsDebuff
+    m_Metadata:
+      m_Items: []
+  - m_Id: 157880984039424
+    m_Key: Const_Skill_UseOnlyOnCaster
+    m_Metadata:
+      m_Items: []
+  - m_Id: 157930644598784
+    m_Key: Const_Skill_UseOnAround
+    m_Metadata:
+      m_Items: []
+  - m_Id: 158087519956992
+    m_Key: Const_Skill_AuraType
+    m_Metadata:
+      m_Items: []
+  - m_Id: 158350049832960
+    m_Key: Const_Skill_Movement_HitEnemy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 158418693812224
+    m_Key: Const_Skill_Movement_DontHitEnemy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 158483017658368
+    m_Key: Const_Skill_MovementRange
+    m_Metadata:
+      m_Items: []
+  - m_Id: 158564861112320
+    m_Key: Const_Skill_UsedStat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 158739641954304
+    m_Key: Const_Skill_OffenseStat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 158788060999680
+    m_Key: Const_Skill_BuffEffect
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
-    rid: 2937792868456071582
+    rid: 2937792877301334184
   references:
     version: 2
     RefIds:
-    - rid: 2937792868456071582
+    - rid: 2937792877301334184
       type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
       data:
         m_CustomEpoch: 1641121126413

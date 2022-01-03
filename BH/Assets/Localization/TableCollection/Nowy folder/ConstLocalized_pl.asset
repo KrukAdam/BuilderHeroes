@@ -26,6 +26,110 @@ MonoBehaviour:
     m_Localized: Maks
     m_Metadata:
       m_Items: []
+  - m_Id: 99729500827648
+    m_Localized: Na
+    m_Metadata:
+      m_Items: []
+  - m_Id: 99931129409536
+    m_Localized: Sekund
+    m_Metadata:
+      m_Items: []
+  - m_Id: 158788060999680
+    m_Localized: Efekt Aury
+    m_Metadata:
+      m_Items: []
+  - m_Id: 158739641954304
+    m_Localized: Ofensywa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 158564861112320
+    m_Localized: Koszt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 158483017658368
+    m_Localized: "Zasi\u0119g Ruchu"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 158418693812224
+    m_Localized: Nie Uderza Wroga
+    m_Metadata:
+      m_Items: []
+  - m_Id: 158350049832960
+    m_Localized: Uderza Wroga
+    m_Metadata:
+      m_Items: []
+  - m_Id: 158087519956992
+    m_Localized: Typ Aury
+    m_Metadata:
+      m_Items: []
+  - m_Id: 157930644598784
+    m_Localized: "U\u017Cycie W Pobli\u017Cu"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 157880984039424
+    m_Localized: "U\u017Cycie Wy\u0142\u0105cznie Na Rzucaj\u0105cym"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 157828135809024
+    m_Localized: "Czar Os\u0142abiaj\u0105cy"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 157785794310144
+    m_Localized: "Czar Wzmacniaj\u0105cy"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 157714587611136
+    m_Localized: "Zasi\u0119g Pocisku"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 157627413196800
+    m_Localized: "Amunicja Na Strza\u0142"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 157572216156160
+    m_Localized: Runy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 157530910650368
+    m_Localized: "Be\u0142ty"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 157484911718400
+    m_Localized: "Strza\u0142y"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 157286735048704
+    m_Localized: "Si\u0142a Odepchni\u0119cia"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 157253717487616
+    m_Localized: Czas Rzucania
+    m_Metadata:
+      m_Items: []
+  - m_Id: 157173388177408
+    m_Localized: "Wiele Cel\xF3w"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 157113292189696
+    m_Localized: "Pojedy\u0144czy Cel"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 157027799691264
+    m_Localized: Ruch
+    m_Metadata:
+      m_Items: []
+  - m_Id: 156999240675328
+    m_Localized: Aura
+    m_Metadata:
+      m_Items: []
+  - m_Id: 156973001109504
+    m_Localized: "Zasi\u0119gowy"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 156807179300864
+    m_Localized: W Zwarciu
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
