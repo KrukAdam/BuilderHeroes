@@ -1532,27 +1532,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8984366036970906225, guid: dc69fe1bf2b466941ba986adc552cb2a, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8984366036970906225, guid: dc69fe1bf2b466941ba986adc552cb2a, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8984366036970906225, guid: dc69fe1bf2b466941ba986adc552cb2a, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 303
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8984366036970906225, guid: dc69fe1bf2b466941ba986adc552cb2a, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 42
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8984366036970906225, guid: dc69fe1bf2b466941ba986adc552cb2a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 151.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8984366036970906225, guid: dc69fe1bf2b466941ba986adc552cb2a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -21
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc69fe1bf2b466941ba986adc552cb2a, type: 3}
@@ -2100,7 +2100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemTooltip: {fileID: 1189390659}
-  statTooltip: {fileID: 2944448156166549014, guid: 4a47d01d29df31a4ead75b0b0ad0ae1e, type: 3}
+  statTooltip: {fileID: 1520233388}
   tooltipMainSkill: {fileID: 1282967749}
   tooltipSecondSkill: {fileID: 1313286728}
   statPositive: {r: 0, g: 1, b: 0, a: 1}
@@ -10718,6 +10718,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7772454645268047155, guid: 3dccc3dc6cd8f804aa5553d1b2058670, type: 3}
   m_PrefabInstance: {fileID: 1520058581}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1520233388 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2944448156166549014, guid: 4a47d01d29df31a4ead75b0b0ad0ae1e, type: 3}
+  m_PrefabInstance: {fileID: 1017133306}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31cfc45848a2e2746bf6d5301ade9050, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1526003534
 GameObject:
   m_ObjectHideFlags: 0

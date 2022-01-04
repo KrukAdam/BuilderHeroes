@@ -45,6 +45,40 @@ public class AuraData
         stats.AuraRefresh();
     }
 
+    public void ExecuteEffect(ItemUsable parentItem, PlayerCharacter character)
+    {
+        StatModifier statModifier;
+
+        if (isPercentMult)
+        {
+            statModifier = new StatModifier(buffValue, EStatModifierType.PercentAdd, parentItem);
+        }
+        else
+        {
+            statModifier = new StatModifier(buffValue, EStatModifierType.Constants, parentItem);
+        }
+
+        int index = 0;
+        for (int i = 0; i < character.Stats.AllStats.Count; i++)
+        {
+            if (buffStatType == character.Stats.AllStats[i].StatType)
+            {
+                character.Stats.AllStats[i].AddModifier(statModifier, baseStatType);
+                index = i;
+            }
+        }
+
+        character.Stats.Refresh();
+        character.StartCoroutine(RemoveBuff(character, statModifier, index, duration));
+    }
+
+    private IEnumerator RemoveBuff(PlayerCharacter character, StatModifier statModifiers, int index, float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        character.Stats.AllStats[index].RemoveModifiers(statModifiers, baseStatType);
+        character.Stats.Refresh();
+    }
+
     private IEnumerator RemoveBuff(Stats stats, StatModifier statModifiers, int index, float duration)
     {
         yield return new WaitForSeconds(duration);

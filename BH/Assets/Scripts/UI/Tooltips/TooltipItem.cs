@@ -61,7 +61,7 @@ public class TooltipItem : TooltipBase
     private void ShowModifiersItem(ItemUsable itemUsable)
     {
         Color textColor;
-        ItemStatBuffEffect buffEffect;
+        AuraData buffEffect;
 
         for (int i = 0; i < itemUsable.Effects.Count; i++)
         {
