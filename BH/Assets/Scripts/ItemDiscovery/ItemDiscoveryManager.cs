@@ -7,6 +7,7 @@ public class ItemDiscoveryManager : MonoBehaviour
     private List<Item> itemsDiscovered;
     private List<CraftingRecipe> reciplesDiscovered;
     private CraftingRecipesDatabase craftingRecipesDatabase;
+    private TooltipsPanels tooltipsPanels;
 
     public void Setup(LocalController localController)
     {
@@ -14,6 +15,7 @@ public class ItemDiscoveryManager : MonoBehaviour
         reciplesDiscovered = new List<CraftingRecipe>();
 
         craftingRecipesDatabase = GameManager.Instance.CraftingRecipesDatabase;
+        tooltipsPanels = localController.GameUiManager.TooltipsPanels;
 
         localController.GameUiManager.CharacterPanels.InventoryPanel.OnAddItem += Discovered;
     }
@@ -40,8 +42,7 @@ public class ItemDiscoveryManager : MonoBehaviour
 
     private void DiscaveredNewItem(Item newItem)
     {
-        //Localized is not setup here
-        Debug.Log("New item : " + newItem.ItemName);
+        StartShowTooltipForNewItem(newItem);
         itemsDiscovered.Add(newItem);
 
         DiscaveredNewRecipe(newItem);
@@ -55,18 +56,31 @@ public class ItemDiscoveryManager : MonoBehaviour
             {
                 if(reciplesDiscovered.Count <= 0)
                 {
-                    Debug.Log("New Recipe discavered. Item: " + recipe);
                     reciplesDiscovered.Add(recipe);
+                    StartShowTooltipForNewItem(recipe);
                 }
                 else
                 {
                     if (!reciplesDiscovered.Contains(recipe))
                     {
-                        Debug.Log("New Recipe discavered. Item: " + recipe);
                         reciplesDiscovered.Add(recipe);
+                        StartShowTooltipForNewItem(recipe);
                     }
                 }
             }
+        }
+    }
+
+    private void StartShowTooltipForNewItem(Item item)
+    {
+        tooltipsPanels.ShowNewItemsTooltip(item);
+    }
+
+    private void StartShowTooltipForNewItem(CraftingRecipe craftingRecipe)
+    {
+        foreach (var item in craftingRecipe.Results)
+        {
+            tooltipsPanels.ShowNewItemsTooltip(item.Item);
         }
     }
 }

@@ -32,4 +32,8 @@ public static class Constant
     //Caster movement logic
     public static float TimeToBlockMoveCaster = 1f;
     public static float DistanceToTarget = 0.25f;
+
+    //UI
+    //Tooltips
+    public static float TimeToShowNewItemTooltip = 2f;
 }

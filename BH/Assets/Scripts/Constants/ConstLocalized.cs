@@ -39,4 +39,7 @@ public class ConstLocalized : ScriptableObject
     public LocalizedString SkillUseStat;
     public LocalizedString SkillOffenseStat;
     public LocalizedString SkillBuffEffect;
+
+    //Simple
+    public LocalizedString NEW;
 }

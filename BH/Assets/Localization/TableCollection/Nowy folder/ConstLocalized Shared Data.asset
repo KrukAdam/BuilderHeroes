@@ -127,14 +127,18 @@ MonoBehaviour:
     m_Key: Const_Skill_BuffEffect
     m_Metadata:
       m_Items: []
+  - m_Id: 1594415369449472
+    m_Key: Const_NEW
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
-    rid: 2937792877301334184
+    rid: 2937792968303313179
   references:
     version: 2
     RefIds:
-    - rid: 2937792877301334184
+    - rid: 2937792968303313179
       type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
       data:
         m_CustomEpoch: 1641121126413

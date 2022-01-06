@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class TooltipsPanels : MonoBehaviour
 {
-    [SerializeField] private TooltipItem itemTooltip = null;
-    [SerializeField] private TooltipStat statTooltip = null;
-    [SerializeField] private TooltipSkill tooltipMainSkill = null;
-    [SerializeField] private TooltipSkill tooltipSecondSkill = null;
+    [SerializeField] private TooltipBase itemTooltip = null;
+    [SerializeField] private TooltipBase statTooltip = null;
+    [SerializeField] private TooltipBase tooltipMainSkill = null;
+    [SerializeField] private TooltipBase tooltipSecondSkill = null;
+    [SerializeField] private TooltipBase tooltipNewItemDiscover = null;
     [SerializeField] private Color statPositive = Color.green;
     [SerializeField] private Color statNegative = Color.red;
+
+    private List<Item> newItemsToShow = new List<Item>();
+    private WaitForSeconds waitFor = new WaitForSeconds(Constant.TimeToShowNewItemTooltip);
 
     private void Start()
     {
@@ -17,6 +21,7 @@ public class TooltipsPanels : MonoBehaviour
         itemTooltip.Setup(statPositive, statNegative);
         tooltipMainSkill.Setup(statPositive, statNegative);
         tooltipSecondSkill.Setup(statPositive, statNegative);
+        tooltipNewItemDiscover.Setup(statPositive, statNegative);
     }
 
     public void ShowItemTooltip(BaseItemSlot itemSlot)
@@ -84,5 +89,70 @@ public class TooltipsPanels : MonoBehaviour
     public void HideSecondSkillTooltip()
     {
         tooltipSecondSkill.HideTooltip();
+    }
+
+    public void ShowNewItemsTooltip(List<Item> items)
+    {
+        foreach (var item in items)
+        {
+            if (!newItemsToShow.Contains(item))
+            {
+                newItemsToShow.Add(item);
+            }
+        }
+
+        if (!tooltipNewItemDiscover.gameObject.activeSelf && newItemsToShow.Count > 0)
+        {
+            StartCoroutine(ShowNewItemTooltipLoop());
+        }
+    }
+
+    public void ShowNewItemsTooltip(Item item)
+    {
+        if (!newItemsToShow.Contains(item))
+        {
+            newItemsToShow.Add(item);
+
+            if (!tooltipNewItemDiscover.gameObject.activeSelf && newItemsToShow.Count > 0)
+            {
+                StartCoroutine(ShowNewItemTooltipLoop());
+            }
+        }
+
+
+    }
+
+    public void HideNewItemTooltip()
+    {
+        if (tooltipNewItemDiscover.gameObject.activeSelf)
+        {
+            tooltipNewItemDiscover.HideTooltip();
+        }
+    }
+
+    private IEnumerator ShowNewItemTooltipLoop()
+    {
+        ShowNewItemTooltip(newItemsToShow[0]);
+
+        yield return waitFor;
+
+        newItemsToShow.RemoveAt(0);
+        if (newItemsToShow.Count > 0)
+        {
+            newItemsToShow.Sort((p1, p2) => p1.name.CompareTo(p2.name));
+            StartCoroutine(ShowNewItemTooltipLoop());
+        }
+        else
+        {
+            HideNewItemTooltip();
+        }
+    }
+
+    private void ShowNewItemTooltip(Item item)
+    {
+        if (item != null)
+        {
+            tooltipNewItemDiscover.ShowTooltip(item);
+        }
     }
 }

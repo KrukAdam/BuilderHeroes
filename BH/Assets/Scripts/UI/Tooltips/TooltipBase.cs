@@ -60,6 +60,8 @@ public class TooltipBase : MonoBehaviour
 
     protected void HideModifiersBars()
     {
+        if (modifierBars.Count <= 0) return;
+
         for (int i = 0; i < modifierBars.Count; i++)
         {
             modifierBars[i].gameObject.SetActive(false);
