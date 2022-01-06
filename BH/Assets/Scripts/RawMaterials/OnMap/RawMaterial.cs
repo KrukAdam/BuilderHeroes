@@ -9,17 +9,20 @@ public class RawMaterial : BaseObjectOnMap
     [SerializeField] protected float durability = 1;
     [SerializeField] protected ItemOnMap itemOnMapPrefab = null;
     [SerializeField] protected ItemDropped[] rawMaterialsDroped = null;
-    [SerializeField] protected bool randomRawMaterialSprites = true;
+    [SerializeField] protected bool randomSprites = true;
     [SerializeField] protected Sprite[] spritesRawMaterial = null;
+    [SerializeField] private Effects effectsPrefab = null;
 
     protected ItemTool toolNeeded;
     protected Transform itemsDropParent;
+    protected Effects effects;
 
     private void Awake()
     {
         itemsDropParent = transform.parent.transform;
         SetOrderLayer();
         SetSprite();
+        SetupEffects();
     }
 
     public override void InteractionOnWorldMap(LocalController localController)
@@ -49,6 +52,7 @@ public class RawMaterial : BaseObjectOnMap
 
     protected virtual void DamageRawMaterial()
     {
+        if (effects) effects.Show();
         durability -= toolNeeded.DamageRawMaterial;
         if (durability <= 0)
         {
@@ -80,8 +84,17 @@ public class RawMaterial : BaseObjectOnMap
 
     protected virtual void SetSprite()
     {
-        if (!randomRawMaterialSprites || spritesRawMaterial == null || spritesRawMaterial.Length <= 0) return;
+        if (!randomSprites || spritesRawMaterial == null || spritesRawMaterial.Length <= 0) return;
 
         objectSpriteRenderer.sprite = spritesRawMaterial[Random.Range(0, spritesRawMaterial.Length - 1)];
+    }
+
+    private void SetupEffects()
+    {
+        if (!effectsPrefab) return;
+
+        int layer = objectSpriteRenderer.sortingOrder +1;
+        effects = Instantiate(effectsPrefab, transform);
+        effects.Setup(layer, transform);
     }
 }

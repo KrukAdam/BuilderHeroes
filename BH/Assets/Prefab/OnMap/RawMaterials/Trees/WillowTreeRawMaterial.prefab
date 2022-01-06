@@ -129,8 +129,9 @@ MonoBehaviour:
   - ItemDroppedPrefab: {fileID: 11400000, guid: fabe5bfad7ea78a46a8de7de58c13ad4, type: 2}
     DropChance: 100
     DropMax: 3
-  randomRawMaterialSprites: 1
+  randomSprites: 1
   spritesRawMaterial: []
+  effectsPrefab: {fileID: 11400000, guid: c5a1460002e4f87419f6edd0b06a0e32, type: 2}
   treeBranches: {fileID: 2728707333232815916}
   randomTreeBranchesSprites: 1
   spritesTreeBranches: []
