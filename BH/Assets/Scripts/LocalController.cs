@@ -19,4 +19,6 @@ public class LocalController : MonoBehaviour
         localManagers.SetupManagers(this);
         gameUiManager.Setup(this);
     }
+
+
 }

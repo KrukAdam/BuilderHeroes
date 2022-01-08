@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class BuildingBuilderManager : MonoBehaviour
 {
@@ -32,9 +33,14 @@ public class BuildingBuilderManager : MonoBehaviour
         InstantiateBuildingBlueprint();
         cityBuilderPanels.BuildingBuilderPanel.SetupBuildingsDataPanel(buildingsDictionary[localController.Player.RaceType], this);
 
-        GameManager.Instance.InputManager.InputController.Player.CancelAction.performed += ctx => DeselectedBuilding();
+        GameManager.Instance.InputManager.InputController.Player.CancelAction.performed += DeselectedBuilding;
 
         cityBuilderPanels.OnToggleBuilderPanel += OnTogglePanel;
+    }
+
+    private void OnDestroy()
+    {
+        GameManager.Instance.InputManager.InputController.Player.CancelAction.performed -= DeselectedBuilding;
     }
 
     public void SelectedBuilding(Building building)
@@ -49,6 +55,16 @@ public class BuildingBuilderManager : MonoBehaviour
     }
 
     public void DeselectedBuilding()
+    {
+        if (blueprintSelected)
+        {
+            blueprintSelected = false;
+            BuildingBlueprintActive(false);
+            selectedBuilding = null;
+        }
+    }
+
+    public void DeselectedBuilding(InputAction.CallbackContext context)
     {
         if (blueprintSelected)
         {

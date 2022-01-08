@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Localization.Settings;
+using UnityEngine.SceneManagement;
 
 public class GameUiManager : MonoBehaviour
 {
@@ -18,6 +19,9 @@ public class GameUiManager : MonoBehaviour
     [SerializeField] private CharacterPanels characterPanels = null;
     [SerializeField] private CityBuilderPanels cityBuilderPanels = null;
 
+    [Space] //Test Btn
+    [SerializeField] private BasicButton btnExitScene = null;
+
     public void Setup(LocalController localController)
     {
         StartCoroutine(SetupPanels(localController));
@@ -25,8 +29,22 @@ public class GameUiManager : MonoBehaviour
         SetEvents();
         TogglePanels();
 
-        GameManager.Instance.InputManager.InputController.Player.CharacterAndInventory.performed += ctx => ToggleCharacterPanel();
-        GameManager.Instance.InputManager.InputController.Player.BuildingBuilderPanel.performed += ctx => ToggleBuildingBuilderPanel();
+        GameManager.Instance.InputManager.InputController.Player.CharacterAndInventory.performed += ToggleCharacterPanel;
+        GameManager.Instance.InputManager.InputController.Player.BuildingBuilderPanel.performed +=  ToggleBuildingBuilderPanel;
+
+        btnExitScene.SetupListener(ExitScene);
+    }
+
+    private void OnDestroy()
+    {
+        GameManager.Instance.InputManager.InputController.Player.CharacterAndInventory.performed -= ToggleCharacterPanel;
+        GameManager.Instance.InputManager.InputController.Player.BuildingBuilderPanel.performed -= ToggleBuildingBuilderPanel;
+    }
+
+    //TEST
+    public void ExitScene()
+    {
+        SceneManager.LoadScene(Constant.SceneMainMenu);
     }
 
     public void OpenBuildingPanel(Building building, Construction construction)
@@ -58,6 +76,17 @@ public class GameUiManager : MonoBehaviour
         OnTogglePanels(CheckForActivePanels());
     }
 
+    public void ToggleCharacterPanel(UnityEngine.InputSystem.InputAction.CallbackContext ctx)
+    {
+        CharacterPanels.ToggleCharacterInventoryPanels();
+        OnTogglePanels(CheckForActivePanels());
+    }
+
+    public void ToggleBuildingBuilderPanel(UnityEngine.InputSystem.InputAction.CallbackContext ctx)
+    {
+        CityBuilderPanels.ToggleBuildingBuilderPanel();
+        OnTogglePanels(CheckForActivePanels());
+    }
     public void ToggleBuildingBuilderPanel()
     {
         CityBuilderPanels.ToggleBuildingBuilderPanel();

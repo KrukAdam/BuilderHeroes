@@ -12,6 +12,12 @@ public class CraftingsPanels : MonoBehaviour
     private GameUiManager gameUiManager;
     private Construction construction;
 
+    private void OnDestroy()
+    {
+        GameManager.Instance.InputManager.InputController.Player.HorizontalMove.performed -= ClosePanelsWhenMove;
+        GameManager.Instance.InputManager.InputController.Player.VerticalMove.performed -= ClosePanelsWhenMove;
+    }
+
     public void Setup(LocalController localController)
     {
         gameUiManager = localController.GameUiManager;

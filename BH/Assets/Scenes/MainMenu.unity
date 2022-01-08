@@ -1637,6 +1637,65 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
+--- !u!1 &1200099202
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1200099204}
+  - component: {fileID: 1200099203}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1200099203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1200099202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f001b4561290b74483704e3079a88b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterStatsData: {fileID: 11400000, guid: 8f719858588acef4f945c0eba4f10e3a, type: 2}
+  craftingRecipesDatabase: {fileID: 11400000, guid: 66d6eb8c58f196849833ca81ac866cea, type: 2}
+  constLocalized: {fileID: 11400000, guid: 45361db3b8748a34d8aaab8c41dff836, type: 2}
+  allyLayersMask:
+    serializedVersion: 2
+    m_Bits: 256
+  enemyLayerMask:
+    serializedVersion: 2
+    m_Bits: 768
+  allyAILayersMask:
+    serializedVersion: 2
+    m_Bits: 512
+  enemyAILayerMask:
+    serializedVersion: 2
+    m_Bits: 256
+--- !u!4 &1200099204
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1200099202}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.0158398, y: 0.45417577, z: -1.4344897}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1416713089
 GameObject:
   m_ObjectHideFlags: 0

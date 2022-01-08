@@ -35,8 +35,8 @@ public class PlayerMovementController : MoveController
         currentDirection = Vector2.zero;
         playerOrderLayer = Constant.BaseStartOrderLayer;
 
-        GameManager.Instance.InputManager.InputController.Player.HorizontalMove.performed += ctx => MoveHorizontal(ctx.ReadValue<float>());
-        GameManager.Instance.InputManager.InputController.Player.VerticalMove.performed += ctx => MoveVertical(ctx.ReadValue<float>());
+        GameManager.Instance.InputManager.InputController.Player.HorizontalMove.performed += MoveHorizontal;
+        GameManager.Instance.InputManager.InputController.Player.VerticalMove.performed += MoveVertical;
     }
 
     private void FixedUpdate()
@@ -55,6 +55,12 @@ public class PlayerMovementController : MoveController
             
             rb.MovePosition(rb.position + currentDirection * moveSpeed * Time.fixedDeltaTime);
         }
+    }
+
+    private void OnDestroy()
+    {
+        GameManager.Instance.InputManager.InputController.Player.HorizontalMove.performed -= MoveHorizontal;
+        GameManager.Instance.InputManager.InputController.Player.VerticalMove.performed -= MoveVertical;
     }
 
     public override void Init(Character playerCharacter, Stats stats)
@@ -108,13 +114,13 @@ public class PlayerMovementController : MoveController
         SetMoveAnimation(currentDirection);
     }
 
-    private void MoveHorizontal(float direction)
+    private void MoveHorizontal(InputAction.CallbackContext context)
     {
-        Move(direction, 0, true);
+        Move(context.ReadValue<float>(), 0, true);
     }
-    private void MoveVertical(float direction)
+    private void MoveVertical(InputAction.CallbackContext context)
     {
-        Move(0, direction, false);
+        Move(0, context.ReadValue<float>(), false);
     }
 
     private void Move(float xDirection, float yDirection, bool moveHorizontal)
@@ -162,7 +168,7 @@ public class PlayerMovementController : MoveController
 
         if (direction.y != 0 || direction.x != 0)
         {
-           playerCharacter.PlayerActionController.InteractionPointer.localPosition = interactionPointerPos / 2;
+            playerCharacter.PlayerActionController.InteractionPointer.localPosition = interactionPointerPos / 2;
         }
     }
 }

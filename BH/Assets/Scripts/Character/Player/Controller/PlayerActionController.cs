@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerActionController : MonoBehaviour
 {
@@ -22,13 +23,18 @@ public class PlayerActionController : MonoBehaviour
     {
         baseTimetoNextInteraction = timeToNextInteraction;
 
-        GameManager.Instance.InputManager.InputController.Player.Interaction.performed += ctx => InteractionOnMapSet(ctx.ReadValue<float>());
+        GameManager.Instance.InputManager.InputController.Player.Interaction.performed += InteractionOnMapSet;
     }
 
     private void Update()
     {
         CalculateTimeToNextInteraction();
         InteractionInit();
+    }
+
+    private void OnDestroy()
+    {
+        GameManager.Instance.InputManager.InputController.Player.Interaction.performed -= InteractionOnMapSet;
     }
 
     public void Setup(LocalController localController, PlayerCharacter playerCharacter)
@@ -56,9 +62,9 @@ public class PlayerActionController : MonoBehaviour
         timeToNextInteraction -= Time.deltaTime;
     }
 
-    private void InteractionOnMapSet(float interaction)
+    private void InteractionOnMapSet(InputAction.CallbackContext context)
     {
-        interactionOnMap = interaction > 0 ? true : false;
+        interactionOnMap = context.ReadValue<float>() > 0 ? true : false;
     }
 
     private void InteractionInit()

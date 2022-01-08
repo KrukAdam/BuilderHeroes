@@ -17,6 +17,12 @@ public class CityBuilderPanels : MonoBehaviour
 
     private GameUiManager gameUiManager;
 
+    private void OnDestroy()
+    {
+        GameManager.Instance.InputManager.InputController.Player.HorizontalMove.performed -= CloseContructionPanelOnMove;
+        GameManager.Instance.InputManager.InputController.Player.VerticalMove.performed -= CloseContructionPanelOnMove;
+    }
+
     public void Setup(LocalController levelController)
     {
         gameUiManager = levelController.GameUiManager;

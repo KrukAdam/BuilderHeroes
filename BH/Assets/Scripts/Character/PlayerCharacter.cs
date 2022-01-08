@@ -23,4 +23,5 @@ public class PlayerCharacter : Character
 
 		Stats.OnStatsChange += localController.GameUiManager.CharacterPanels.StatsPanel.UpdateStatValues;
 	}
+
 }

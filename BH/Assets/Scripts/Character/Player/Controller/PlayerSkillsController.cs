@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerSkillsController : MonoBehaviour
 {
@@ -55,14 +56,25 @@ public class PlayerSkillsController : MonoBehaviour
 
         levelController.GameUiManager.OnTogglePanels += BindSkillToMouse;
 
-        GameManager.Instance.InputManager.InputController.Player.CancelAction.performed += ctx => StopSkillCasting();
-        GameManager.Instance.InputManager.InputController.Player.MainSkill.performed += ctx => UseMainSkill();
-        GameManager.Instance.InputManager.InputController.Player.SecondSkill.performed += ctx => UseSecondSkill();
+        GameManager.Instance.InputManager.InputController.Player.CancelAction.performed += StopSkillCasting;
+        GameManager.Instance.InputManager.InputController.Player.MainSkill.performed += UseMainSkill;
+        GameManager.Instance.InputManager.InputController.Player.SecondSkill.performed += UseSecondSkill;
 
         playerCharacter.Stats.OnStatsChange += SetSpeedAttack;
 
         SetSpeedAttack();
         BindSkillToMouse(true);
+    }
+
+    private void OnDestroy()
+    {
+
+        playerCharacter.Stats.OnDamage -= StopSkillCasting;
+        playerCharacter.Stats.OnDeath -= StopSkillCasting;
+
+        GameManager.Instance.InputManager.InputController.Player.CancelAction.performed -= StopSkillCasting;
+        GameManager.Instance.InputManager.InputController.Player.MainSkill.performed -= UseMainSkill;
+        GameManager.Instance.InputManager.InputController.Player.SecondSkill.performed -= UseSecondSkill;
     }
 
     public void SetMainSkill(Skill skill)
@@ -108,7 +120,7 @@ public class PlayerSkillsController : MonoBehaviour
         playerCharacter.PlayerActionController.AddTimeToNextInteraction(timeBlock, resetTime);
     }
 
-    public void UseMainSkill()
+    public void UseMainSkill(InputAction.CallbackContext context)
     {
         if (CanUseSkill(mainSkill) && mainSkillCooldawn <= 0)
         {
@@ -120,7 +132,7 @@ public class PlayerSkillsController : MonoBehaviour
         }
     }
 
-    public void UseSecondSkill()
+    public void UseSecondSkill(InputAction.CallbackContext context)
     {
         if (CanUseSkill(secondSkill) && secondSkillCooldawn <= 0)
         {
@@ -141,9 +153,20 @@ public class PlayerSkillsController : MonoBehaviour
         }
     }
 
-    public void StopSkillCasting()
+    public void StopSkillCasting(InputAction.CallbackContext context)
     {
         if(castSkill != null)
+        {
+            Debug.Log("StopCasting");
+            StopCoroutine(castSkill);
+            SetTimeBlockInteraction(0, true);
+            playerCharacter.MoveController.SetTimeBlockMove(0, true);
+        }
+    }
+
+    public void StopSkillCasting()
+    {
+        if (castSkill != null)
         {
             Debug.Log("StopCasting");
             StopCoroutine(castSkill);

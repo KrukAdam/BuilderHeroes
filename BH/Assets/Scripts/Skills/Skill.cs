@@ -54,7 +54,6 @@ public class Skill : ScriptableObject
 
         foreach (var offenseStatType in offenseStats)
         {
-            Debug.Log("debug: " + offenseStats.Length + " ofst " + offenseStats + " skillSetupInfo: " + skillSetupInfo);
             offenseStatType.SetOffenseStat(skillSetupInfo.UserStats.GetStat(offenseStatType.StatType));
         }
     }
@@ -62,7 +61,6 @@ public class Skill : ScriptableObject
     public virtual void UseSkill()
     {
         UseStats();
-        Debug.Log("Use skill: " + skillName);
     }
 
     public bool CanUse()
