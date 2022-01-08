@@ -3,7 +3,7 @@
 using UnityEditor;
 #endif
 
-[CreateAssetMenu(menuName = "Database/Items Database")]
+[CreateAssetMenu(menuName = "Game/Database/Items Database")]
 public class ItemDatabase : ScriptableObject
 {
 	[SerializeField] private Item[] items;

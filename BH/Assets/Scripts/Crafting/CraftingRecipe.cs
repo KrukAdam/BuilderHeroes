@@ -10,7 +10,7 @@ public struct ItemAmount
 	public int Amount;
 }
 
-[CreateAssetMenu(menuName = "Crafting/Reciple")]
+[CreateAssetMenu(menuName = "Game/Crafting/Reciple")]
 public class CraftingRecipe : ScriptableObject
 {
 	public List<ItemAmount> Materials;

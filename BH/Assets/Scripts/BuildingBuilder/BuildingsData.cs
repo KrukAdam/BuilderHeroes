@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Buildings/Buildings Data")]
+[CreateAssetMenu(menuName = "Game/Buildings/Buildings Data")]
 public class BuildingsData : ScriptableObject
 {
     public List<Building> Buildings { get => buildings; }

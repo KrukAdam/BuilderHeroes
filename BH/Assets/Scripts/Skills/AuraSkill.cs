@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Localization;
 
-[CreateAssetMenu(menuName = "Skills/Aura Skill")]
+[CreateAssetMenu(menuName = "Game/Skills/Aura Skill")]
 public class AuraSkill : RangeSkill
 {
     public EAuraSkillsType AuraType { get => auraType; }

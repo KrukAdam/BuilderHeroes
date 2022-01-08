@@ -4,7 +4,7 @@ using UnityEngine;
 
 
 [RequireComponent(typeof(Stats))]
-[CreateAssetMenu(menuName = "Items/Ammo Item")]
+[CreateAssetMenu(menuName = "Game/Items/Ammo Item")]
 public class ItemAmmo : ItemEquippable
 {
     public EItemAmmoType AmmoType { get => ammoType; }

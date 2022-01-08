@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Crafting/Recipe Data")]
+[CreateAssetMenu(menuName = "Game/Crafting/Recipe Data")]
 public class CraftingRecipeData : ScriptableObject
 {
     public List<CraftingRecipe> CraftingRecipes { get => craftingRecipes; }

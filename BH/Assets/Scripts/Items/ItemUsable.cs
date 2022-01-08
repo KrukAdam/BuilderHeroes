@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Items/Usable Item")]
+[CreateAssetMenu(menuName = "Game/Items/Usable Item")]
 public class ItemUsable : Item
 {
 	public List<AuraData> Effects { get => effects; }

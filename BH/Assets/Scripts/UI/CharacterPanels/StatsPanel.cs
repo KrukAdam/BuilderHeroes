@@ -1,7 +1,5 @@
 ﻿using UnityEngine;
-using Kryz.CharacterStats;
 using System.Collections.Generic;
-using System;
 
 public class StatsPanel : MonoBehaviour
 {

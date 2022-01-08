@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[CreateAssetMenu(menuName = "Skills/Movement Skill")]
+[CreateAssetMenu(menuName = "Game/Skills/Movement Skill")]
 public class MovementSkill : Skill
 {
     public float CasterMoveSpeed { get => casterMoveSpeed; }

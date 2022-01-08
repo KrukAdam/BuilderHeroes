@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Game/Kruk/CharacterStats/Character Stats Database")]
+[CreateAssetMenu(menuName = "Game/Database/Character Stats Database")]
 public class CharacterStatsData : ScriptableObject
 {
 	public List<CharacterStat> AllStats { get => allStats; }

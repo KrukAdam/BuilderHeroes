@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Database/Recipes Database")]
+[CreateAssetMenu(menuName = "Game/Database/Recipes Database")]
 public class CraftingRecipesDatabase : ScriptableObject
 {
     public CraftingRecipeData[] Datas { get => datas; }

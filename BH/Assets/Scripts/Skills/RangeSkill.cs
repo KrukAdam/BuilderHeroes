@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Skills/Range Skill")]
+[CreateAssetMenu(menuName = "Game/Skills/Range Skill")]
 public class RangeSkill : Skill
 {
     public EItemAmmoType AmmoType { get => ammoType; }
