@@ -12,7 +12,7 @@ public class CharacterPanels : MonoBehaviour
     [SerializeField] private StatsPanel statsPanel = null;
     [SerializeField] private EquipmentWeaponSkillsPanel equipmentWeaponSkillsPanel = null;
 
-    public void SetupPanel(LocalController levelController)
+    public void Setup(LocalController levelController)
     {
         inventoryPanel.Setup(this);
         StatsPanel.SetupPanel(levelController);

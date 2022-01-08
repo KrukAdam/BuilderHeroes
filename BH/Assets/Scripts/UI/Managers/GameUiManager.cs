@@ -13,14 +13,13 @@ public class GameUiManager : MonoBehaviour
     public TooltipsPanels TooltipsPanels { get => tooltipsPanels; }
     public CraftingsPanels CraftingsPanels { get => craftingsPanels; }
     public CityBuilderPanels CityBuilderPanels { get => cityBuilderPanels; }
+    public GameMenuPanel GameMenuPanel { get => gameMenuPanel; }
 
     [SerializeField] private TooltipsPanels tooltipsPanels = null;
     [SerializeField] private CraftingsPanels craftingsPanels = null;
     [SerializeField] private CharacterPanels characterPanels = null;
     [SerializeField] private CityBuilderPanels cityBuilderPanels = null;
-
-    [Space] //Test Btn
-    [SerializeField] private BasicButton btnExitScene = null;
+    [SerializeField] private GameMenuPanel gameMenuPanel = null;
 
     public void Setup(LocalController localController)
     {
@@ -31,21 +30,23 @@ public class GameUiManager : MonoBehaviour
 
         GameManager.Instance.InputManager.InputController.Player.CharacterAndInventory.performed += ToggleCharacterPanel;
         GameManager.Instance.InputManager.InputController.Player.BuildingBuilderPanel.performed +=  ToggleBuildingBuilderPanel;
-
-        btnExitScene.SetupListener(ExitScene);
+        GameManager.Instance.InputManager.InputController.Player.Esc.performed += ToggleGameMenuPanel;
     }
 
     private void OnDestroy()
     {
         GameManager.Instance.InputManager.InputController.Player.CharacterAndInventory.performed -= ToggleCharacterPanel;
         GameManager.Instance.InputManager.InputController.Player.BuildingBuilderPanel.performed -= ToggleBuildingBuilderPanel;
+        GameManager.Instance.InputManager.InputController.Player.Esc.performed -= ToggleGameMenuPanel;
+
+        // Pointer Enter
+        CharacterPanels.InventoryPanel.OnPointerEnterEvent -= TooltipsPanels.ShowItemTooltip;
+        CharacterPanels.EquipmentWeaponSkillsPanel.EquipmentPanel.OnPointerEnterEvent -= TooltipsPanels.ShowItemTooltip;
+        // Pointer Exit
+        CharacterPanels.InventoryPanel.OnPointerExitEvent -= TooltipsPanels.HideItemTooltip;
+        CharacterPanels.EquipmentWeaponSkillsPanel.EquipmentPanel.OnPointerExitEvent -= TooltipsPanels.HideItemTooltip;
     }
 
-    //TEST
-    public void ExitScene()
-    {
-        SceneManager.LoadScene(Constant.SceneMainMenu);
-    }
 
     public void OpenBuildingPanel(Building building, Construction construction)
     {
@@ -67,6 +68,16 @@ public class GameUiManager : MonoBehaviour
     public void ToggleContructionPanel()
     {
         cityBuilderPanels.ToggleContructionPanel();
+        OnTogglePanels(CheckForActivePanels());
+    }
+    public void ToggleGameMenuPanel(UnityEngine.InputSystem.InputAction.CallbackContext ctx)
+    {
+        GameMenuPanel.TogglePanel();
+        OnTogglePanels(CheckForActivePanels());
+    }
+    public void ToggleGameMenuPanel()
+    {
+        GameMenuPanel.TogglePanel();
         OnTogglePanels(CheckForActivePanels());
     }
 
@@ -101,10 +112,12 @@ public class GameUiManager : MonoBehaviour
 
     private void TogglePanels()
     {
+        //Turn off panels on start
         ToggleCharacterPanel();
         ToggleBuildingBuilderPanel();
         ToggleCraftingPanel();
         ToggleContructionPanel();
+        ToggleGameMenuPanel();
     }
 
     private void SetEvents()
@@ -122,6 +135,7 @@ public class GameUiManager : MonoBehaviour
         if (CharacterPanels.CheckActivePanels()) return true;
         if (CityBuilderPanels.CheckActivePanels()) return true;
         if (CraftingsPanels.CheckActivePanels()) return true;
+        if (GameMenuPanel.CheckActivePanels()) return true;
 
         return false;
     }
@@ -131,7 +145,8 @@ public class GameUiManager : MonoBehaviour
         // Wait for the localization system to initialize
         yield return LocalizationSettings.InitializationOperation;
         craftingsPanels.Setup(localController);
-        characterPanels.SetupPanel(localController);
+        characterPanels.Setup(localController);
         cityBuilderPanels.Setup(localController);
+        gameMenuPanel.Setup();
     }
 }

@@ -98,6 +98,15 @@ public partial class @InputController : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": ""Press"",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Esc"",
+                    ""type"": ""Button"",
+                    ""id"": ""9bbff50b-2a45-461a-92fe-7f6441693cef"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press"",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -320,6 +329,17 @@ public partial class @InputController : IInputActionCollection2, IDisposable
                     ""action"": ""BuildingBuilderPanel"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""360cf567-a1be-4689-9061-db009c073f6d"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Esc"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -342,6 +362,7 @@ public partial class @InputController : IInputActionCollection2, IDisposable
         m_Player_SecondSkill = m_Player.FindAction("SecondSkill", throwIfNotFound: true);
         m_Player_CancelAction = m_Player.FindAction("CancelAction", throwIfNotFound: true);
         m_Player_BuildingBuilderPanel = m_Player.FindAction("BuildingBuilderPanel", throwIfNotFound: true);
+        m_Player_Esc = m_Player.FindAction("Esc", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -409,6 +430,7 @@ public partial class @InputController : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_SecondSkill;
     private readonly InputAction m_Player_CancelAction;
     private readonly InputAction m_Player_BuildingBuilderPanel;
+    private readonly InputAction m_Player_Esc;
     public struct PlayerActions
     {
         private @InputController m_Wrapper;
@@ -421,6 +443,7 @@ public partial class @InputController : IInputActionCollection2, IDisposable
         public InputAction @SecondSkill => m_Wrapper.m_Player_SecondSkill;
         public InputAction @CancelAction => m_Wrapper.m_Player_CancelAction;
         public InputAction @BuildingBuilderPanel => m_Wrapper.m_Player_BuildingBuilderPanel;
+        public InputAction @Esc => m_Wrapper.m_Player_Esc;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -454,6 +477,9 @@ public partial class @InputController : IInputActionCollection2, IDisposable
                 @BuildingBuilderPanel.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnBuildingBuilderPanel;
                 @BuildingBuilderPanel.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnBuildingBuilderPanel;
                 @BuildingBuilderPanel.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnBuildingBuilderPanel;
+                @Esc.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEsc;
+                @Esc.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEsc;
+                @Esc.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEsc;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -482,6 +508,9 @@ public partial class @InputController : IInputActionCollection2, IDisposable
                 @BuildingBuilderPanel.started += instance.OnBuildingBuilderPanel;
                 @BuildingBuilderPanel.performed += instance.OnBuildingBuilderPanel;
                 @BuildingBuilderPanel.canceled += instance.OnBuildingBuilderPanel;
+                @Esc.started += instance.OnEsc;
+                @Esc.performed += instance.OnEsc;
+                @Esc.canceled += instance.OnEsc;
             }
         }
     }
@@ -505,5 +534,6 @@ public partial class @InputController : IInputActionCollection2, IDisposable
         void OnSecondSkill(InputAction.CallbackContext context);
         void OnCancelAction(InputAction.CallbackContext context);
         void OnBuildingBuilderPanel(InputAction.CallbackContext context);
+        void OnEsc(InputAction.CallbackContext context);
     }
 }
