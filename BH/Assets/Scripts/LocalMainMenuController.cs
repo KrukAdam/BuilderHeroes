@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LocalMainMenuController : MonoBehaviour
 {
@@ -11,6 +12,12 @@ public class LocalMainMenuController : MonoBehaviour
         mainMenuUiManager.Setup(this);
 
         mainMenuUiManager.MainMenuPanel.OnBtnExitClick += ExitGame;
+        mainMenuUiManager.MainMenuPanel.OnBtnStartGameClick += StartGame;
+    }
+
+    private void StartGame()
+    {
+        SceneManager.LoadScene(Constant.SceneDemo);
     }
 
     private void ExitGame()

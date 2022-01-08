@@ -36,4 +36,8 @@ public static class Constant
     //UI
     //Tooltips
     public static float TimeToShowNewItemTooltip = 2f;
+
+    //Scene
+    public static string SceneMainMenu = "MainMenu";
+    public static string SceneDemo = "DemoScene";
 }
