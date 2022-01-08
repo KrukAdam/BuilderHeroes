@@ -37,8 +37,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0.000061035156, y: 59.7}
-  m_SizeDelta: {x: 270.7642, y: 125.6282}
+  m_AnchoredPosition: {x: 0.000061035156, y: 51.17119}
+  m_SizeDelta: {x: 270.7642, y: 117.0994}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &6119382281214826403
 CanvasRenderer:
@@ -364,7 +364,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 32
+    m_FontSize: 28
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
@@ -660,7 +660,7 @@ RectTransform:
   m_GameObject: {fileID: 7698436463723079106}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6965598215575067429}
@@ -673,8 +673,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 2360.7007, y: 1826.9259}
-  m_SizeDelta: {x: 537.5792, y: 136.537}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 440, y: 135}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &3571786215588858015
 MonoBehaviour:
@@ -688,7 +688,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0638328a92310946ade7bbec37564f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  modifierBarPrefab: {fileID: 0}
+  modifierBarPrefab: {fileID: 4974294918026859801, guid: 57566c1a14ac7434ea752e69eccdd0db, type: 3}
   modifiersBarsInstantiate: 0
   itemImage: {fileID: 8974518394017647020}
   localizedItemName: {fileID: 5998690820988278429}
