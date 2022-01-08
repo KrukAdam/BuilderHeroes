@@ -27,14 +27,18 @@ MonoBehaviour:
     m_Key: Option
     m_Metadata:
       m_Items: []
+  - m_Id: 11277816066048
+    m_Key: "Language\r"
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
-    rid: 2937793004016501012
+    rid: 2937793004016501231
   references:
     version: 2
     RefIds:
-    - rid: 2937793004016501012
+    - rid: 2937793004016501231
       type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
       data:
         m_CustomEpoch: 1641641748511

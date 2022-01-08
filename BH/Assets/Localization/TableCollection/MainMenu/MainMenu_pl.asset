@@ -30,6 +30,10 @@ MonoBehaviour:
     m_Localized: Opcje
     m_Metadata:
       m_Items: []
+  - m_Id: 11277816066048
+    m_Localized: "J\u0119zyk"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

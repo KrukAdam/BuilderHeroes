@@ -9,5 +9,15 @@ public class LocalMainMenuController : MonoBehaviour
     private void Awake()
     {
         mainMenuUiManager.Setup(this);
+
+        mainMenuUiManager.MainMenuPanel.OnBtnExitClick += ExitGame;
+    }
+
+    private void ExitGame()
+    {
+        Application.Quit();
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
     }
 }
