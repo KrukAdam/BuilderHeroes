@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,9 @@ using UnityEngine.UI;
 
 public class WeaponSkillsPanel : MonoBehaviour
 {
+    public event Action<Skill> OnPointerEnterSkillButton = delegate { };
+    public event Action OnPointerExitSkillButton = delegate { };
+
     [SerializeField] private Color hoverMainSkillColor = Color.green;
     [SerializeField] private Color hoverSecondSkillColor = Color.green;
     [SerializeField] private Color basicColor = Color.white;
@@ -178,6 +182,19 @@ public class WeaponSkillsPanel : MonoBehaviour
     public void AddToButtonsList(CharacterWeaponSkillButton characterWeaponSkillButton)
     {
         characterWeaponSkillButtons.Add(characterWeaponSkillButton);
+    }
+
+    public void OnPointerEnterOnSkillButton(ECharacterWeaponSkillButtonType buttonType)
+    {
+        if(skillsSet.TryGetValue(buttonType, out Skill skill))
+        {
+            OnPointerEnterSkillButton(skill);
+        }
+    }
+
+    public void OnPointerExitOnSkillButton()
+    {
+        OnPointerExitSkillButton();
     }
 
     private void ResetSelectedButton(ECharacterWeaponSkillButtonType buttonType)

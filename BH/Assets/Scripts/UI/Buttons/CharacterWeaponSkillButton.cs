@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,7 +6,7 @@ using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class CharacterWeaponSkillButton : MonoBehaviour, IPointerClickHandler
+public class CharacterWeaponSkillButton : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
 
     public Image SkillImage { get => skillImage; }
@@ -45,5 +46,15 @@ public class CharacterWeaponSkillButton : MonoBehaviour, IPointerClickHandler
     private void OnRightClick()
     {
         weaponSkillsPanel.SetSecondSkillSelected(buttonType);
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        weaponSkillsPanel.OnPointerEnterOnSkillButton(ButtonType);
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        weaponSkillsPanel.OnPointerExitOnSkillButton();
     }
 }

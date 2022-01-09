@@ -218,7 +218,7 @@ public class TooltipSkill : TooltipBase
         if (auraSkill)
         {
             sb.Clear();
-            sb.Append(GameManager.Instance.ConstLocalized.SkillTypeAura+": " +auraSkill.AuraTypeName.GetLocalizedString());
+            sb.Append(GameManager.Instance.ConstLocalized.SkillTypeAura.GetLocalizedString() + ": " +auraSkill.AuraTypeName.GetLocalizedString());
             ShowModifierBar(sb, barIndex, baseColor);
             barIndex++;
         }

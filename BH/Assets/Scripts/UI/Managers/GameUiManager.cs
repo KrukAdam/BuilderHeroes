@@ -42,9 +42,11 @@ public class GameUiManager : MonoBehaviour
         // Pointer Enter
         CharacterPanels.InventoryPanel.OnPointerEnterEvent -= TooltipsPanels.ShowItemTooltip;
         CharacterPanels.EquipmentWeaponSkillsPanel.EquipmentPanel.OnPointerEnterEvent -= TooltipsPanels.ShowItemTooltip;
+        CharacterPanels.EquipmentWeaponSkillsPanel.WeaponSkillsPanel.OnPointerEnterSkillButton -= TooltipsPanels.ShowMainSkillTooltip;
         // Pointer Exit
         CharacterPanels.InventoryPanel.OnPointerExitEvent -= TooltipsPanels.HideItemTooltip;
         CharacterPanels.EquipmentWeaponSkillsPanel.EquipmentPanel.OnPointerExitEvent -= TooltipsPanels.HideItemTooltip;
+        CharacterPanels.EquipmentWeaponSkillsPanel.WeaponSkillsPanel.OnPointerExitSkillButton -= TooltipsPanels.HideMainSkillTooltip;
     }
 
 
@@ -125,9 +127,11 @@ public class GameUiManager : MonoBehaviour
         // Pointer Enter
         CharacterPanels.InventoryPanel.OnPointerEnterEvent += TooltipsPanels.ShowItemTooltip;
         CharacterPanels.EquipmentWeaponSkillsPanel.EquipmentPanel.OnPointerEnterEvent += TooltipsPanels.ShowItemTooltip;
+        CharacterPanels.EquipmentWeaponSkillsPanel.WeaponSkillsPanel.OnPointerEnterSkillButton += TooltipsPanels.ShowMainSkillTooltip;
         // Pointer Exit
         CharacterPanels.InventoryPanel.OnPointerExitEvent += TooltipsPanels.HideItemTooltip;
         CharacterPanels.EquipmentWeaponSkillsPanel.EquipmentPanel.OnPointerExitEvent += TooltipsPanels.HideItemTooltip;
+        CharacterPanels.EquipmentWeaponSkillsPanel.WeaponSkillsPanel.OnPointerExitSkillButton += TooltipsPanels.HideMainSkillTooltip;
     }
 
     private bool CheckForActivePanels()

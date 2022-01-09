@@ -54,19 +54,19 @@ MonoBehaviour:
   auraType: 1
   auraTypeName:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:b153a5de2cc0017478fb7a9e17d3b180
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 40319348736
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   auras:
-  - buffValue: 100
+  - buffValue: -25
     duration: 8
     baseStatType: 1
     buffStatType: 4
-    isPercentMult: 0
+    isPercentMult: 1
   references:
     version: 2
     RefIds: []
