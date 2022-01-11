@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Localization;
 using UnityEngine.Localization.Components;
+using UnityEngine.Localization.Settings;
 using UnityEngine.UI;
 
 public class TooltipItem : TooltipBase
@@ -9,12 +10,19 @@ public class TooltipItem : TooltipBase
     [SerializeField] private LocalizeStringEvent localizeType;
     [SerializeField] private Text itemDescriptionText;
 
+    private int indexBar;
+
     public override void ShowTooltip(Item item)
     {
         base.ShowTooltip(item);
+
+        indexBar = 0;
+
         SetItemInfo(item);
         ShowModifiers(item);
         ShowItemDescription(item);
+        ShowToolsInfo(item);
+
         gameObject.SetActive(true);
     }
 
@@ -44,6 +52,28 @@ public class TooltipItem : TooltipBase
         }
     }
 
+    private void ShowToolsInfo(Item item)
+    {
+        ItemTool itemTool = item as ItemTool;
+        if (itemTool)
+        {
+            sb.Clear();
+            sb.Append(itemTool.ToolTypeName.GetLocalizedString());
+            ShowModifierBar(sb, indexBar, statPositive);
+            indexBar++;
+
+            sb.Clear();
+            sb.Append(itemTool.DamageRawMaterial.ToString() + " " + GameManager.Instance.ConstLocalized.DamageRawMaterial.GetLocalizedString());
+            ShowModifierBar(sb, indexBar, baseColor);
+            indexBar++;
+
+            sb.Clear();
+            sb.Append(itemTool.Durability.ToString() + " " + GameManager.Instance.ConstLocalized.ItemDurability.GetLocalizedString());
+            ShowModifierBar(sb, indexBar, baseColor);
+            indexBar++;
+        }
+
+    }
 
 
     private void ShowItemDescription(Item item)
@@ -62,6 +92,7 @@ public class TooltipItem : TooltipBase
     {
         Color textColor;
         AuraData buffEffect;
+        indexBar = itemUsable.Effects.Count;
 
         for (int i = 0; i < itemUsable.Effects.Count; i++)
         {
@@ -106,7 +137,6 @@ public class TooltipItem : TooltipBase
     {
         Color textColor = statNegative;
         BaseStat baseStat;
-        int barIndex = 0;
 
         sb.Clear();
 
@@ -134,8 +164,8 @@ public class TooltipItem : TooltipBase
                     sb.Append(" ");
                     sb.Append(characterStat.StatName.GetLocalizedString());
 
-                    ShowModifierBar(sb, barIndex, textColor);
-                    barIndex++;
+                    ShowModifierBar(sb, indexBar, textColor);
+                    indexBar++;
                 }
             }
             if (characterStat.StatUseValues == EStatsValueUse.BaseAndMaxValue)
@@ -158,8 +188,8 @@ public class TooltipItem : TooltipBase
                     sb.Append(" ");
                     sb.Append(characterStat.StatName.GetLocalizedString());
 
-                    ShowModifierBar(sb, barIndex, textColor);
-                    barIndex++;
+                    ShowModifierBar(sb, indexBar, textColor);
+                    indexBar++;
                 }
 
             }
@@ -183,8 +213,8 @@ public class TooltipItem : TooltipBase
                     sb.Append(" " + GameManager.Instance.ConstLocalized.StatMinValue.GetLocalizedString() + " ");
                     sb.Append(characterStat.StatName.GetLocalizedString());
 
-                    ShowModifierBar(sb, barIndex, textColor);
-                    barIndex++;
+                    ShowModifierBar(sb, indexBar, textColor);
+                    indexBar++;
 
                 }
 
@@ -207,8 +237,8 @@ public class TooltipItem : TooltipBase
                     sb.Append(" " + GameManager.Instance.ConstLocalized.StatMaxValue.GetLocalizedString() + " ");
                     sb.Append(characterStat.StatName.GetLocalizedString());
 
-                    ShowModifierBar(sb, barIndex, textColor);
-                    barIndex++;
+                    ShowModifierBar(sb, indexBar, textColor);
+                    indexBar++;
                 }
             }
         }
@@ -238,8 +268,8 @@ public class TooltipItem : TooltipBase
                     sb.Append(" ");
                     sb.Append(characterStat.StatName.GetLocalizedString());
 
-                    ShowModifierBar(sb, barIndex, textColor);
-                    barIndex++;
+                    ShowModifierBar(sb, indexBar, textColor);
+                    indexBar++;
                 }
             }
             if (characterStat.StatUseValues == EStatsValueUse.BaseAndMaxValue)
@@ -263,8 +293,8 @@ public class TooltipItem : TooltipBase
                     sb.Append(" ");
                     sb.Append(characterStat.StatName.GetLocalizedString());
 
-                    ShowModifierBar(sb, barIndex, textColor);
-                    barIndex++;
+                    ShowModifierBar(sb, indexBar, textColor);
+                    indexBar++;
                 }
 
             }
@@ -288,8 +318,8 @@ public class TooltipItem : TooltipBase
                     sb.Append(" " + GameManager.Instance.ConstLocalized.StatMinValue.GetLocalizedString() + " ");
                     sb.Append(characterStat.StatName.GetLocalizedString());
 
-                    ShowModifierBar(sb, barIndex, textColor);
-                    barIndex++;
+                    ShowModifierBar(sb, indexBar, textColor);
+                    indexBar++;
 
                 }
 
@@ -313,8 +343,8 @@ public class TooltipItem : TooltipBase
                     sb.Append(" " + GameManager.Instance.ConstLocalized.StatMaxValue.GetLocalizedString() + " ");
                     sb.Append(characterStat.StatName.GetLocalizedString());
 
-                    ShowModifierBar(sb, barIndex, textColor);
-                    barIndex++;
+                    ShowModifierBar(sb, indexBar, textColor);
+                    indexBar++;
                 }
 
             }

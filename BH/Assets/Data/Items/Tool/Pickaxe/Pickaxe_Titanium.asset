@@ -31,6 +31,15 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
+  ItemDescription:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   Icon: {fileID: 1365186947, guid: b7daa4134f3bdd041afe364cfe36ebfc, type: 3}
   MaximumStacks: 1
   EquipmentType: 9
@@ -1011,6 +1020,15 @@ MonoBehaviour:
   gameCharacterStatsData: {fileID: 11400000, guid: 8f719858588acef4f945c0eba4f10e3a, type: 2}
   mainSkill: {fileID: 0}
   secondSkill: {fileID: 0}
+  toolTypeName:
+    m_TableReference:
+      m_TableCollectionName: GUID:051d11dc8992261489cdae5ee20fbff7
+    m_TableEntryReference:
+      m_KeyId: 290140483584
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   toolType: 2
   damageRawMaterial: 4
   durability: 280

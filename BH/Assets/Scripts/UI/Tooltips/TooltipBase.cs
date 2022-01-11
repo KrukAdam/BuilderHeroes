@@ -11,6 +11,7 @@ public class TooltipBase : MonoBehaviour
     protected List<TooltipsStatModifierBar> modifierBars = new List<TooltipsStatModifierBar>();
     protected Color statPositive;
     protected Color statNegative;
+    protected Color baseColor;
     protected readonly StringBuilder sb = new StringBuilder();
 
     private void Awake()
@@ -20,10 +21,11 @@ public class TooltipBase : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    public virtual void Setup(Color positive, Color negative)
+    public virtual void Setup(Color positive, Color negative, Color baseColor)
     {
         statPositive = positive;
         statNegative = negative;
+        this.baseColor = baseColor;
     }
 
     public virtual void ShowTooltip(CharacterStat stat) { }

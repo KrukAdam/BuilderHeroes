@@ -131,6 +131,14 @@ MonoBehaviour:
     m_Key: Const_NEW
     m_Metadata:
       m_Items: []
+  - m_Id: 3429982671499264
+    m_Key: Const_DamageRawMaterial
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3430932240953344
+    m_Key: Const_ItemDurability
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

@@ -3040,27 +3040,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8984366036970906225, guid: dc69fe1bf2b466941ba986adc552cb2a, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8984366036970906225, guid: dc69fe1bf2b466941ba986adc552cb2a, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8984366036970906225, guid: dc69fe1bf2b466941ba986adc552cb2a, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 303
       objectReference: {fileID: 0}
     - target: {fileID: 8984366036970906225, guid: dc69fe1bf2b466941ba986adc552cb2a, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 42
       objectReference: {fileID: 0}
     - target: {fileID: 8984366036970906225, guid: dc69fe1bf2b466941ba986adc552cb2a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 151.5
       objectReference: {fileID: 0}
     - target: {fileID: 8984366036970906225, guid: dc69fe1bf2b466941ba986adc552cb2a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -21
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc69fe1bf2b466941ba986adc552cb2a, type: 3}
@@ -4673,8 +4673,9 @@ MonoBehaviour:
   tooltipMainSkill: {fileID: 1282967749}
   tooltipSecondSkill: {fileID: 1313286728}
   tooltipNewItemDiscover: {fileID: 329206674}
-  statPositive: {r: 0, g: 1, b: 0, a: 1}
-  statNegative: {r: 1, g: 0, b: 0, a: 1}
+  statPositive: {r: 0.050062295, g: 0.7075472, b: 0.050062295, a: 1}
+  statNegative: {r: 0.745283, g: 0, b: 0, a: 1}
+  baseColor: {r: 0.06674972, g: 0.58273226, b: 0.9433962, a: 1}
 --- !u!224 &325342480
 RectTransform:
   m_ObjectHideFlags: 0

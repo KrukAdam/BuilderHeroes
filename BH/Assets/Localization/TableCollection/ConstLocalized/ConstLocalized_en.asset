@@ -134,6 +134,14 @@ MonoBehaviour:
     m_Localized: NEW
     m_Metadata:
       m_Items: []
+  - m_Id: 3429982671499264
+    m_Localized: Damage Raw Material
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3430932240953344
+    m_Localized: Durability
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

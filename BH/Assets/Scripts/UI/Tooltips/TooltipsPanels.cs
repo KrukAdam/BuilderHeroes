@@ -11,17 +11,18 @@ public class TooltipsPanels : MonoBehaviour
     [SerializeField] private TooltipBase tooltipNewItemDiscover = null;
     [SerializeField] private Color statPositive = Color.green;
     [SerializeField] private Color statNegative = Color.red;
+    [SerializeField] private Color baseColor = Color.blue;
 
     private List<Item> newItemsToShow = new List<Item>();
     private WaitForSeconds waitFor = new WaitForSeconds(Constant.TimeToShowNewItemTooltip);
 
     private void Start()
     {
-        statTooltip.Setup(statPositive, statNegative);
-        itemTooltip.Setup(statPositive, statNegative);
-        tooltipMainSkill.Setup(statPositive, statNegative);
-        tooltipSecondSkill.Setup(statPositive, statNegative);
-        tooltipNewItemDiscover.Setup(statPositive, statNegative);
+        statTooltip.Setup(statPositive, statNegative, baseColor);
+        itemTooltip.Setup(statPositive, statNegative, baseColor);
+        tooltipMainSkill.Setup(statPositive, statNegative, baseColor);
+        tooltipSecondSkill.Setup(statPositive, statNegative, baseColor);
+        tooltipNewItemDiscover.Setup(statPositive, statNegative, baseColor);
     }
 
     public void ShowItemTooltip(BaseItemSlot itemSlot)

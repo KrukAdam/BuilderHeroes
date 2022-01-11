@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class TooltipSkill : TooltipBase
 {
     [SerializeField] private Image image = null;
-    [SerializeField] private Color baseColor = Color.black;
     [SerializeField] private Text nameText = null;
     [SerializeField] private Text targetsAmountText = null;
     [SerializeField] private Text typeText = null;

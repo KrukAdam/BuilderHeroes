@@ -273,6 +273,24 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
+  DamageRawMaterial:
+    m_TableReference:
+      m_TableCollectionName: GUID:16bbb9c522cd5e147af7c09d8b15aee4
+    m_TableEntryReference:
+      m_KeyId: 3429982671499264
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  ItemDurability:
+    m_TableReference:
+      m_TableCollectionName: GUID:16bbb9c522cd5e147af7c09d8b15aee4
+    m_TableEntryReference:
+      m_KeyId: 3430932240953344
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   references:
     version: 2
     RefIds: []

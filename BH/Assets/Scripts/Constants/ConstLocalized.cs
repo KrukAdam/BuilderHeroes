@@ -42,4 +42,8 @@ public class ConstLocalized : ScriptableObject
 
     //Simple
     public LocalizedString NEW;
+
+    //Items
+    public LocalizedString DamageRawMaterial;
+    public LocalizedString ItemDurability;
 }
