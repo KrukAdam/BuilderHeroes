@@ -9,9 +9,16 @@ public class NewGamePanel : MonoBehaviour
 
     [SerializeField] private BasicButton btnStartGame = null;
     [SerializeField] private DropdownRace dropdownRace = null;
-    
+    [SerializeField] private RaceSkillWindow raceSkillWindow = null;
+
+    private void OnDestroy()
+    {
+        dropdownRace.OnValueChange -= raceSkillWindow.SetupSkills;
+    }
+
     public void Setup()
     {
+        dropdownRace.OnValueChange += raceSkillWindow.SetupSkills;
         dropdownRace.Setup();
 
         btnStartGame.SetupListener(BtnStartGameClick);

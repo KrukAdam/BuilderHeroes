@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,8 @@ using UnityEngine.UI;
 
 public class DropdownRace : MonoBehaviour
 {
+    public event Action OnValueChange = delegate { };
+    
     [SerializeField] private Dropdown dropdown;
 
     public void Setup()
@@ -26,8 +29,9 @@ public class DropdownRace : MonoBehaviour
         RaceSelected(selected);
     }
 
-    static void RaceSelected(int index)
+    private void RaceSelected(int index)
     {
         GameManager.Instance.CharacterCreator.SetupRace(GameManager.Instance.RaceDatabase.Race[index]);
+        OnValueChange();
     }
 }
