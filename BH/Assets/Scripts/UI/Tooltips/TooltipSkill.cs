@@ -125,27 +125,32 @@ public class TooltipSkill : TooltipBase
                 }
 
                 sb.Append(" ");
-                sb.Append(GameManager.Instance.CharacterStatsData.GetStat(stat.StatType).StatName.GetLocalizedString());
-                sb.Append(": ");
-                sb.Append(GameManager.Instance.CharacterStatsData.GetStat(stat.DamagedStatType).StatName.GetLocalizedString());
-
-                ShowModifierBar(sb, barIndex, statPositive);
-                barIndex++;
             }
 
-            if (stat.MinPercentDamage != 0 || stat.MinPercentDamage != 0)
+            if (stat.MinPercentDamage != 0 || stat.MaxPercentDamage != 0)
             {
+                if (stat.MinDamage != 0 || stat.MaxDamage != 0) sb.Append("+ ");
+
                 if (stat.MinPercentDamage != 0)
                 {
                     sb.Append(stat.MinPercentDamage+"%");
                 }
-                if (stat.MinPercentDamage != 0 && stat.MinPercentDamage != 0) sb.Append("-");
-                if (stat.MinPercentDamage != 0)
+                else
                 {
-                    sb.Append(stat.MinPercentDamage + "%");
+                    sb.Append("0%-");
+                }
+                if (stat.MinPercentDamage != 0 && stat.MaxPercentDamage != 0) sb.Append("-");
+                if (stat.MaxPercentDamage != 0)
+                {
+                    sb.Append(stat.MaxPercentDamage + "%");
                 }
 
                 sb.Append(" ");
+
+            }
+
+            if(sb.Length > 0)
+            {
                 sb.Append(GameManager.Instance.CharacterStatsData.GetStat(stat.StatType).StatName.GetLocalizedString());
                 sb.Append(": ");
                 sb.Append(GameManager.Instance.CharacterStatsData.GetStat(stat.DamagedStatType).StatName.GetLocalizedString());
@@ -153,7 +158,6 @@ public class TooltipSkill : TooltipBase
                 ShowModifierBar(sb, barIndex, statPositive);
                 barIndex++;
             }
-
 
         }
     }

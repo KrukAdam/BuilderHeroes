@@ -225,8 +225,8 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 1662feff
-      m_LastClickedID: -105962
+      m_SelectedIDs: 989cfeff
+      m_LastClickedID: 0
       m_ExpandedIDs: 646afeff6075feffecbcfeff0abffeff28c6feff5ad1feffa0effeff08f1feff10f8feffd203ffffe81cffffb8f1ffff30f3fffffef9ffff16fbfffff4ffffff447c0000bc7c0000bcc60000fcc7000032cb0000dae900003a0d0100ec110100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
@@ -950,7 +950,7 @@ MonoBehaviour:
   - {fileID: 13}
   - {fileID: 14}
   m_Selected: 0
-  m_LastSelected: 1
+  m_LastSelected: 2
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1074,7 +1074,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 12956
+  controlID: 23054
 --- !u!114 &16
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1142,22 +1142,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefab/Player
+    - Assets/Data/Skills/Base/Loyalist
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Prefab/Player
+  - Assets/Data/Skills/Base/Loyalist
   m_LastFoldersGridSize: 16
   m_LastProjectPath: E:\Projekty Gier\BH\Projekt\BH
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 573}
-    m_SelectedIDs: e6ce0000
-    m_LastClickedID: 52966
-    m_ExpandedIDs: 00000000f65d000036610000386100003a610000dc660000de660000e0660000e266000008670000287d00002a7d0000487f000000ca9a3b
+    scrollPos: {x: 0, y: 79}
+    m_SelectedIDs: e8290100
+    m_LastClickedID: 76264
+    m_ExpandedIDs: 00000000f65d000036610000dc660000de660000e0660000e2660000287d00002a7d000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1210,8 +1210,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 1662feff
-    m_LastClickedInstanceID: -105962
+    m_SelectedInstanceIDs: 989cfeff
+    m_LastClickedInstanceID: -90984
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c623000040620000caf90000f8fb0000b4720000
     m_RenameOverlay:
@@ -1346,8 +1346,8 @@ MonoBehaviour:
     y: 0
     width: 421
     height: 947
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 22}
   m_Panes:
   - {fileID: 22}
