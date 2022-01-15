@@ -20,6 +20,11 @@ public class Character : MonoBehaviour
     protected LayerMask allyLayersMask;
     protected LayerMask enemyLayerMask;
 
+    public void SetupRace(ERaceType raceType)
+    {
+        this.raceType = raceType;
+    }
+
     protected void SetupLayerMask(bool isPlayer)
     {
         if (isPlayer)

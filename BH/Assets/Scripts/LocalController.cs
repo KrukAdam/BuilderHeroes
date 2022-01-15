@@ -12,10 +12,14 @@ public class LocalController : MonoBehaviour
     [SerializeField] private PlayerCharacter player = null;
     [SerializeField] private GameUiManager gameUiManager = null;
     [SerializeField] private LocalManagers localManagers = null;
+    [SerializeField] private RespawnPlayerManager respawnPlayerManager = null;
 
     private void Awake()
     {
+        respawnPlayerManager.Setup();
+        player = respawnPlayerManager.PlayerCharacter;
         player.SetupCharacter(this);
+
         localManagers.SetupManagers(this);
         gameUiManager.Setup(this);
 
