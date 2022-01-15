@@ -76,8 +76,8 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-pl
     - Preload
-  - m_GUID: 4c01c24d84b48ab43a654b5713d2cf07
-    m_Address: CharacterCreatorPanel_pl
+  - m_GUID: 29fe46a5db5614a4aa53942b05d76023
+    m_Address: PanelNewGame_pl
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-pl

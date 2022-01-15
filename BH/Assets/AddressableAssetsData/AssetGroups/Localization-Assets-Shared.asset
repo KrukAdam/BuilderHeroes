@@ -68,9 +68,9 @@ MonoBehaviour:
       Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
-  - m_GUID: f70aa1166b21a6f4d983c146408548da
-    m_Address: Assets/Localization/TableCollection/CharacterCreatorPanel/CharacterCreatorPanel
-      Shared Data.asset
+  - m_GUID: a1bdaed5676464e4a841b7c3ec436493
+    m_Address: Assets/Localization/TableCollection/PanelNewGame/PanelNewGame Shared
+      Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
   m_ReadOnly: 1

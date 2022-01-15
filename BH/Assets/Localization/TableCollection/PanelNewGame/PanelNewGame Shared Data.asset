@@ -13,16 +13,20 @@ MonoBehaviour:
   m_Name: PanelNewGame Shared Data
   m_EditorClassIdentifier: 
   m_TableCollectionName: PanelNewGame
-  m_TableCollectionNameGuidString: 00000000000000000000000000000000
-  m_Entries: []
+  m_TableCollectionNameGuidString: a1bdaed5676464e4a841b7c3ec436493
+  m_Entries:
+  - m_Id: 216148766720
+    m_Key: PanelNewGameLabel
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
-    rid: 2937793164724928630
+    rid: 2937793164724928673
   references:
     version: 2
     RefIds:
-    - rid: 2937793164724928630
+    - rid: 2937793164724928673
       type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
       data:
         m_CustomEpoch: 1642246505653

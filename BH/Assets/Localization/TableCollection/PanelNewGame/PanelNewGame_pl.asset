@@ -17,7 +17,11 @@ MonoBehaviour:
   m_SharedData: {fileID: 11400000, guid: a1bdaed5676464e4a841b7c3ec436493, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData: []
+  m_TableData:
+  - m_Id: 216148766720
+    m_Localized: Panel Nowej gry
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
