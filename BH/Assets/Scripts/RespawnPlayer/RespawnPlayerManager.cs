@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class RespawnPlayerManager : MonoBehaviour
@@ -18,6 +16,7 @@ public class RespawnPlayerManager : MonoBehaviour
 
         RespawnPlayer();
         SetRace();
+        SetRaceSkill();
     }
 
     private void RespawnPlayer()
@@ -27,6 +26,13 @@ public class RespawnPlayerManager : MonoBehaviour
 
     private void SetRace()
     {
-        playerCharacter.SetupRace(characterCreator.RaceType);
+        playerCharacter.SetupRace(characterCreator.RaceData.RaceType);
+    }
+
+    private void SetRaceSkill()
+    {
+        Skill main = Instantiate(characterCreator.RaceData.MainRaceSkill);
+        Skill second = Instantiate(characterCreator.RaceData.SecondRaceSkill);
+        playerCharacter.PlayerSkillsController.SetupRaceSkill(main, second);
     }
 }

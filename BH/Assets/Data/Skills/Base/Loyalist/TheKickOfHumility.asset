@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b8fdba3dffbd8345846d0de5dc722f2, type: 3}
+  m_Name: TheKickOfHumility
+  m_EditorClassIdentifier: 
+  skillSprite: {fileID: 1650073546, guid: cca2ecb5e932ff44fa5efeeafc11cd75, type: 3}
+  skillName:
+    m_TableReference:
+      m_TableCollectionName: GUID:6c956b7186ebbb44185725b3476e2ffd
+    m_TableEntryReference:
+      m_KeyId: 629686169600
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  description:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  singleTarget: 1
+  skillUsePositionType: 3
+  skillRange: 0.7
+  skillCooldawn: 2
+  skillCastTime: 0.5
+  timeToBlockCasterMove: 0.5
+  timeToBlockCasterAction: 1
+  pushPower: 10
+  skillStatsUsed:
+  - StatType: 3
+    StatValue: 3
+  offenseStats:
+  - StatType: 8
+    SkillOffenseStatType: 5
+    MinDamage: 2
+    MaxDamage: 5
+    MinPercentDamage: 5
+    MaxPercentDamage: 25
+    DamagedStatType: 1
+  - StatType: 8
+    SkillOffenseStatType: 5
+    MinDamage: 1
+    MaxDamage: 3
+    MinPercentDamage: 0
+    MaxPercentDamage: 15
+    DamagedStatType: 3
+  references:
+    version: 2
+    RefIds: []

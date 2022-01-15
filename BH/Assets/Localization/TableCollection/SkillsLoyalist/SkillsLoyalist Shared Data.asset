@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: SkillsLoyalist Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: SkillsLoyalist
+  m_TableCollectionNameGuidString: 6c956b7186ebbb44185725b3476e2ffd
+  m_Entries:
+  - m_Id: 7113043968
+    m_Key: Skill_Lo_HonoraryStraightStrike
+    m_Metadata:
+      m_Items: []
+  - m_Id: 629686169600
+    m_Key: Skill_Lo_TheKickOfHumility
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 2937793164724929097
+  references:
+    version: 2
+    RefIds:
+    - rid: 2937793164724929097
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1642270492270

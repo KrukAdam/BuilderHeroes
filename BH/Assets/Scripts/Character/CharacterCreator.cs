@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class CharacterCreator : MonoBehaviour
 {
-    public ERaceType RaceType { get => raceType; }
+    public RaceData RaceData { get => raceData; }
 
-    private ERaceType raceType;
+    private RaceData raceData;
 
-    public void SetupRace(ERaceType raceType)
+    public void SetupRace(RaceData raceData)
     {
-        this.raceType = raceType;
+        this.raceData = raceData;
 
         //TODO reset all value to basic 
     }

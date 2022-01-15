@@ -28,6 +28,6 @@ public class DropdownRace : MonoBehaviour
 
     static void RaceSelected(int index)
     {
-        GameManager.Instance.CharacterCreator.SetupRace(GameManager.Instance.RaceDatabase.Race[index].RaceType);
+        GameManager.Instance.CharacterCreator.SetupRace(GameManager.Instance.RaceDatabase.Race[index]);
     }
 }

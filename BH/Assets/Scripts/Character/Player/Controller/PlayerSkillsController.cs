@@ -9,11 +9,8 @@ public class PlayerSkillsController : MonoBehaviour
     public event Action OnMainSkillUse = delegate { };
     public event Action OnSecondSkillUse = delegate { };
 
-    public Skill MainRaceSkill { get => Instantiate(mainSkillRacePrefab); }
-    public Skill SecondRaceSkill { get => Instantiate(secondSkillRacePrefab); }
-
-    [SerializeField] private Skill mainSkillRacePrefab = null;
-    [SerializeField] private Skill secondSkillRacePrefab = null;
+    public Skill MainRaceSkill { get => mainSkill; }
+    public Skill SecondRaceSkill { get => secondSkill; }
 
     private Skill mainSkill = null;
     private Skill secondSkill = null;
@@ -41,15 +38,11 @@ public class PlayerSkillsController : MonoBehaviour
     {
         this.playerCharacter = levelController.Player;
 
+        ammoSlot = levelController.GameUiManager.CharacterPanels.EquipmentWeaponSkillsPanel.EquipmentPanel.AmmoSlot;
+
         skillSetupInfo = new SkillSetupInfo(playerCharacter, gameObject.transform);
-
-        mainSkill = Instantiate(mainSkillRacePrefab);
-        secondSkill = Instantiate(secondSkillRacePrefab);
-
         mainSkill.SetupSkill(skillSetupInfo);
         secondSkill.SetupSkill(skillSetupInfo);
-
-        ammoSlot = levelController.GameUiManager.CharacterPanels.EquipmentWeaponSkillsPanel.EquipmentPanel.AmmoSlot;
 
         playerCharacter.Stats.OnDamage += StopSkillCasting;
         playerCharacter.Stats.OnDeath += StopSkillCasting;
@@ -75,6 +68,12 @@ public class PlayerSkillsController : MonoBehaviour
         GameManager.Instance.InputManager.InputController.Player.CancelAction.performed -= StopSkillCasting;
         GameManager.Instance.InputManager.InputController.Player.MainSkill.performed -= UseMainSkill;
         GameManager.Instance.InputManager.InputController.Player.SecondSkill.performed -= UseSecondSkill;
+    }
+
+    public void SetupRaceSkill(Skill mainSkill, Skill secondSkill)
+    {
+        this.mainSkill = mainSkill;
+        this.secondSkill = secondSkill;
     }
 
     public void SetMainSkill(Skill skill)

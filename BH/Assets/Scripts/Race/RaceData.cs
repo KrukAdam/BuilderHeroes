@@ -8,7 +8,11 @@ public class RaceData : ScriptableObject
 {
     public ERaceType RaceType { get => raceType; }
     public LocalizedString RaceName { get => raceName; }
+    public Skill MainRaceSkill { get => mainRaceSkill; }
+    public Skill SecondRaceSkill { get => secondRaceSkill; }
 
     [SerializeField] private ERaceType raceType = ERaceType.None;
     [SerializeField] private LocalizedString raceName = null;
+    [SerializeField] private Skill mainRaceSkill = null;
+    [SerializeField] private Skill secondRaceSkill = null;
 }
