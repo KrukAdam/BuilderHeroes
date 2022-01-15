@@ -34,6 +34,10 @@ MonoBehaviour:
     m_Localized: "J\u0119zyk"
     m_Metadata:
       m_Items: []
+  - m_Id: 2530394146107392
+    m_Localized: Nowa Gra
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

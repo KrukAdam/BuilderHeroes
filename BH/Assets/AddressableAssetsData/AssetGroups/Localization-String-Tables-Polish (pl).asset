@@ -76,6 +76,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-pl
     - Preload
+  - m_GUID: 4c01c24d84b48ab43a654b5713d2cf07
+    m_Address: CharacterCreatorPanel_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    - Preload
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 6c2525f31135a624f874d31204351340, type: 2}
   m_SchemaSet:

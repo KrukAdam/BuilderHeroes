@@ -12,7 +12,7 @@ public class LocalMainMenuController : MonoBehaviour
         mainMenuUiManager.Setup(this);
 
         mainMenuUiManager.MainMenuPanel.OnBtnExitClick += ExitGame;
-        mainMenuUiManager.MainMenuPanel.OnBtnStartGameClick += StartGame;
+        mainMenuUiManager.NewGamePanel.OnBtnStartGameClick += StartGame;
     }
 
     private void StartGame()
