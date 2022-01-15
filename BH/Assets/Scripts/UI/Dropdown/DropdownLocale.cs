@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.Localization.Settings;
 using UnityEngine.UI;
 
-public class LocaleDropdown : MonoBehaviour
+public class DropdownLocale : MonoBehaviour
 {
-    public Dropdown dropdown;
+    [SerializeField] private Dropdown dropdown;
 
     public void Setup()
     {

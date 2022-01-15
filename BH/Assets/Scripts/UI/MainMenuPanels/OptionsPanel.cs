@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class OptionsPanel : MonoBehaviour
 {
-    [SerializeField] private LocaleDropdown localeDropdown = null;
+    [SerializeField] private DropdownLocale localeDropdown = null;
 
     public void Setup()
     {
