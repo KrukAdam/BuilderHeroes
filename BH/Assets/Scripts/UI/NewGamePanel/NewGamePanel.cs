@@ -6,6 +6,7 @@ using UnityEngine;
 public class NewGamePanel : MonoBehaviour
 {
     public event Action OnBtnStartGameClick = delegate { };
+    public RaceSkillWindow RaceSkillWindow { get => raceSkillWindow; }
 
     [SerializeField] private BasicButton btnStartGame = null;
     [SerializeField] private DropdownRace dropdownRace = null;

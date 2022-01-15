@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class RaceSkillWindow : MonoBehaviour
 {
+    public ButtonSkill BtnMainSkill { get => btnMainSkill; }
+    public ButtonSkill BtnSecondSkill { get => btnSecondSkill; }
+
     [SerializeField] private ButtonSkill btnMainSkill = null;
     [SerializeField] private ButtonSkill btnSecondSkill = null;
 

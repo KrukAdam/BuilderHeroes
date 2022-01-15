@@ -18,11 +18,11 @@ public class TooltipsPanels : MonoBehaviour
 
     private void Start()
     {
-        statTooltip.Setup(statPositive, statNegative, baseColor);
-        itemTooltip.Setup(statPositive, statNegative, baseColor);
-        tooltipMainSkill.Setup(statPositive, statNegative, baseColor);
-        tooltipSecondSkill.Setup(statPositive, statNegative, baseColor);
-        tooltipNewItemDiscover.Setup(statPositive, statNegative, baseColor);
+        if (statTooltip) statTooltip.Setup(statPositive, statNegative, baseColor);
+        if (itemTooltip) itemTooltip.Setup(statPositive, statNegative, baseColor);
+        if (tooltipMainSkill) tooltipMainSkill.Setup(statPositive, statNegative, baseColor);
+        if (tooltipSecondSkill) tooltipSecondSkill.Setup(statPositive, statNegative, baseColor);
+        if (tooltipNewItemDiscover) tooltipNewItemDiscover.Setup(statPositive, statNegative, baseColor);
     }
 
     public void ShowItemTooltip(BaseItemSlot itemSlot)
