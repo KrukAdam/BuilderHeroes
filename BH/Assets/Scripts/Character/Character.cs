@@ -25,6 +25,12 @@ public class Character : MonoBehaviour
         this.raceType = raceType;
     }
 
+    public void SetupStats()
+    {
+        if (!Stats) stats = gameObject.GetComponent<Stats>();
+        this.Stats.Init();
+    }
+
     protected void SetupLayerMask(bool isPlayer)
     {
         if (isPlayer)

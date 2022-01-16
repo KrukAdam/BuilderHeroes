@@ -14,9 +14,6 @@ public class PlayerCharacter : Character
 
 		SetupLayerMask(true);
 
-		if(!Stats) stats = gameObject.GetComponent<Stats>();
-		this.Stats.Init();
-
 		playerActionController.Setup(localController, this);
 		moveController.Init(this, stats);
 		playerSkillsController.Setup(localController);

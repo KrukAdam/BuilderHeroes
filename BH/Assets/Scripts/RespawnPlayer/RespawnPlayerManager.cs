@@ -16,7 +16,17 @@ public class RespawnPlayerManager : MonoBehaviour
 
         RespawnPlayer();
         SetRace();
+        SetStats();
         SetRaceSkill();
+    }
+
+    private void SetStats()
+    {
+        playerCharacter.SetupStats();
+        foreach (var buffStat in characterCreator.RaceData.RaceBasicStats.Auras)
+        {
+            buffStat.ExecuteEffect(characterCreator.RaceData.RaceBasicStats, playerCharacter.Stats);
+        }
     }
 
     private void RespawnPlayer()

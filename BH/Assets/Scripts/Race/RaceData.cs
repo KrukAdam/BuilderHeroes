@@ -10,7 +10,7 @@ public class RaceData : ScriptableObject
     public LocalizedString RaceName { get => raceName; }
     public Skill MainRaceSkill { get => mainRaceSkill; }
     public Skill SecondRaceSkill { get => secondRaceSkill; }
-    public AuraSkill RaceBasciStats { get => raceBasciStats; }
+    public AuraSkill RaceBasicStats { get => raceBasciStats; }
 
     [SerializeField] private ERaceType raceType = ERaceType.None;
     [SerializeField] private LocalizedString raceName = null;

@@ -24,9 +24,9 @@ public class CharacterCreator : MonoBehaviour
 
     private void ExecuteStartStatsEffect()
     {
-        foreach (var stat in raceData.RaceBasciStats.Auras)
+        foreach (var stat in raceData.RaceBasicStats.Auras)
         {
-            stat.ExecuteEffect(raceData.RaceBasciStats, stats);
+            stat.ExecuteEffect(raceData.RaceBasicStats, stats);
         }
     }
 }
