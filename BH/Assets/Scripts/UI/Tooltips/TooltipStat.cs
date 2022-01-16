@@ -66,6 +66,14 @@ public class TooltipStat : TooltipBase
 					// Debug.LogWarning("Modifier is not an Item!");
 				}
 
+				AuraSkill aura = mod.Source as AuraSkill;
+
+				if (aura != null)
+				{
+					sb.Append(" ");
+					sb.Append(aura.AuraTypeName.GetLocalizedString());
+				}
+
 				ShowModifierBar(sb, i, textColor);
 			}
 		}
@@ -106,6 +114,14 @@ public class TooltipStat : TooltipBase
 				else
 				{
 					// Debug.LogWarning("Modifier is not an Item!");
+				}
+
+				AuraSkill aura = mod.Source as AuraSkill;
+
+				if (aura != null)
+				{
+					sb.Append(" ");
+					sb.Append(aura.AuraTypeName.GetLocalizedString());
 				}
 
 				ShowModifierBar(sb, i, textColor);
@@ -152,6 +168,14 @@ public class TooltipStat : TooltipBase
 					// Debug.LogWarning("Modifier is not an Item!");
 				}
 
+				AuraSkill aura = mod.Source as AuraSkill;
+
+				if (aura != null)
+				{
+					sb.Append(" ");
+					sb.Append(aura.AuraTypeName.GetLocalizedString());
+				}
+
 				ShowModifierBar(sb, i, textColor);
 				startMaxOnIndex++;
 			}
@@ -190,6 +214,14 @@ public class TooltipStat : TooltipBase
 				else
 				{
 					// Debug.LogWarning("Modifier is not an Item!");
+				}
+
+				AuraSkill aura = mod.Source as AuraSkill;
+
+				if (aura != null)
+				{
+					sb.Append(" ");
+					sb.Append(aura.AuraTypeName.GetLocalizedString());
 				}
 
 				ShowModifierBar(sb, startMaxOnIndex + i, textColor);

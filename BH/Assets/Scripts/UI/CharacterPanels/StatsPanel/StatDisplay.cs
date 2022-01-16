@@ -2,8 +2,6 @@
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.Localization.Components;
-using System.Collections;
-using UnityEngine.Localization.Settings;
 using System;
 
 public class StatDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
@@ -13,19 +11,26 @@ public class StatDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
 	[SerializeField] private LocalizeStringEvent nameText;
 	[SerializeField] private Text valueBaseText;
-	[SerializeField] private TooltipStat tooltip;
 
 	private CharacterStat stat;
 
-	public void Setup(CharacterStat characterStat, LocalController localController)
+	public void Setup(CharacterStat characterStat, TooltipsPanels tooltipsPanels)
 	{
 		stat = characterStat;
 		nameText.StringReference = stat.StatName;
 
 		UpdateStatValue();
 
-		OnPointerEnterEvent += localController.GameUiManager.TooltipsPanels.ShowStatTooltip;
-		OnPointerExitEvent += localController.GameUiManager.TooltipsPanels.HideStatTooltip;
+		OnPointerEnterEvent += tooltipsPanels.ShowStatTooltip;
+		OnPointerExitEvent += tooltipsPanels.HideStatTooltip;
+	}
+
+	public void SetupNewStat(CharacterStat characterStat)
+	{
+		stat = characterStat;
+		nameText.StringReference = stat.StatName;
+
+		UpdateStatValue();
 	}
 
 	public void OnPointerEnter(PointerEventData eventData)

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: da0da80ec7b59e940b6d2c9ee8f17b58, type: 3}
-  m_Name: StatsLoyalist
+  m_Name: BasePlayerStats
   m_EditorClassIdentifier: 
   stats:
   - StatName:
@@ -30,7 +30,7 @@ MonoBehaviour:
     MinValue:
       Value: 0
     MaxValue:
-      Value: 100
+      Value: 0
   - StatName:
       m_TableReference:
         m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
@@ -48,7 +48,7 @@ MonoBehaviour:
     MinValue:
       Value: 0
     MaxValue:
-      Value: 12
+      Value: 0
   - StatName:
       m_TableReference:
         m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
@@ -66,7 +66,7 @@ MonoBehaviour:
     MinValue:
       Value: 0
     MaxValue:
-      Value: 2
+      Value: 0
   - StatName:
       m_TableReference:
         m_TableCollectionName: GUID:50d145101e263214aaefdd253bbd7f6e
@@ -80,7 +80,7 @@ MonoBehaviour:
     StatType: 4
     StatDefenseType: 0
     BaseValue:
-      Value: 100
+      Value: 0
     MinValue:
       Value: 0
     MaxValue:
@@ -98,7 +98,7 @@ MonoBehaviour:
     StatType: 5
     StatDefenseType: 0
     BaseValue:
-      Value: 5
+      Value: 0
     MinValue:
       Value: 0
     MaxValue:

@@ -24,6 +24,7 @@ MonoBehaviour:
     m_LocalVariables: []
   mainRaceSkill: {fileID: 11400000, guid: 334312bde700d2b4b9e834e51bec0045, type: 2}
   secondRaceSkill: {fileID: 11400000, guid: fea1e772d9ac7d84e8914a6690650678, type: 2}
+  raceBasciStats: {fileID: 11400000, guid: 00226ab5f68c2ab4a973e44ff5a6794c, type: 2}
   references:
     version: 2
     RefIds: []

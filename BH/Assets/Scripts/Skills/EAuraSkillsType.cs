@@ -4,5 +4,6 @@
 public enum EAuraSkillsType
 {
     None,
-    TestAura
+    TestAura,
+    BasicsRace
 }

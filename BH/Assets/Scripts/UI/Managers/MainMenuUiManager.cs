@@ -51,7 +51,7 @@ public class MainMenuUiManager : MonoBehaviour
         yield return LocalizationSettings.InitializationOperation;
         mainMenuPanel.Setup(this);
         optionsPanel.Setup();
-        newGamePanel.Setup();
+        newGamePanel.Setup(this);
     }
 
     private void SetupEvents()

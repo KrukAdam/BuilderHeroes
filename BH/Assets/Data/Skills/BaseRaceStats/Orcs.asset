@@ -1,0 +1,97 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 299ba178d853ef34d91f2a0befc2b8b5, type: 3}
+  m_Name: Orcs
+  m_EditorClassIdentifier: 
+  skillSprite: {fileID: 21300000, guid: ab0226cd28d392f419078c390d24f898, type: 3}
+  skillName:
+    m_TableReference:
+      m_TableCollectionName: GUID:436a90e1f08e21c40982e3d53f20d266
+    m_TableEntryReference:
+      m_KeyId: 45524480000
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  description:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  singleTarget: 0
+  skillUsePositionType: 3
+  skillRange: 1
+  skillCooldawn: 1
+  skillCastTime: 0
+  timeToBlockCasterMove: 0
+  timeToBlockCasterAction: 0
+  pushPower: 0
+  skillStatsUsed: []
+  offenseStats: []
+  ammoType: 0
+  ammoUsePerShot: 1
+  missileSpeed: 10
+  missileRange: 5
+  missileSprite: {fileID: 0}
+  missilePrefab: {fileID: 0}
+  isBuff: 1
+  isRangeSkill: 0
+  takeDamage: 0
+  useOnlyOnCaster: 0
+  auraType: 2
+  auraTypeName:
+    m_TableReference:
+      m_TableCollectionName: GUID:436a90e1f08e21c40982e3d53f20d266
+    m_TableEntryReference:
+      m_KeyId: 45524480000
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  auras:
+  - buffValue: 150
+    duration: 0
+    baseStatType: 3
+    buffStatType: 1
+    isPercentMult: 0
+    isPermanent: 1
+  - buffValue: 25
+    duration: 0
+    baseStatType: 3
+    buffStatType: 2
+    isPercentMult: 0
+    isPermanent: 1
+  - buffValue: 125
+    duration: 0
+    baseStatType: 3
+    buffStatType: 3
+    isPercentMult: 0
+    isPermanent: 1
+  - buffValue: 85
+    duration: 0
+    baseStatType: 1
+    buffStatType: 4
+    isPercentMult: 0
+    isPermanent: 1
+  - buffValue: 5
+    duration: 0
+    baseStatType: 1
+    buffStatType: 5
+    isPercentMult: 0
+    isPermanent: 1
+  references:
+    version: 2
+    RefIds: []

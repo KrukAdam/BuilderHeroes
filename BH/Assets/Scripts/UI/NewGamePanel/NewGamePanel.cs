@@ -11,16 +11,21 @@ public class NewGamePanel : MonoBehaviour
     [SerializeField] private BasicButton btnStartGame = null;
     [SerializeField] private DropdownRace dropdownRace = null;
     [SerializeField] private RaceSkillWindow raceSkillWindow = null;
+    [SerializeField] private StatsPanel statsPanel = null;
 
     private void OnDestroy()
     {
         dropdownRace.OnValueChange -= raceSkillWindow.SetupSkills;
+        dropdownRace.OnValueChange -= statsPanel.UpdateStats;
     }
 
-    public void Setup()
+    public void Setup(MainMenuUiManager mainMenuUiManager)
     {
         dropdownRace.OnValueChange += raceSkillWindow.SetupSkills;
+        dropdownRace.OnValueChange += statsPanel.UpdateStats;
         dropdownRace.Setup();
+
+        statsPanel.SetupPanel(mainMenuUiManager.TooltipsPanels);
 
         btnStartGame.SetupListener(BtnStartGameClick);
 

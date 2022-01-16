@@ -11,7 +11,7 @@ public class Stats : MonoBehaviour, IDamage
     
 	public List<CharacterStat> AllStats { get => allStats; }
 
-    [SerializeField] private StatsData statsData = null;   //TODO gracz wybiera rase i dostaje odpowiednie staty poczatkowe
+    [SerializeField] private StatsData statsData = null; 
     [SerializeField] private List<CharacterStat> allStats = null;    //Init on start, SF to see in inspector
 
 	private StatsData characterStatsData = null;
@@ -23,6 +23,8 @@ public class Stats : MonoBehaviour, IDamage
     {
 		characterStatsData = Instantiate(statsData);
         characterStatsData.Setup();
+
+        allStats.Clear();
 		allStats = characterStatsData.Stats;
 
         minDamage = Constant.MinDamage;
@@ -75,6 +77,14 @@ public class Stats : MonoBehaviour, IDamage
         OnStatsChange();
     }
 
+    public void RemoveBuff(StatModifier modifier, EBaseStatType baseStatType)
+    {
+        foreach (var stat in allStats)
+        {
+            stat.RemoveModifiers(modifier, baseStatType);
+        }
+    }
+
     public void Death()
     {
         Debug.Log("Death " + gameObject.name);
@@ -115,6 +125,7 @@ public class Stats : MonoBehaviour, IDamage
 
     private void SetupStatsDictionary()
     {
+        statsDictionary.Clear();
         foreach (var stat in allStats)
         {
             statsDictionary.Add(stat.StatType, stat);

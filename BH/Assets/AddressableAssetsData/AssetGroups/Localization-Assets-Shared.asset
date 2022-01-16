@@ -86,6 +86,10 @@ MonoBehaviour:
     m_Address: Assets/Localization/TableCollection/SkillsOrcs/SkillsOrcs Shared Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
+  - m_GUID: 436a90e1f08e21c40982e3d53f20d266
+    m_Address: Assets/Localization/TableCollection/Others/Others Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 6c2525f31135a624f874d31204351340, type: 2}
   m_SchemaSet:

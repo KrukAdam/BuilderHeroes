@@ -17,6 +17,7 @@ public class AuraData
     [SerializeField] private EBaseStatType baseStatType = EBaseStatType.None;
     [SerializeField] private EStatsTypes buffStatType = EStatsTypes.None;
     [SerializeField] private bool isPercentMult = false;
+    [SerializeField] private bool isPermanent = false;
 
     public void ExecuteEffect(AuraSkill aura, Stats stats)
     {
@@ -41,8 +42,8 @@ public class AuraData
             }
         }
 
-        stats.StartCoroutine(RemoveBuff(stats, statModifier, index, duration));
         stats.AuraRefresh();
+        if (!isPermanent) stats.StartCoroutine(RemoveBuff(stats, statModifier, index, duration));
     }
 
     public void ExecuteEffect(ItemUsable parentItem, PlayerCharacter character)
@@ -69,7 +70,7 @@ public class AuraData
         }
 
         character.Stats.Refresh();
-        character.StartCoroutine(RemoveBuff(character, statModifier, index, duration));
+        if (!isPermanent) character.StartCoroutine(RemoveBuff(character, statModifier, index, duration));
     }
 
     private IEnumerator RemoveBuff(PlayerCharacter character, StatModifier statModifiers, int index, float duration)
