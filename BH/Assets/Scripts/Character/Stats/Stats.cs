@@ -36,6 +36,8 @@ public class Stats : MonoBehaviour, IDamage
     {
         characterStatsData = Instantiate(statsData);
         characterStatsData.Setup();
+
+        allStats.Clear();
         allStats = characterStatsData.Stats;
 
         minDamage = Constant.MinDamage;
@@ -121,6 +123,14 @@ public class Stats : MonoBehaviour, IDamage
         speed = speed / 100;
 
         return speed;
+    }
+
+    public void ResetToMaxValue()
+    {
+        foreach (var stat in allStats)
+        {
+            stat.ResetToMax();
+        }
     }
 
     private void SetupStatsDictionary()

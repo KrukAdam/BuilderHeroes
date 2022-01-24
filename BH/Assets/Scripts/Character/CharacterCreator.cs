@@ -19,6 +19,8 @@ public class CharacterCreator : MonoBehaviour
         stats.Init();
         ExecuteStartStatsEffect();
 
+        stats.ResetToMaxValue();
+
         //TODO reset all value to basic 
     }
 

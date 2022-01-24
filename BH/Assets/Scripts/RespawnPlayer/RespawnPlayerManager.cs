@@ -27,6 +27,7 @@ public class RespawnPlayerManager : MonoBehaviour
         {
             buffStat.ExecuteEffect(characterCreator.RaceData.RaceBasicStats, playerCharacter.Stats);
         }
+        playerCharacter.Stats.ResetToMaxValue();
     }
 
     private void RespawnPlayer()

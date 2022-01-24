@@ -73,6 +73,18 @@ public class CharacterStat
         CheckOverride();
     }
 
+    public void ResetToMax()
+    {
+        if (StatUseValues == EStatsValueUse.BaseAndMaxValue)
+        {
+            BaseValue.Value = MaxValue.Value;
+        }
+        if (StatUseValues == EStatsValueUse.MinAndMaxValue)
+        {
+            MinValue.Value = MaxValue.Value;
+        }
+    }
+
     private void CheckOverride()
     {
         if(StatUseValues == EStatsValueUse.BaseAndMaxValue)
