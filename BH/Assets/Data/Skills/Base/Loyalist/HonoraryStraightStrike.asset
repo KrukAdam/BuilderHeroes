@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b8fdba3dffbd8345846d0de5dc722f2, type: 3}
   m_Name: HonoraryStraightStrike
   m_EditorClassIdentifier: 
-  skillSprite: {fileID: 6727712, guid: cebe0b3731f1cc245bd62dce450740a1, type: 3}
+  skillSprite: {fileID: -1295810676, guid: a1afe98318d2cdb49965c81e1f9faaa6, type: 3}
   skillName:
     m_TableReference:
       m_TableCollectionName: GUID:6c956b7186ebbb44185725b3476e2ffd

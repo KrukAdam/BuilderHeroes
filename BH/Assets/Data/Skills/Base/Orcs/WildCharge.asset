@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de43a8dabe7761d45a8f517d8ee64a13, type: 3}
   m_Name: WildCharge
   m_EditorClassIdentifier: 
-  skillSprite: {fileID: 21300000, guid: 71dd1c6209d9ef446a7c6ac23332c05b, type: 3}
+  skillSprite: {fileID: -1751895305, guid: a1afe98318d2cdb49965c81e1f9faaa6, type: 3}
   skillName:
     m_TableReference:
       m_TableCollectionName: GUID:d49fb60789a30fb4ba377f83b364480c
