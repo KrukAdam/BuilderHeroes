@@ -90,6 +90,15 @@ MonoBehaviour:
     m_Address: Assets/Localization/TableCollection/Others/Others Shared Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
+  - m_GUID: 2690b0af07a902f40bd5e139e0210a04
+    m_Address: Assets/Localization/TableCollection/ItemsOre/Items_Ore Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+  - m_GUID: 9fdec85e59b31da4dbfaf06ea96f312c
+    m_Address: Assets/Localization/TableCollection/ItemsRocks/Items_Rocks Shared
+      Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 6c2525f31135a624f874d31204351340, type: 2}
   m_SchemaSet:

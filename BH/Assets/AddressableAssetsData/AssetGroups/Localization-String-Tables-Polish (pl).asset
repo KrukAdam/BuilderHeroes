@@ -41,13 +41,13 @@ MonoBehaviour:
     - Locale-pl
     - Preload
   - m_GUID: 6baace800bf5487479ae2ad92d346197
-    m_Address: ItemsPickaxes_pl
+    m_Address: Items_Pickaxes_pl
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-pl
     - Preload
   - m_GUID: 54d4898a6a9d8ba48affcac63f26b4cd
-    m_Address: ItemsTypes_pl
+    m_Address: Items_Types_pl
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-pl
@@ -102,6 +102,18 @@ MonoBehaviour:
     - Preload
   - m_GUID: 6469379672da826488e487d31ed09767
     m_Address: Others_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    - Preload
+  - m_GUID: ccd4fe0a24996fd409af702d387721b1
+    m_Address: Items_Ore_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    - Preload
+  - m_GUID: a32ebafece4947249b7d9356be058d85
+    m_Address: Items_Rocks_pl
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-pl

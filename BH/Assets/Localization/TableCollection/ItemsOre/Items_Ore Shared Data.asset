@@ -10,39 +10,47 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
-  m_Name: ItemsPickaxes Shared Data
+  m_Name: Items_Ore Shared Data
   m_EditorClassIdentifier: 
-  m_TableCollectionName: Items_Pickaxes
-  m_TableCollectionNameGuidString: 9613dbe3555c461408e66ff89af959b2
+  m_TableCollectionName: Items_Ore
+  m_TableCollectionNameGuidString: 2690b0af07a902f40bd5e139e0210a04
   m_Entries:
-  - m_Id: 7587000320
-    m_Key: Pickaxe_Stone
+  - m_Id: 120451526656
+    m_Key: Ore_Coal
     m_Metadata:
       m_Items: []
-  - m_Id: 197450559488
-    m_Key: Pickaxe_Copper
+  - m_Id: 158087016448
+    m_Key: Ore_Copper
     m_Metadata:
       m_Items: []
-  - m_Id: 218224947200
-    m_Key: Pickaxe_Iron
+  - m_Id: 350181945344
+    m_Key: Ore_Gold
     m_Metadata:
       m_Items: []
-  - m_Id: 223593656320
-    m_Key: Pickaxe_Titanium
+  - m_Id: 429605285888
+    m_Key: Ore_Heavenly
     m_Metadata:
       m_Items: []
-  - m_Id: 233152475136
-    m_Key: Pickaxe_Heavenly
+  - m_Id: 540028727296
+    m_Key: Ore_Iron
+    m_Metadata:
+      m_Items: []
+  - m_Id: 602007957504
+    m_Key: Ore_Tin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 709348585472
+    m_Key: Ore_Titanium
     m_Metadata:
       m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
-    rid: 2937793370727383365
+    rid: 2937793370727383329
   references:
     version: 2
     RefIds:
-    - rid: 2937793370727383365
+    - rid: 2937793370727383329
       type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
       data:
-        m_CustomEpoch: 1641038708308
+        m_CustomEpoch: 1643041830031

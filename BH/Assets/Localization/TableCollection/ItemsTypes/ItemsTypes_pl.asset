@@ -58,6 +58,10 @@ MonoBehaviour:
     m_Localized: "U\u017Cytkowy"
     m_Metadata:
       m_Items: []
+  - m_Id: 8431634419838976
+    m_Localized: "Materia\u0142"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

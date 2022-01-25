@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
   m_Name: ItemsTypes Shared Data
   m_EditorClassIdentifier: 
-  m_TableCollectionName: ItemsTypes
+  m_TableCollectionName: Items_Types
   m_TableCollectionNameGuidString: 430614de7679a2e44b04d68c9c8442c7
   m_Entries:
   - m_Id: 27925180416
@@ -55,14 +55,18 @@ MonoBehaviour:
     m_Key: Item_Type_Usable
     m_Metadata:
       m_Items: []
+  - m_Id: 8431634419838976
+    m_Key: Item_Type_Material
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
-    rid: 2937792877301334190
+    rid: 2937793370727383358
   references:
     version: 2
     RefIds:
-    - rid: 2937792877301334190
+    - rid: 2937793370727383358
       type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
       data:
         m_CustomEpoch: 1641039036175
