@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 31f098b1f861fd94bb6f09f84fe87404, type: 3}
-  m_Name: Stone
+  m_Name: WoodWillow
   m_EditorClassIdentifier: 
-  id: 6fac732f37fe4aa42962a71b55996f6d
+  id: fabe5bfad7ea78a46a8de7de58c13ad4
   ItemName:
     m_TableReference:
-      m_TableCollectionName: GUID:9fdec85e59b31da4dbfaf06ea96f312c
+      m_TableCollectionName: GUID:3250bd429fcdf234ab0ba6f13f455b6f
     m_TableEntryReference:
-      m_KeyId: 5716340736
+      m_KeyId: 78831448064
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
@@ -40,8 +40,8 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
-  Icon: {fileID: 974539637, guid: 5115fa5c6dca3b84889d9c4cdb3b6dca, type: 3}
-  MaximumStacks: 99
+  Icon: {fileID: -518637075, guid: b767455eb017bec4e953a599d6cf36e7, type: 3}
+  MaximumStacks: 10
   references:
     version: 2
     RefIds: []

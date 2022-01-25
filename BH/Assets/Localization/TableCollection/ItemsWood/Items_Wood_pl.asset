@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Items_Wood_pl
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: pl
+  m_SharedData: {fileID: 11400000, guid: 3250bd429fcdf234ab0ba6f13f455b6f, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 78831448064
+    m_Localized: Wierzba
+    m_Metadata:
+      m_Items: []
+  - m_Id: 200600481792
+    m_Localized: Brzoza
+    m_Metadata:
+      m_Items: []
+  - m_Id: 303008608256
+    m_Localized: Czarna Sosna
+    m_Metadata:
+      m_Items: []
+  - m_Id: 386458480640
+    m_Localized: Jesion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 429911470080
+    m_Localized: Buk
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

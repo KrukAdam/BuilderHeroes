@@ -118,6 +118,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-pl
     - Preload
+  - m_GUID: 97d3d068e57f1a44c8c8af6d0b24b659
+    m_Address: Items_Wood_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    - Preload
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 6c2525f31135a624f874d31204351340, type: 2}
   m_SchemaSet:
