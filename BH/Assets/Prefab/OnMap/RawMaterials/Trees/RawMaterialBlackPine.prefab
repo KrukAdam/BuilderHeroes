@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6083862566407778181}
   - component: {fileID: 2816505371894349666}
   m_Layer: 7
-  m_Name: WillowTreeRawMaterial
+  m_Name: RawMaterialBlackPine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6083862566407778183}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.933, y: 3.973, z: -4.58061}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -92,7 +92,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e89cb433abee5f94a8704a108d44b006, type: 3}
+  m_Sprite: {fileID: -86787402, guid: ae16f1f09b8d63f4092367e2e7945a75, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -117,24 +117,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectSpriteRenderer: {fileID: 6083862566407778181}
   toolTypeNeeded: 3
-  durability: 7
+  durability: 15
   itemOnMapPrefab: {fileID: 3869834638423572842, guid: b700418436395104eb80c099e2d9eabc, type: 3}
   rawMaterialsDroped:
-  - ItemDroppedPrefab: {fileID: 11400000, guid: fabe5bfad7ea78a46a8de7de58c13ad4, type: 2}
+  - ItemDroppedPrefab: {fileID: 11400000, guid: a1fa46e4efbcb7846b43193ba1138306, type: 2}
     DropChance: 100
-    DropMax: 3
-  - ItemDroppedPrefab: {fileID: 11400000, guid: fabe5bfad7ea78a46a8de7de58c13ad4, type: 2}
-    DropChance: 100
-    DropMax: 3
-  - ItemDroppedPrefab: {fileID: 11400000, guid: fabe5bfad7ea78a46a8de7de58c13ad4, type: 2}
-    DropChance: 100
-    DropMax: 3
+    DropMax: 5
   randomSprites: 1
-  spritesRawMaterial: []
+  spritesRawMaterial:
+  - {fileID: -86787402, guid: ae16f1f09b8d63f4092367e2e7945a75, type: 3}
+  - {fileID: -1499131942, guid: ae16f1f09b8d63f4092367e2e7945a75, type: 3}
+  - {fileID: 1504045630, guid: ae16f1f09b8d63f4092367e2e7945a75, type: 3}
+  - {fileID: 629895794, guid: ae16f1f09b8d63f4092367e2e7945a75, type: 3}
+  - {fileID: -1151128481, guid: ae16f1f09b8d63f4092367e2e7945a75, type: 3}
+  - {fileID: 1911153961, guid: ae16f1f09b8d63f4092367e2e7945a75, type: 3}
+  - {fileID: -1226005332, guid: ae16f1f09b8d63f4092367e2e7945a75, type: 3}
+  - {fileID: -1901367719, guid: ae16f1f09b8d63f4092367e2e7945a75, type: 3}
+  - {fileID: -1763537717, guid: ae16f1f09b8d63f4092367e2e7945a75, type: 3}
   effectsPrefab: {fileID: 11400000, guid: c5a1460002e4f87419f6edd0b06a0e32, type: 2}
   treeBranches: {fileID: 2728707333232815916}
   randomTreeBranchesSprites: 1
-  spritesTreeBranches: []
+  spritesTreeBranches:
+  - {fileID: 1080759508, guid: 8a17fafe8802a5e4f9a661162cde898a, type: 3}
 --- !u!1 &7069996616135654219
 GameObject:
   m_ObjectHideFlags: 0
@@ -160,7 +164,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7069996616135654219}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.409, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -208,7 +212,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: b192dd41597f8b448954e149431a7742, type: 3}
+  m_Sprite: {fileID: 1080759508, guid: 8a17fafe8802a5e4f9a661162cde898a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -1030,8 +1030,8 @@ MonoBehaviour:
     m_WaitForCompletion: 0
     m_LocalVariables: []
   toolType: 3
-  damageRawMaterial: 1
-  durability: 12
+  damageRawMaterial: 10
+  durability: 120
   references:
     version: 2
     RefIds: []
