@@ -6,6 +6,7 @@ Ultimately, the game will be multiplayer.
 
 ## Table of contents
 * [Technologies](#technologies)
+* [Hotkeys](#hotkeys)
 * [Features](#features)
 * [Installation](#installation)
 * [Status](#status)
@@ -15,6 +16,15 @@ Ultimately, the game will be multiplayer.
 Project is created with:
 * Unity 2021.2.2f1
 * C#
+
+## Hotkeys
+- WSAD/Arrows: movement
+- Spacebar: pick up, interaction, use tool
+- LMB: use main base skill, UI interaction
+- RMB: use second base skill
+- B: Open builder panel
+- I: Open inventory and character panel
+- ESC: Open menu panel
 
 ## Features
 - Player movement and interaction with the environment
@@ -31,16 +41,12 @@ Project is created with:
 - The weapon can have up to two basic skills
 - Player can change main and second skill choosing from the skills of the weapons he carry and the race he choose 
 - UI tooltips: item, new item discovered, skill, stats containing a description and components affecting the stats
-- UI panels: contruction, building, buildier, crafting, inventory, equipment, stats, menu, options, character creator, weapons skills
+- UI panels: contruction, building, builder, crafting, inventory, equipment, stats, menu, options, character creator, weapons skills
 
 
 ## Installation
 
-Download build game from itch - [HERE](https://kruq.itch.io/dont-stop-rabbit) 
-
-* Download game
-* Unpack folder
-* Open Dont Stop Rabbit.exe and have fun!
+Demo coming soon!
 
 ## Status
 
