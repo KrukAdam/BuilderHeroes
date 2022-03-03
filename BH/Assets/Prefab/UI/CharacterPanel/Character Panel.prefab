@@ -1650,8 +1650,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9f67d9a92a0d0e488eccddc937c6a32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  statDisplayPrefab: {fileID: 6672213470989797795, guid: 7678ca4c87c5b734199c189dc19ca01a, type: 3}
-  parentStatDisplay: {fileID: 0}
+  statDisplayPrefab: {fileID: 270117840785465888, guid: 7678ca4c87c5b734199c189dc19ca01a, type: 3}
+  parentStatDisplay: {fileID: 842422946395271099}
 --- !u!222 &407732570
 CanvasRenderer:
   m_ObjectHideFlags: 0
