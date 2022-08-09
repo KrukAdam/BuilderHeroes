@@ -50,7 +50,8 @@ Demo coming soon!
 
 ## Status
 
-The game is in the early stages of development.
+The game is refactor and change to 3D version.
+Info coming soon!
 
 ## Version
 
